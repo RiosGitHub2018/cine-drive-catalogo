@@ -1,0 +1,17 @@
+[
+  {
+<<<<<<< HEAD
+    "nome": "Jaspion",
+    "arquivo": "tokusatsus/jaspion.json",
+    "thumb": "https://1.bp.blogspot.com/-NmAJ4jfnbO4/XZ_Ts6wUxiI/AAAAAAAACAU/ZoU2GmcIwCsBCUwNaxmRX4yMih4GhPDTwCLcBGAsYHQ/s1600/Jaspion.jpg",
+    "totalEpisodios": 2
+  }
+]
+=======
+    "nome": "Rambo",
+    "arquivo": "tokusatsus/rambo.json",
+    "thumb": "",
+    "totalEpisodios": 38
+  }
+]
+>>>>>>> 1e7e86b (Atualizando arquivos de json e tokusatsus)

@@ -1,0 +1,748 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Cine-Drive — Editor de Catalogo</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --vm: #e50914;
+  --ouro: #f5c518;
+  --roxo: #7c3aed;
+  --verde: #22c55e;
+  --fundo: #0d0d10;
+  --painel: #13131a;
+  --borda: #1e1e2e;
+  --texto: #f0f0f5;
+  --suave: #666680;
+  --entrada: #1a1a26;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--fundo); color:var(--texto); font-family:'DM Sans',sans-serif; min-height:100vh; display:flex; flex-direction:column; }
+
+header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-bottom:1px solid var(--borda); background:var(--painel); flex-shrink:0; }
+.logo { font-family:'Bebas Neue',sans-serif; font-size:32px; letter-spacing:3px; background:linear-gradient(135deg,var(--vm),var(--ouro)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1; }
+.logo small { font-size:12px; letter-spacing:6px; display:block; color:var(--suave); -webkit-text-fill-color:var(--suave); margin-top:-4px; }
+.sep { width:1px; height:32px; background:var(--borda); }
+
+.btn { border:none; border-radius:8px; padding:9px 18px; font-family:'DM Sans',sans-serif; font-size:13px; font-weight:600; cursor:pointer; transition:all 0.2s; white-space:nowrap; display:inline-flex; align-items:center; gap:6px; }
+.btn-vm   { background:var(--vm); color:#fff; }
+.btn-vm:hover   { background:#ff2020; }
+.btn-sec  { background:var(--entrada); color:var(--texto); border:1px solid var(--borda); }
+.btn-sec:hover  { border-color:var(--suave); }
+.btn-ouro { background:var(--ouro); color:#000; font-weight:700; }
+.btn-ouro:hover { background:#ffd700; }
+.btn-roxo { background:var(--roxo); color:#fff; }
+.btn-roxo:hover { background:#6d28d9; }
+.btn-verde { background:var(--verde); color:#000; font-weight:700; }
+.btn-verde:hover { background:#16a34a; color:#fff; }
+
+.layout { display:flex; flex:1; overflow:hidden; height:calc(100vh - 65px); }
+
+/* SIDEBAR */
+.sidebar { width:272px; min-width:272px; background:var(--painel); border-right:1px solid var(--borda); display:flex; flex-direction:column; height:100%; }
+.sidebar-abas { display:flex; border-bottom:1px solid var(--borda); flex-shrink:0; }
+.sidebar-aba { flex:1; padding:11px 6px; text-align:center; font-size:11px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--suave); cursor:pointer; border-bottom:2px solid transparent; transition:all 0.2s; }
+.sidebar-aba.ativa { color:var(--texto); border-bottom-color:var(--vm); }
+.sidebar-aba.ativa.sub { border-bottom-color:var(--roxo); color:var(--roxo); }
+.sidebar-top { padding:10px 14px; border-bottom:1px solid var(--borda); display:flex; align-items:center; justify-content:space-between; flex-shrink:0; }
+.sidebar-label { font-size:10px; letter-spacing:2px; color:var(--suave); text-transform:uppercase; }
+.badge-count { font-size:11px; font-weight:700; padding:2px 8px; border-radius:20px; }
+.badge-ouro { background:rgba(245,197,24,0.15); color:var(--ouro); }
+.badge-roxo { background:rgba(124,58,237,0.15); color:var(--roxo); }
+.lista-cats { flex:1; overflow-y:auto; padding:6px; }
+.cat-item { display:flex; align-items:center; gap:7px; padding:9px 11px; border-radius:7px; cursor:pointer; transition:background 0.15s; font-size:13px; font-weight:500; border-left:3px solid transparent; }
+.cat-item:hover { background:rgba(255,255,255,0.04); }
+.cat-item.ativa { background:rgba(229,9,20,0.1); border-left-color:var(--vm); }
+.cat-item.ativa.sub { background:rgba(124,58,237,0.1); border-left-color:var(--roxo); }
+.cat-nome { flex:1; font-size:13px; }
+.cat-tag { font-size:10px; padding:2px 6px; border-radius:20px; font-weight:700; background:rgba(124,58,237,0.15); color:var(--roxo); }
+.cat-count { font-size:11px; color:var(--suave); background:var(--entrada); padding:1px 6px; border-radius:20px; }
+.btn-del-cat { background:none; border:none; color:var(--suave); cursor:pointer; font-size:13px; width:20px; height:20px; border-radius:4px; display:flex; align-items:center; justify-content:center; transition:color 0.2s,background 0.2s; flex-shrink:0; }
+.btn-del-cat:hover { color:var(--vm); background:rgba(229,9,20,0.1); }
+.sidebar-footer { padding:10px 14px; border-top:1px solid var(--borda); flex-shrink:0; }
+
+/* CONTEUDO */
+.conteudo { flex:1; padding:24px 36px 100px; overflow-y:auto; height:100%; }
+.conteudo-vazio { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; gap:12px; color:var(--suave); text-align:center; }
+.conteudo-vazio .ico { font-size:52px; opacity:0.2; }
+.secao-header { display:flex; align-items:center; margin-bottom:18px; gap:14px; flex-wrap:wrap; }
+.secao-titulo { font-family:'Bebas Neue',sans-serif; font-size:24px; letter-spacing:2px; }
+.secao-titulo span { font-size:12px; font-family:'DM Sans',sans-serif; font-weight:400; letter-spacing:0; color:var(--suave); margin-left:8px; }
+.breadcrumb { font-size:12px; color:var(--suave); }
+.breadcrumb b { color:var(--roxo); }
+.lista-filmes { display:flex; flex-direction:column; gap:8px; margin-bottom:16px; }
+.filme-card { background:var(--painel); border:1px solid var(--borda); border-radius:10px; padding:12px 16px; display:grid; grid-template-columns:40px 1fr 1fr 1fr 36px; gap:10px; align-items:end; transition:border-color 0.2s; }
+.filme-card:hover { border-color:rgba(229,9,20,0.2); }
+.filme-card.episodio:hover { border-color:rgba(124,58,237,0.2); }
+.filme-num { font-family:'Bebas Neue',sans-serif; font-size:24px; color:var(--suave); text-align:center; line-height:1; padding-bottom:4px; }
+.campo { display:flex; flex-direction:column; gap:3px; }
+.campo label { font-size:10px; color:var(--suave); letter-spacing:1.5px; text-transform:uppercase; }
+.campo input { background:var(--entrada); border:1px solid var(--borda); border-radius:6px; padding:7px 10px; color:var(--texto); font-family:'DM Sans',sans-serif; font-size:13px; outline:none; transition:border-color 0.2s; width:100%; }
+.campo input:focus { border-color:var(--vm); }
+.campo input::placeholder { color:var(--suave); font-size:11px; }
+.btn-del-filme { background:rgba(229,9,20,0.08); border:1px solid rgba(229,9,20,0.2); border-radius:7px; color:var(--vm); cursor:pointer; width:34px; height:34px; font-size:14px; display:flex; align-items:center; justify-content:center; transition:all 0.2s; flex-shrink:0; }
+.btn-del-filme:hover { background:rgba(229,9,20,0.2); }
+
+/* BARRA INFERIOR */
+.barra-salvar { position:fixed; bottom:0; left:0; right:0; background:var(--painel); border-top:1px solid var(--borda); padding:10px 32px; display:flex; align-items:center; justify-content:space-between; gap:14px; z-index:100; }
+.status { font-size:13px; color:var(--suave); flex:1; }
+.status.ok { color:var(--verde); }
+.status.erro { color:var(--vm); }
+.barra-botoes { display:flex; gap:8px; }
+
+/* TOAST */
+.toast { position:fixed; top:18px; right:18px; background:#1e1e2e; border:1px solid var(--borda); border-radius:10px; padding:11px 16px; font-size:13px; z-index:9999; transform:translateY(-10px); opacity:0; transition:all 0.3s; pointer-events:none; max-width:320px; }
+.toast.show { transform:translateY(0); opacity:1; }
+.toast.sucesso { border-color:var(--verde); color:var(--verde); }
+.toast.erro { border-color:var(--vm); color:var(--vm); }
+.toast.info { border-color:var(--ouro); color:var(--ouro); }
+
+/* MODAL */
+.modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.78); backdrop-filter:blur(6px); z-index:9998; display:none; align-items:center; justify-content:center; }
+.modal-overlay.aberto { display:flex; }
+.modal { background:var(--painel); border:1px solid var(--borda); border-radius:14px; padding:28px; width:480px; display:flex; flex-direction:column; gap:16px; box-shadow:0 40px 80px rgba(0,0,0,0.6); animation:slideUp 0.25s ease; }
+@keyframes slideUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+.modal-titulo { font-family:'Bebas Neue',sans-serif; font-size:24px; letter-spacing:2px; }
+.modal-titulo.roxo { background:linear-gradient(135deg,var(--roxo),#a78bfa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.modal-titulo.vm { background:linear-gradient(135deg,var(--vm),var(--ouro)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.modal-desc { font-size:13px; color:var(--suave); margin-top:-8px; }
+.modal-input { background:var(--entrada); border:2px solid var(--borda); border-radius:9px; padding:12px 15px; color:var(--texto); font-family:'DM Sans',sans-serif; font-size:14px; outline:none; transition:border-color 0.2s; width:100%; }
+.modal-input:focus { border-color:var(--vm); }
+.modal-input.roxo:focus { border-color:var(--roxo); }
+.modal-input::placeholder { color:var(--suave); }
+.modal-select { background:var(--entrada); border:2px solid var(--borda); border-radius:9px; padding:12px 15px; color:var(--texto); font-family:'DM Sans',sans-serif; font-size:14px; outline:none; width:100%; cursor:pointer; }
+.modal-select:focus { border-color:var(--roxo); }
+.modal-botoes { display:flex; gap:10px; justify-content:flex-end; }
+
+/* MODAL SALVAR */
+.salvar-lista { display:flex; flex-direction:column; gap:6px; max-height:300px; overflow-y:auto; }
+.salvar-item { display:flex; align-items:center; gap:10px; padding:8px 12px; background:var(--entrada); border-radius:7px; font-size:13px; }
+.salvar-item .icone { font-size:16px; }
+.salvar-item .path { flex:1; font-family:monospace; color:var(--ouro); }
+.salvar-item .tipo { font-size:11px; color:var(--suave); }
+
+::-webkit-scrollbar { width:4px; }
+::-webkit-scrollbar-track { background:transparent; }
+::-webkit-scrollbar-thumb { background:var(--borda); border-radius:2px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">CINE<small>DRIVE</small></div>
+  <div class="sep"></div>
+  <span style="color:var(--suave);font-size:13px;">Editor de Catalogo</span>
+  <div id="arquivo-info" style="color:var(--suave);font-size:12px;margin-left:auto;">Nenhum arquivo carregado</div>
+  <label class="btn btn-sec" for="input-arquivo">&#128194; Abrir index.json</label>
+  <input type="file" id="input-arquivo" accept=".json" style="display:none">
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-abas">
+      <div class="sidebar-aba ativa" id="aba-cat" onclick="mudarAba('cat')">Categorias</div>
+      <div class="sidebar-aba" id="aba-sub" onclick="mudarAba('sub')">Subcategorias</div>
+    </div>
+
+    <!-- PAINEL CATEGORIAS -->
+    <div id="painel-cat" style="display:flex;flex-direction:column;flex:1;overflow:hidden;">
+      <div class="sidebar-top">
+        <span class="sidebar-label">Categorias</span>
+        <span class="badge-count badge-ouro" id="total-cats">0</span>
+      </div>
+      <div class="lista-cats" id="lista-cats"></div>
+      <div class="sidebar-footer">
+        <button class="btn btn-vm" style="width:100%;padding:10px;justify-content:center;" onclick="abrirModalCat()">+ Nova Categoria</button>
+      </div>
+    </div>
+
+    <!-- PAINEL SUBCATEGORIAS -->
+    <div id="painel-sub" style="display:none;flex-direction:column;flex:1;overflow:hidden;">
+      <div class="sidebar-top">
+        <span class="sidebar-label">Subcategorias</span>
+        <span class="badge-count badge-roxo" id="total-subs">0</span>
+      </div>
+      <div class="lista-cats" id="lista-subs"></div>
+      <div class="sidebar-footer">
+        <button class="btn btn-roxo" style="width:100%;padding:10px;justify-content:center;" onclick="abrirModalSub()">+ Nova Subcategoria</button>
+      </div>
+    </div>
+  </aside>
+
+  <main class="conteudo" id="conteudo">
+    <div class="conteudo-vazio">
+      <div class="ico">🎬</div>
+      <div style="font-size:16px;font-weight:600;">Bem-vindo ao Editor</div>
+      <div style="font-size:13px;">Abra um index.json ou crie novas categorias</div>
+    </div>
+  </main>
+</div>
+
+<div class="barra-salvar">
+  <div class="status" id="status">Pronto</div>
+  <div class="barra-botoes">
+    <button class="btn btn-sec" onclick="verJson()">&#128065; Ver JSON</button>
+    <button class="btn btn-verde" onclick="abrirModalSalvar()">&#128190; Salvar e Baixar ZIP</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- MODAL NOVA CATEGORIA -->
+<div class="modal-overlay" id="modal-cat" onclick="fecharModalFora(event,'modal-cat')">
+  <div class="modal">
+    <div class="modal-titulo vm">Nova Categoria</div>
+    <div class="modal-desc">Defina o nome e o tipo da categoria.</div>
+    <div class="campo">
+      <label>Nome da categoria</label>
+      <input class="modal-input" type="text" id="input-nome-cat" placeholder="Ex: Comedia, Acao, Series..." maxlength="40">
+    </div>
+    <div class="campo">
+      <label>Tipo</label>
+      <select class="modal-select" id="select-tipo-cat">
+        <option value="filmes">Filmes (sem subcategorias)</option>
+        <option value="series">Series (com subcategorias)</option>
+      </select>
+    </div>
+    <div class="modal-botoes">
+      <button class="btn btn-sec" onclick="fecharModal('modal-cat')">Cancelar</button>
+      <button class="btn btn-vm" onclick="confirmarCat()">Criar Categoria</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL NOVA SUBCATEGORIA -->
+<div class="modal-overlay" id="modal-sub" onclick="fecharModalFora(event,'modal-sub')">
+  <div class="modal">
+    <div class="modal-titulo roxo">Nova Subcategoria</div>
+    <div class="modal-desc">Selecione a categoria pai e defina os dados da serie.</div>
+    <div class="campo">
+      <label>Categoria pai</label>
+      <select class="modal-select" id="select-cat-pai"></select>
+    </div>
+    <div class="campo">
+      <label>Nome da subcategoria</label>
+      <input class="modal-input roxo" type="text" id="input-nome-sub" placeholder="Ex: Breaking Bad, Kamen Rider..." maxlength="60">
+    </div>
+    <div class="campo">
+      <label>URL da capa (thumb)</label>
+      <input class="modal-input roxo" type="text" id="input-thumb-sub" placeholder="https://... ou thumbs/serie.jpg" maxlength="300">
+    </div>
+    <div class="modal-botoes">
+      <button class="btn btn-sec" onclick="fecharModal('modal-sub')">Cancelar</button>
+      <button class="btn btn-roxo" onclick="confirmarSub()">Adicionar Subcategoria</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL SALVAR -->
+<div class="modal-overlay" id="modal-salvar" onclick="fecharModalFora(event,'modal-salvar')">
+  <div class="modal" style="width:560px;">
+    <div class="modal-titulo vm">Salvar Catalogo</div>
+    <div class="modal-desc">Os arquivos abaixo serao gerados e baixados em um ZIP. Extraia e suba para o GitHub.</div>
+    <div class="salvar-lista" id="salvar-lista"></div>
+    <div class="modal-botoes">
+      <button class="btn btn-sec" onclick="fecharModal('modal-salvar')">Cancelar</button>
+      <button class="btn btn-verde" onclick="gerarZip()">&#128230; Baixar ZIP</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===== ESTADO =====
+var catalogo = [];
+// catalogo = [
+//   { categoria:'Comedia', tipo:'filmes', arquivo:'comedia.json', itens:[] },
+//   { categoria:'Series',  tipo:'series', arquivo:'series/index.json', subs:[
+//     { nome:'Breaking Bad', arquivo:'series/breaking-bad.json', thumb:'', episodios:[] }
+//   ]}
+// ]
+var abaAtiva = 'cat';
+var catAtiva = -1;
+var subAtiva = -1;
+
+// ===== ABRIR ARQUIVO =====
+document.getElementById('input-arquivo').addEventListener('change', function(e) {
+  var file = e.target.files[0];
+  if (!file) return;
+  document.getElementById('arquivo-info').textContent = file.name;
+  var reader = new FileReader();
+  reader.onload = function(ev) {
+    try {
+      var data = JSON.parse(ev.target.result);
+      // Converte index.json antigo (catalogo.json) para novo formato
+      catalogo = normalizarIndice(data);
+      catAtiva = catalogo.length > 0 ? 0 : -1;
+      subAtiva = -1;
+      renderSidebar();
+      renderSubsSidebar();
+      renderConteudo();
+      setStatus('Carregado: ' + file.name, 'ok');
+      toast('Catalogo carregado!', 'sucesso');
+    } catch(err) {
+      toast('JSON invalido!', 'erro');
+    }
+  };
+  reader.readAsText(file);
+});
+
+function normalizarIndice(data) {
+  // Se ja eh o novo formato (tem campo 'arquivo')
+  if (data.length > 0 && data[0].arquivo) return data;
+  // Converte catalogo.json antigo
+  var resultado = [];
+  for (var i = 0; i < data.length; i++) {
+    var cat = data[i];
+    var slug = slugify(cat.categoria);
+    var temSubs = cat.subs && cat.subs.length > 0;
+    var entrada = {
+      categoria: cat.categoria,
+      tipo: temSubs ? 'series' : 'filmes',
+      arquivo: temSubs ? (slug + '/index.json') : (slug + '.json'),
+      itens: cat.itens || [],
+      subs: []
+    };
+    if (temSubs) {
+      for (var j = 0; j < cat.subs.length; j++) {
+        var sub = cat.subs[j];
+        entrada.subs.push({
+          nome: sub.nome,
+          arquivo: slug + '/' + slugify(sub.nome) + '.json',
+          thumb: sub.thumb || '',
+          totalEpisodios: sub.episodios ? sub.episodios.length : 0,
+          episodios: sub.episodios || []
+        });
+      }
+    }
+    resultado.push(entrada);
+  }
+  return resultado;
+}
+
+function slugify(str) {
+  return str.toLowerCase()
+    .replace(/[áàãâä]/g,'a').replace(/[éèêë]/g,'e')
+    .replace(/[íìîï]/g,'i').replace(/[óòõôö]/g,'o')
+    .replace(/[úùûü]/g,'u').replace(/[ç]/g,'c')
+    .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+}
+
+// ===== ABAS =====
+function mudarAba(aba) {
+  abaAtiva = aba;
+  document.getElementById('aba-cat').className = 'sidebar-aba' + (aba==='cat'?' ativa':'');
+  document.getElementById('aba-sub').className = 'sidebar-aba' + (aba==='sub'?' ativa sub':'');
+  document.getElementById('painel-cat').style.display = aba==='cat'?'flex':'none';
+  document.getElementById('painel-sub').style.display = aba==='sub'?'flex':'none';
+  if (aba==='sub') { subAtiva=-1; renderSubsSidebar(); renderConteudoSubs(); }
+  else renderConteudo();
+}
+
+// ===== SIDEBAR CATEGORIAS =====
+function renderSidebar() {
+  var lista = document.getElementById('lista-cats');
+  lista.innerHTML = '';
+  document.getElementById('total-cats').textContent = catalogo.length;
+  for (var i=0;i<catalogo.length;i++) lista.appendChild(criarItemCat(i));
+}
+
+function criarItemCat(i) {
+  var cat = catalogo[i];
+  var item = document.createElement('div');
+  item.className = 'cat-item'+(i===catAtiva&&abaAtiva==='cat'?' ativa':'');
+  item.dataset.idx = i;
+
+  var nome = document.createElement('span');
+  nome.className = 'cat-nome';
+  nome.textContent = cat.categoria;
+
+  var count = document.createElement('span');
+  count.className = 'cat-count';
+  count.textContent = cat.tipo==='series' ? (cat.subs?cat.subs.length:0) : (cat.itens?cat.itens.length:0);
+
+  var del = document.createElement('button');
+  del.className = 'btn-del-cat';
+  del.innerHTML = '&#10005;';
+  del.dataset.idx = i;
+  del.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var idx = parseInt(this.dataset.idx);
+    if (confirm('Remover "'+catalogo[idx].categoria+'" e todo seu conteudo?')) {
+      catalogo.splice(idx,1);
+      if (catAtiva>=catalogo.length) catAtiva=catalogo.length-1;
+      renderSidebar(); renderSubsSidebar(); renderConteudo();
+      toast('Categoria removida!','sucesso');
+    }
+  });
+
+  item.appendChild(nome); item.appendChild(count); item.appendChild(del);
+  item.addEventListener('click', function() {
+    catAtiva=parseInt(this.dataset.idx);
+    renderSidebar(); renderConteudo();
+  });
+  return item;
+}
+
+// ===== SIDEBAR SUBCATEGORIAS =====
+function renderSubsSidebar() {
+  var lista = document.getElementById('lista-subs');
+  lista.innerHTML='';
+  var todas = getTodasSubs();
+  document.getElementById('total-subs').textContent = todas.length;
+  for (var i=0;i<todas.length;i++) lista.appendChild(criarItemSub(i,todas[i]));
+}
+
+function getTodasSubs() {
+  var subs=[];
+  for (var i=0;i<catalogo.length;i++) {
+    if (catalogo[i].tipo!=='series') continue;
+    var subsArr = catalogo[i].subs||[];
+    for (var j=0;j<subsArr.length;j++) {
+      subs.push({catIdx:i,subIdx:j,catNome:catalogo[i].categoria,sub:subsArr[j]});
+    }
+  }
+  return subs;
+}
+
+function criarItemSub(gIdx, info) {
+  var item = document.createElement('div');
+  item.className='cat-item'+(gIdx===subAtiva?' ativa sub':'');
+  item.dataset.gidx=gIdx;
+  item.dataset.catidx=info.catIdx;
+  item.dataset.subidx=info.subIdx;
+
+  var nome=document.createElement('span'); nome.className='cat-nome'; nome.textContent=info.sub.nome;
+  var tag=document.createElement('span'); tag.className='cat-tag'; tag.textContent=info.catNome;
+  var count=document.createElement('span'); count.className='cat-count'; count.textContent=(info.sub.episodios?info.sub.episodios.length:0);
+  var del=document.createElement('button'); del.className='btn-del-cat'; del.innerHTML='&#10005;';
+  del.dataset.catidx=info.catIdx; del.dataset.subidx=info.subIdx;
+  del.addEventListener('click',function(e){
+    e.stopPropagation();
+    var ci=parseInt(this.dataset.catidx), si=parseInt(this.dataset.subidx);
+    if(confirm('Remover "'+catalogo[ci].subs[si].nome+'"?')){
+      catalogo[ci].subs.splice(si,1);
+      subAtiva=-1; renderSubsSidebar(); renderConteudoSubs();
+      toast('Subcategoria removida!','sucesso');
+    }
+  });
+
+  item.appendChild(nome); item.appendChild(tag); item.appendChild(count); item.appendChild(del);
+  item.addEventListener('click',function(){
+    subAtiva=parseInt(this.dataset.gidx); renderSubsSidebar(); renderConteudoSubs();
+  });
+  return item;
+}
+
+// ===== CONTEUDO CATEGORIAS =====
+function renderConteudo() {
+  var el=document.getElementById('conteudo');
+  if (catAtiva<0||!catalogo[catAtiva]){
+    el.innerHTML='<div class="conteudo-vazio"><div class="ico">🎬</div><div style="font-size:16px;font-weight:600;">Selecione uma categoria</div></div>';
+    return;
+  }
+  var cat=catalogo[catAtiva];
+  if (cat.tipo==='series'){
+    el.innerHTML='<div class="secao-header"><div class="secao-titulo">'+cat.categoria+'<span>'+(cat.subs?cat.subs.length:0)+' series</span></div></div>'+
+      '<div style="color:var(--suave);font-size:13px;margin-bottom:16px;">Esta categoria usa subcategorias. Gerencie as series na aba <b>Subcategorias</b>.</div>';
+    return;
+  }
+  el.innerHTML='<div class="secao-header"><div class="secao-titulo">'+cat.categoria+'<span>'+(cat.itens?cat.itens.length:0)+' filmes</span></div></div>'+
+    '<div class="lista-filmes" id="lista-filmes"></div>'+
+    '<button class="btn btn-vm" onclick="adicionarFilme()">+ Adicionar Filme</button>';
+  renderFilmes();
+}
+
+function renderFilmes() {
+  var lista=document.getElementById('lista-filmes');
+  if(!lista) return;
+  lista.innerHTML='';
+  var itens=catalogo[catAtiva].itens||[];
+  for(var i=0;i<itens.length;i++) lista.appendChild(criarCard(i,itens[i],false,null));
+}
+
+function adicionarFilme(){
+  if(!catalogo[catAtiva].itens) catalogo[catAtiva].itens=[];
+  var idx=catalogo[catAtiva].itens.length;
+  catalogo[catAtiva].itens.push({id:pad(idx+1),titulo:'',thumb:'',driveId:''});
+  renderConteudo();
+  setTimeout(function(){var c=document.getElementById('conteudo');c.scrollTop=c.scrollHeight;},80);
+}
+
+// ===== CONTEUDO SUBCATEGORIAS =====
+function renderConteudoSubs(){
+  var el=document.getElementById('conteudo');
+  if(subAtiva<0){
+    el.innerHTML='<div class="conteudo-vazio"><div class="ico">📺</div><div style="font-size:16px;font-weight:600;">Selecione uma subcategoria</div></div>';
+    return;
+  }
+  var todas=getTodasSubs();
+  if(!todas[subAtiva]){el.innerHTML='';return;}
+  var info=todas[subAtiva];
+  var sub=info.sub;
+  if(!sub.episodios) sub.episodios=[];
+  el.innerHTML=
+    '<div class="secao-header">'+
+      '<div><div class="breadcrumb">Categoria: <b>'+info.catNome+'</b></div>'+
+      '<div class="secao-titulo" style="color:var(--roxo)">'+sub.nome+'<span>'+sub.episodios.length+' episodios</span></div></div>'+
+    '</div>'+
+    '<div class="lista-filmes" id="lista-eps"></div>'+
+    '<button class="btn btn-roxo" onclick="adicionarEpisodio()">+ Adicionar Episodio</button>';
+  renderEpisodios(info);
+}
+
+function renderEpisodios(info){
+  var lista=document.getElementById('lista-eps');
+  if(!lista) return;
+  lista.innerHTML='';
+  var eps=info.sub.episodios||[];
+  for(var i=0;i<eps.length;i++) lista.appendChild(criarCard(i,eps[i],true,info));
+}
+
+function adicionarEpisodio(){
+  var todas=getTodasSubs();
+  var info=todas[subAtiva];
+  if(!info) return;
+  if(!info.sub.episodios) info.sub.episodios=[];
+  var idx=info.sub.episodios.length;
+  info.sub.episodios.push({id:pad(idx+1),titulo:'',thumb:'',driveId:''});
+  renderConteudoSubs();
+  setTimeout(function(){var c=document.getElementById('conteudo');c.scrollTop=c.scrollHeight;},80);
+}
+
+// ===== CARD GENERICO =====
+function criarCard(idx,item,isEp,info){
+  var card=document.createElement('div');
+  card.className='filme-card'+(isEp?' episodio':'');
+  card.innerHTML=
+    '<div class="filme-num">'+(idx+1)+'</div>'+
+    '<div class="campo"><label>Titulo</label><input type="text" placeholder="'+(isEp?'Ep '+(idx+1)+' - Titulo':'Nome do filme')+'" value="'+esc(item.titulo)+'" data-campo="titulo" data-idx="'+idx+'"></div>'+
+    '<div class="campo"><label>Drive ID</label><input type="text" placeholder="ID do Google Drive" value="'+esc(item.driveId)+'" data-campo="driveId" data-idx="'+idx+'"></div>'+
+    '<div class="campo"><label>URL da Capa</label><input type="text" placeholder="https://... ou thumbs/capa.jpg" value="'+esc(item.thumb)+'" data-campo="thumb" data-idx="'+idx+'"></div>'+
+    '<button class="btn-del-filme" data-idx="'+idx+'" title="Remover">&#10005;</button>';
+
+  var inputs=card.querySelectorAll('input');
+  for(var j=0;j<inputs.length;j++){
+    inputs[j].addEventListener('input',(function(isEpisodio,infoRef){
+      return function(){
+        var i=parseInt(this.dataset.idx), campo=this.dataset.campo;
+        if(isEpisodio&&infoRef) infoRef.sub.episodios[i][campo]=this.value;
+        else if(catalogo[catAtiva]) catalogo[catAtiva].itens[i][campo]=this.value;
+      };
+    })(isEp,info));
+  }
+  card.querySelector('.btn-del-filme').addEventListener('click',(function(isEpisodio,infoRef){
+    return function(){
+      var i=parseInt(this.dataset.idx);
+      if(isEpisodio&&infoRef){ infoRef.sub.episodios.splice(i,1); renderConteudoSubs(); }
+      else { catalogo[catAtiva].itens.splice(i,1); renderConteudo(); }
+    };
+  })(isEp,info));
+  return card;
+}
+
+// ===== MODAIS CATEGORIA / SUBCATEGORIA =====
+function abrirModalCat(){
+  document.getElementById('modal-cat').classList.add('aberto');
+  setTimeout(function(){document.getElementById('input-nome-cat').focus();},100);
+}
+
+function abrirModalSub(){
+  var sel=document.getElementById('select-cat-pai');
+  sel.innerHTML='';
+  var temSeries=false;
+  for(var i=0;i<catalogo.length;i++){
+    if(catalogo[i].tipo==='series'){
+      var opt=document.createElement('option');
+      opt.value=i; opt.textContent=catalogo[i].categoria;
+      sel.appendChild(opt); temSeries=true;
+    }
+  }
+  if(!temSeries){toast('Crie uma categoria do tipo "Series" primeiro!','erro');return;}
+  document.getElementById('modal-sub').classList.add('aberto');
+  setTimeout(function(){document.getElementById('input-nome-sub').focus();},100);
+}
+
+function fecharModal(id){
+  document.getElementById(id).classList.remove('aberto');
+  if(id==='modal-cat'){document.getElementById('input-nome-cat').value='';}
+  if(id==='modal-sub'){document.getElementById('input-nome-sub').value='';document.getElementById('input-thumb-sub').value='';}
+}
+
+function fecharModalFora(e,id){
+  if(e.target===document.getElementById(id)) fecharModal(id);
+}
+
+function confirmarCat(){
+  var input=document.getElementById('input-nome-cat');
+  var nome=input.value.trim();
+  var tipo=document.getElementById('select-tipo-cat').value;
+  if(!nome){toast('Digite o nome!','erro');input.focus();return;}
+  for(var i=0;i<catalogo.length;i++){
+    if(catalogo[i].categoria.toLowerCase()===nome.toLowerCase()){toast('Categoria ja existe!','erro');return;}
+  }
+  var slug=slugify(nome);
+  catalogo.push({
+    categoria:nome,
+    tipo:tipo,
+    arquivo: tipo==='series'?(slug+'/index.json'):(slug+'.json'),
+    itens:[],
+    subs:[]
+  });
+  catAtiva=catalogo.length-1;
+  fecharModal('modal-cat');
+  renderSidebar(); renderConteudo();
+  toast('Categoria "'+nome+'" criada!','sucesso');
+}
+
+function confirmarSub(){
+  var catIdx=parseInt(document.getElementById('select-cat-pai').value);
+  var nome=document.getElementById('input-nome-sub').value.trim();
+  var thumb=document.getElementById('input-thumb-sub').value.trim();
+  if(!nome){toast('Digite o nome!','erro');return;}
+  if(!catalogo[catIdx].subs) catalogo[catIdx].subs=[];
+  var slug=slugify(catalogo[catIdx].categoria);
+  var subSlug=slugify(nome);
+  catalogo[catIdx].subs.push({
+    nome:nome,
+    arquivo:slug+'/'+subSlug+'.json',
+    thumb:thumb,
+    totalEpisodios:0,
+    episodios:[]
+  });
+  fecharModal('modal-sub');
+  subAtiva=getTodasSubs().length-1;
+  renderSubsSidebar(); renderConteudoSubs();
+  toast('Subcategoria "'+nome+'" criada!','sucesso');
+}
+
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){fecharModal('modal-cat');fecharModal('modal-sub');fecharModal('modal-salvar');}
+  if(e.key==='Enter'){
+    if(document.getElementById('modal-cat').classList.contains('aberto')) confirmarCat();
+  }
+});
+
+// ===== MODAL SALVAR =====
+function abrirModalSalvar(){
+  if(catalogo.length===0){toast('Catalogo vazio!','erro');return;}
+  var lista=document.getElementById('salvar-lista');
+  lista.innerHTML='';
+  var arquivos=listarArquivos();
+  for(var i=0;i<arquivos.length;i++){
+    var div=document.createElement('div');
+    div.className='salvar-item';
+    div.innerHTML='<span class="icone">'+arquivos[i].icone+'</span>'+
+      '<span class="path">'+arquivos[i].path+'</span>'+
+      '<span class="tipo">'+arquivos[i].tipo+'</span>';
+    lista.appendChild(div);
+  }
+  document.getElementById('modal-salvar').classList.add('aberto');
+}
+
+function listarArquivos(){
+  var arquivos=[];
+  arquivos.push({path:'index.json',icone:'&#128196;',tipo:'indice principal'});
+  for(var i=0;i<catalogo.length;i++){
+    var cat=catalogo[i];
+    if(cat.tipo==='filmes'){
+      arquivos.push({path:cat.arquivo,icone:'&#127916;',tipo:cat.categoria});
+    } else {
+      arquivos.push({path:cat.arquivo,icone:'&#128193;',tipo:'indice '+cat.categoria});
+      var subs=cat.subs||[];
+      for(var j=0;j<subs.length;j++){
+        arquivos.push({path:subs[j].arquivo,icone:'&#128250;',tipo:subs[j].nome});
+      }
+    }
+  }
+  return arquivos;
+}
+
+// ===== GERAR ZIP =====
+function gerarZip(){
+  var zip=new JSZip();
+
+  // index.json — lista categorias sem itens/episodios
+  var indiceSimples=[];
+  for(var i=0;i<catalogo.length;i++){
+    var cat=catalogo[i];
+    indiceSimples.push({categoria:cat.categoria,tipo:cat.tipo,arquivo:cat.arquivo});
+  }
+  zip.file('index.json', JSON.stringify(indiceSimples,null,2));
+
+  // Arquivos por categoria
+  for(var i=0;i<catalogo.length;i++){
+    var cat=catalogo[i];
+
+    if(cat.tipo==='filmes'){
+      // Um unico arquivo com todos os filmes
+      var itensLimpos=[];
+      var itens=cat.itens||[];
+      for(var j=0;j<itens.length;j++){
+        if(itens[j].titulo||itens[j].driveId){
+          itensLimpos.push({id:pad(j+1),titulo:itens[j].titulo||'',thumb:itens[j].thumb||'',driveId:itens[j].driveId||''});
+        }
+      }
+      zip.file(cat.arquivo, JSON.stringify(itensLimpos,null,2));
+
+    } else {
+      // series/index.json — lista das subcategorias
+      var subs=cat.subs||[];
+      var subsSimples=[];
+      for(var j=0;j<subs.length;j++){
+        subsSimples.push({nome:subs[j].nome,arquivo:subs[j].arquivo,thumb:subs[j].thumb||'',totalEpisodios:subs[j].episodios?subs[j].episodios.length:0});
+      }
+      zip.file(cat.arquivo, JSON.stringify(subsSimples,null,2));
+
+      // Um arquivo por subcategoria
+      for(var j=0;j<subs.length;j++){
+        var sub=subs[j];
+        var epsLimpos=[];
+        var eps=sub.episodios||[];
+        for(var k=0;k<eps.length;k++){
+          if(eps[k].titulo||eps[k].driveId){
+            epsLimpos.push({id:pad(k+1),titulo:eps[k].titulo||'',thumb:eps[k].thumb||'',driveId:eps[k].driveId||''});
+          }
+        }
+        zip.file(sub.arquivo, JSON.stringify({nome:sub.nome,thumb:sub.thumb||'',episodios:epsLimpos},null,2));
+      }
+    }
+  }
+
+  // Baixar ZIP
+  zip.generateAsync({type:'blob'}).then(function(content){
+    var url=URL.createObjectURL(content);
+    var a=document.createElement('a');
+    a.href=url; a.download='cine-drive-catalogo.zip'; a.click();
+    URL.revokeObjectURL(url);
+    fecharModal('modal-salvar');
+    setStatus('ZIP baixado! Extraia e suba para o GitHub.','ok');
+    toast('ZIP gerado com sucesso!','sucesso');
+  });
+}
+
+// ===== VER JSON =====
+function verJson(){
+  var json=JSON.stringify(catalogo,null,2);
+  var w=window.open('','_blank');
+  w.document.write('<pre style="background:#0d0d10;color:#f0f0f5;padding:20px;font-size:13px;font-family:monospace;white-space:pre-wrap;">'+json+'</pre>');
+}
+
+// ===== UTILITARIOS =====
+function pad(n){return String(n).padStart(3,'0');}
+function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;');}
+function setStatus(msg,tipo){var el=document.getElementById('status');el.textContent=msg;el.className='status '+(tipo||'');}
+function toast(msg,tipo){
+  var el=document.getElementById('toast');
+  el.textContent=msg; el.className='toast '+(tipo||'');
+  el.classList.add('show');
+  clearTimeout(window._tt);
+  window._tt=setTimeout(function(){el.classList.remove('show');},3000);
+}
+</script>
+</body>
+</html>
