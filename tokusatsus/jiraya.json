@@ -1,0 +1,306 @@
+{
+  "nome": "Jiraya",
+  "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+  "episodios": [
+    {
+      "id": "001",
+      "titulo": "1 - Pako",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1o32Sj8UyxpQDKs-V_roxFgYgDgejlAun"
+    },
+    {
+      "id": "002",
+      "titulo": "2 - Barão Owl",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1ieUknf2yjyjnLBQcqGexvH52mpVZQTh9"
+    },
+    {
+      "id": "003",
+      "titulo": "3 - A Esmeralda",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1jNakqmDl_L0HzwVZQvDtGM4XplWNguKb"
+    },
+    {
+      "id": "004",
+      "titulo": "4 - A Retomada da Inscrição",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "N/A"
+    },
+    {
+      "id": "005",
+      "titulo": "5 - O Roubo da Espada Olímpica",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1O4_lRVx9fSmAyNXryvToY3RshZcBncMp"
+    },
+    {
+      "id": "006",
+      "titulo": "6 - O Mistério dos Mistérios",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1NejrulaNDV5152_0Obv1aHoiPtEkxg24"
+    },
+    {
+      "id": "007",
+      "titulo": "7 - O Caçador da Selva",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1hmiLWWQxXhAeC7Hth4q9wKuVxbj2Feri"
+    },
+    {
+      "id": "008",
+      "titulo": "8 - O Anjo da Paz",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1o9ZgrZUM77-6LNnaZ4uEXJfDju6qcOk8"
+    },
+    {
+      "id": "009",
+      "titulo": "9 - A Emboscada",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "121exGxUuTNzwHvMJWCk34RmLtmr7dXUd"
+    },
+    {
+      "id": "010",
+      "titulo": "10 - A Vida ou a Morte",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1GnCaSPK6zjy7o7xvW9ekg0sD51RUC6ok"
+    },
+    {
+      "id": "011",
+      "titulo": "11 - A Vingança do Kung-Fu",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1YtfSfbwsq0lMg5l4nyFxReDAV3tMvjuj"
+    },
+    {
+      "id": "012",
+      "titulo": "12 - A Promessa do Amor",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1mn94qHyN_MoDYNuNIS40OBp0BLgG-9Cl"
+    },
+    {
+      "id": "013",
+      "titulo": "13 - As Sete Sombras",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1S07vRozpROG-xnCoWmeFIlq8odTAflnr"
+    },
+    {
+      "id": "014",
+      "titulo": "14 - O Franco-Atirador",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1TjHp5k4DgZ-WBz1sV5KkY9y31J_P0Mcp"
+    },
+    {
+      "id": "015",
+      "titulo": "15 - A Maldição Lendária",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1b1Kx8cbKVdOhC9WQSsiuOcSAhnRe2bA_"
+    },
+    {
+      "id": "016",
+      "titulo": "16 - A Cruzada dos Ninjas",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1Ot-eJQYiHthPbOs2JELIL821FehIFSB1"
+    },
+    {
+      "id": "017",
+      "titulo": "17 - A Estrela das Trevas",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1r6VpnSyCOQFUCMBCR7ytFatbuEWXGUNZ"
+    },
+    {
+      "id": "018",
+      "titulo": "18 - A Vingança de Agnes",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1OKf0232oonOYYFUOy5Lt9uKVvWWbIOK8"
+    },
+    {
+      "id": "019",
+      "titulo": "19 - A Invasão",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1meX-cvQ3VdBdlWO9V4g75llXFkTYFZ8i"
+    },
+    {
+      "id": "020",
+      "titulo": "20 - Procura-se Jiraiya",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1IhBfTEyygiUqAJhiciwWBPElubeiEq3F"
+    },
+    {
+      "id": "021",
+      "titulo": "21 - A Ira da Lua",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "17sJDy7S_CzXKQSX3st17C7aVPWZpOGoC"
+    },
+    {
+      "id": "022",
+      "titulo": "22 - A Dimensão da Amizade",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1ZTS4aWM7RDWzRafbFqv10OVT2d6mbD7N"
+    },
+    {
+      "id": "023",
+      "titulo": "23 - O Sequestro dos Cientistas",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1Jbt1qiO5irbru7QQOKNv0Gd04X1orbqN"
+    },
+    {
+      "id": "024",
+      "titulo": "24 - O Capitão Pirata",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1W8wGqX-WEE9f--PD_cPk41eVfjcbJxQF"
+    },
+    {
+      "id": "025",
+      "titulo": "25 - O Rapto dos Animais",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "16yfr-9PabSHq6FP045E_HuA-P7L8Xzu4"
+    },
+    {
+      "id": "026",
+      "titulo": "26 - A Primavera de Emiha",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1M_a3sSdNYpa1v2PChKGt5ZK_W8vkVdwU"
+    },
+    {
+      "id": "027",
+      "titulo": "27 - Jiraiya",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1jBeDxNqPV9Kb9MyLZg43KMZg38Luhfk3"
+    },
+    {
+      "id": "028",
+      "titulo": "28 - Quem sou eu?",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1dzPInDoC89nyvueKSYyb3cIJRHAuP6-4"
+    },
+    {
+      "id": "029",
+      "titulo": "29 - A Revolta do Pequeno Ninja",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1izTF3W52iRs9_QGtqNRoc3EFfEWKhQ1r"
+    },
+    {
+      "id": "030",
+      "titulo": "30 - O Ninja Solitário",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1KydsZUSsCtDYVv3lMISmMg7fjr_YjFFu"
+    },
+    {
+      "id": "031",
+      "titulo": "31 - A espada de Shinguen",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1bUTtZEZlLUh93wI_cA94kC9hxolrRJ_v"
+    },
+    {
+      "id": "032",
+      "titulo": "32 - A Percepção Extrasensorial",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "15MEFiygNAjTly9vnM6z2qjosJWabRKEc"
+    },
+    {
+      "id": "033",
+      "titulo": "33 - A Guitarra Cobiçada",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "14fRx1O3WgJK4z2iTofcyWNh7AnylZFJL"
+    },
+    {
+      "id": "034",
+      "titulo": "34 - A Caveira Assassina",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1iOW_NQRfZKbasaK5oQCXAXcKTjJcfI0N"
+    },
+    {
+      "id": "035",
+      "titulo": "35 - O Desafio dos Togakure",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1VGnZay1J52N9v4aAYzroWkItZUHHSeqi"
+    },
+    {
+      "id": "036",
+      "titulo": "36 - O Feitiço do Gato Preto",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "16EsSsbnx2q9QrmUxAzwIplG4yNonB_Zx"
+    },
+    {
+      "id": "037",
+      "titulo": "37 - O Homem de 23 Anos",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "12OVrogM-3_rFq_Zd4ITtpb5zQmncnn1Z"
+    },
+    {
+      "id": "038",
+      "titulo": "38 - As Mil e Uma Faces",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1Q_XxIn2vfDI2GijKUc1oF0Kja1Mu6dIC"
+    },
+    {
+      "id": "039",
+      "titulo": "39 - A Conspiração de Morgana",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1MJfaEipLFQU4X9WlBo06TNcuzOvJQgIG"
+    },
+    {
+      "id": "040",
+      "titulo": "40 - A Traição",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1xZkW85jeHKYtZVio7eLDnooqdrY3Eo-J"
+    },
+    {
+      "id": "041",
+      "titulo": "41 - Olímpica VS Satã",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1x446jaLZOLdN7EqPmMUc58c-Y2AaaBHM"
+    },
+    {
+      "id": "042",
+      "titulo": "42 - Adeus",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1TIqk8yV2WPZGvg6Vs_hGwNw1ss4Hk_l1"
+    },
+    {
+      "id": "043",
+      "titulo": "43 - O Indomável Strowver",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1SegOO18ubw4eq1LRKzPP3S9wI4h5S63v"
+    },
+    {
+      "id": "044",
+      "titulo": "44 - O Poder do Amor",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1hvIcx8GLxkhCog25G3O9JFIKzQJJ6OBl"
+    },
+    {
+      "id": "045",
+      "titulo": "45 - A Ponte da Esperança",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1IXOBRpP0rBRp26D9KPmUyVtpPykimeKa"
+    },
+    {
+      "id": "046",
+      "titulo": "46 - Amizade Perdida",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1ysGTqjlbqEgqXqSscj30pyHA6N_bxT1N"
+    },
+    {
+      "id": "047",
+      "titulo": "47 - Manabu e seu Primeiro Amor",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1SCQMWCrzQ6HSkuqUNybrnwnUFjyrlg-U"
+    },
+    {
+      "id": "048",
+      "titulo": "48 - O Aparecimento de Pako",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1G_SF6KgYBhq7qTmBvWKOlM1X88_tUQMj"
+    },
+    {
+      "id": "049",
+      "titulo": "49 - O Último Confronto",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1TcOp1hzZ1oFlEms-MZekwOOD_D-WbrhA"
+    },
+    {
+      "id": "050",
+      "titulo": "50 - Adeus",
+      "thumb": "https://2.bp.blogspot.com/-0ZyrNQe1TOg/XZ_Ts2v_mpI/AAAAAAAACAQ/dnIj9nchkGQKdDQiPkzR2zV2gMtJSUIpQCLcBGAsYHQ/s1600/Jiraya.jpg",
+      "driveId": "1RVqpwNbMCYnkWYgtZJuq4VamJRGhYFDd"
+    }
+  ]
+}
