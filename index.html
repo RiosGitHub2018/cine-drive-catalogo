@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -453,7 +452,11 @@ function renderConteudo() {
   }
   el.innerHTML='<div class="secao-header"><div class="secao-titulo">'+cat.categoria+'<span>'+(cat.itens?cat.itens.length:0)+' filmes</span></div></div>'+
     '<div class="lista-filmes" id="lista-filmes"></div>'+
-    '<button class="btn btn-vm" onclick="adicionarFilme()">+ Adicionar Filme</button>';
+    '<div style="display:flex;gap:10px;align-items:center;">'+
+    '<button class="btn btn-vm" onclick="adicionarFilme()">+ Adicionar Filme</button>'+
+    '<label class="btn btn-ouro" for="csv-filmes" style="cursor:pointer;">&#128229; Importar CSV</label>'+
+    '<input type="file" id="csv-filmes" accept=".csv" style="display:none" onchange="importarCSVFilmes(this)">'+
+    '</div>';
   renderFilmes();
 }
 
@@ -491,7 +494,11 @@ function renderConteudoSubs(){
       '<div class="secao-titulo" style="color:var(--roxo)">'+sub.nome+'<span>'+sub.episodios.length+' episodios</span></div></div>'+
     '</div>'+
     '<div class="lista-filmes" id="lista-eps"></div>'+
-    '<button class="btn btn-roxo" onclick="adicionarEpisodio()">+ Adicionar Episodio</button>';
+    '<div style="display:flex;gap:10px;align-items:center;">'+
+    '<button class="btn btn-roxo" onclick="adicionarEpisodio()">+ Adicionar Episodio</button>'+
+    '<label class="btn btn-ouro" for="csv-eps" style="cursor:pointer;">&#128229; Importar CSV</label>'+
+    '<input type="file" id="csv-eps" accept=".csv" style="display:none" onchange="importarCSVEpisodios(this)">'+
+    '</div>';
   renderEpisodios(info);
 }
 
@@ -521,8 +528,8 @@ function criarCard(idx,item,isEp,info){
   card.innerHTML=
     '<div class="filme-num">'+(idx+1)+'</div>'+
     '<div class="campo"><label>Titulo</label><input type="text" placeholder="'+(isEp?'Ep '+(idx+1)+' - Titulo':'Nome do filme')+'" value="'+esc(item.titulo)+'" data-campo="titulo" data-idx="'+idx+'"></div>'+
-    '<div class="campo"><label>Drive ID</label><input type="text" placeholder="ID do Google Drive" value="'+esc(item.driveId)+'" data-campo="driveId" data-idx="'+idx+'"></div>'+
     '<div class="campo"><label>URL da Capa</label><input type="text" placeholder="https://... ou thumbs/capa.jpg" value="'+esc(item.thumb)+'" data-campo="thumb" data-idx="'+idx+'"></div>'+
+    '<div class="campo"><label>Drive ID</label><input type="text" placeholder="ID do Google Drive" value="'+esc(item.driveId)+'" data-campo="driveId" data-idx="'+idx+'"></div>'+
     '<button class="btn-del-filme" data-idx="'+idx+'" title="Remover">&#10005;</button>';
 
   var inputs=card.querySelectorAll('input');
@@ -723,6 +730,75 @@ function gerarZip(){
     setStatus('ZIP baixado! Extraia e suba para o GitHub.','ok');
     toast('ZIP gerado com sucesso!','sucesso');
   });
+}
+
+// ===== IMPORTAR CSV =====
+function parseCSV(text) {
+  var linhas = text.trim().split('\n');
+  if (linhas.length < 2) return [];
+  var sep = linhas[0].indexOf(';') > -1 ? ';' : ',';
+  var headers = linhas[0].split(sep).map(function(h){ return h.trim().replace(/^\uFEFF/,''); });
+  function findCol(keys) {
+    for (var k=0; k<keys.length; k++) {
+      for (var h=0; h<headers.length; h++) {
+        if (headers[h].toLowerCase().indexOf(keys[k]) > -1) return h;
+      }
+    }
+    return -1;
+  }
+  var iThumb  = findCol(['url','capa','thumb','imagem','cover']);
+  var iDrive  = findCol(['id','drive']);
+  var iTitulo = findCol(['titulo','title','nome','name']);
+  var itens = [];
+  for (var i=1; i<linhas.length; i++) {
+    var cols = linhas[i].split(sep);
+    var thumb   = iThumb  > -1 ? (cols[iThumb]  || '').trim() : '';
+    var driveId = iDrive  > -1 ? (cols[iDrive]  || '').trim() : '';
+    var titulo  = iTitulo > -1 ? (cols[iTitulo] || '').trim() : '';
+    if (titulo || driveId) itens.push({ thumb: thumb, driveId: driveId, titulo: titulo });
+  }
+  return itens;
+}
+
+function importarCSVFilmes(input) {
+  var file = input.files[0];
+  if (!file) return;
+  var reader = new FileReader();
+  reader.onload = function(ev) {
+    var itens = parseCSV(ev.target.result);
+    if (!itens.length) { toast('CSV vazio ou formato invalido!', 'erro'); return; }
+    if (!catalogo[catAtiva].itens) catalogo[catAtiva].itens = [];
+    var base = catalogo[catAtiva].itens.length;
+    for (var i=0; i<itens.length; i++) {
+      catalogo[catAtiva].itens.push({ id: pad(base+i+1), titulo: itens[i].titulo, thumb: itens[i].thumb, driveId: itens[i].driveId });
+    }
+    renderConteudo();
+    toast(itens.length + ' filmes importados!', 'sucesso');
+    input.value = '';
+  };
+  reader.readAsText(file, 'UTF-8');
+}
+
+function importarCSVEpisodios(input) {
+  var file = input.files[0];
+  if (!file) return;
+  var reader = new FileReader();
+  reader.onload = function(ev) {
+    var itens = parseCSV(ev.target.result);
+    if (!itens.length) { toast('CSV vazio ou formato invalido!', 'erro'); return; }
+    var todas = getTodasSubs();
+    var info = todas[subAtiva];
+    if (!info) return;
+    if (!info.sub.episodios) info.sub.episodios = [];
+    var base = info.sub.episodios.length;
+    for (var i=0; i<itens.length; i++) {
+      info.sub.episodios.push({ id: pad(base+i+1), titulo: itens[i].titulo, thumb: itens[i].thumb, driveId: itens[i].driveId });
+    }
+    renderConteudoSubs();
+    toast(itens.length + ' episodios importados!', 'sucesso');
+    input.value = '';
+  };
+  reader.readAsText(file, 'UTF-8');
 }
 
 // ===== VER JSON =====
