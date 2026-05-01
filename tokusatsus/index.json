@@ -12,15 +12,21 @@
     "totalEpisodios": 50
   },
   {
-    "nome":  "Jiban",
+    "nome": "Jiban",
     "arquivo": "tokusatsus/Jiban.json",
     "thumb": "https://2.bp.blogspot.com/-yMjZ9EpWCbk/XZ_TthiGeiI/AAAAAAAACAg/CYFroku1OuULXt-__e895emE9Kd9VGRwwCLcBGAsYHQ/s1600/jiban.jpg",
     "totalEpisodios": 52
   },
   {
-    "nome":  "Sharivan",
+    "nome": "Sharivan",
     "arquivo": "tokusatsus/sharivan.json",
     "thumb": "https://3.bp.blogspot.com/-vyZNkEQIKAU/XZ_Turm10AI/AAAAAAAACAw/Jgibo5FAsbsi2E5de1zaqo6cVhK4P_o6QCLcBGAsYHQ/s1600/sharivan.jpg",
     "totalEpisodios": 51
+  },
+  {
+    "nome": "Testando",
+    "arquivo": "tokusatsus/testando.json",
+    "thumb": "sdsdssd",
+    "totalEpisodios": 1
   }
 ]
