@@ -1,12 +1,12 @@
 [
   {
-    "categoria": "Comedia",
-    "tipo": "filmes",
-    "arquivo": "comedia.json"
-  },
-  {
     "categoria": "Tokusatsus",
     "tipo": "series",
     "arquivo": "tokusatsus/index.json"
+  },
+  {
+    "categoria": "Filmes",
+    "tipo": "series",
+    "arquivo": "filmes/index.json"
   }
 ]
