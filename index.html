@@ -446,16 +446,44 @@ function renderConteudo() {
   }
   var cat=catalogo[catAtiva];
   if (cat.tipo==='series'){
-    el.innerHTML='<div class="secao-header"><div class="secao-titulo">'+cat.categoria+'<span>'+(cat.subs?cat.subs.length:0)+' series</span></div></div>'+
-      '<div style="color:var(--suave);font-size:13px;margin-bottom:16px;">Esta categoria usa subcategorias. Gerencie as series na aba <b>Subcategorias</b>.</div>';
+    var temSubs = cat.subs && cat.subs.length > 0;
+    el.innerHTML=
+      '<div class="secao-header">'+
+        '<div><div class="secao-titulo">'+cat.categoria+'<span>'+(cat.subs?cat.subs.length:0)+' series</span></div>'+
+        '<div style="font-size:11px;color:var(--suave);font-family:monospace;margin-top:2px;">'+cat.arquivo+'</div></div>'+
+      '</div>'+
+      '<div style="color:var(--suave);font-size:13px;margin-bottom:16px;">Esta categoria usa subcategorias. Gerencie as series na aba <b>Subcategorias</b>.</div>'+
+      (!temSubs ?
+        '<div style="display:flex;gap:10px;align-items:center;">'+
+        '<label class="btn btn-sec" for="json-idx-cat-'+catAtiva+'" style="cursor:pointer;border-color:var(--ouro);color:var(--ouro);">&#128194; Carregar '+cat.arquivo+'</label>'+
+        '<input type="file" id="json-idx-cat-'+catAtiva+'" accept=".json" style="display:none" onchange="carregarIndexCategoriaSeries(this,'+catAtiva+')">'+
+        '<span style="font-size:12px;color:var(--suave);">Carregue o index.json desta categoria para importar as series existentes</span>'+
+        '</div>'
+        :
+        '<div style="display:flex;gap:10px;align-items:center;">'+
+        '<label class="btn btn-sec" for="json-idx-cat-r-'+catAtiva+'" style="cursor:pointer;border-color:var(--suave);color:var(--suave);font-size:12px;">&#128260; Recarregar '+cat.arquivo+'</label>'+
+        '<input type="file" id="json-idx-cat-r-'+catAtiva+'" accept=".json" style="display:none" onchange="carregarIndexCategoriaSeries(this,'+catAtiva+')">'+
+        '</div>'
+      );
     return;
   }
-  el.innerHTML='<div class="secao-header"><div class="secao-titulo">'+cat.categoria+'<span>'+(cat.itens?cat.itens.length:0)+' filmes</span></div></div>'+
+  var temItens = cat.itens && cat.itens.length > 0;
+  var jsonBtnHTML = '<label class="btn btn-sec" for="json-cat-IDX" style="cursor:pointer;border-color:var(--ouro);color:var(--ouro);">&#128194; Carregar '+cat.arquivo+'</label>'+
+    '<input type="file" id="json-cat-IDX" accept=".json" style="display:none" onchange="carregarJSONCategoria(this,IDX)">';
+  jsonBtnHTML = jsonBtnHTML.replace(/IDX/g, catAtiva);
+  el.innerHTML=
+    '<div class="secao-header">'+
+      '<div><div class="secao-titulo">'+cat.categoria+'<span>'+(cat.itens?cat.itens.length:0)+' filmes</span></div>'+
+      '<div style="font-size:11px;color:var(--suave);font-family:monospace;margin-top:2px;">'+cat.arquivo+'</div></div>'+
+      (!temItens ? '<div style="margin-left:auto;">'+jsonBtnHTML+'</div>' : '')+
+    '</div>'+
     '<div class="lista-filmes" id="lista-filmes"></div>'+
-    '<div style="display:flex;gap:10px;align-items:center;">'+
+    '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">'+
     '<button class="btn btn-vm" onclick="adicionarFilme()">+ Adicionar Filme</button>'+
     '<label class="btn btn-ouro" for="csv-filmes" style="cursor:pointer;">&#128229; Importar CSV</label>'+
     '<input type="file" id="csv-filmes" accept=".csv" style="display:none" onchange="importarCSVFilmes(this)">'+
+    (temItens ? '<label class="btn btn-sec" for="json-sub-r" style="cursor:pointer;border-color:var(--suave);color:var(--suave);font-size:12px;">&#128260; Recarregar JSON</label>'+
+    '<input type="file" id="json-sub-r" accept=".json" style="display:none" onchange="carregarJSONCategoria(this,'+catAtiva+')">': '')+
     '</div>';
   renderFilmes();
 }
@@ -491,13 +519,21 @@ function renderConteudoSubs(){
   el.innerHTML=
     '<div class="secao-header">'+
       '<div><div class="breadcrumb">Categoria: <b>'+info.catNome+'</b></div>'+
-      '<div class="secao-titulo" style="color:var(--roxo)">'+sub.nome+'<span>'+sub.episodios.length+' episodios</span></div></div>'+
+      '<div class="secao-titulo" style="color:var(--roxo)">'+sub.nome+'<span>'+sub.episodios.length+' episodios</span></div>'+
+      '<div style="font-size:11px;color:var(--suave);font-family:monospace;margin-top:2px;">'+sub.arquivo+'</div></div>'+
     '</div>'+
     '<div class="lista-filmes" id="lista-eps"></div>'+
-    '<div style="display:flex;gap:10px;align-items:center;">'+
+    '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">'+
     '<button class="btn btn-roxo" onclick="adicionarEpisodio()">+ Adicionar Episodio</button>'+
     '<label class="btn btn-ouro" for="csv-eps" style="cursor:pointer;">&#128229; Importar CSV</label>'+
     '<input type="file" id="csv-eps" accept=".csv" style="display:none" onchange="importarCSVEpisodios(this)">'+
+    (sub.episodios.length===0 ?
+      '<label class="btn btn-sec" for="json-sub-'+info.catIdx+'-'+info.subIdx+'" style="cursor:pointer;border-color:var(--ouro);color:var(--ouro);">&#128194; Carregar '+sub.arquivo+'</label>'+
+      '<input type="file" id="json-sub-'+info.catIdx+'-'+info.subIdx+'" accept=".json" style="display:none" onchange="carregarJSONSub(this,'+info.catIdx+','+info.subIdx+')">'
+      :
+      '<label class="btn btn-sec" for="json-sub-r-'+info.catIdx+'-'+info.subIdx+'" style="cursor:pointer;border-color:var(--suave);color:var(--suave);font-size:12px;">&#128260; Recarregar JSON</label>'+
+      '<input type="file" id="json-sub-r-'+info.catIdx+'-'+info.subIdx+'" accept=".json" style="display:none" onchange="carregarJSONSub(this,'+info.catIdx+','+info.subIdx+')">'
+    )+
     '</div>';
   renderEpisodios(info);
 }
@@ -510,6 +546,12 @@ function renderEpisodios(info){
   for(var i=0;i<eps.length;i++) lista.appendChild(criarCard(i,eps[i],true,info));
 }
 
+function marcarSubEditada(){
+  var todas=getTodasSubs();
+  var info=todas[subAtiva];
+  if(info) info.sub._editado=true;
+}
+
 function adicionarEpisodio(){
   var todas=getTodasSubs();
   var info=todas[subAtiva];
@@ -517,6 +559,7 @@ function adicionarEpisodio(){
   if(!info.sub.episodios) info.sub.episodios=[];
   var idx=info.sub.episodios.length;
   info.sub.episodios.push({id:pad(idx+1),titulo:'',thumb:'',driveId:''});
+  marcarSubEditada();
   renderConteudoSubs();
   setTimeout(function(){var c=document.getElementById('conteudo');c.scrollTop=c.scrollHeight;},80);
 }
@@ -701,21 +744,31 @@ function gerarZip(){
       var subs=cat.subs||[];
       var subsSimples=[];
       for(var j=0;j<subs.length;j++){
-        subsSimples.push({nome:subs[j].nome,arquivo:subs[j].arquivo,thumb:subs[j].thumb||'',totalEpisodios:subs[j].episodios?subs[j].episodios.length:0});
+        var totalEps = subs[j].episodios && subs[j].episodios.length > 0
+          ? subs[j].episodios.length
+          : (subs[j].totalEpisodios || 0);
+        subsSimples.push({nome:subs[j].nome,arquivo:subs[j].arquivo,thumb:subs[j].thumb||'',totalEpisodios:totalEps});
       }
       zip.file(cat.arquivo, JSON.stringify(subsSimples,null,2));
 
       // Um arquivo por subcategoria
+      // Se episodios foram carregados/editados: gera com conteudo completo
+      // Se nao foram carregados: gera estrutura minima preservando nome e thumb
       for(var j=0;j<subs.length;j++){
         var sub=subs[j];
-        var epsLimpos=[];
         var eps=sub.episodios||[];
+        var epsLimpos=[];
         for(var k=0;k<eps.length;k++){
           if(eps[k].titulo||eps[k].driveId){
             epsLimpos.push({id:pad(k+1),titulo:eps[k].titulo||'',thumb:eps[k].thumb||'',driveId:eps[k].driveId||''});
           }
         }
-        zip.file(sub.arquivo, JSON.stringify({nome:sub.nome,thumb:sub.thumb||'',episodios:epsLimpos},null,2));
+        // Marca se foi editado nesta sessao
+        var foiEditado = sub._editado || epsLimpos.length > 0;
+        if(foiEditado){
+          zip.file(sub.arquivo, JSON.stringify({nome:sub.nome,thumb:sub.thumb||'',episodios:epsLimpos},null,2));
+        }
+        // Se nao foi editado, NAO inclui no ZIP — o arquivo existente no GitHub e preservado
       }
     }
   }
@@ -730,6 +783,130 @@ function gerarZip(){
     setStatus('ZIP baixado! Extraia e suba para o GitHub.','ok');
     toast('ZIP gerado com sucesso!','sucesso');
   });
+}
+
+// ===== CARREGAR JSON DE CATEGORIA / SUBCATEGORIA =====
+function carregarIndexCategoriaSeries(input, catIdx) {
+  var file = input.files[0];
+  if (!file) return;
+  var reader = new FileReader();
+  reader.onload = function(ev) {
+    try {
+      var data = JSON.parse(ev.target.result);
+      if (!Array.isArray(data)) { toast('Formato invalido!', 'erro'); return; }
+      if (!catalogo[catIdx].subs) catalogo[catIdx].subs = [];
+      var existentes = catalogo[catIdx].subs;
+      var adicionadas = 0;
+      for (var i = 0; i < data.length; i++) {
+        var item = data[i];
+        var nome = item.nome || item.name || item.titulo || '';
+        var arquivo = item.arquivo || '';
+        // Verifica se ja existe pelo arquivo ou nome
+        var jaExiste = false;
+        for (var j = 0; j < existentes.length; j++) {
+          if (existentes[j].arquivo === arquivo || existentes[j].nome.toLowerCase() === nome.toLowerCase()) {
+            jaExiste = true;
+            // Atualiza thumb se veio no index
+            if (item.thumb) existentes[j].thumb = item.thumb;
+            break;
+          }
+        }
+        if (!jaExiste && nome) {
+          existentes.push({
+            nome: nome,
+            arquivo: arquivo,
+            thumb: item.thumb || '',
+            totalEpisodios: item.totalEpisodios || 0,
+            episodios: []
+          });
+          adicionadas++;
+        }
+      }
+      renderSubsSidebar();
+      renderConteudo();
+      // Muda para aba subcategorias para o usuario ver as series importadas
+      if (adicionadas > 0) {
+        mudarAba('sub');
+        subAtiva = 0;
+        renderSubsSidebar();
+        renderConteudoSubs();
+      }
+      toast(adicionadas + ' series importadas de ' + file.name + '!', 'sucesso');
+      input.value = '';
+    } catch(err) {
+      toast('JSON invalido!', 'erro');
+    }
+  };
+  reader.readAsText(file, 'UTF-8');
+}
+
+function carregarJSONCategoria(input, catIdx) {
+  var file = input.files[0];
+  if (!file) return;
+  var reader = new FileReader();
+  reader.onload = function(ev) {
+    try {
+      var data = JSON.parse(ev.target.result);
+      // Formato esperado: array de objetos com titulo, driveId, thumb
+      var itens = [];
+      if (Array.isArray(data)) {
+        for (var i=0; i<data.length; i++) {
+          var item = data[i];
+          itens.push({
+            id: pad(i+1),
+            titulo: item.titulo || item.title || item.nome || '',
+            thumb: item.thumb || item.capa || item.url || '',
+            driveId: item.driveId || item.id || item.driveID || ''
+          });
+        }
+      }
+      catalogo[catIdx].itens = itens;
+      catAtiva = catIdx;
+      renderSidebar();
+      renderConteudo();
+      toast(itens.length + ' filmes carregados de ' + file.name + '!', 'sucesso');
+      input.value = '';
+    } catch(err) {
+      toast('JSON invalido!', 'erro');
+    }
+  };
+  reader.readAsText(file, 'UTF-8');
+}
+
+function carregarJSONSub(input, catIdx, subIdx) {
+  var file = input.files[0];
+  if (!file) return;
+  var reader = new FileReader();
+  reader.onload = function(ev) {
+    try {
+      var data = JSON.parse(ev.target.result);
+      // Formato esperado: { nome, thumb, episodios: [...] }
+      var eps = [];
+      var fonte = Array.isArray(data) ? data : (data.episodios || []);
+      for (var i=0; i<fonte.length; i++) {
+        var ep = fonte[i];
+        eps.push({
+          id: pad(i+1),
+          titulo: ep.titulo || ep.title || ep.nome || '',
+          thumb: ep.thumb || ep.capa || ep.url || '',
+          driveId: ep.driveId || ep.id || ep.driveID || ''
+        });
+      }
+      catalogo[catIdx].subs[subIdx].episodios = eps;
+      catalogo[catIdx].subs[subIdx]._editado = true;
+      // Atualiza thumb da sub se JSON tiver
+      if (!Array.isArray(data) && data.thumb) {
+        catalogo[catIdx].subs[subIdx].thumb = data.thumb;
+      }
+      renderSubsSidebar();
+      renderConteudoSubs();
+      toast(eps.length + ' episodios carregados de ' + file.name + '!', 'sucesso');
+      input.value = '';
+    } catch(err) {
+      toast('JSON invalido!', 'erro');
+    }
+  };
+  reader.readAsText(file, 'UTF-8');
 }
 
 // ===== IMPORTAR CSV =====
@@ -794,6 +971,7 @@ function importarCSVEpisodios(input) {
     for (var i=0; i<itens.length; i++) {
       info.sub.episodios.push({ id: pad(base+i+1), titulo: itens[i].titulo, thumb: itens[i].thumb, driveId: itens[i].driveId });
     }
+    marcarSubEditada();
     renderConteudoSubs();
     toast(itens.length + ' episodios importados!', 'sucesso');
     input.value = '';
