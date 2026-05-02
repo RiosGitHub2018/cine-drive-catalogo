@@ -2,7 +2,7 @@
   {
     "nome": "Comédia",
     "arquivo": "filmes/comedia.json",
-    "thumb": "",
+    "thumb": "https://raw.githubusercontent.com/RiosGitHub2018/cine-drive-catalogo/refs/heads/main/Imagens/nQIa9dm.jpeg",
     "totalEpisodios": 1
   }
 ]
