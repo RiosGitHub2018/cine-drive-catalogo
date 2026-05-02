@@ -7,6 +7,7 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap');
 
+/* ===== TEMAS ===== */
 :root {
   --vm: #e50914;
   --ouro: #f5c518;
@@ -18,15 +19,45 @@
   --texto: #f0f0f5;
   --suave: #666680;
   --entrada: #1a1a26;
+  --toggle-bg: #1a1a26;
+  --toggle-knob: #666680;
+  --shadow-modal: 0 40px 80px rgba(0,0,0,0.6);
+}
+
+body.tema-claro {
+  --fundo: #f0f0f5;
+  --painel: #ffffff;
+  --borda: #d8d8e8;
+  --texto: #13131a;
+  --suave: #8888a8;
+  --entrada: #eeeef8;
+  --toggle-bg: #d8d8e8;
+  --toggle-knob: #ffffff;
+  --shadow-modal: 0 20px 60px rgba(0,0,0,0.18);
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
-body { background:var(--fundo); color:var(--texto); font-family:'DM Sans',sans-serif; min-height:100vh; display:flex; flex-direction:column; }
+body { background:var(--fundo); color:var(--texto); font-family:'DM Sans',sans-serif; min-height:100vh; display:flex; flex-direction:column; transition: background 0.3s, color 0.3s; }
 
-header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-bottom:1px solid var(--borda); background:var(--painel); flex-shrink:0; }
+/* ===== TOGGLE TEMA ===== */
+.tema-toggle-wrap { display:flex; align-items:center; gap:8px; }
+.tema-label { font-size:11px; color:var(--suave); letter-spacing:1px; text-transform:uppercase; white-space:nowrap; }
+.tema-toggle { position:relative; width:40px; height:22px; cursor:pointer; flex-shrink:0; }
+.tema-toggle input { opacity:0; width:0; height:0; position:absolute; }
+.tema-slider { position:absolute; inset:0; background:var(--toggle-bg); border-radius:22px; border:1px solid var(--borda); transition:background 0.3s,border-color 0.3s; }
+.tema-slider::before { content:''; position:absolute; left:3px; top:50%; transform:translateY(-50%); width:14px; height:14px; border-radius:50%; background:var(--suave); transition:left 0.25s,background 0.3s; }
+.tema-toggle input:checked + .tema-slider { background:var(--ouro); border-color:var(--ouro); }
+.tema-toggle input:checked + .tema-slider::before { left:21px; background:#fff; }
+.tema-toggle .icone-tema { position:absolute; top:50%; transform:translateY(-50%); font-size:10px; pointer-events:none; transition:opacity 0.2s; }
+.tema-toggle .icone-sol  { right:4px; opacity:0; }
+.tema-toggle .icone-lua  { left:4px; opacity:1; }
+.tema-toggle input:checked ~ .icone-sol  { opacity:1; }
+.tema-toggle input:checked ~ .icone-lua  { opacity:0; }
+
+header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-bottom:1px solid var(--borda); background:var(--painel); flex-shrink:0; transition:background 0.3s,border-color 0.3s; }
 .logo { font-family:'Bebas Neue',sans-serif; font-size:32px; letter-spacing:3px; background:linear-gradient(135deg,var(--vm),var(--ouro)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1; }
 .logo small { font-size:12px; letter-spacing:6px; display:block; color:var(--suave); -webkit-text-fill-color:var(--suave); margin-top:-4px; }
-.sep { width:1px; height:32px; background:var(--borda); }
+.sep { width:1px; height:32px; background:var(--borda); flex-shrink:0; }
 
 .btn { border:none; border-radius:8px; padding:9px 18px; font-family:'DM Sans',sans-serif; font-size:13px; font-weight:600; cursor:pointer; transition:all 0.2s; white-space:nowrap; display:inline-flex; align-items:center; gap:6px; }
 .btn-vm   { background:var(--vm); color:#fff; }
@@ -43,7 +74,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .layout { display:flex; flex:1; overflow:hidden; height:calc(100vh - 65px); }
 
 /* SIDEBAR */
-.sidebar { width:272px; min-width:272px; background:var(--painel); border-right:1px solid var(--borda); display:flex; flex-direction:column; height:100%; }
+.sidebar { width:272px; min-width:272px; background:var(--painel); border-right:1px solid var(--borda); display:flex; flex-direction:column; height:100%; transition:background 0.3s,border-color 0.3s; }
 .sidebar-abas { display:flex; border-bottom:1px solid var(--borda); flex-shrink:0; }
 .sidebar-aba { flex:1; padding:11px 6px; text-align:center; font-size:11px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--suave); cursor:pointer; border-bottom:2px solid transparent; transition:all 0.2s; }
 .sidebar-aba.ativa { color:var(--texto); border-bottom-color:var(--vm); }
@@ -55,7 +86,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .badge-roxo { background:rgba(124,58,237,0.15); color:var(--roxo); }
 .lista-cats { flex:1; overflow-y:auto; padding:6px; }
 .cat-item { display:flex; align-items:center; gap:7px; padding:9px 11px; border-radius:7px; cursor:pointer; transition:background 0.15s; font-size:13px; font-weight:500; border-left:3px solid transparent; }
-.cat-item:hover { background:rgba(255,255,255,0.04); }
+.cat-item:hover { background:rgba(128,128,128,0.08); }
 .cat-item.ativa { background:rgba(229,9,20,0.1); border-left-color:var(--vm); }
 .cat-item.ativa.sub { background:rgba(124,58,237,0.1); border-left-color:var(--roxo); }
 .cat-nome { flex:1; font-size:13px; }
@@ -75,27 +106,27 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .breadcrumb { font-size:12px; color:var(--suave); }
 .breadcrumb b { color:var(--roxo); }
 .lista-filmes { display:flex; flex-direction:column; gap:8px; margin-bottom:16px; }
-.filme-card { background:var(--painel); border:1px solid var(--borda); border-radius:10px; padding:12px 16px; display:grid; grid-template-columns:40px 1fr 1fr 1fr 36px; gap:10px; align-items:end; transition:border-color 0.2s; }
+.filme-card { background:var(--painel); border:1px solid var(--borda); border-radius:10px; padding:12px 16px; display:grid; grid-template-columns:40px 1fr 1fr 1fr 36px; gap:10px; align-items:end; transition:border-color 0.2s,background 0.3s; }
 .filme-card:hover { border-color:rgba(229,9,20,0.2); }
 .filme-card.episodio:hover { border-color:rgba(124,58,237,0.2); }
 .filme-num { font-family:'Bebas Neue',sans-serif; font-size:24px; color:var(--suave); text-align:center; line-height:1; padding-bottom:4px; }
 .campo { display:flex; flex-direction:column; gap:3px; }
 .campo label { font-size:10px; color:var(--suave); letter-spacing:1.5px; text-transform:uppercase; }
-.campo input { background:var(--entrada); border:1px solid var(--borda); border-radius:6px; padding:7px 10px; color:var(--texto); font-family:'DM Sans',sans-serif; font-size:13px; outline:none; transition:border-color 0.2s; width:100%; }
+.campo input { background:var(--entrada); border:1px solid var(--borda); border-radius:6px; padding:7px 10px; color:var(--texto); font-family:'DM Sans',sans-serif; font-size:13px; outline:none; transition:border-color 0.2s,background 0.3s,color 0.3s; width:100%; }
 .campo input:focus { border-color:var(--vm); }
 .campo input::placeholder { color:var(--suave); font-size:11px; }
 .btn-del-filme { background:rgba(229,9,20,0.08); border:1px solid rgba(229,9,20,0.2); border-radius:7px; color:var(--vm); cursor:pointer; width:34px; height:34px; font-size:14px; display:flex; align-items:center; justify-content:center; transition:all 0.2s; flex-shrink:0; }
 .btn-del-filme:hover { background:rgba(229,9,20,0.2); }
 
 /* BARRA INFERIOR */
-.barra-salvar { position:fixed; bottom:0; left:0; right:0; background:var(--painel); border-top:1px solid var(--borda); padding:10px 32px; display:flex; align-items:center; justify-content:space-between; gap:14px; z-index:100; }
+.barra-salvar { position:fixed; bottom:0; left:0; right:0; background:var(--painel); border-top:1px solid var(--borda); padding:10px 32px; display:flex; align-items:center; justify-content:space-between; gap:14px; z-index:100; transition:background 0.3s,border-color 0.3s; }
 .status { font-size:13px; color:var(--suave); flex:1; }
 .status.ok { color:var(--verde); }
 .status.erro { color:var(--vm); }
 .barra-botoes { display:flex; gap:8px; }
 
 /* TOAST */
-.toast { position:fixed; top:18px; right:18px; background:#1e1e2e; border:1px solid var(--borda); border-radius:10px; padding:11px 16px; font-size:13px; z-index:9999; transform:translateY(-10px); opacity:0; transition:all 0.3s; pointer-events:none; max-width:320px; }
+.toast { position:fixed; top:18px; right:18px; background:var(--painel); border:1px solid var(--borda); border-radius:10px; padding:11px 16px; font-size:13px; z-index:9999; transform:translateY(-10px); opacity:0; transition:all 0.3s; pointer-events:none; max-width:320px; }
 .toast.show { transform:translateY(0); opacity:1; }
 .toast.sucesso { border-color:var(--verde); color:var(--verde); }
 .toast.erro { border-color:var(--vm); color:var(--vm); }
@@ -104,26 +135,56 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 /* MODAL */
 .modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.78); backdrop-filter:blur(6px); z-index:9998; display:none; align-items:center; justify-content:center; }
 .modal-overlay.aberto { display:flex; }
-.modal { background:var(--painel); border:1px solid var(--borda); border-radius:14px; padding:28px; width:480px; display:flex; flex-direction:column; gap:16px; box-shadow:0 40px 80px rgba(0,0,0,0.6); animation:slideUp 0.25s ease; }
+.modal { background:var(--painel); border:1px solid var(--borda); border-radius:14px; padding:28px; width:480px; display:flex; flex-direction:column; gap:16px; box-shadow:var(--shadow-modal); animation:slideUp 0.25s ease; transition:background 0.3s,border-color 0.3s; }
 @keyframes slideUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
 .modal-titulo { font-family:'Bebas Neue',sans-serif; font-size:24px; letter-spacing:2px; }
 .modal-titulo.roxo { background:linear-gradient(135deg,var(--roxo),#a78bfa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .modal-titulo.vm { background:linear-gradient(135deg,var(--vm),var(--ouro)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .modal-desc { font-size:13px; color:var(--suave); margin-top:-8px; }
-.modal-input { background:var(--entrada); border:2px solid var(--borda); border-radius:9px; padding:12px 15px; color:var(--texto); font-family:'DM Sans',sans-serif; font-size:14px; outline:none; transition:border-color 0.2s; width:100%; }
+.modal-input { background:var(--entrada); border:2px solid var(--borda); border-radius:9px; padding:12px 15px; color:var(--texto); font-family:'DM Sans',sans-serif; font-size:14px; outline:none; transition:border-color 0.2s,background 0.3s,color 0.3s; width:100%; }
 .modal-input:focus { border-color:var(--vm); }
 .modal-input.roxo:focus { border-color:var(--roxo); }
 .modal-input::placeholder { color:var(--suave); }
-.modal-select { background:var(--entrada); border:2px solid var(--borda); border-radius:9px; padding:12px 15px; color:var(--texto); font-family:'DM Sans',sans-serif; font-size:14px; outline:none; width:100%; cursor:pointer; }
+.modal-select { background:var(--entrada); border:2px solid var(--borda); border-radius:9px; padding:12px 15px; color:var(--texto); font-family:'DM Sans',sans-serif; font-size:14px; outline:none; width:100%; cursor:pointer; transition:background 0.3s,color 0.3s,border-color 0.2s; }
 .modal-select:focus { border-color:var(--roxo); }
 .modal-botoes { display:flex; gap:10px; justify-content:flex-end; }
 
 /* MODAL SALVAR */
-.salvar-lista { display:flex; flex-direction:column; gap:6px; max-height:300px; overflow-y:auto; }
-.salvar-item { display:flex; align-items:center; gap:10px; padding:8px 12px; background:var(--entrada); border-radius:7px; font-size:13px; }
+.salvar-lista { display:flex; flex-direction:column; gap:6px; max-height:240px; overflow-y:auto; }
+.salvar-item { display:flex; align-items:center; gap:10px; padding:8px 12px; background:var(--entrada); border-radius:7px; font-size:13px; transition:background 0.3s; }
+.salvar-item.nao-incluido { opacity:0.35; }
 .salvar-item .icone { font-size:16px; }
 .salvar-item .path { flex:1; font-family:monospace; color:var(--ouro); }
+.salvar-item.nao-incluido .path { color:var(--suave); text-decoration:line-through; }
 .salvar-item .tipo { font-size:11px; color:var(--suave); }
+.salvar-item .badge-editado { font-size:10px; padding:2px 7px; border-radius:20px; background:rgba(34,197,94,0.15); color:var(--verde); font-weight:700; }
+.salvar-item .badge-novo { font-size:10px; padding:2px 7px; border-radius:20px; background:rgba(245,197,24,0.15); color:var(--ouro); font-weight:700; }
+.salvar-item .badge-sem-dados { font-size:10px; padding:2px 7px; border-radius:20px; background:rgba(102,102,128,0.2); color:var(--suave); font-weight:700; }
+
+/* SELETOR DE MODO ZIP */
+.zip-modo { display:flex; gap:8px; }
+.zip-opcao { flex:1; display:flex; align-items:center; gap:10px; padding:11px 14px; border-radius:10px; border:2px solid var(--borda); background:var(--entrada); cursor:pointer; transition:border-color 0.2s,background 0.2s; user-select:none; }
+.zip-opcao:hover { border-color:var(--suave); }
+.zip-opcao input[type=radio] { display:none; }
+.zip-opcao.selecionada { border-color:var(--verde); background:rgba(34,197,94,0.08); }
+.zip-opcao.selecionada.modo-todos { border-color:var(--vm); background:rgba(229,9,20,0.07); }
+.zip-icone { font-size:20px; line-height:1; }
+.zip-texto { flex:1; }
+.zip-texto strong { font-size:13px; font-weight:600; display:block; margin-bottom:1px; }
+.zip-texto small { font-size:11px; color:var(--suave); line-height:1.3; display:block; }
+.zip-radio-circulo { width:16px; height:16px; border-radius:50%; border:2px solid var(--borda); flex-shrink:0; display:flex; align-items:center; justify-content:center; transition:border-color 0.2s; }
+.zip-opcao.selecionada .zip-radio-circulo { border-color:var(--verde); }
+.zip-opcao.selecionada.modo-todos .zip-radio-circulo { border-color:var(--vm); }
+.zip-radio-dot { width:7px; height:7px; border-radius:50%; background:var(--verde); transform:scale(0); transition:transform 0.2s; }
+.zip-opcao.selecionada .zip-radio-dot { transform:scale(1); }
+.zip-opcao.selecionada.modo-todos .zip-radio-dot { background:var(--vm); }
+
+/* SEPARADOR DO MODAL */
+.modal-sep { height:1px; background:var(--borda); margin:0 -4px; }
+
+/* CONTADOR PREVIEW */
+.zip-preview { font-size:12px; color:var(--suave); padding:6px 0 2px; display:flex; align-items:center; gap:6px; }
+.zip-preview b { color:var(--texto); }
 
 ::-webkit-scrollbar { width:4px; }
 ::-webkit-scrollbar-track { background:transparent; }
@@ -136,6 +197,18 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
   <div class="logo">CINE<small>DRIVE</small></div>
   <div class="sep"></div>
   <span style="color:var(--suave);font-size:13px;">Editor de Catalogo</span>
+
+  <!-- TOGGLE TEMA -->
+  <div class="tema-toggle-wrap" style="margin-left:12px;">
+    <label class="tema-toggle" title="Alternar tema">
+      <input type="checkbox" id="toggle-tema" onchange="alternarTema(this.checked)">
+      <span class="tema-slider"></span>
+      <span class="icone-tema icone-sol">☀</span>
+      <span class="icone-tema icone-lua">☽</span>
+    </label>
+    <span class="tema-label" id="tema-label">Dark</span>
+  </div>
+
   <div id="arquivo-info" style="color:var(--suave);font-size:12px;margin-left:auto;">Nenhum arquivo carregado</div>
   <label class="btn btn-sec" for="input-arquivo">&#128194; Abrir index.json</label>
   <input type="file" id="input-arquivo" accept=".json" style="display:none">
@@ -148,7 +221,6 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
       <div class="sidebar-aba" id="aba-sub" onclick="mudarAba('sub')">Subcategorias</div>
     </div>
 
-    <!-- PAINEL CATEGORIAS -->
     <div id="painel-cat" style="display:flex;flex-direction:column;flex:1;overflow:hidden;">
       <div class="sidebar-top">
         <span class="sidebar-label">Categorias</span>
@@ -160,7 +232,6 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
       </div>
     </div>
 
-    <!-- PAINEL SUBCATEGORIAS -->
     <div id="painel-sub" style="display:none;flex-direction:column;flex:1;overflow:hidden;">
       <div class="sidebar-top">
         <span class="sidebar-label">Subcategorias</span>
@@ -241,10 +312,41 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 
 <!-- MODAL SALVAR -->
 <div class="modal-overlay" id="modal-salvar" onclick="fecharModalFora(event,'modal-salvar')">
-  <div class="modal" style="width:560px;">
+  <div class="modal" style="width:580px;max-width:96vw;">
     <div class="modal-titulo vm">Salvar Catalogo</div>
-    <div class="modal-desc">Os arquivos abaixo serao gerados e baixados em um ZIP. Extraia e suba para o GitHub.</div>
+    <div class="modal-desc">Escolha o modo de compactacao e baixe o ZIP para enviar ao GitHub.</div>
+
+    <!-- SELETOR MODO ZIP -->
+    <div class="zip-modo" id="zip-modo">
+      <label class="zip-opcao modo-todos selecionada" id="opcao-todos" onclick="selecionarModoZip('todos')">
+        <input type="radio" name="zip-modo" value="todos" checked>
+        <span class="zip-icone">📦</span>
+        <span class="zip-texto">
+          <strong>Zipar todos</strong>
+          <small>Inclui todos os arquivos do catalogo</small>
+        </span>
+        <span class="zip-radio-circulo"><span class="zip-radio-dot"></span></span>
+      </label>
+
+      <label class="zip-opcao" id="opcao-editados" onclick="selecionarModoZip('editados')">
+        <input type="radio" name="zip-modo" value="editados">
+        <span class="zip-icone">✏️</span>
+        <span class="zip-texto">
+          <strong>Apenas editados</strong>
+          <small>So arquivos novos ou modificados nesta sessao</small>
+        </span>
+        <span class="zip-radio-circulo"><span class="zip-radio-dot"></span></span>
+      </label>
+    </div>
+
+    <!-- PREVIEW CONTADOR -->
+    <div class="zip-preview" id="zip-preview"></div>
+
+    <div class="modal-sep"></div>
+
+    <!-- LISTA DE ARQUIVOS -->
     <div class="salvar-lista" id="salvar-lista"></div>
+
     <div class="modal-botoes">
       <button class="btn btn-sec" onclick="fecharModal('modal-salvar')">Cancelar</button>
       <button class="btn btn-verde" onclick="gerarZip()">&#128230; Baixar ZIP</button>
@@ -255,15 +357,82 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 <script>
 // ===== ESTADO =====
 var catalogo = [];
-// catalogo = [
-//   { categoria:'Comedia', tipo:'filmes', arquivo:'comedia.json', itens:[] },
-//   { categoria:'Series',  tipo:'series', arquivo:'series/index.json', subs:[
-//     { nome:'Breaking Bad', arquivo:'series/breaking-bad.json', thumb:'', episodios:[] }
-//   ]}
-// ]
 var abaAtiva = 'cat';
 var catAtiva = -1;
 var subAtiva = -1;
+var modoZip = 'todos'; // 'todos' | 'editados'
+
+// ===== TEMA =====
+(function() {
+  var salvo = localStorage.getItem('cine-drive-tema') || 'escuro';
+  if (salvo === 'claro') {
+    document.body.classList.add('tema-claro');
+    document.getElementById('toggle-tema').checked = true;
+    document.getElementById('tema-label').textContent = 'Light';
+  }
+})();
+
+function alternarTema(ligado) {
+  if (ligado) {
+    document.body.classList.add('tema-claro');
+    localStorage.setItem('cine-drive-tema', 'claro');
+    document.getElementById('tema-label').textContent = 'Light';
+  } else {
+    document.body.classList.remove('tema-claro');
+    localStorage.setItem('cine-drive-tema', 'escuro');
+    document.getElementById('tema-label').textContent = 'Dark';
+  }
+}
+
+// ===== MODO ZIP =====
+function selecionarModoZip(modo) {
+  modoZip = modo;
+  var elTodos    = document.getElementById('opcao-todos');
+  var elEditados = document.getElementById('opcao-editados');
+  if (modo === 'todos') {
+    elTodos.classList.add('selecionada','modo-todos');
+    elEditados.classList.remove('selecionada');
+  } else {
+    elEditados.classList.add('selecionada');
+    elTodos.classList.remove('selecionada','modo-todos');
+  }
+  // Recalcula lista exibida
+  if (document.getElementById('modal-salvar').classList.contains('aberto')) {
+    atualizarListaSalvar();
+  }
+}
+
+function atualizarListaSalvar() {
+  var lista = document.getElementById('salvar-lista');
+  lista.innerHTML = '';
+  var arquivos = listarArquivosComStatus();
+  var incluidos = 0;
+
+  for (var i = 0; i < arquivos.length; i++) {
+    var arq = arquivos[i];
+    var incluir = modoZip === 'todos' ? true : arq.editado;
+
+    var div = document.createElement('div');
+    div.className = 'salvar-item' + (incluir ? '' : ' nao-incluido');
+    div.innerHTML =
+      '<span class="icone">' + arq.icone + '</span>' +
+      '<span class="path">' + arq.path + '</span>' +
+      (incluir && arq.statusBadge ? '<span class="' + arq.statusBadge.cls + '">' + arq.statusBadge.label + '</span>' : '') +
+      (!incluir ? '<span class="badge-sem-dados">ignorado</span>' : '') +
+      '<span class="tipo">' + arq.tipo + '</span>';
+    lista.appendChild(div);
+
+    if (incluir) incluidos++;
+  }
+
+  // Atualiza preview
+  var preview = document.getElementById('zip-preview');
+  if (modoZip === 'editados') {
+    preview.innerHTML = '<b>' + incluidos + '</b> de <b>' + arquivos.length + '</b> arquivo(s) serao incluidos no ZIP &mdash; os demais ja existem no GitHub e serao preservados.';
+  } else {
+    preview.innerHTML = '<b>' + incluidos + '</b> arquivo(s) serao incluidos no ZIP.';
+  }
+}
 
 // ===== ABRIR ARQUIVO =====
 document.getElementById('input-arquivo').addEventListener('change', function(e) {
@@ -274,7 +443,6 @@ document.getElementById('input-arquivo').addEventListener('change', function(e) 
   reader.onload = function(ev) {
     try {
       var data = JSON.parse(ev.target.result);
-      // Converte index.json antigo (catalogo.json) para novo formato
       catalogo = normalizarIndice(data);
       catAtiva = catalogo.length > 0 ? 0 : -1;
       subAtiva = -1;
@@ -291,9 +459,7 @@ document.getElementById('input-arquivo').addEventListener('change', function(e) 
 });
 
 function normalizarIndice(data) {
-  // Se ja eh o novo formato (tem campo 'arquivo')
   if (data.length > 0 && data[0].arquivo) return data;
-  // Converte catalogo.json antigo
   var resultado = [];
   for (var i = 0; i < data.length; i++) {
     var cat = data[i];
@@ -304,7 +470,8 @@ function normalizarIndice(data) {
       tipo: temSubs ? 'series' : 'filmes',
       arquivo: temSubs ? (slug + '/index.json') : (slug + '.json'),
       itens: cat.itens || [],
-      subs: []
+      subs: [],
+      _novo: true
     };
     if (temSubs) {
       for (var j = 0; j < cat.subs.length; j++) {
@@ -500,6 +667,7 @@ function adicionarFilme(){
   if(!catalogo[catAtiva].itens) catalogo[catAtiva].itens=[];
   var idx=catalogo[catAtiva].itens.length;
   catalogo[catAtiva].itens.push({id:pad(idx+1),titulo:'',thumb:'',driveId:''});
+  catalogo[catAtiva]._editado = true;
   renderConteudo();
   setTimeout(function(){var c=document.getElementById('conteudo');c.scrollTop=c.scrollHeight;},80);
 }
@@ -580,16 +748,16 @@ function criarCard(idx,item,isEp,info){
     inputs[j].addEventListener('input',(function(isEpisodio,infoRef){
       return function(){
         var i=parseInt(this.dataset.idx), campo=this.dataset.campo;
-        if(isEpisodio&&infoRef) infoRef.sub.episodios[i][campo]=this.value;
-        else if(catalogo[catAtiva]) catalogo[catAtiva].itens[i][campo]=this.value;
+        if(isEpisodio&&infoRef){ infoRef.sub.episodios[i][campo]=this.value; marcarSubEditada(); }
+        else if(catalogo[catAtiva]){ catalogo[catAtiva].itens[i][campo]=this.value; catalogo[catAtiva]._editado=true; }
       };
     })(isEp,info));
   }
   card.querySelector('.btn-del-filme').addEventListener('click',(function(isEpisodio,infoRef){
     return function(){
       var i=parseInt(this.dataset.idx);
-      if(isEpisodio&&infoRef){ infoRef.sub.episodios.splice(i,1); renderConteudoSubs(); }
-      else { catalogo[catAtiva].itens.splice(i,1); renderConteudo(); }
+      if(isEpisodio&&infoRef){ infoRef.sub.episodios.splice(i,1); marcarSubEditada(); renderConteudoSubs(); }
+      else { catalogo[catAtiva].itens.splice(i,1); catalogo[catAtiva]._editado=true; renderConteudo(); }
     };
   })(isEp,info));
   return card;
@@ -641,7 +809,8 @@ function confirmarCat(){
     tipo:tipo,
     arquivo: tipo==='series'?(slug+'/index.json'):(slug+'.json'),
     itens:[],
-    subs:[]
+    subs:[],
+    _novo:true
   });
   catAtiva=catalogo.length-1;
   fecharModal('modal-cat');
@@ -662,7 +831,8 @@ function confirmarSub(){
     arquivo:slug+'/'+subSlug+'.json',
     thumb:thumb,
     totalEpisodios:0,
-    episodios:[]
+    episodios:[],
+    _novo:true
   });
   fecharModal('modal-sub');
   subAtiva=getTodasSubs().length-1;
@@ -680,32 +850,68 @@ document.addEventListener('keydown',function(e){
 // ===== MODAL SALVAR =====
 function abrirModalSalvar(){
   if(catalogo.length===0){toast('Catalogo vazio!','erro');return;}
-  var lista=document.getElementById('salvar-lista');
-  lista.innerHTML='';
-  var arquivos=listarArquivos();
-  for(var i=0;i<arquivos.length;i++){
-    var div=document.createElement('div');
-    div.className='salvar-item';
-    div.innerHTML='<span class="icone">'+arquivos[i].icone+'</span>'+
-      '<span class="path">'+arquivos[i].path+'</span>'+
-      '<span class="tipo">'+arquivos[i].tipo+'</span>';
-    lista.appendChild(div);
-  }
+  // Reseta para modo 'todos' ao abrir
+  selecionarModoZip('todos');
+  atualizarListaSalvar();
   document.getElementById('modal-salvar').classList.add('aberto');
 }
 
-function listarArquivos(){
+// ===== LISTAR ARQUIVOS COM STATUS =====
+function listarArquivosComStatus(){
   var arquivos=[];
-  arquivos.push({path:'index.json',icone:'&#128196;',tipo:'indice principal'});
+
+  // index.json principal — sempre considerado editado (reflete estrutura atual)
+  arquivos.push({
+    path:'index.json',
+    icone:'📄',
+    tipo:'indice principal',
+    editado:true,
+    statusBadge:{ cls:'badge-editado', label:'sempre' }
+  });
+
   for(var i=0;i<catalogo.length;i++){
     var cat=catalogo[i];
+    var catEditada = !!(cat._editado || cat._novo);
+
     if(cat.tipo==='filmes'){
-      arquivos.push({path:cat.arquivo,icone:'&#127916;',tipo:cat.categoria});
+      var temItens = cat.itens && cat.itens.length > 0;
+      var foiEditada = catEditada || temItens;
+      arquivos.push({
+        path: cat.arquivo,
+        icone: '🎬',
+        tipo: cat.categoria,
+        editado: foiEditada,
+        statusBadge: cat._novo
+          ? { cls:'badge-novo', label:'novo' }
+          : (foiEditada ? { cls:'badge-editado', label:'editado' } : null)
+      });
     } else {
-      arquivos.push({path:cat.arquivo,icone:'&#128193;',tipo:'indice '+cat.categoria});
-      var subs=cat.subs||[];
+      // index da categoria de series — editado se a lista de subs mudou
+      arquivos.push({
+        path: cat.arquivo,
+        icone: '📁',
+        tipo: 'indice ' + cat.categoria,
+        editado: catEditada || !!(cat.subs && cat.subs.length > 0 && cat.subs.some(function(s){ return s._novo; })),
+        statusBadge: cat._novo
+          ? { cls:'badge-novo', label:'novo' }
+          : (catEditada ? { cls:'badge-editado', label:'editado' } : null)
+      });
+
+      var subs = cat.subs||[];
       for(var j=0;j<subs.length;j++){
-        arquivos.push({path:subs[j].arquivo,icone:'&#128250;',tipo:subs[j].nome});
+        var sub = subs[j];
+        var subEditada = !!(sub._editado || sub._novo);
+        var temEps = sub.episodios && sub.episodios.length > 0;
+        var incluir = subEditada || temEps;
+        arquivos.push({
+          path: sub.arquivo,
+          icone: '📺',
+          tipo: sub.nome,
+          editado: incluir,
+          statusBadge: sub._novo
+            ? { cls:'badge-novo', label:'novo' }
+            : (incluir ? { cls:'badge-editado', label:'editado' } : null)
+        });
       }
     }
   }
@@ -715,8 +921,9 @@ function listarArquivos(){
 // ===== GERAR ZIP =====
 function gerarZip(){
   var zip=new JSZip();
+  var arquivos = listarArquivosComStatus();
 
-  // index.json — lista categorias sem itens/episodios
+  // index.json principal
   var indiceSimples=[];
   for(var i=0;i<catalogo.length;i++){
     var cat=catalogo[i];
@@ -724,56 +931,61 @@ function gerarZip(){
   }
   zip.file('index.json', JSON.stringify(indiceSimples,null,2));
 
-  // Arquivos por categoria
   for(var i=0;i<catalogo.length;i++){
     var cat=catalogo[i];
+    var catEditada = !!(cat._editado || cat._novo);
 
     if(cat.tipo==='filmes'){
-      // Um unico arquivo com todos os filmes
-      var itensLimpos=[];
-      var itens=cat.itens||[];
-      for(var j=0;j<itens.length;j++){
-        if(itens[j].titulo||itens[j].driveId){
-          itensLimpos.push({id:pad(j+1),titulo:itens[j].titulo||'',thumb:itens[j].thumb||'',driveId:itens[j].driveId||''});
+      var temItens = cat.itens && cat.itens.length > 0;
+      var deveIncluir = modoZip==='todos' || catEditada || temItens;
+      if(deveIncluir){
+        var itensLimpos=[];
+        var itens=cat.itens||[];
+        for(var j=0;j<itens.length;j++){
+          if(itens[j].titulo||itens[j].driveId){
+            itensLimpos.push({id:pad(j+1),titulo:itens[j].titulo||'',thumb:itens[j].thumb||'',driveId:itens[j].driveId||''});
+          }
         }
+        zip.file(cat.arquivo, JSON.stringify(itensLimpos,null,2));
       }
-      zip.file(cat.arquivo, JSON.stringify(itensLimpos,null,2));
-
     } else {
-      // series/index.json — lista das subcategorias
+      // series/index.json
       var subs=cat.subs||[];
-      var subsSimples=[];
-      for(var j=0;j<subs.length;j++){
-        var totalEps = subs[j].episodios && subs[j].episodios.length > 0
-          ? subs[j].episodios.length
-          : (subs[j].totalEpisodios || 0);
-        subsSimples.push({nome:subs[j].nome,arquivo:subs[j].arquivo,thumb:subs[j].thumb||'',totalEpisodios:totalEps});
+      var algumSubEditado = subs.some(function(s){ return s._novo; });
+      var deveIncluirIdx = modoZip==='todos' || catEditada || algumSubEditado;
+      if(deveIncluirIdx){
+        var subsSimples=[];
+        for(var j=0;j<subs.length;j++){
+          var totalEps = subs[j].episodios && subs[j].episodios.length > 0
+            ? subs[j].episodios.length
+            : (subs[j].totalEpisodios || 0);
+          subsSimples.push({nome:subs[j].nome,arquivo:subs[j].arquivo,thumb:subs[j].thumb||'',totalEpisodios:totalEps});
+        }
+        zip.file(cat.arquivo, JSON.stringify(subsSimples,null,2));
       }
-      zip.file(cat.arquivo, JSON.stringify(subsSimples,null,2));
 
-      // Um arquivo por subcategoria
-      // Se episodios foram carregados/editados: gera com conteudo completo
-      // Se nao foram carregados: gera estrutura minima preservando nome e thumb
       for(var j=0;j<subs.length;j++){
         var sub=subs[j];
         var eps=sub.episodios||[];
-        var epsLimpos=[];
-        for(var k=0;k<eps.length;k++){
-          if(eps[k].titulo||eps[k].driveId){
-            epsLimpos.push({id:pad(k+1),titulo:eps[k].titulo||'',thumb:eps[k].thumb||'',driveId:eps[k].driveId||''});
+        var subEditada = !!(sub._editado || sub._novo);
+        var temEps = eps.length > 0;
+        var deveIncluirSub = modoZip==='todos' ? (subEditada||temEps) : (subEditada||temEps);
+        // No modo 'editados', so inclui se foi editado/novo nesta sessao
+        if(modoZip==='editados') deveIncluirSub = subEditada || temEps;
+
+        if(deveIncluirSub){
+          var epsLimpos=[];
+          for(var k=0;k<eps.length;k++){
+            if(eps[k].titulo||eps[k].driveId){
+              epsLimpos.push({id:pad(k+1),titulo:eps[k].titulo||'',thumb:eps[k].thumb||'',driveId:eps[k].driveId||''});
+            }
           }
-        }
-        // Marca se foi editado nesta sessao
-        var foiEditado = sub._editado || epsLimpos.length > 0;
-        if(foiEditado){
           zip.file(sub.arquivo, JSON.stringify({nome:sub.nome,thumb:sub.thumb||'',episodios:epsLimpos},null,2));
         }
-        // Se nao foi editado, NAO inclui no ZIP — o arquivo existente no GitHub e preservado
       }
     }
   }
 
-  // Baixar ZIP
   zip.generateAsync({type:'blob'}).then(function(content){
     var url=URL.createObjectURL(content);
     var a=document.createElement('a');
@@ -785,7 +997,7 @@ function gerarZip(){
   });
 }
 
-// ===== CARREGAR JSON DE CATEGORIA / SUBCATEGORIA =====
+// ===== CARREGAR JSON =====
 function carregarIndexCategoriaSeries(input, catIdx) {
   var file = input.files[0];
   if (!file) return;
@@ -801,41 +1013,24 @@ function carregarIndexCategoriaSeries(input, catIdx) {
         var item = data[i];
         var nome = item.nome || item.name || item.titulo || '';
         var arquivo = item.arquivo || '';
-        // Verifica se ja existe pelo arquivo ou nome
         var jaExiste = false;
         for (var j = 0; j < existentes.length; j++) {
           if (existentes[j].arquivo === arquivo || existentes[j].nome.toLowerCase() === nome.toLowerCase()) {
             jaExiste = true;
-            // Atualiza thumb se veio no index
             if (item.thumb) existentes[j].thumb = item.thumb;
             break;
           }
         }
         if (!jaExiste && nome) {
-          existentes.push({
-            nome: nome,
-            arquivo: arquivo,
-            thumb: item.thumb || '',
-            totalEpisodios: item.totalEpisodios || 0,
-            episodios: []
-          });
+          existentes.push({ nome: nome, arquivo: arquivo, thumb: item.thumb || '', totalEpisodios: item.totalEpisodios || 0, episodios: [] });
           adicionadas++;
         }
       }
-      renderSubsSidebar();
-      renderConteudo();
-      // Muda para aba subcategorias para o usuario ver as series importadas
-      if (adicionadas > 0) {
-        mudarAba('sub');
-        subAtiva = 0;
-        renderSubsSidebar();
-        renderConteudoSubs();
-      }
+      renderSubsSidebar(); renderConteudo();
+      if (adicionadas > 0) { mudarAba('sub'); subAtiva=0; renderSubsSidebar(); renderConteudoSubs(); }
       toast(adicionadas + ' series importadas de ' + file.name + '!', 'sucesso');
       input.value = '';
-    } catch(err) {
-      toast('JSON invalido!', 'erro');
-    }
+    } catch(err) { toast('JSON invalido!', 'erro'); }
   };
   reader.readAsText(file, 'UTF-8');
 }
@@ -847,28 +1042,20 @@ function carregarJSONCategoria(input, catIdx) {
   reader.onload = function(ev) {
     try {
       var data = JSON.parse(ev.target.result);
-      // Formato esperado: array de objetos com titulo, driveId, thumb
       var itens = [];
       if (Array.isArray(data)) {
         for (var i=0; i<data.length; i++) {
           var item = data[i];
-          itens.push({
-            id: pad(i+1),
-            titulo: item.titulo || item.title || item.nome || '',
-            thumb: item.thumb || item.capa || item.url || '',
-            driveId: item.driveId || item.id || item.driveID || ''
-          });
+          itens.push({ id: pad(i+1), titulo: item.titulo||item.title||item.nome||'', thumb: item.thumb||item.capa||item.url||'', driveId: item.driveId||item.id||item.driveID||'' });
         }
       }
       catalogo[catIdx].itens = itens;
+      // Nao marca como editado ao apenas carregar — preserva status original
       catAtiva = catIdx;
-      renderSidebar();
-      renderConteudo();
+      renderSidebar(); renderConteudo();
       toast(itens.length + ' filmes carregados de ' + file.name + '!', 'sucesso');
       input.value = '';
-    } catch(err) {
-      toast('JSON invalido!', 'erro');
-    }
+    } catch(err) { toast('JSON invalido!', 'erro'); }
   };
   reader.readAsText(file, 'UTF-8');
 }
@@ -880,31 +1067,19 @@ function carregarJSONSub(input, catIdx, subIdx) {
   reader.onload = function(ev) {
     try {
       var data = JSON.parse(ev.target.result);
-      // Formato esperado: { nome, thumb, episodios: [...] }
       var eps = [];
       var fonte = Array.isArray(data) ? data : (data.episodios || []);
       for (var i=0; i<fonte.length; i++) {
         var ep = fonte[i];
-        eps.push({
-          id: pad(i+1),
-          titulo: ep.titulo || ep.title || ep.nome || '',
-          thumb: ep.thumb || ep.capa || ep.url || '',
-          driveId: ep.driveId || ep.id || ep.driveID || ''
-        });
+        eps.push({ id: pad(i+1), titulo: ep.titulo||ep.title||ep.nome||'', thumb: ep.thumb||ep.capa||ep.url||'', driveId: ep.driveId||ep.id||ep.driveID||'' });
       }
       catalogo[catIdx].subs[subIdx].episodios = eps;
-      catalogo[catIdx].subs[subIdx]._editado = true;
-      // Atualiza thumb da sub se JSON tiver
-      if (!Array.isArray(data) && data.thumb) {
-        catalogo[catIdx].subs[subIdx].thumb = data.thumb;
-      }
-      renderSubsSidebar();
-      renderConteudoSubs();
+      // Nao marca como _editado ao carregar — so marca se o usuario editar depois
+      if (!Array.isArray(data) && data.thumb) catalogo[catIdx].subs[subIdx].thumb = data.thumb;
+      renderSubsSidebar(); renderConteudoSubs();
       toast(eps.length + ' episodios carregados de ' + file.name + '!', 'sucesso');
       input.value = '';
-    } catch(err) {
-      toast('JSON invalido!', 'erro');
-    }
+    } catch(err) { toast('JSON invalido!', 'erro'); }
   };
   reader.readAsText(file, 'UTF-8');
 }
@@ -916,11 +1091,7 @@ function parseCSV(text) {
   var sep = linhas[0].indexOf(';') > -1 ? ';' : ',';
   var headers = linhas[0].split(sep).map(function(h){ return h.trim().replace(/^\uFEFF/,''); });
   function findCol(keys) {
-    for (var k=0; k<keys.length; k++) {
-      for (var h=0; h<headers.length; h++) {
-        if (headers[h].toLowerCase().indexOf(keys[k]) > -1) return h;
-      }
-    }
+    for (var k=0; k<keys.length; k++) for (var h=0; h<headers.length; h++) if (headers[h].toLowerCase().indexOf(keys[k]) > -1) return h;
     return -1;
   }
   var iThumb  = findCol(['url','capa','thumb','imagem','cover']);
@@ -938,17 +1109,15 @@ function parseCSV(text) {
 }
 
 function importarCSVFilmes(input) {
-  var file = input.files[0];
-  if (!file) return;
+  var file = input.files[0]; if (!file) return;
   var reader = new FileReader();
   reader.onload = function(ev) {
     var itens = parseCSV(ev.target.result);
     if (!itens.length) { toast('CSV vazio ou formato invalido!', 'erro'); return; }
     if (!catalogo[catAtiva].itens) catalogo[catAtiva].itens = [];
     var base = catalogo[catAtiva].itens.length;
-    for (var i=0; i<itens.length; i++) {
-      catalogo[catAtiva].itens.push({ id: pad(base+i+1), titulo: itens[i].titulo, thumb: itens[i].thumb, driveId: itens[i].driveId });
-    }
+    for (var i=0; i<itens.length; i++) catalogo[catAtiva].itens.push({ id: pad(base+i+1), titulo: itens[i].titulo, thumb: itens[i].thumb, driveId: itens[i].driveId });
+    catalogo[catAtiva]._editado = true;
     renderConteudo();
     toast(itens.length + ' filmes importados!', 'sucesso');
     input.value = '';
@@ -957,20 +1126,16 @@ function importarCSVFilmes(input) {
 }
 
 function importarCSVEpisodios(input) {
-  var file = input.files[0];
-  if (!file) return;
+  var file = input.files[0]; if (!file) return;
   var reader = new FileReader();
   reader.onload = function(ev) {
     var itens = parseCSV(ev.target.result);
     if (!itens.length) { toast('CSV vazio ou formato invalido!', 'erro'); return; }
-    var todas = getTodasSubs();
-    var info = todas[subAtiva];
+    var todas = getTodasSubs(); var info = todas[subAtiva];
     if (!info) return;
     if (!info.sub.episodios) info.sub.episodios = [];
     var base = info.sub.episodios.length;
-    for (var i=0; i<itens.length; i++) {
-      info.sub.episodios.push({ id: pad(base+i+1), titulo: itens[i].titulo, thumb: itens[i].thumb, driveId: itens[i].driveId });
-    }
+    for (var i=0; i<itens.length; i++) info.sub.episodios.push({ id: pad(base+i+1), titulo: itens[i].titulo, thumb: itens[i].thumb, driveId: itens[i].driveId });
     marcarSubEditada();
     renderConteudoSubs();
     toast(itens.length + ' episodios importados!', 'sucesso');
