@@ -1,0 +1,132 @@
+{
+  "nome": "B-Fighter",
+  "thumb": "https://1.bp.blogspot.com/-SwCgYxjjpHM/YYQ2ZkXO-RI/AAAAAAAACcg/wulUcIaiJBY2GlJKb4f6a5o5KkdMuuT5QCLcBGAsYHQ/s0/1B-Fighter.png",
+  "episodios": [
+    {
+      "id": "001",
+      "titulo": "Fighter_EP-01",
+      "thumb": "https://1.bp.blogspot.com/-SwCgYxjjpHM/YYQ2ZkXO-RI/AAAAAAAACcg/wulUcIaiJBY2GlJKb4f6a5o5KkdMuuT5QCLcBGAsYHQ/s0/1B-Fighter.png",
+      "driveId": "11tFRkqGkfOoBUOpXvz9oaC2hY5_BT8IB"
+    },
+    {
+      "id": "002",
+      "titulo": "Fighter_EP-02",
+      "thumb": "https://1.bp.blogspot.com/-SwCgYxjjpHM/YYQ2ZkXO-RI/AAAAAAAACcg/wulUcIaiJBY2GlJKb4f6a5o5KkdMuuT5QCLcBGAsYHQ/s0/1B-Fighter.png",
+      "driveId": "1vlhdMGDDZ76Uby83aty-Q_tc3TBWEM7s"
+    },
+    {
+      "id": "003",
+      "titulo": "Fighter_EP-03",
+      "thumb": "https://1.bp.blogspot.com/-SwCgYxjjpHM/YYQ2ZkXO-RI/AAAAAAAACcg/wulUcIaiJBY2GlJKb4f6a5o5KkdMuuT5QCLcBGAsYHQ/s0/1B-Fighter.png",
+      "driveId": "1pLfc2_MEzEIcoYq-isIaXujlQB0yzVRK"
+    },
+    {
+      "id": "004",
+      "titulo": "Fighter_EP-04",
+      "thumb": "https://1.bp.blogspot.com/-SwCgYxjjpHM/YYQ2ZkXO-RI/AAAAAAAACcg/wulUcIaiJBY2GlJKb4f6a5o5KkdMuuT5QCLcBGAsYHQ/s0/1B-Fighter.png",
+      "driveId": "1cTODI9EEA3UFTFsIYI91LnT_4ZJFxdpX"
+    },
+    {
+      "id": "005",
+      "titulo": "Fighter_EP-05",
+      "thumb": "https://1.bp.blogspot.com/-SwCgYxjjpHM/YYQ2ZkXO-RI/AAAAAAAACcg/wulUcIaiJBY2GlJKb4f6a5o5KkdMuuT5QCLcBGAsYHQ/s0/1B-Fighter.png",
+      "driveId": "1tBjYHD6AEypW9eXfbB-l9QivJ8k_a0Rb"
+    },
+    {
+      "id": "006",
+      "titulo": "Fighter_EP-06",
+      "thumb": "https://1.bp.blogspot.com/-SwCgYxjjpHM/YYQ2ZkXO-RI/AAAAAAAACcg/wulUcIaiJBY2GlJKb4f6a5o5KkdMuuT5QCLcBGAsYHQ/s0/1B-Fighter.png",
+      "driveId": "1VP00xidHPXU9WCUmjvMbHYL9O905yKCy"
+    },
+    {
+      "id": "007",
+      "titulo": "Fighter_EP-07",
+      "thumb": "https://1.bp.blogspot.com/-SwCgYxjjpHM/YYQ2ZkXO-RI/AAAAAAAACcg/wulUcIaiJBY2GlJKb4f6a5o5KkdMuuT5QCLcBGAsYHQ/s0/1B-Fighter.png",
+      "driveId": "1cv70Q7ebAxI_7PQGZa-Wx91WfzvmV6gc"
+    },
+    {
+      "id": "008",
+      "titulo": "Fighter_EP-08",
+      "thumb": "https://1.bp.blogspot.com/-SwCgYxjjpHM/YYQ2ZkXO-RI/AAAAAAAACcg/wulUcIaiJBY2GlJKb4f6a5o5KkdMuuT5QCLcBGAsYHQ/s0/1B-Fighter.png",
+      "driveId": "1YdKhlGRfYhxw2DGEvaRQMez7mOm1SEss"
+    },
+    {
+      "id": "009",
+      "titulo": "Fighter_EP-09",
+      "thumb": "https://1.bp.blogspot.com/-SwCgYxjjpHM/YYQ2ZkXO-RI/AAAAAAAACcg/wulUcIaiJBY2GlJKb4f6a5o5KkdMuuT5QCLcBGAsYHQ/s0/1B-Fighter.png",
+      "driveId": "1RiFSfhdVZCle2sA8K80ZsD5P9oBB2M5D"
+    },
+    {
+      "id": "010",
+      "titulo": "Fighter_EP-10",
+      "thumb": "https://1.bp.blogspot.com/-SwCgYxjjpHM/YYQ2ZkXO-RI/AAAAAAAACcg/wulUcIaiJBY2GlJKb4f6a5o5KkdMuuT5QCLcBGAsYHQ/s0/1B-Fighter.png",
+      "driveId": "1BU3oMJPdztLLN2mCYu8pHg_HZ9HmOY_f"
+    },
+    {
+      "id": "011",
+      "titulo": "Fighter_EP-11",
+      "thumb": "https://1.bp.blogspot.com/-SwCgYxjjpHM/YYQ2ZkXO-RI/AAAAAAAACcg/wulUcIaiJBY2GlJKb4f6a5o5KkdMuuT5QCLcBGAsYHQ/s0/1B-Fighter.png",
+      "driveId": "1oKi2VVgsvJcNClxyWYXmwKz1PiJn3Xds"
+    },
+    {
+      "id": "012",
+      "titulo": "Fighter_EP-12",
+      "thumb": "https://1.bp.blogspot.com/-SwCgYxjjpHM/YYQ2ZkXO-RI/AAAAAAAACcg/wulUcIaiJBY2GlJKb4f6a5o5KkdMuuT5QCLcBGAsYHQ/s0/1B-Fighter.png",
+      "driveId": "1hpupXlV0Ug0LTQETZpVfBwCQhJcIrXDg"
+    },
+    {
+      "id": "013",
+      "titulo": "Fighter_EP-13",
+      "thumb": "https://1.bp.blogspot.com/-SwCgYxjjpHM/YYQ2ZkXO-RI/AAAAAAAACcg/wulUcIaiJBY2GlJKb4f6a5o5KkdMuuT5QCLcBGAsYHQ/s0/1B-Fighter.png",
+      "driveId": "1m30PJzhh3r-zEHbsJYjfY8B5-dppDp3T"
+    },
+    {
+      "id": "014",
+      "titulo": "Fighter_EP-14",
+      "thumb": "https://1.bp.blogspot.com/-SwCgYxjjpHM/YYQ2ZkXO-RI/AAAAAAAACcg/wulUcIaiJBY2GlJKb4f6a5o5KkdMuuT5QCLcBGAsYHQ/s0/1B-Fighter.png",
+      "driveId": "1klOxuPKlzxo1w53g_J68JbWhxL2385Oz"
+    },
+    {
+      "id": "015",
+      "titulo": "Fighter_EP-15",
+      "thumb": "https://1.bp.blogspot.com/-SwCgYxjjpHM/YYQ2ZkXO-RI/AAAAAAAACcg/wulUcIaiJBY2GlJKb4f6a5o5KkdMuuT5QCLcBGAsYHQ/s0/1B-Fighter.png",
+      "driveId": "1__jWdSojRjLCqqNj124SQ44mYtyouLgR"
+    },
+    {
+      "id": "016",
+      "titulo": "Fighter_EP-16",
+      "thumb": "https://1.bp.blogspot.com/-SwCgYxjjpHM/YYQ2ZkXO-RI/AAAAAAAACcg/wulUcIaiJBY2GlJKb4f6a5o5KkdMuuT5QCLcBGAsYHQ/s0/1B-Fighter.png",
+      "driveId": "185V_JjVjT_X4O4iubE7sgIoAzDre68cB"
+    },
+    {
+      "id": "017",
+      "titulo": "Fighter_EP-17",
+      "thumb": "https://1.bp.blogspot.com/-SwCgYxjjpHM/YYQ2ZkXO-RI/AAAAAAAACcg/wulUcIaiJBY2GlJKb4f6a5o5KkdMuuT5QCLcBGAsYHQ/s0/1B-Fighter.png",
+      "driveId": "1rVvHfiLHRpkeA6oWlLEX_pKoTQgE4raf"
+    },
+    {
+      "id": "018",
+      "titulo": "Fighter_EP-18",
+      "thumb": "https://1.bp.blogspot.com/-SwCgYxjjpHM/YYQ2ZkXO-RI/AAAAAAAACcg/wulUcIaiJBY2GlJKb4f6a5o5KkdMuuT5QCLcBGAsYHQ/s0/1B-Fighter.png",
+      "driveId": "1uE1XE8lh-dr7L3M7q9VsfpHnWYmM6dc4"
+    },
+    {
+      "id": "019",
+      "titulo": "Fighter_EP-19",
+      "thumb": "https://1.bp.blogspot.com/-SwCgYxjjpHM/YYQ2ZkXO-RI/AAAAAAAACcg/wulUcIaiJBY2GlJKb4f6a5o5KkdMuuT5QCLcBGAsYHQ/s0/1B-Fighter.png",
+      "driveId": "1Zmcs5jhKYT14BktR0IkSJfKm30SrnrxC"
+    },
+    {
+      "id": "020",
+      "titulo": "Fighter_EP-20",
+      "thumb": "https://1.bp.blogspot.com/-SwCgYxjjpHM/YYQ2ZkXO-RI/AAAAAAAACcg/wulUcIaiJBY2GlJKb4f6a5o5KkdMuuT5QCLcBGAsYHQ/s0/1B-Fighter.png",
+      "driveId": "12l1g-3OWNRMHkouACGVtHRIVwcv_LdHr"
+    },
+    {
+      "id": "021",
+      "titulo": "Fighter_EP-21",
+      "thumb": "https://1.bp.blogspot.com/-SwCgYxjjpHM/YYQ2ZkXO-RI/AAAAAAAACcg/wulUcIaiJBY2GlJKb4f6a5o5KkdMuuT5QCLcBGAsYHQ/s0/1B-Fighter.png",
+      "driveId": "1x-wb5i9aXNvoRvW0RyAvOQ5to4L4KI3b"
+    }
+  ]
+}
