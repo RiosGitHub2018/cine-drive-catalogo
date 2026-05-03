@@ -1,0 +1,312 @@
+{
+  "nome": "Junperson",
+  "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+  "episodios": [
+    {
+      "id": "001",
+      "titulo": "O Misterioso Novo Herói",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1g9E-nfyicq5N5jo7O5F-k6hyjGpKLVvi"
+    },
+    {
+      "id": "002",
+      "titulo": "Eu sou Justiça!",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1zhQ4czBfJYm8zOrABwJSTTMEd_lwQRMq"
+    },
+    {
+      "id": "003",
+      "titulo": "Chegam os Caçadores de Robôs!",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1cbzQPf7wuThIDueos2TUn-C0nU7TTjo0"
+    },
+    {
+      "id": "004",
+      "titulo": "O exército mais forte mostra suas presas",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1EYAywjakfQLQzdQP_uC0QABI28Y1Bjwt"
+    },
+    {
+      "id": "005",
+      "titulo": "Voe para dentro do meu coração",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1sn-hRd7uvNkvoKM4lBW-Z0Cn1nQzymGP"
+    },
+    {
+      "id": "006",
+      "titulo": "O Homem de Gelo Errante",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1_ob6aaCntmmHVbUs4AOUjeB3XskGrqGT"
+    },
+    {
+      "id": "007",
+      "titulo": "Eu sou uma garota?",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1ZZqfLZR5bo5ZT_sGfLcs_Wzo-p-vPRLO"
+    },
+    {
+      "id": "008",
+      "titulo": "Eis o rosto do novo herói!",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1fIJnbM9mP9qpXr4s6CLgY_hk4nfWEW3O"
+    },
+    {
+      "id": "009",
+      "titulo": "Meu pai é um monstro!",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1W0pfbUQTn2A9Q-3jebDYR89BpYeyNxjZ"
+    },
+    {
+      "id": "010",
+      "titulo": "Cuidado com o Deus da Sorte",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1GzxF1CfCaSa3Hfpb579SIRUs6Y1Xb11w"
+    },
+    {
+      "id": "011",
+      "titulo": "O Sorriso do Guerreiro Fraco",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "16u1C3_t7Pr8QXW9WJkU4m1xrPewJifNi"
+    },
+    {
+      "id": "012",
+      "titulo": "A Revolta dos Robôs Entregadores",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "13sCJBidTcqDRAs-ovox_6GJb9KoJ0NET"
+    },
+    {
+      "id": "013",
+      "titulo": "O Segredo de Janperson",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1o0pVaPGsBhWHUquicYO5gD42g3dd_qQI"
+    },
+    {
+      "id": "014",
+      "titulo": "A Amizade à Beira da Explosão",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1gSXSH87LepqgcG8SCQNSsITUiT7WcGIZ"
+    },
+    {
+      "id": "015",
+      "titulo": "O Anjo que Jogou Fora Suas Asas",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1IJKNL4NVb33KbKUiLyUS0xZW3yljRmi2"
+    },
+    {
+      "id": "016",
+      "titulo": "Mistério do Pássaro Dourado",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1fr73iseqWz7hWhMozftmLuGXgvppd-Wu"
+    },
+    {
+      "id": "017",
+      "titulo": "Primeira Abertura",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1smwWikY4tAUSVl_NeGZMbO1X2B-E30_9"
+    },
+    {
+      "id": "018",
+      "titulo": "A história secreta do nascimento de Janperson",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1EaBfX8esKHCZcpCn0JftBNSNVgBAlxZs"
+    },
+    {
+      "id": "019",
+      "titulo": "O Ladrão Misterioso",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1PfCbnUH1q9eeCz7ach1NCz7qHFx7pahD"
+    },
+    {
+      "id": "020",
+      "titulo": "Ninpo Deathmatch",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1kxQTmh0BHUVkaBf80rzbGCGI5cjVA9Tq"
+    },
+    {
+      "id": "021",
+      "titulo": "Desafio",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1iRIFi1BgsTcPeFDFvWKt9xa3qySqb449"
+    },
+    {
+      "id": "022",
+      "titulo": "Confronto! Janperson V.S. Gun Gibson",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "12UORYM3FgEqL7lfsfy5JfpgipyTzTmoy"
+    },
+    {
+      "id": "023",
+      "titulo": "Morrer pela Justiça",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "17y2brGdY4aHyBWfAAbrYejIiApahkTFR"
+    },
+    {
+      "id": "024",
+      "titulo": "O começo superior da história",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1fHLgKjYHTKPfuhqroM07A9zmuimFxaHy"
+    },
+    {
+      "id": "025",
+      "titulo": "Battle Of The Quickest Gun Fighters",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1YJMbRE2TP07iSrRPgPM2sh1ipI6iuzwu"
+    },
+    {
+      "id": "026",
+      "titulo": "uma feroz batalha de carros",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1R0VnpePZCDQbDojF9zM7gAnIzLQoYOYc"
+    },
+    {
+      "id": "027",
+      "titulo": "A verdadeira face de um grande líder",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1xDcGZPFwUlOl4nfu9i28Omjy9QFXGjrN"
+    },
+    {
+      "id": "028",
+      "titulo": "Árvore da Vida",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1tQT1pvspcxrfE9ASh8lsvJkRhd4GlFBJ"
+    },
+    {
+      "id": "029",
+      "titulo": "Death For The Androids",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "10esUDHNEOu3pwVdO27ZiEKA-QTO1TYWP"
+    },
+    {
+      "id": "030",
+      "titulo": "Ruptura",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1cBWHU2okToPNNTMVdBT7JYGJ4GtOu9-Q"
+    },
+    {
+      "id": "031",
+      "titulo": "O nascimento de um novo modelo Janperson?",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1khbKEj0QpmonkCnguqPpnPhBI6da9aJ5"
+    },
+    {
+      "id": "032",
+      "titulo": "O labirinto do qual não se pode escapar",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1Y_36Z7U53wmXq3AOVYq6E5omMXbo6dNV"
+    },
+    {
+      "id": "033",
+      "titulo": "Ardent Love Man Of Outer Space One",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1qs8EJoFept-NM7C520-XsyYRdLpxaUi7"
+    },
+    {
+      "id": "034",
+      "titulo": "Adeus nas lutas intensas",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1jeyZBBSQ-EHUtkMjl19I6sys4JT3NIw4"
+    },
+    {
+      "id": "035",
+      "titulo": "The Reckless Serafuku",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1qhLAyKL38VPThhlrToF3zKeyy7rHGpZF"
+    },
+    {
+      "id": "036",
+      "titulo": "Life It Does Shortly",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1W0iJcFDp4GXhTDNYHtqLRr_hz5vjx6bE"
+    },
+    {
+      "id": "037",
+      "titulo": "Justiça vs. Justiça Amor",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1xrq8bH9aVe_AEDlqlhNpVdMVDDOIKVBQ"
+    },
+    {
+      "id": "038",
+      "titulo": "Gun Gibson Scattered About",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1QaZ82GzbL2Avftx576SmfYYu3KxGBL8M"
+    },
+    {
+      "id": "039",
+      "titulo": "Linda Mulher Secretária do Inferno",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "150XndlO5D8hYSDQi1lo9z9Vv6Lbg2234"
+    },
+    {
+      "id": "040",
+      "titulo": "Base em perigo",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1v8D4KGjiCjteWaqtaUVaXNwfqTMXVmIF"
+    },
+    {
+      "id": "041",
+      "titulo": "Decisão Dead Sphere Of Thrust Trap",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1TUr3q8rYVfRNcw3oLspw3ZK39wTVy0Cx"
+    },
+    {
+      "id": "042",
+      "titulo": "No Calor da Batalha",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1xE9tEDGsKdv2kVQKtcXSAsSCJemzky5X"
+    },
+    {
+      "id": "043",
+      "titulo": "O Último Super Lutador",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1zwuFLhsXm8QeGiQVZxUWDAo2gHH73bHu"
+    },
+    {
+      "id": "044",
+      "titulo": "A Rainha Que Queima!",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1Bbo6-3I6sgEYj2zU65qdbBxDaEgL9Uw4"
+    },
+    {
+      "id": "045",
+      "titulo": "A Estrada para a Morte",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1e47Vo93Pipx3akpicnxm0zotvVyfRkPS"
+    },
+    {
+      "id": "046",
+      "titulo": "A Última Batalha da Guilda Neo!",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1IyxgXbpqQauJTCipLyiQaHfIV6VTAZez"
+    },
+    {
+      "id": "047",
+      "titulo": "Quebra-cabeça? Tempestade de Traição",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1LFzUvrMz_FRCn3iI9oyhhuzHm1G38pne"
+    },
+    {
+      "id": "048",
+      "titulo": "A Destruição da Base JP!",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1l5_SvPFMPb3T4guzSXSR9_S2J5byvDMf"
+    },
+    {
+      "id": "049",
+      "titulo": "Quando Gun Gibson se Apaga em Chamas",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1y0wDZC2zWuf-z8rCSJyHiwGbnNzhUAvY"
+    },
+    {
+      "id": "050",
+      "titulo": "Janperson para Sempre",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1wnAnn8LfmzToPImGEkvcgqVpPLi8w6B1"
+    },
+    {
+      "id": "051",
+      "titulo": "Epsodio Final",
+      "thumb": "https://3.bp.blogspot.com/-K4g2hRmGREE/XZ_TtwhGJpI/AAAAAAAACAk/JZu3KKNyK6g4zAMaB5sYwZrBHV5otJhIgCLcBGAsYHQ/s1600/junperson.jpg",
+      "driveId": "1R9JDaj4-x78bbuDDi9-yOISHYi58Y2aR"
+    }
+  ]
+}
