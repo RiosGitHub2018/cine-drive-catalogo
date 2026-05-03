@@ -58,5 +58,11 @@
     "arquivo": "tokusatsus/b-fighter.json",
     "thumb": "https://1.bp.blogspot.com/-SwCgYxjjpHM/YYQ2ZkXO-RI/AAAAAAAACcg/wulUcIaiJBY2GlJKb4f6a5o5KkdMuuT5QCLcBGAsYHQ/s0/1B-Fighter.png",
     "totalEpisodios": 21
+  },
+  {
+    "nome": "B-FighterKabuto",
+    "arquivo": "tokusatsus/b-fighterkabuto.json",
+    "thumb": "https://1.bp.blogspot.com/-nAIiLtkBqi8/YYQ2ZmxLCSI/AAAAAAAACcc/chjO-nULX3YR2o9AdJSpyb7YaTRxkLd2gCLcBGAsYHQ/s0/B-FighterKB.png",
+    "totalEpisodios": 15
   }
 ]
