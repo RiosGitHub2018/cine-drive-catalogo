@@ -1,281 +1,281 @@
 {
   "nome": "jaspion",
-  "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+  "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
   "episodios": [
     {
       "id": "001",
       "titulo": "O Planeta de Edin",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1V4mwI2kby56hrW3l9McxxieYt0t7WmND"
     },
     {
       "id": "002",
       "titulo": "O Triste Fim de Sakurá",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1Ii6Q4expEwmh-9KFe_ir-MkD3owwgP-S"
     },
     {
       "id": "003",
       "titulo": "O Sonho do Menino Galáctico",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1F3kKMazO9sI5VwVxEQNJZaQJaEDlhDNf"
     },
     {
       "id": "004",
       "titulo": "A Fúria do Pântano",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1RO00yAMODrv4_d10KMBfKVyMyUopcked"
     },
     {
       "id": "005",
       "titulo": "O Enigma da Flauta",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1TCoaZAziqiJ82GmLfr1VqmJHI_zCjtyW"
     },
     {
       "id": "006",
       "titulo": "Gordon em Busca da Mãe",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1-0nIy4i6jx1IiMLWp1lyflzU-f3scu4T"
     },
     {
       "id": "007",
       "titulo": "O Demônio da Montanha",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1hm0bSi0qA_1mX-7j3fLFQZpuK_tD9Th0"
     },
     {
       "id": "008",
       "titulo": "O Casal Fugitivo",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1PRF6cXPxwcvhj_JHBwx9ab2PnyuFKJrA"
     },
     {
       "id": "009",
       "titulo": "A História de uma Árvore",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "19MQNfd3qxSOyFm05iVi6PooABGTK6L9K"
     },
     {
       "id": "010",
       "titulo": "O Ataque do Pirossauro",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1b90t7MKro3vyv8RcATpu5Z_3I84UVWJo"
     },
     {
       "id": "011",
       "titulo": "Perigo em Tsukuba",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1tp5KxiC1yzgpw1KzB2-Uk-Oa7m4lW7hc"
     },
     {
       "id": "012",
       "titulo": "A Profecia",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1Fs3zsCoiyAQ0H0AOt2_-3JF6SvzpTvA5"
     },
     {
       "id": "013",
       "titulo": "A Investida dos Aliados Espaciais",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1VMYl6HBr5lyeGiCfWzH9aflpkQ5SAeZi"
     },
     {
       "id": "014",
       "titulo": "Perigo na Lagoa dos Noivos",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1ge3N8gP7XUtXTp-l_6jcYjNruxVQUvzR"
     },
     {
       "id": "015",
       "titulo": "Sonho ou Ilusão? A Imagem Dourada",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1AKOdBdqMGbAqHoXzGiin0Hs2e06xngog"
     },
     {
       "id": "016",
       "titulo": "Qual o Destino da Humanidade?",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1tp6aaFQckKfz1GxVrXjNamxWR0M5DD-2"
     },
     {
       "id": "017",
       "titulo": "O Mistério do Pássaro Dourado",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1PNvxTpP3WLlnfHCeUrJ_fybDkKxkvzFK"
     },
     {
       "id": "018",
       "titulo": "O Inimigo Imortal",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1_yN5-9tltZNUBZQsOZxH4bs0Fx7_YS37"
     },
     {
       "id": "019",
       "titulo": "Alerta no Oceano",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1AotCrQwr3oHGU3KIZFL4RBw1h4BOnz5M"
     },
     {
       "id": "020",
       "titulo": "A Última Chance",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1-DtkafQ_s3iXmRHf4mAYNw2Vy_f4mAL1"
     },
     {
       "id": "021",
       "titulo": "O Valente Garoto Jogador",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1cayVzr5dik8vZ-V4TEfDY3OB3HnGc2oH"
     },
     {
       "id": "022",
       "titulo": "O Feitiço de Titânia",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1hmdd2n30siCuysrR3P0gpD-2tRxr8n31"
     },
     {
       "id": "023",
       "titulo": "O Monstro do Século",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1_Ds_2EXuNA97B8Szyl5YhxJVA0Qt4Jo3"
     },
     {
       "id": "024",
       "titulo": "Ambição Perigosa",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1dxce-gu2A9TETP3uig30iaHYgTSLTg28"
     },
     {
       "id": "025",
       "titulo": "Tóquio em Perigo",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1r4ruMxbmZ3kxjDiy5HZ6g6gxoFHZT0PQ"
     },
     {
       "id": "026",
       "titulo": "O Contra-Ataque de Daileon",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "11efIoALFVA3xUVlLZ1ZI_u1OgnmsobQc"
     },
     {
       "id": "027",
       "titulo": "Juventude Ameaçadora",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "19ZaffUqy2fFdH2Fo0rA1NC_TUHzA6n-W"
     },
     {
       "id": "028",
       "titulo": "Dados Mortais do Monstro",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1Sunlk6fZe4yvoBvhZ4okLhbcf_CJoEHP"
     },
     {
       "id": "029",
       "titulo": "A Morte de MacGaren",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1RxdB7_44d6vQ2KYtnQJHA1T5BH_MA8LG"
     },
     {
       "id": "030",
       "titulo": "O Pânico do Balão",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1xXsX-x4HxGnwNaA4tOYBvpDJP6Sh6DXq"
     },
     {
       "id": "031",
       "titulo": "Golpe na TV",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1WMXEYAdVrtvF3LkjF8wvcWCTAz6KoEx4"
     },
     {
       "id": "032",
       "titulo": "A Conspiração do Robô",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "12JkOW9XCynA5NQH0oJAXMAY0P_LRWGH7"
     },
     {
       "id": "033",
       "titulo": "A Batalha da Magia Negra",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "169vw2wje2UU-kymxTJqSntC-lbHvVzQL"
     },
     {
       "id": "034",
       "titulo": "Fortaleza Indestrutível",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "13RGF5GnqFC-Kh2AltoG_d9YppZwCZcgb"
     },
     {
       "id": "035",
       "titulo": "A Descoberta do Pergaminho",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1Esfxhsr90XABD1h5-l6c9JDKJUMzfcfC"
     },
     {
       "id": "036",
       "titulo": "O Milagre das Novas Vidas",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1SFHjGUeiz279zIxGOg82AN7nJ0Xq2Aj9"
     },
     {
       "id": "037",
       "titulo": "O Cardápio Infernal",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "19vHBp31mmKSGZ0PL91SO4q8j8gvxIoCr"
     },
     {
       "id": "038",
       "titulo": "Trama Miraculosa",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "19vHBp31mmKSGZ0PL91SO4q8j8gvxIoCr"
     },
     {
       "id": "039",
       "titulo": "O Poderoso Beijo de Miyo",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "16xluWkPmGxeFoAZEzEFSL9R8qp2AiOEa"
     },
     {
       "id": "040",
       "titulo": "O Enigma do Meteoro",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1kcP-Dq3m5DS6QXMEnUpnThpVg4Y0Ypbe"
     },
     {
       "id": "041",
       "titulo": "O Atirador da Justiça",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1yXhNvHqdpkm_yifAIETLfaUu1aseERx7"
     },
     {
       "id": "042",
       "titulo": "A História de Pep e Hiroshi",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1EFqExFKUKvq8IV0ghL4-DZ0GJQR4o5D8"
     },
     {
       "id": "043",
       "titulo": "O Misterioso Mundo de Satan",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1yRj268sb9gnx3UlcSP53qK08mM9Uj3BM"
     },
     {
       "id": "044",
       "titulo": "Retorno Satânico",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1ca6p3Ss39_loHRKyYbwMFYWKahGmtG1w"
     },
     {
       "id": "045",
       "titulo": "Sou o Filho de Satan Goss",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "1JfbaShhOazH_2_zjQ47JDnez2a0si5wn"
     },
     {
       "id": "046",
       "titulo": "A União dos Povos da Via Láctea-Final",
-      "thumb": "https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg",
       "driveId": "183WC28hgIe9KZN17d1FruZ94J7LGDgT0"
     }
   ]
