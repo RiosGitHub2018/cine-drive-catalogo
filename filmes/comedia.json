@@ -31,6 +31,12 @@
       "titulo": "O  Pequenino",
       "thumb": "https://raw.githubusercontent.com/RiosGitHub2018/cine-drive-catalogo/refs/heads/main/Imagens/opequenino.jpg",
       "driveId": "0ByfEzfBLMGseS3k3OXFKN2drZlE"
+    },
+    {
+      "id": "006",
+      "titulo": "Esposa de mentirinha",
+      "thumb": "https://image.tmdb.org/t/p/w500/glC4pDnSieQ9NGU501rfVIqUCTB.jpg",
+      "driveId": "1--I4LM6zwHpQGkoooD29-MghhTDw6Gj-"
     }
   ]
 }
