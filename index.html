@@ -12,6 +12,7 @@
   --ouro: #f5c518;
   --roxo: #7c3aed;
   --verde: #22c55e;
+  --azul: #3b82f6;
   --fundo: #0d0d10;
   --painel: #13131a;
   --borda: #1e1e2e;
@@ -68,24 +69,29 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .btn-roxo:hover { background:#6d28d9; }
 .btn-verde { background:var(--verde); color:#000; font-weight:700; }
 .btn-verde:hover { background:#16a34a; color:#fff; }
+.btn-azul { background:var(--azul); color:#fff; font-weight:700; }
+.btn-azul:hover { background:#2563eb; }
 
 .layout { display:flex; flex:1; overflow:hidden; height:calc(100vh - 65px); }
 
 .sidebar { width:272px; min-width:272px; background:var(--painel); border-right:1px solid var(--borda); display:flex; flex-direction:column; height:100%; transition:background 0.3s,border-color 0.3s; }
 .sidebar-abas { display:flex; border-bottom:1px solid var(--borda); flex-shrink:0; }
-.sidebar-aba { flex:1; padding:11px 6px; text-align:center; font-size:11px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--suave); cursor:pointer; border-bottom:2px solid transparent; transition:all 0.2s; }
-.sidebar-aba.ativa { color:var(--texto); border-bottom-color:var(--vm); }
-.sidebar-aba.ativa.sub { border-bottom-color:var(--roxo); color:var(--roxo); }
+.sidebar-aba { flex:1; padding:11px 4px; text-align:center; font-size:10px; font-weight:600; letter-spacing:0.5px; text-transform:uppercase; color:var(--suave); cursor:pointer; border-bottom:2px solid transparent; transition:all 0.2s; }
+.sidebar-aba.ativa       { color:var(--texto);  border-bottom-color:var(--vm); }
+.sidebar-aba.ativa.sub   { color:var(--roxo);   border-bottom-color:var(--roxo); }
+.sidebar-aba.ativa.infor { color:var(--azul);   border-bottom-color:var(--azul); }
 .sidebar-top { padding:10px 14px; border-bottom:1px solid var(--borda); display:flex; align-items:center; justify-content:space-between; flex-shrink:0; }
 .sidebar-label { font-size:10px; letter-spacing:2px; color:var(--suave); text-transform:uppercase; }
 .badge-count { font-size:11px; font-weight:700; padding:2px 8px; border-radius:20px; }
-.badge-ouro { background:rgba(245,197,24,0.15); color:var(--ouro); }
-.badge-roxo { background:rgba(124,58,237,0.15); color:var(--roxo); }
+.badge-ouro  { background:rgba(245,197,24,0.15);  color:var(--ouro); }
+.badge-roxo  { background:rgba(124,58,237,0.15);  color:var(--roxo); }
+.badge-azul  { background:rgba(59,130,246,0.15);  color:var(--azul); }
 .lista-cats { flex:1; overflow-y:auto; padding:6px; }
 .cat-item { display:flex; align-items:center; gap:7px; padding:9px 11px; border-radius:7px; cursor:pointer; transition:background 0.15s; font-size:13px; font-weight:500; border-left:3px solid transparent; }
 .cat-item:hover { background:rgba(128,128,128,0.08); }
-.cat-item.ativa { background:rgba(229,9,20,0.1); border-left-color:var(--vm); }
-.cat-item.ativa.sub { background:rgba(124,58,237,0.1); border-left-color:var(--roxo); }
+.cat-item.ativa      { background:rgba(229,9,20,0.1);    border-left-color:var(--vm); }
+.cat-item.ativa.sub  { background:rgba(124,58,237,0.1);  border-left-color:var(--roxo); }
+.cat-item.ativa.infor{ background:rgba(59,130,246,0.1);  border-left-color:var(--azul); }
 .cat-nome { flex:1; font-size:13px; }
 .cat-tag { font-size:10px; padding:2px 6px; border-radius:20px; font-weight:700; background:rgba(124,58,237,0.15); color:var(--roxo); }
 .cat-count { font-size:11px; color:var(--suave); background:var(--entrada); padding:1px 6px; border-radius:20px; }
@@ -103,7 +109,6 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .breadcrumb b { color:var(--roxo); }
 .lista-filmes { display:flex; flex-direction:column; gap:8px; margin-bottom:16px; }
 
-/* CARD — coluna final é "auto" para acomodar os dois botões empilhados */
 .filme-card {
   background:var(--painel);
   border:1px solid var(--borda);
@@ -117,17 +122,40 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 }
 .filme-card:hover { border-color:rgba(229,9,20,0.2); }
 .filme-card.episodio:hover { border-color:rgba(124,58,237,0.2); }
+
+/* Card de Informações */
+.infor-card {
+  background:var(--painel);
+  border:1px solid var(--borda);
+  border-radius:10px;
+  padding:16px 20px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  transition:border-color 0.2s,background 0.3s;
+  position:relative;
+}
+.infor-card:hover { border-color:rgba(59,130,246,0.25); }
+.infor-card-header { display:flex; align-items:center; gap:10px; }
+.infor-card-num { font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--azul); min-width:28px; }
+.infor-card-titulo-val { font-size:14px; font-weight:600; color:var(--texto); flex:1; }
+.infor-card-body { display:grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap:12px; }
+.infor-card-sinopse { display:flex; flex-direction:column; gap:4px; }
+.infor-card-acoes { display:flex; justify-content:flex-end; }
+
 .filme-num { font-family:'Bebas Neue',sans-serif; font-size:24px; color:var(--suave); text-align:center; line-height:1; padding-bottom:4px; }
 .campo { display:flex; flex-direction:column; gap:3px; }
 .campo label { font-size:10px; color:var(--suave); letter-spacing:1.5px; text-transform:uppercase; }
 .campo input { background:var(--entrada); border:1px solid var(--borda); border-radius:6px; padding:7px 10px; color:var(--texto); font-family:'DM Sans',sans-serif; font-size:13px; outline:none; transition:border-color 0.2s,background 0.3s,color 0.3s; width:100%; }
 .campo input:focus { border-color:var(--vm); }
+.campo input.azul:focus { border-color:var(--azul); }
 .campo input::placeholder { color:var(--suave); font-size:11px; }
+.campo textarea { background:var(--entrada); border:1px solid var(--borda); border-radius:6px; padding:8px 10px; color:var(--texto); font-family:'DM Sans',sans-serif; font-size:13px; outline:none; transition:border-color 0.2s,background 0.3s,color 0.3s; width:100%; resize:vertical; min-height:90px; line-height:1.5; }
+.campo textarea:focus { border-color:var(--azul); }
+.campo textarea::placeholder { color:var(--suave); font-size:11px; }
 
-/* Coluna de ações: botão F e X lado a lado */
 .card-acoes { display:flex; flex-direction:row; gap:4px; align-items:flex-end; padding-bottom:1px; }
 
-/* Botão F — filtrar/extrair Drive ID */
 .btn-filtrar-id {
   background: rgba(245,197,24,0.12);
   border: 1px solid rgba(245,197,24,0.4);
@@ -150,12 +178,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .btn-filtrar-id:active { transform: scale(0.95); }
 .btn-filtrar-id.ok  { background: rgba(34,197,94,0.18);  border-color: var(--verde); color: var(--verde); }
 .btn-filtrar-id.err { background: rgba(229,9,20,0.15);   border-color: var(--vm);    color: var(--vm); }
-
-.btn-filtrar-id.btn-filtrar-thumb {
-  background: rgba(124,58,237,0.12);
-  border-color: rgba(124,58,237,0.4);
-  color: var(--roxo);
-}
+.btn-filtrar-id.btn-filtrar-thumb { background: rgba(124,58,237,0.12); border-color: rgba(124,58,237,0.4); color: var(--roxo); }
 .btn-filtrar-id.btn-filtrar-thumb:hover { background: rgba(124,58,237,0.26); border-color: var(--roxo); }
 
 .btn-del-filme {
@@ -184,10 +207,12 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .modal-titulo { font-family:'Bebas Neue',sans-serif; font-size:24px; letter-spacing:2px; }
 .modal-titulo.roxo { background:linear-gradient(135deg,var(--roxo),#a78bfa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .modal-titulo.vm { background:linear-gradient(135deg,var(--vm),var(--ouro)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.modal-titulo.azul { background:linear-gradient(135deg,var(--azul),#60a5fa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .modal-desc { font-size:13px; color:var(--suave); margin-top:-8px; }
 .modal-input { background:var(--entrada); border:2px solid var(--borda); border-radius:9px; padding:12px 15px; color:var(--texto); font-family:'DM Sans',sans-serif; font-size:14px; outline:none; transition:border-color 0.2s,background 0.3s,color 0.3s; width:100%; }
 .modal-input:focus { border-color:var(--vm); }
 .modal-input.roxo:focus { border-color:var(--roxo); }
+.modal-input.azul:focus { border-color:var(--azul); }
 .modal-input::placeholder { color:var(--suave); }
 .modal-select { background:var(--entrada); border:2px solid var(--borda); border-radius:9px; padding:12px 15px; color:var(--texto); font-family:'DM Sans',sans-serif; font-size:14px; outline:none; width:100%; cursor:pointer; transition:background 0.3s,color 0.3s,border-color 0.2s; }
 .modal-select:focus { border-color:var(--roxo); }
@@ -224,6 +249,14 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .zip-preview { font-size:12px; color:var(--suave); padding:6px 0 2px; display:flex; align-items:center; gap:6px; }
 .zip-preview b { color:var(--texto); }
 
+.github-campo { display:flex; flex-direction:column; gap:4px; }
+.github-campo label { font-size:10px; color:var(--suave); letter-spacing:1.5px; text-transform:uppercase; }
+.github-status-dot { width:8px; height:8px; border-radius:50%; display:inline-block; margin-right:6px; }
+.github-status-dot.ok  { background:var(--verde); }
+.github-status-dot.err { background:var(--vm); }
+.progress-bar { height:4px; background:var(--borda); border-radius:2px; overflow:hidden; margin-top:4px; }
+.progress-fill { height:100%; background:var(--azul); border-radius:2px; transition:width 0.3s; width:0%; }
+
 ::-webkit-scrollbar { width:4px; }
 ::-webkit-scrollbar-track { background:transparent; }
 ::-webkit-scrollbar-thumb { background:var(--borda); border-radius:2px; }
@@ -245,16 +278,22 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
     <span class="tema-label" id="tema-label">Dark</span>
   </div>
   <div id="arquivo-info" style="color:var(--suave);font-size:12px;margin-left:auto;">Nenhum arquivo carregado</div>
-  <label class="btn btn-sec" for="input-arquivo">&#128194; Abrir index.json</label>
+  <div id="github-status" style="font-size:12px;padding:5px 12px;border-radius:6px;background:rgba(34,197,94,0.1);color:var(--verde);border:1px solid rgba(34,197,94,0.3);display:none;">✅ GitHub conectado</div>
+  <button class="btn btn-sec" onclick="abrirModalGithub()" title="Configurar GitHub">⚙️ GitHub</button>
+  <button class="btn btn-azul" id="btn-carregar-github" onclick="carregarDoGithub()" style="display:none;">☁️ Carregar</button>
+  <label class="btn btn-sec" for="input-arquivo">&#128194; Abrir JSON local</label>
   <input type="file" id="input-arquivo" accept=".json" style="display:none">
 </header>
 
 <div class="layout">
   <aside class="sidebar">
     <div class="sidebar-abas">
-      <div class="sidebar-aba ativa" id="aba-cat" onclick="mudarAba('cat')">Categorias</div>
-      <div class="sidebar-aba" id="aba-sub" onclick="mudarAba('sub')">Subcategorias</div>
+      <div class="sidebar-aba ativa"  id="aba-cat"   onclick="mudarAba('cat')">Categorias</div>
+      <div class="sidebar-aba"        id="aba-sub"   onclick="mudarAba('sub')">Subcategorias</div>
+      <div class="sidebar-aba"        id="aba-infor" onclick="mudarAba('infor')">Informações</div>
     </div>
+
+    <!-- PAINEL CATEGORIAS -->
     <div id="painel-cat" style="display:flex;flex-direction:column;flex:1;overflow:hidden;">
       <div class="sidebar-top">
         <span class="sidebar-label">Categorias</span>
@@ -265,6 +304,8 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
         <button class="btn btn-vm" style="width:100%;padding:10px;justify-content:center;" onclick="abrirModalCat()">+ Nova Categoria</button>
       </div>
     </div>
+
+    <!-- PAINEL SUBCATEGORIAS -->
     <div id="painel-sub" style="display:none;flex-direction:column;flex:1;overflow:hidden;">
       <div class="sidebar-top">
         <span class="sidebar-label">Subcategorias</span>
@@ -273,6 +314,18 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
       <div class="lista-cats" id="lista-subs"></div>
       <div class="sidebar-footer">
         <button class="btn btn-roxo" style="width:100%;padding:10px;justify-content:center;" onclick="abrirModalSub()">+ Nova Subcategoria</button>
+      </div>
+    </div>
+
+    <!-- PAINEL INFORMAÇÕES -->
+    <div id="painel-infor" style="display:none;flex-direction:column;flex:1;overflow:hidden;">
+      <div class="sidebar-top">
+        <span class="sidebar-label">Informações</span>
+        <span class="badge-count badge-azul" id="total-infor">0</span>
+      </div>
+      <div class="lista-cats" id="lista-infor"></div>
+      <div class="sidebar-footer">
+        <button class="btn btn-azul" style="width:100%;padding:10px;justify-content:center;" onclick="adicionarInfor()">+ Informações</button>
       </div>
     </div>
   </aside>
@@ -296,6 +349,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 
 <div class="toast" id="toast"></div>
 
+<!-- MODAL NOVA CATEGORIA -->
 <div class="modal-overlay" id="modal-cat" onclick="fecharModalFora(event,'modal-cat')">
   <div class="modal">
     <div class="modal-titulo vm">Nova Categoria</div>
@@ -318,6 +372,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
   </div>
 </div>
 
+<!-- MODAL NOVA SUBCATEGORIA -->
 <div class="modal-overlay" id="modal-sub" onclick="fecharModalFora(event,'modal-sub')">
   <div class="modal">
     <div class="modal-titulo roxo">Nova Subcategoria</div>
@@ -341,6 +396,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
   </div>
 </div>
 
+<!-- MODAL SALVAR -->
 <div class="modal-overlay" id="modal-salvar" onclick="fecharModalFora(event,'modal-salvar')">
   <div class="modal" style="width:580px;max-width:96vw;">
     <div class="modal-titulo vm">Salvar Catalogo</div>
@@ -369,8 +425,54 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
   </div>
 </div>
 
+<!-- MODAL GITHUB -->
+<div class="modal-overlay" id="modal-github" onclick="fecharModalFora(event,'modal-github')">
+  <div class="modal" style="width:520px;max-width:96vw;">
+    <div class="modal-titulo azul">⚙️ Configuração GitHub</div>
+    <div class="modal-desc">Configure sua conexão com o repositório. O token fica salvo apenas no seu navegador.</div>
+    <div class="github-campo">
+      <label>Token de acesso (Personal Access Token)</label>
+      <input class="modal-input azul" type="password" id="gh-token" placeholder="ghp_..." autocomplete="off">
+    </div>
+    <div class="github-campo">
+      <label>Usuário GitHub</label>
+      <input class="modal-input azul" type="text" id="gh-usuario" value="RiosGitHub2018">
+    </div>
+    <div class="github-campo">
+      <label>Repositório</label>
+      <input class="modal-input azul" type="text" id="gh-repo" value="cine-drive-catalogo">
+    </div>
+    <div class="github-campo">
+      <label>Branch</label>
+      <input class="modal-input azul" type="text" id="gh-branch" value="main">
+    </div>
+    <div id="gh-teste-status" style="font-size:13px;min-height:20px;"></div>
+    <div class="modal-botoes">
+      <button class="btn btn-sec" onclick="fecharModal('modal-github')">Cancelar</button>
+      <button class="btn btn-sec" onclick="testarConexaoGithub()">🔍 Testar conexão</button>
+      <button class="btn btn-azul" onclick="salvarConfigGithub()">💾 Salvar configuração</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL SALVAR GITHUB -->
+<div class="modal-overlay" id="modal-salvar-github" onclick="fecharModalFora(event,'modal-salvar-github')">
+  <div class="modal" style="width:540px;max-width:96vw;">
+    <div class="modal-titulo azul">☁️ Salvar no GitHub</div>
+    <div class="modal-desc">Os arquivos modificados serão enviados diretamente ao repositório.</div>
+    <div class="salvar-lista" id="salvar-lista-github"></div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+    <div id="gh-salvar-status" style="font-size:13px;min-height:20px;margin-top:4px;"></div>
+    <div class="modal-botoes">
+      <button class="btn btn-sec" onclick="fecharModal('modal-salvar-github')">Cancelar</button>
+      <button class="btn btn-verde" id="btn-confirmar-push" onclick="confirmarPushGithub()">🚀 Enviar para GitHub</button>
+    </div>
+  </div>
+</div>
+
 <script>
 var catalogo = [];
+var informacoes = []; // Array de objetos: { video, ano, generos, nota, sinopse }
 var abaAtiva = 'cat';
 var catAtiva = -1;
 var subAtiva = -1;
@@ -388,26 +490,17 @@ var modoZip  = 'todos';
 
 function alternarTema(ligado) {
   if (ligado) { document.body.classList.add('tema-claro'); localStorage.setItem('cine-drive-tema','claro'); document.getElementById('tema-label').textContent='Light'; }
-  else         { document.body.classList.remove('tema-claro'); localStorage.setItem('cine-drive-tema','escuro'); document.getElementById('tema-label').textContent='Dark'; }
+  else { document.body.classList.remove('tema-claro'); localStorage.setItem('cine-drive-tema','escuro'); document.getElementById('tema-label').textContent='Dark'; }
 }
 
 // ===== EXTRAIR DRIVE ID =====
-// Formatos suportados:
-//   /file/d/ID/view            → drive.google.com/file/d/ID/view[?usp=...]
-//   /file/d/ID/edit            → docs.google.com/file/d/ID/edit
-//   ?id=ID  /  &id=ID          → /open?id=  /uc?id=  /uc?export=download&id=
-//   /folders/ID                → drive.google.com/drive/folders/ID
-//   valor puro sem http        → já é o ID, devolve como está
 function extrairDriveId(valor) {
   if (!valor) return null;
   var v = valor.trim();
   if (!v) return null;
-  // Já é só um ID (sem barra nem protocolo)
   if (!/https?:\/\//.test(v) && /^[a-zA-Z0-9_-]{15,}$/.test(v)) return v;
-  // Padrão /d/ID  ou  /folders/ID
   var m = v.match(/\/(?:d|folders)\/([a-zA-Z0-9_-]{15,})/);
   if (m) return m[1];
-  // Padrão ?id=ID  ou  &id=ID
   m = v.match(/[?&]id=([a-zA-Z0-9_-]{15,})/);
   if (m) return m[1];
   return null;
@@ -418,32 +511,22 @@ function filtrarId(btn, inputEl) {
   if (id && id !== inputEl.value.trim()) {
     inputEl.value = id;
     inputEl.dispatchEvent(new Event('input', { bubbles: true }));
-    btn.textContent = '✓';
-    btn.classList.add('ok');
+    btn.textContent = '✓'; btn.classList.add('ok');
     setTimeout(function(){ btn.textContent = 'F'; btn.classList.remove('ok'); }, 1400);
   } else if (id) {
-    // Valor já era o ID puro — pisca verde mesmo assim para confirmar
-    btn.textContent = '✓';
-    btn.classList.add('ok');
+    btn.textContent = '✓'; btn.classList.add('ok');
     setTimeout(function(){ btn.textContent = 'F'; btn.classList.remove('ok'); }, 1000);
   } else {
-    btn.textContent = '!';
-    btn.classList.add('err');
+    btn.textContent = '!'; btn.classList.add('err');
     setTimeout(function(){ btn.textContent = 'F'; btn.classList.remove('err'); }, 1400);
     toast('Nenhum ID do Drive encontrado na URL', 'erro');
   }
 }
 
-// ===== NORMALIZAR URL DO TMDB =====
-// Extrai o nome do arquivo de qualquer URL do TMDB e remonta com domínio oficial w500
-// Entrada:  https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg
-// Saída:    https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg
-// Também aceita URLs já corretas (image.tmdb.org) — normaliza o tamanho para w500
 function normalizarUrlTmdb(valor) {
   if (!valor) return null;
   var v = valor.trim();
   if (!v) return null;
-  // Extrai o nome do arquivo — último segmento do path com extensão de imagem
   var m = v.match(/\/([^\/]+\.(jpg|jpeg|png|webp))(\?.*)?$/i);
   if (!m) return null;
   return 'https://image.tmdb.org/t/p/w500/' + m[1];
@@ -454,12 +537,10 @@ function filtrarThumb(btn, inputEl) {
   if (url) {
     inputEl.value = url;
     inputEl.dispatchEvent(new Event('input', { bubbles: true }));
-    btn.textContent = '✓';
-    btn.classList.add('ok');
+    btn.textContent = '✓'; btn.classList.add('ok');
     setTimeout(function(){ btn.textContent = 'F'; btn.classList.remove('ok'); }, 1400);
   } else {
-    btn.textContent = '!';
-    btn.classList.add('err');
+    btn.textContent = '!'; btn.classList.add('err');
     setTimeout(function(){ btn.textContent = 'F'; btn.classList.remove('err'); }, 1400);
     toast('Nenhuma URL de imagem TMDB reconhecida', 'erro');
   }
@@ -494,7 +575,7 @@ function atualizarListaSalvar() {
   }
   var preview = document.getElementById('zip-preview');
   preview.innerHTML = modoZip === 'editados'
-    ? '<b>'+incluidos+'</b> de <b>'+arquivos.length+'</b> arquivo(s) serao incluidos &mdash; os demais serao preservados no GitHub.'
+    ? '<b>'+incluidos+'</b> de <b>'+arquivos.length+'</b> arquivo(s) serao incluidos.'
     : '<b>'+incluidos+'</b> arquivo(s) serao incluidos no ZIP.';
 }
 
@@ -536,15 +617,21 @@ function slugify(str) {
     .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
 }
 
+// ===== ABAS =====
 function mudarAba(aba) {
   abaAtiva = aba;
-  document.getElementById('aba-cat').className = 'sidebar-aba'+(aba==='cat'?' ativa':'');
-  document.getElementById('aba-sub').className = 'sidebar-aba'+(aba==='sub'?' ativa sub':'');
-  document.getElementById('painel-cat').style.display = aba==='cat'?'flex':'none';
-  document.getElementById('painel-sub').style.display = aba==='sub'?'flex':'none';
-  if (aba==='sub') { subAtiva=-1; renderSubsSidebar(); renderConteudoSubs(); } else renderConteudo();
+  document.getElementById('aba-cat').className   = 'sidebar-aba' + (aba==='cat'?'   ativa':'');
+  document.getElementById('aba-sub').className   = 'sidebar-aba' + (aba==='sub'?'   ativa sub':'');
+  document.getElementById('aba-infor').className = 'sidebar-aba' + (aba==='infor'?' ativa infor':'');
+  document.getElementById('painel-cat').style.display   = aba==='cat'?'flex':'none';
+  document.getElementById('painel-sub').style.display   = aba==='sub'?'flex':'none';
+  document.getElementById('painel-infor').style.display = aba==='infor'?'flex':'none';
+  if (aba==='sub')   { subAtiva=-1; renderSubsSidebar(); renderConteudoSubs(); }
+  else if (aba==='infor') { renderInforSidebar(); renderConteudoInfor(); }
+  else renderConteudo();
 }
 
+// ===== SIDEBAR CATEGORIAS =====
 function renderSidebar() {
   var lista = document.getElementById('lista-cats');
   lista.innerHTML = '';
@@ -568,6 +655,7 @@ function criarItemCat(i) {
   return item;
 }
 
+// ===== SIDEBAR SUBCATEGORIAS =====
 function renderSubsSidebar() {
   var lista = document.getElementById('lista-subs'); lista.innerHTML='';
   var todas = getTodasSubs();
@@ -597,6 +685,30 @@ function criarItemSub(gIdx, info) {
   return item;
 }
 
+// ===== SIDEBAR INFORMAÇÕES =====
+function renderInforSidebar() {
+  var lista = document.getElementById('lista-infor'); lista.innerHTML='';
+  document.getElementById('total-infor').textContent = informacoes.length;
+  for (var i=0;i<informacoes.length;i++) {
+    var item = document.createElement('div');
+    item.className = 'cat-item' + (abaAtiva==='infor'?' ativa infor':'');
+    var nome = document.createElement('span'); nome.className='cat-nome';
+    nome.textContent = informacoes[i].video || ('Informação '+(i+1));
+    var del = document.createElement('button'); del.className='btn-del-cat'; del.innerHTML='&#10005;';
+    del.dataset.idx = i;
+    del.addEventListener('click', (function(idx){
+      return function(e){ e.stopPropagation();
+        if(confirm('Remover informações de "'+( informacoes[idx].video||'item '+(idx+1))+'"?')){
+          informacoes.splice(idx,1); renderInforSidebar(); renderConteudoInfor(); toast('Removido!','sucesso');
+        }
+      };
+    })(i));
+    item.appendChild(nome); item.appendChild(del);
+    lista.appendChild(item);
+  }
+}
+
+// ===== CONTEUDO CATEGORIAS =====
 function renderConteudo() {
   var el=document.getElementById('conteudo');
   if (catAtiva<0||!catalogo[catAtiva]){ el.innerHTML='<div class="conteudo-vazio"><div class="ico">🎬</div><div style="font-size:16px;font-weight:600;">Selecione uma categoria</div></div>'; return; }
@@ -647,6 +759,7 @@ function adicionarFilme(){
   setTimeout(function(){var c=document.getElementById('conteudo');c.scrollTop=c.scrollHeight;},80);
 }
 
+// ===== CONTEUDO SUBCATEGORIAS =====
 function renderConteudoSubs(){
   var el=document.getElementById('conteudo');
   if(subAtiva<0){ el.innerHTML='<div class="conteudo-vazio"><div class="ico">📺</div><div style="font-size:16px;font-weight:600;">Selecione uma subcategoria</div></div>'; return; }
@@ -688,57 +801,201 @@ function adicionarEpisodio(){
   setTimeout(function(){var c=document.getElementById('conteudo');c.scrollTop=c.scrollHeight;},80);
 }
 
-// ===== CARD GENÉRICO =====
-function criarCard(idx, item, isEp, info) {
+// ===== CONTEUDO INFORMAÇÕES =====
+function renderConteudoInfor() {
+  var el = document.getElementById('conteudo');
+  el.innerHTML =
+    '<div class="secao-header">' +
+      '<div><div class="secao-titulo" style="color:var(--azul)">INFORMAÇÕES<span>' + informacoes.length + ' registros</span></div>' +
+      '<div style="font-size:11px;color:var(--suave);font-family:monospace;margin-top:2px;">infor.json</div></div>' +
+      (informacoes.length > 0 ?
+        '<label class="btn btn-sec" for="json-infor-r" style="cursor:pointer;border-color:var(--suave);color:var(--suave);font-size:12px;margin-left:auto;">&#128260; Recarregar JSON</label>' +
+        '<input type="file" id="json-infor-r" accept=".json" style="display:none" onchange="carregarJSONInfor(this)">'
+        :
+        '<label class="btn btn-sec" for="json-infor-c" style="cursor:pointer;border-color:var(--azul);color:var(--azul);margin-left:auto;">&#128194; Carregar infor.json</label>' +
+        '<input type="file" id="json-infor-c" accept=".json" style="display:none" onchange="carregarJSONInfor(this)">'
+      ) +
+    '</div>' +
+    '<div class="lista-filmes" id="lista-infor-cards"></div>' +
+    '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">' +
+      '<button class="btn btn-azul" onclick="adicionarInfor()">+ Adicionar</button>' +
+      '<label class="btn btn-ouro" for="csv-infor" style="cursor:pointer;">&#128229; Importar CSV</label>' +
+      '<input type="file" id="csv-infor" accept=".csv" style="display:none" onchange="importarCSVInfor(this)">' +
+    '</div>';
+  renderInforCards();
+}
+
+function renderInforCards() {
+  var lista = document.getElementById('lista-infor-cards'); if (!lista) return;
+  lista.innerHTML = '';
+  for (var i = 0; i < informacoes.length; i++) lista.appendChild(criarCardInfor(i));
+}
+
+function adicionarInfor() {
+  informacoes.push({ video:'', ano:'', generos:'', nota:'', sinopse:'' });
+  if (abaAtiva !== 'infor') mudarAba('infor');
+  else { renderInforSidebar(); renderConteudoInfor(); }
+  setTimeout(function(){ var c=document.getElementById('conteudo'); c.scrollTop=c.scrollHeight; }, 80);
+}
+
+function criarCardInfor(idx) {
+  var item = informacoes[idx];
   var card = document.createElement('div');
-  card.className = 'filme-card' + (isEp ? ' episodio' : '');
+  card.className = 'infor-card';
 
-  var numDiv = document.createElement('div');
-  numDiv.className = 'filme-num';
-  numDiv.textContent = idx + 1;
+  // Cabeçalho com número e título do vídeo
+  var header = document.createElement('div');
+  header.className = 'infor-card-header';
+  header.innerHTML = '<span class="infor-card-num">' + (idx+1) + '</span>' +
+    '<span class="infor-card-titulo-val" id="infor-titulo-val-'+idx+'">' + (item.video || '—') + '</span>';
 
-  var campoTitulo = criarCampoInput('Titulo', isEp ? 'Ep '+(idx+1)+' - Titulo' : 'Nome do filme', item.titulo, 'titulo', idx);
-  var campoThumb  = criarCampoInput('URL da Capa', 'https://... ou thumbs/capa.jpg', item.thumb, 'thumb', idx);
-  var campoDrive  = criarCampoInput('Drive ID', 'ID do Google Drive', item.driveId, 'driveId', idx);
-
-  // Botão F — Thumb (TMDB): coluna própria entre URL Capa e Drive ID
-  var btnFThumb = document.createElement('button');
-  btnFThumb.className = 'btn-filtrar-id btn-filtrar-thumb';
-  btnFThumb.textContent = 'F';
-  btnFThumb.title = 'Normalizar URL da capa para image.tmdb.org/t/p/w500/';
-  var inputThumb = campoThumb.querySelector('input');
-  btnFThumb.addEventListener('click', function(){ filtrarThumb(btnFThumb, inputThumb); });
-
-  // Coluna de ações finais: F-drive + X
-  var acoes = document.createElement('div');
-  acoes.className = 'card-acoes';
-
-  // Botão F — Drive ID
-  var btnF = document.createElement('button');
-  btnF.className = 'btn-filtrar-id';
-  btnF.textContent = 'F';
-  btnF.title = 'Extrair ID do Google Drive da URL colada no campo Drive ID';
-  var inputDrive = campoDrive.querySelector('input');
-  btnF.addEventListener('click', function(){ filtrarId(btnF, inputDrive); });
-
-  // Botão X
+  // Botão deletar no cabeçalho
   var btnDel = document.createElement('button');
   btnDel.className = 'btn-del-filme';
   btnDel.innerHTML = '&#10005;';
   btnDel.title = 'Remover';
+  btnDel.addEventListener('click', (function(i){
+    return function(){
+      if(confirm('Remover informações de "'+(informacoes[i].video||'item '+(i+1))+'"?')){
+        informacoes.splice(i,1); renderInforSidebar(); renderConteudoInfor(); toast('Removido!','sucesso');
+      }
+    };
+  })(idx));
+  header.appendChild(btnDel);
+  card.appendChild(header);
 
-  acoes.appendChild(btnF);
-  acoes.appendChild(btnDel);
+  // Campos linha 1: Video | Ano | Gêneros | Nota
+  var body = document.createElement('div');
+  body.className = 'infor-card-body';
 
-  // Ordem no grid: nº | título | url-capa | F-thumb | drive-id | F-drive+X
-  card.appendChild(numDiv);
-  card.appendChild(campoTitulo);
-  card.appendChild(campoThumb);
-  card.appendChild(btnFThumb);
-  card.appendChild(campoDrive);
-  card.appendChild(acoes);
+  var campos = [
+    { label:'Vídeo', campo:'video', placeholder:'Nome exato da série ou filme', tipo:'text' },
+    { label:'Ano', campo:'ano', placeholder:'Ex: 1982', tipo:'text' },
+    { label:'Gêneros', campo:'generos', placeholder:'Ex: Tokusatsu, Ação', tipo:'text' },
+    { label:'Nota', campo:'nota', placeholder:'Ex: 8.5', tipo:'text' }
+  ];
 
-  // Eventos de input
+  for (var c = 0; c < campos.length; c++) {
+    var def = campos[c];
+    var wrap = document.createElement('div'); wrap.className = 'campo';
+    var lbl = document.createElement('label'); lbl.textContent = def.label;
+    var inp = document.createElement('input');
+    inp.type = def.tipo; inp.placeholder = def.placeholder;
+    inp.value = item[def.campo] || '';
+    inp.className = 'azul';
+    inp.dataset.idx = idx; inp.dataset.campo = def.campo;
+    inp.addEventListener('input', (function(i, campo){
+      return function(){
+        informacoes[i][campo] = this.value;
+        if (campo === 'video') {
+          var tv = document.getElementById('infor-titulo-val-'+i);
+          var sl = document.getElementById('infor-sidebar-'+i);
+          if (tv) tv.textContent = this.value || '—';
+          if (sl) sl.textContent = this.value || ('Informação '+(i+1));
+        }
+      };
+    })(idx, def.campo));
+    wrap.appendChild(lbl); wrap.appendChild(inp);
+    body.appendChild(wrap);
+  }
+  card.appendChild(body);
+
+  // Campo Sinopse — textarea
+  var wrapSin = document.createElement('div'); wrapSin.className = 'campo infor-card-sinopse';
+  var lblSin = document.createElement('label'); lblSin.textContent = 'Sinopse';
+  var ta = document.createElement('textarea');
+  ta.placeholder = 'Descrição da série ou filme...';
+  ta.value = item.sinopse || '';
+  ta.dataset.idx = idx; ta.dataset.campo = 'sinopse';
+  ta.addEventListener('input', (function(i){
+    return function(){ informacoes[i].sinopse = this.value; };
+  })(idx));
+  wrapSin.appendChild(lblSin); wrapSin.appendChild(ta);
+  card.appendChild(wrapSin);
+
+  return card;
+}
+
+// ===== CARREGAR / IMPORTAR INFORMAÇÕES =====
+function carregarJSONInfor(input) {
+  var file = input.files[0]; if (!file) return;
+  var reader = new FileReader();
+  reader.onload = function(ev) {
+    try {
+      var data = JSON.parse(ev.target.result);
+      // Aceita array ou objeto chave->objeto
+      if (Array.isArray(data)) {
+        informacoes = data;
+      } else {
+        informacoes = [];
+        for (var k in data) {
+          var obj = data[k];
+          informacoes.push({
+            video: k,
+            ano: obj.ano || '',
+            generos: Array.isArray(obj.generos) ? obj.generos.join(', ') : (obj.generos || ''),
+            nota: obj.nota || '',
+            sinopse: obj.sinopse || ''
+          });
+        }
+      }
+      renderInforSidebar(); renderConteudoInfor();
+      toast(informacoes.length + ' informacoes carregadas!', 'sucesso');
+      input.value = '';
+    } catch(err) { toast('JSON invalido!', 'erro'); }
+  };
+  reader.readAsText(file, 'UTF-8');
+}
+
+function importarCSVInfor(input) {
+  var file = input.files[0]; if (!file) return;
+  var reader = new FileReader();
+  reader.onload = function(ev) {
+    var linhas = ev.target.result.trim().split('\n');
+    if (linhas.length < 2) { toast('CSV vazio!', 'erro'); return; }
+    var sep = linhas[0].indexOf(';') > -1 ? ';' : ',';
+    var headers = linhas[0].split(sep).map(function(h){ return h.trim().replace(/^\uFEFF/,'').toLowerCase(); });
+    function col(keys){ for(var k=0;k<keys.length;k++) for(var h=0;h<headers.length;h++) if(headers[h].indexOf(keys[k])>-1) return h; return -1; }
+    var iV=col(['video','nome','title']), iA=col(['ano','year']), iG=col(['genero','genre']), iN=col(['nota','rating','score']), iS=col(['sinopse','synopsis','descricao']);
+    var adicionados = 0;
+    for (var i = 1; i < linhas.length; i++) {
+      var cols = linhas[i].split(sep);
+      var obj = {
+        video:   iV>-1?(cols[iV]||'').trim():'',
+        ano:     iA>-1?(cols[iA]||'').trim():'',
+        generos: iG>-1?(cols[iG]||'').trim():'',
+        nota:    iN>-1?(cols[iN]||'').trim():'',
+        sinopse: iS>-1?(cols[iS]||'').trim():''
+      };
+      if (obj.video) { informacoes.push(obj); adicionados++; }
+    }
+    renderInforSidebar(); renderConteudoInfor();
+    toast(adicionados + ' informacoes importadas!', 'sucesso'); input.value = '';
+  };
+  reader.readAsText(file, 'UTF-8');
+}
+
+// ===== CARD GENÉRICO (filmes/episódios) =====
+function criarCard(idx, item, isEp, info) {
+  var card = document.createElement('div');
+  card.className = 'filme-card' + (isEp ? ' episodio' : '');
+  var numDiv = document.createElement('div'); numDiv.className = 'filme-num'; numDiv.textContent = idx + 1;
+  var campoTitulo = criarCampoInput('Titulo', isEp ? 'Ep '+(idx+1)+' - Titulo' : 'Nome do filme', item.titulo, 'titulo', idx);
+  var campoThumb  = criarCampoInput('URL da Capa', 'https://... ou thumbs/capa.jpg', item.thumb, 'thumb', idx);
+  var campoDrive  = criarCampoInput('Drive ID', 'ID do Google Drive', item.driveId, 'driveId', idx);
+  var btnFThumb = document.createElement('button');
+  btnFThumb.className = 'btn-filtrar-id btn-filtrar-thumb'; btnFThumb.textContent = 'F';
+  btnFThumb.title = 'Normalizar URL da capa para image.tmdb.org/t/p/w500/';
+  var inputThumb = campoThumb.querySelector('input');
+  btnFThumb.addEventListener('click', function(){ filtrarThumb(btnFThumb, inputThumb); });
+  var acoes = document.createElement('div'); acoes.className = 'card-acoes';
+  var btnF = document.createElement('button'); btnF.className = 'btn-filtrar-id'; btnF.textContent = 'F';
+  btnF.title = 'Extrair ID do Google Drive da URL';
+  var inputDrive = campoDrive.querySelector('input');
+  btnF.addEventListener('click', function(){ filtrarId(btnF, inputDrive); });
+  var btnDel = document.createElement('button'); btnDel.className = 'btn-del-filme'; btnDel.innerHTML = '&#10005;'; btnDel.title = 'Remover';
+  acoes.appendChild(btnF); acoes.appendChild(btnDel);
+  card.appendChild(numDiv); card.appendChild(campoTitulo); card.appendChild(campoThumb); card.appendChild(btnFThumb); card.appendChild(campoDrive); card.appendChild(acoes);
   var inputs = card.querySelectorAll('input');
   for (var j = 0; j < inputs.length; j++) {
     inputs[j].addEventListener('input', (function(isEpisodio, infoRef){
@@ -749,8 +1006,6 @@ function criarCard(idx, item, isEp, info) {
       };
     })(isEp, info));
   }
-
-  // Evento remover — usa dataset.idx do inputDrive para pegar o índice correto
   btnDel.addEventListener('click', (function(isEpisodio, infoRef){
     return function(){
       var i = parseInt(inputDrive.dataset.idx);
@@ -758,7 +1013,6 @@ function criarCard(idx, item, isEp, info) {
       else { catalogo[catAtiva].itens.splice(i,1); catalogo[catAtiva]._editado=true; renderConteudo(); }
     };
   })(isEp, info));
-
   return card;
 }
 
@@ -774,7 +1028,6 @@ function criarCampoInput(labelTxt, placeholder, valor, campo, idx) {
 
 // ===== MODAIS =====
 function abrirModalCat(){ document.getElementById('modal-cat').classList.add('aberto'); setTimeout(function(){document.getElementById('input-nome-cat').focus();},100); }
-
 function abrirModalSub(){
   var sel=document.getElementById('select-cat-pai'); sel.innerHTML=''; var temSeries=false;
   for(var i=0;i<catalogo.length;i++){ if(catalogo[i].tipo==='series'){ var opt=document.createElement('option'); opt.value=i; opt.textContent=catalogo[i].categoria; sel.appendChild(opt); temSeries=true; } }
@@ -782,15 +1035,12 @@ function abrirModalSub(){
   document.getElementById('modal-sub').classList.add('aberto');
   setTimeout(function(){document.getElementById('input-nome-sub').focus();},100);
 }
-
 function fecharModal(id){
   document.getElementById(id).classList.remove('aberto');
   if(id==='modal-cat') document.getElementById('input-nome-cat').value='';
   if(id==='modal-sub'){ document.getElementById('input-nome-sub').value=''; document.getElementById('input-thumb-sub').value=''; }
 }
-
 function fecharModalFora(e,id){ if(e.target===document.getElementById(id)) fecharModal(id); }
-
 function confirmarCat(){
   var input=document.getElementById('input-nome-cat'); var nome=input.value.trim(); var tipo=document.getElementById('select-tipo-cat').value;
   if(!nome){toast('Digite o nome!','erro');input.focus();return;}
@@ -800,7 +1050,6 @@ function confirmarCat(){
   catAtiva=catalogo.length-1; fecharModal('modal-cat'); renderSidebar(); renderConteudo();
   toast('Categoria "'+nome+'" criada!','sucesso');
 }
-
 function confirmarSub(){
   var catIdx=parseInt(document.getElementById('select-cat-pai').value);
   var nome=document.getElementById('input-nome-sub').value.trim();
@@ -813,7 +1062,6 @@ function confirmarSub(){
   renderSubsSidebar(); renderConteudoSubs();
   toast('Subcategoria "'+nome+'" criada!','sucesso');
 }
-
 document.addEventListener('keydown',function(e){
   if(e.key==='Escape'){fecharModal('modal-cat');fecharModal('modal-sub');fecharModal('modal-salvar');}
   if(e.key==='Enter'){ if(document.getElementById('modal-cat').classList.contains('aberto')) confirmarCat(); }
@@ -821,7 +1069,7 @@ document.addEventListener('keydown',function(e){
 
 // ===== MODAL SALVAR =====
 function abrirModalSalvar(){
-  if(catalogo.length===0){toast('Catalogo vazio!','erro');return;}
+  if(catalogo.length===0&&informacoes.length===0){toast('Nada para salvar!','erro');return;}
   selecionarModoZip('todos'); atualizarListaSalvar();
   document.getElementById('modal-salvar').classList.add('aberto');
 }
@@ -847,14 +1095,20 @@ function listarArquivosComStatus(){
       }
     }
   }
+  // infor.json
+  if (informacoes.length > 0) {
+    arquivos.push({path:'infor.json',icone:'ℹ️',tipo:'informacoes',editado:true,statusBadge:{cls:'badge-editado',label:'editado'}});
+  }
   return arquivos;
 }
 
 function gerarZip(){
   var zip=new JSZip();
+  // index.json
   var indiceSimples=[];
   for(var i=0;i<catalogo.length;i++) indiceSimples.push({categoria:catalogo[i].categoria,tipo:catalogo[i].tipo,arquivo:catalogo[i].arquivo});
   zip.file('index.json',JSON.stringify(indiceSimples,null,2));
+  // arquivos do catálogo
   for(var i=0;i<catalogo.length;i++){
     var cat=catalogo[i], catEditada=!!(cat._editado||cat._novo);
     if(cat.tipo==='filmes'){
@@ -868,6 +1122,21 @@ function gerarZip(){
         if(deveS){ var epsL=[]; for(var k=0;k<eps.length;k++) if(eps[k].titulo||eps[k].driveId) epsL.push({id:pad(k+1),titulo:eps[k].titulo||'',thumb:eps[k].thumb||'',driveId:eps[k].driveId||''}); zip.file(sub.arquivo,JSON.stringify({nome:sub.nome,thumb:sub.thumb||'',episodios:epsL},null,2)); }
       }
     }
+  }
+  // infor.json — salva como objeto chave->dados para fácil lookup no app
+  if (informacoes.length > 0) {
+    var inforObj = {};
+    for (var i = 0; i < informacoes.length; i++) {
+      var inf = informacoes[i];
+      if (!inf.video) continue;
+      inforObj[inf.video] = {
+        ano:     inf.ano     || '',
+        generos: inf.generos ? inf.generos.split(',').map(function(g){return g.trim();}).filter(Boolean) : [],
+        nota:    inf.nota    || '',
+        sinopse: inf.sinopse || ''
+      };
+    }
+    zip.file('infor.json', JSON.stringify(inforObj, null, 2));
   }
   zip.generateAsync({type:'blob'}).then(function(content){
     var url=URL.createObjectURL(content), a=document.createElement('a');
@@ -969,13 +1238,12 @@ function importarCSVEpisodios(input){
 }
 
 function verJson(){
-  var json=JSON.stringify(catalogo,null,2);
+  var obj = { catalogo: catalogo, informacoes: informacoes };
   var w=window.open('','_blank');
-  w.document.write('<pre style="background:#0d0d10;color:#f0f0f5;padding:20px;font-size:13px;font-family:monospace;white-space:pre-wrap;">'+json+'</pre>');
+  w.document.write('<pre style="background:#0d0d10;color:#f0f0f5;padding:20px;font-size:13px;font-family:monospace;white-space:pre-wrap;">'+JSON.stringify(obj,null,2)+'</pre>');
 }
 
 function pad(n){return String(n).padStart(3,'0');}
-function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;');}
 function setStatus(msg,tipo){var el=document.getElementById('status');el.textContent=msg;el.className='status '+(tipo||'');}
 function toast(msg,tipo){
   var el=document.getElementById('toast');
@@ -983,6 +1251,251 @@ function toast(msg,tipo){
   el.classList.add('show'); clearTimeout(window._tt);
   window._tt=setTimeout(function(){el.classList.remove('show');},3000);
 }
+
+// ===== GITHUB API =====
+var _ghShas = {};
+
+function ghConfig() {
+  return {
+    token:   localStorage.getItem('gh_token')   || '',
+    usuario: localStorage.getItem('gh_usuario') || 'RiosGitHub2018',
+    repo:    localStorage.getItem('gh_repo')    || 'cine-drive-catalogo',
+    branch:  localStorage.getItem('gh_branch')  || 'main'
+  };
+}
+
+function abrirModalGithub() {
+  var cfg = ghConfig();
+  document.getElementById('gh-token').value   = cfg.token;
+  document.getElementById('gh-usuario').value = cfg.usuario;
+  document.getElementById('gh-repo').value    = cfg.repo;
+  document.getElementById('gh-branch').value  = cfg.branch;
+  document.getElementById('gh-teste-status').innerHTML = '';
+  document.getElementById('modal-github').classList.add('aberto');
+}
+
+function salvarConfigGithub() {
+  var token   = document.getElementById('gh-token').value.trim();
+  var usuario = document.getElementById('gh-usuario').value.trim();
+  var repo    = document.getElementById('gh-repo').value.trim();
+  var branch  = document.getElementById('gh-branch').value.trim();
+  if (!token) { toast('Cole o token!', 'erro'); return; }
+  localStorage.setItem('gh_token',   token);
+  localStorage.setItem('gh_usuario', usuario);
+  localStorage.setItem('gh_repo',    repo);
+  localStorage.setItem('gh_branch',  branch);
+  fecharModal('modal-github');
+  atualizarStatusGithub();
+  toast('Configuração salva!', 'sucesso');
+}
+
+function atualizarStatusGithub() {
+  var cfg = ghConfig();
+  var statusEl    = document.getElementById('github-status');
+  var btnCarregar = document.getElementById('btn-carregar-github');
+  if (cfg.token) {
+    statusEl.style.display    = 'block';
+    btnCarregar.style.display = 'inline-flex';
+  } else {
+    statusEl.style.display    = 'none';
+    btnCarregar.style.display = 'none';
+  }
+}
+
+async function testarConexaoGithub() {
+  var token   = document.getElementById('gh-token').value.trim();
+  var usuario = document.getElementById('gh-usuario').value.trim();
+  var repo    = document.getElementById('gh-repo').value.trim();
+  var statusEl = document.getElementById('gh-teste-status');
+  statusEl.innerHTML = '🔄 Testando...';
+  try {
+    var resp = await fetch('https://api.github.com/repos/' + usuario + '/' + repo, {
+      headers: { 'Authorization': 'token ' + token, 'Accept': 'application/vnd.github.v3+json' }
+    });
+    if (resp.ok) {
+      var data = await resp.json();
+      statusEl.innerHTML = '<span style="color:var(--verde)">✅ Conectado! Repositório: <b>' + data.full_name + '</b></span>';
+    } else {
+      statusEl.innerHTML = '<span style="color:var(--vm)">❌ Erro ' + resp.status + ' — verifique o token e o repositório.</span>';
+    }
+  } catch(e) {
+    statusEl.innerHTML = '<span style="color:var(--vm)">❌ Erro de conexão.</span>';
+  }
+}
+
+async function ghGetFile(path) {
+  var cfg = ghConfig();
+  var resp = await fetch('https://api.github.com/repos/' + cfg.usuario + '/' + cfg.repo + '/contents/' + path + '?ref=' + cfg.branch, {
+    headers: { 'Authorization': 'token ' + cfg.token, 'Accept': 'application/vnd.github.v3+json' }
+  });
+  if (!resp.ok) return null;
+  var data = await resp.json();
+  _ghShas[path] = data.sha;
+  return decodeURIComponent(escape(atob(data.content.replace(/\n/g,''))));
+}
+
+async function ghPutFile(path, conteudo, mensagem) {
+  var cfg = ghConfig();
+  var sha = _ghShas[path] || null;
+  if (!sha) {
+    var check = await fetch('https://api.github.com/repos/' + cfg.usuario + '/' + cfg.repo + '/contents/' + path + '?ref=' + cfg.branch, {
+      headers: { 'Authorization': 'token ' + cfg.token, 'Accept': 'application/vnd.github.v3+json' }
+    });
+    if (check.ok) { var cd = await check.json(); sha = cd.sha; _ghShas[path] = sha; }
+  }
+  var body = { message: mensagem || 'Editor Cine Drive: ' + path, content: btoa(unescape(encodeURIComponent(conteudo))), branch: cfg.branch };
+  if (sha) body.sha = sha;
+  var resp = await fetch('https://api.github.com/repos/' + cfg.usuario + '/' + cfg.repo + '/contents/' + path, {
+    method: 'PUT',
+    headers: { 'Authorization': 'token ' + cfg.token, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  });
+  var data = await resp.json();
+  if (resp.ok && data.content) { _ghShas[path] = data.content.sha; return true; }
+  return false;
+}
+
+async function carregarDoGithub() {
+  var cfg = ghConfig();
+  if (!cfg.token) { toast('Configure o GitHub primeiro!', 'erro'); abrirModalGithub(); return; }
+  setStatus('Carregando do GitHub...', '');
+  toast('Carregando catálogo...', 'info');
+  try {
+    var indexTxt = await ghGetFile('index.json');
+    if (!indexTxt) { toast('index.json não encontrado!', 'erro'); return; }
+    catalogo = normalizarIndice(JSON.parse(indexTxt));
+    for (var i = 0; i < catalogo.length; i++) {
+      var cat = catalogo[i];
+      var catTxt = await ghGetFile(cat.arquivo);
+      if (!catTxt) continue;
+      var catData = JSON.parse(catTxt);
+      if (cat.tipo === 'filmes') {
+        cat.itens = catData.map(function(it,j){ return {id:pad(j+1),titulo:it.titulo||'',thumb:it.thumb||'',driveId:it.driveId||''}; });
+      } else {
+        cat.subs = catData.map(function(s){ return {nome:s.nome,arquivo:s.arquivo,thumb:s.thumb||'',totalEpisodios:s.totalEpisodios||0,episodios:[]}; });
+        for (var j = 0; j < cat.subs.length; j++) {
+          var subTxt = await ghGetFile(cat.subs[j].arquivo);
+          if (!subTxt) continue;
+          var subData = JSON.parse(subTxt);
+          var eps = Array.isArray(subData) ? subData : (subData.episodios||[]);
+          cat.subs[j].episodios = eps.map(function(ep,k){ return {id:pad(k+1),titulo:ep.titulo||'',thumb:ep.thumb||'',driveId:ep.driveId||''}; });
+          if (!Array.isArray(subData) && subData.thumb) cat.subs[j].thumb = subData.thumb;
+        }
+      }
+    }
+    // infor.json opcional
+    try {
+      var inforTxt = await ghGetFile('infor.json');
+      if (inforTxt) {
+        informacoes = [];
+        var inforData = JSON.parse(inforTxt);
+        for (var k in inforData) {
+          var obj = inforData[k];
+          informacoes.push({ video:k, ano:obj.ano||'', generos:Array.isArray(obj.generos)?obj.generos.join(', '):(obj.generos||''), nota:obj.nota||'', sinopse:obj.sinopse||'' });
+        }
+      }
+    } catch(e) {}
+    catAtiva = catalogo.length > 0 ? 0 : -1; subAtiva = -1;
+    renderSidebar(); renderSubsSidebar(); renderConteudo();
+    document.getElementById('arquivo-info').textContent = cfg.usuario + '/' + cfg.repo;
+    setStatus('Catálogo carregado do GitHub!', 'ok');
+    toast('Catálogo carregado com sucesso!', 'sucesso');
+  } catch(e) { toast('Erro: ' + e.message, 'erro'); }
+}
+
+function abrirModalSalvarGithub() {
+  var cfg = ghConfig();
+  if (!cfg.token) { toast('Configure o GitHub primeiro!', 'erro'); abrirModalGithub(); return; }
+  var arquivos = listarArquivosComStatus().filter(function(a){ return a.editado; });
+  if (!arquivos.length) { toast('Nenhuma alteração para salvar!', 'info'); return; }
+  var lista = document.getElementById('salvar-lista-github');
+  lista.innerHTML = '';
+  for (var i = 0; i < arquivos.length; i++) {
+    var div = document.createElement('div'); div.className = 'salvar-item';
+    div.innerHTML = '<span class="icone">'+arquivos[i].icone+'</span><span class="path">'+arquivos[i].path+'</span>'+
+      (arquivos[i].statusBadge?'<span class="'+arquivos[i].statusBadge.cls+'">'+arquivos[i].statusBadge.label+'</span>':'')+
+      '<span class="tipo">'+arquivos[i].tipo+'</span>';
+    lista.appendChild(div);
+  }
+  document.getElementById('gh-salvar-status').innerHTML = '';
+  document.getElementById('progress-fill').style.width = '0%';
+  document.getElementById('btn-confirmar-push').disabled = false;
+  document.getElementById('modal-salvar-github').classList.add('aberto');
+}
+
+async function confirmarPushGithub() {
+  var arquivos = listarArquivosComStatus().filter(function(a){ return a.editado; });
+  var statusEl  = document.getElementById('gh-salvar-status');
+  var progressEl = document.getElementById('progress-fill');
+  var btn = document.getElementById('btn-confirmar-push');
+  btn.disabled = true;
+  var ok = 0, erro = 0;
+  for (var i = 0; i < arquivos.length; i++) {
+    statusEl.innerHTML = '🔄 Enviando ' + arquivos[i].path + '...';
+    progressEl.style.width = Math.round((i / arquivos.length) * 100) + '%';
+    var conteudo = gerarConteudoArquivo(arquivos[i].path);
+    if (conteudo === null) continue;
+    var res = await ghPutFile(arquivos[i].path, conteudo, 'Editor Cine Drive: ' + arquivos[i].path);
+    if (res) ok++; else erro++;
+  }
+  progressEl.style.width = '100%';
+  if (erro === 0) {
+    statusEl.innerHTML = '<span style="color:var(--verde)">✅ ' + ok + ' arquivo(s) enviado(s) com sucesso!</span>';
+    setStatus('Salvo no GitHub! (' + ok + ' arquivos)', 'ok');
+    toast('Salvo no GitHub!', 'sucesso');
+    setTimeout(function(){ fecharModal('modal-salvar-github'); }, 2000);
+  } else {
+    statusEl.innerHTML = '<span style="color:var(--vm)">⚠️ ' + ok + ' ok, ' + erro + ' com erro.</span>';
+    toast(erro + ' arquivo(s) com erro!', 'erro');
+  }
+  btn.disabled = false;
+}
+
+function gerarConteudoArquivo(path) {
+  if (path === 'index.json') {
+    return JSON.stringify(catalogo.map(function(c){ return {categoria:c.categoria,tipo:c.tipo,arquivo:c.arquivo}; }), null, 2);
+  }
+  if (path === 'infor.json') {
+    var obj = {};
+    for (var i = 0; i < informacoes.length; i++) {
+      var inf = informacoes[i]; if (!inf.video) continue;
+      obj[inf.video] = { ano:inf.ano||'', generos:inf.generos?inf.generos.split(',').map(function(g){return g.trim();}).filter(Boolean):[], nota:inf.nota||'', sinopse:inf.sinopse||'' };
+    }
+    return JSON.stringify(obj, null, 2);
+  }
+  for (var i = 0; i < catalogo.length; i++) {
+    var cat = catalogo[i];
+    if (cat.arquivo === path && cat.tipo === 'filmes') {
+      return JSON.stringify((cat.itens||[]).filter(function(it){return it.titulo||it.driveId;}).map(function(it,j){return {id:pad(j+1),titulo:it.titulo||'',thumb:it.thumb||'',driveId:it.driveId||''};}), null, 2);
+    }
+    if (cat.tipo === 'series') {
+      if (cat.arquivo === path) {
+        return JSON.stringify((cat.subs||[]).map(function(s){return {nome:s.nome,arquivo:s.arquivo,thumb:s.thumb||'',totalEpisodios:s.episodios?s.episodios.length:(s.totalEpisodios||0)};}), null, 2);
+      }
+      for (var j = 0; j < (cat.subs||[]).length; j++) {
+        if (cat.subs[j].arquivo === path) {
+          var epsL = (cat.subs[j].episodios||[]).filter(function(ep){return ep.titulo||ep.driveId;}).map(function(ep,k){return {id:pad(k+1),titulo:ep.titulo||'',thumb:ep.thumb||'',driveId:ep.driveId||''};});
+          return JSON.stringify({nome:cat.subs[j].nome,thumb:cat.subs[j].thumb||'',episodios:epsL}, null, 2);
+        }
+      }
+    }
+  }
+  return null;
+}
+
+// Inicializar status GitHub ao carregar
+document.addEventListener('DOMContentLoaded', function() {
+  atualizarStatusGithub();
+  // Adicionar botão Salvar no GitHub na barra
+  var barraBotoes = document.querySelector('.barra-botoes');
+  if (barraBotoes) {
+    var btnGh = document.createElement('button');
+    btnGh.className = 'btn btn-azul';
+    btnGh.innerHTML = '🚀 Salvar no GitHub';
+    btnGh.onclick = abrirModalSalvarGithub;
+    barraBotoes.insertBefore(btnGh, barraBotoes.firstChild);
+  }
+});
 </script>
 </body>
 </html>
