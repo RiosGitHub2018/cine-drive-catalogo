@@ -7,7 +7,6 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap');
 
-/* ===== TEMAS ===== */
 :root {
   --vm: #e50914;
   --ouro: #f5c518;
@@ -37,9 +36,8 @@ body.tema-claro {
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
-body { background:var(--fundo); color:var(--texto); font-family:'DM Sans',sans-serif; min-height:100vh; display:flex; flex-direction:column; transition: background 0.3s, color 0.3s; }
+body { background:var(--fundo); color:var(--texto); font-family:'DM Sans',sans-serif; min-height:100vh; display:flex; flex-direction:column; transition:background 0.3s,color 0.3s; }
 
-/* ===== TOGGLE TEMA ===== */
 .tema-toggle-wrap { display:flex; align-items:center; gap:8px; }
 .tema-label { font-size:11px; color:var(--suave); letter-spacing:1px; text-transform:uppercase; white-space:nowrap; }
 .tema-toggle { position:relative; width:40px; height:22px; cursor:pointer; flex-shrink:0; }
@@ -49,10 +47,10 @@ body { background:var(--fundo); color:var(--texto); font-family:'DM Sans',sans-s
 .tema-toggle input:checked + .tema-slider { background:var(--ouro); border-color:var(--ouro); }
 .tema-toggle input:checked + .tema-slider::before { left:21px; background:#fff; }
 .tema-toggle .icone-tema { position:absolute; top:50%; transform:translateY(-50%); font-size:10px; pointer-events:none; transition:opacity 0.2s; }
-.tema-toggle .icone-sol  { right:4px; opacity:0; }
-.tema-toggle .icone-lua  { left:4px; opacity:1; }
-.tema-toggle input:checked ~ .icone-sol  { opacity:1; }
-.tema-toggle input:checked ~ .icone-lua  { opacity:0; }
+.tema-toggle .icone-sol { right:4px; opacity:0; }
+.tema-toggle .icone-lua { left:4px; opacity:1; }
+.tema-toggle input:checked ~ .icone-sol { opacity:1; }
+.tema-toggle input:checked ~ .icone-lua { opacity:0; }
 
 header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-bottom:1px solid var(--borda); background:var(--painel); flex-shrink:0; transition:background 0.3s,border-color 0.3s; }
 .logo { font-family:'Bebas Neue',sans-serif; font-size:32px; letter-spacing:3px; background:linear-gradient(135deg,var(--vm),var(--ouro)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1; }
@@ -73,7 +71,6 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 
 .layout { display:flex; flex:1; overflow:hidden; height:calc(100vh - 65px); }
 
-/* SIDEBAR */
 .sidebar { width:272px; min-width:272px; background:var(--painel); border-right:1px solid var(--borda); display:flex; flex-direction:column; height:100%; transition:background 0.3s,border-color 0.3s; }
 .sidebar-abas { display:flex; border-bottom:1px solid var(--borda); flex-shrink:0; }
 .sidebar-aba { flex:1; padding:11px 6px; text-align:center; font-size:11px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--suave); cursor:pointer; border-bottom:2px solid transparent; transition:all 0.2s; }
@@ -96,7 +93,6 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .btn-del-cat:hover { color:var(--vm); background:rgba(229,9,20,0.1); }
 .sidebar-footer { padding:10px 14px; border-top:1px solid var(--borda); flex-shrink:0; }
 
-/* CONTEUDO */
 .conteudo { flex:1; padding:24px 36px 100px; overflow-y:auto; height:100%; }
 .conteudo-vazio { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; gap:12px; color:var(--suave); text-align:center; }
 .conteudo-vazio .ico { font-size:52px; opacity:0.2; }
@@ -106,7 +102,19 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .breadcrumb { font-size:12px; color:var(--suave); }
 .breadcrumb b { color:var(--roxo); }
 .lista-filmes { display:flex; flex-direction:column; gap:8px; margin-bottom:16px; }
-.filme-card { background:var(--painel); border:1px solid var(--borda); border-radius:10px; padding:12px 16px; display:grid; grid-template-columns:40px 1fr 1fr 1fr 36px; gap:10px; align-items:end; transition:border-color 0.2s,background 0.3s; }
+
+/* CARD — coluna final é "auto" para acomodar os dois botões empilhados */
+.filme-card {
+  background:var(--painel);
+  border:1px solid var(--borda);
+  border-radius:10px;
+  padding:12px 16px;
+  display:grid;
+  grid-template-columns: 40px 1fr 1fr auto 1fr auto;
+  gap:10px;
+  align-items:end;
+  transition:border-color 0.2s,background 0.3s;
+}
 .filme-card:hover { border-color:rgba(229,9,20,0.2); }
 .filme-card.episodio:hover { border-color:rgba(124,58,237,0.2); }
 .filme-num { font-family:'Bebas Neue',sans-serif; font-size:24px; color:var(--suave); text-align:center; line-height:1; padding-bottom:4px; }
@@ -115,24 +123,60 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .campo input { background:var(--entrada); border:1px solid var(--borda); border-radius:6px; padding:7px 10px; color:var(--texto); font-family:'DM Sans',sans-serif; font-size:13px; outline:none; transition:border-color 0.2s,background 0.3s,color 0.3s; width:100%; }
 .campo input:focus { border-color:var(--vm); }
 .campo input::placeholder { color:var(--suave); font-size:11px; }
-.btn-del-filme { background:rgba(229,9,20,0.08); border:1px solid rgba(229,9,20,0.2); border-radius:7px; color:var(--vm); cursor:pointer; width:34px; height:34px; font-size:14px; display:flex; align-items:center; justify-content:center; transition:all 0.2s; flex-shrink:0; }
+
+/* Coluna de ações: botão F e X lado a lado */
+.card-acoes { display:flex; flex-direction:row; gap:4px; align-items:flex-end; padding-bottom:1px; }
+
+/* Botão F — filtrar/extrair Drive ID */
+.btn-filtrar-id {
+  background: rgba(245,197,24,0.12);
+  border: 1px solid rgba(245,197,24,0.4);
+  border-radius: 7px;
+  color: var(--ouro);
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s, color 0.2s;
+  flex-shrink: 0;
+}
+.btn-filtrar-id:hover { background: rgba(245,197,24,0.26); border-color: var(--ouro); transform: scale(1.07); }
+.btn-filtrar-id:active { transform: scale(0.95); }
+.btn-filtrar-id.ok  { background: rgba(34,197,94,0.18);  border-color: var(--verde); color: var(--verde); }
+.btn-filtrar-id.err { background: rgba(229,9,20,0.15);   border-color: var(--vm);    color: var(--vm); }
+
+.btn-filtrar-id.btn-filtrar-thumb {
+  background: rgba(124,58,237,0.12);
+  border-color: rgba(124,58,237,0.4);
+  color: var(--roxo);
+}
+.btn-filtrar-id.btn-filtrar-thumb:hover { background: rgba(124,58,237,0.26); border-color: var(--roxo); }
+
+.btn-del-filme {
+  background:rgba(229,9,20,0.08); border:1px solid rgba(229,9,20,0.2); border-radius:7px;
+  color:var(--vm); cursor:pointer; width:34px; height:34px; font-size:14px;
+  display:flex; align-items:center; justify-content:center; transition:all 0.2s; flex-shrink:0;
+}
 .btn-del-filme:hover { background:rgba(229,9,20,0.2); }
 
-/* BARRA INFERIOR */
 .barra-salvar { position:fixed; bottom:0; left:0; right:0; background:var(--painel); border-top:1px solid var(--borda); padding:10px 32px; display:flex; align-items:center; justify-content:space-between; gap:14px; z-index:100; transition:background 0.3s,border-color 0.3s; }
 .status { font-size:13px; color:var(--suave); flex:1; }
 .status.ok { color:var(--verde); }
 .status.erro { color:var(--vm); }
 .barra-botoes { display:flex; gap:8px; }
 
-/* TOAST */
 .toast { position:fixed; top:18px; right:18px; background:var(--painel); border:1px solid var(--borda); border-radius:10px; padding:11px 16px; font-size:13px; z-index:9999; transform:translateY(-10px); opacity:0; transition:all 0.3s; pointer-events:none; max-width:320px; }
 .toast.show { transform:translateY(0); opacity:1; }
 .toast.sucesso { border-color:var(--verde); color:var(--verde); }
 .toast.erro { border-color:var(--vm); color:var(--vm); }
 .toast.info { border-color:var(--ouro); color:var(--ouro); }
 
-/* MODAL */
 .modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.78); backdrop-filter:blur(6px); z-index:9998; display:none; align-items:center; justify-content:center; }
 .modal-overlay.aberto { display:flex; }
 .modal { background:var(--painel); border:1px solid var(--borda); border-radius:14px; padding:28px; width:480px; display:flex; flex-direction:column; gap:16px; box-shadow:var(--shadow-modal); animation:slideUp 0.25s ease; transition:background 0.3s,border-color 0.3s; }
@@ -149,7 +193,6 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .modal-select:focus { border-color:var(--roxo); }
 .modal-botoes { display:flex; gap:10px; justify-content:flex-end; }
 
-/* MODAL SALVAR */
 .salvar-lista { display:flex; flex-direction:column; gap:6px; max-height:240px; overflow-y:auto; }
 .salvar-item { display:flex; align-items:center; gap:10px; padding:8px 12px; background:var(--entrada); border-radius:7px; font-size:13px; transition:background 0.3s; }
 .salvar-item.nao-incluido { opacity:0.35; }
@@ -161,7 +204,6 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .salvar-item .badge-novo { font-size:10px; padding:2px 7px; border-radius:20px; background:rgba(245,197,24,0.15); color:var(--ouro); font-weight:700; }
 .salvar-item .badge-sem-dados { font-size:10px; padding:2px 7px; border-radius:20px; background:rgba(102,102,128,0.2); color:var(--suave); font-weight:700; }
 
-/* SELETOR DE MODO ZIP */
 .zip-modo { display:flex; gap:8px; }
 .zip-opcao { flex:1; display:flex; align-items:center; gap:10px; padding:11px 14px; border-radius:10px; border:2px solid var(--borda); background:var(--entrada); cursor:pointer; transition:border-color 0.2s,background 0.2s; user-select:none; }
 .zip-opcao:hover { border-color:var(--suave); }
@@ -178,11 +220,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .zip-radio-dot { width:7px; height:7px; border-radius:50%; background:var(--verde); transform:scale(0); transition:transform 0.2s; }
 .zip-opcao.selecionada .zip-radio-dot { transform:scale(1); }
 .zip-opcao.selecionada.modo-todos .zip-radio-dot { background:var(--vm); }
-
-/* SEPARADOR DO MODAL */
 .modal-sep { height:1px; background:var(--borda); margin:0 -4px; }
-
-/* CONTADOR PREVIEW */
 .zip-preview { font-size:12px; color:var(--suave); padding:6px 0 2px; display:flex; align-items:center; gap:6px; }
 .zip-preview b { color:var(--texto); }
 
@@ -197,8 +235,6 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
   <div class="logo">CINE<small>DRIVE</small></div>
   <div class="sep"></div>
   <span style="color:var(--suave);font-size:13px;">Editor de Catalogo</span>
-
-  <!-- TOGGLE TEMA -->
   <div class="tema-toggle-wrap" style="margin-left:12px;">
     <label class="tema-toggle" title="Alternar tema">
       <input type="checkbox" id="toggle-tema" onchange="alternarTema(this.checked)">
@@ -208,7 +244,6 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
     </label>
     <span class="tema-label" id="tema-label">Dark</span>
   </div>
-
   <div id="arquivo-info" style="color:var(--suave);font-size:12px;margin-left:auto;">Nenhum arquivo carregado</div>
   <label class="btn btn-sec" for="input-arquivo">&#128194; Abrir index.json</label>
   <input type="file" id="input-arquivo" accept=".json" style="display:none">
@@ -220,7 +255,6 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
       <div class="sidebar-aba ativa" id="aba-cat" onclick="mudarAba('cat')">Categorias</div>
       <div class="sidebar-aba" id="aba-sub" onclick="mudarAba('sub')">Subcategorias</div>
     </div>
-
     <div id="painel-cat" style="display:flex;flex-direction:column;flex:1;overflow:hidden;">
       <div class="sidebar-top">
         <span class="sidebar-label">Categorias</span>
@@ -231,7 +265,6 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
         <button class="btn btn-vm" style="width:100%;padding:10px;justify-content:center;" onclick="abrirModalCat()">+ Nova Categoria</button>
       </div>
     </div>
-
     <div id="painel-sub" style="display:none;flex-direction:column;flex:1;overflow:hidden;">
       <div class="sidebar-top">
         <span class="sidebar-label">Subcategorias</span>
@@ -263,7 +296,6 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 
 <div class="toast" id="toast"></div>
 
-<!-- MODAL NOVA CATEGORIA -->
 <div class="modal-overlay" id="modal-cat" onclick="fecharModalFora(event,'modal-cat')">
   <div class="modal">
     <div class="modal-titulo vm">Nova Categoria</div>
@@ -286,7 +318,6 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
   </div>
 </div>
 
-<!-- MODAL NOVA SUBCATEGORIA -->
 <div class="modal-overlay" id="modal-sub" onclick="fecharModalFora(event,'modal-sub')">
   <div class="modal">
     <div class="modal-titulo roxo">Nova Subcategoria</div>
@@ -310,43 +341,27 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
   </div>
 </div>
 
-<!-- MODAL SALVAR -->
 <div class="modal-overlay" id="modal-salvar" onclick="fecharModalFora(event,'modal-salvar')">
   <div class="modal" style="width:580px;max-width:96vw;">
     <div class="modal-titulo vm">Salvar Catalogo</div>
     <div class="modal-desc">Escolha o modo de compactacao e baixe o ZIP para enviar ao GitHub.</div>
-
-    <!-- SELETOR MODO ZIP -->
     <div class="zip-modo" id="zip-modo">
       <label class="zip-opcao modo-todos selecionada" id="opcao-todos" onclick="selecionarModoZip('todos')">
         <input type="radio" name="zip-modo" value="todos" checked>
         <span class="zip-icone">📦</span>
-        <span class="zip-texto">
-          <strong>Zipar todos</strong>
-          <small>Inclui todos os arquivos do catalogo</small>
-        </span>
+        <span class="zip-texto"><strong>Zipar todos</strong><small>Inclui todos os arquivos do catalogo</small></span>
         <span class="zip-radio-circulo"><span class="zip-radio-dot"></span></span>
       </label>
-
       <label class="zip-opcao" id="opcao-editados" onclick="selecionarModoZip('editados')">
         <input type="radio" name="zip-modo" value="editados">
         <span class="zip-icone">✏️</span>
-        <span class="zip-texto">
-          <strong>Apenas editados</strong>
-          <small>So arquivos novos ou modificados nesta sessao</small>
-        </span>
+        <span class="zip-texto"><strong>Apenas editados</strong><small>So arquivos novos ou modificados nesta sessao</small></span>
         <span class="zip-radio-circulo"><span class="zip-radio-dot"></span></span>
       </label>
     </div>
-
-    <!-- PREVIEW CONTADOR -->
     <div class="zip-preview" id="zip-preview"></div>
-
     <div class="modal-sep"></div>
-
-    <!-- LISTA DE ARQUIVOS -->
     <div class="salvar-lista" id="salvar-lista"></div>
-
     <div class="modal-botoes">
       <button class="btn btn-sec" onclick="fecharModal('modal-salvar')">Cancelar</button>
       <button class="btn btn-verde" onclick="gerarZip()">&#128230; Baixar ZIP</button>
@@ -355,15 +370,14 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 </div>
 
 <script>
-// ===== ESTADO =====
 var catalogo = [];
 var abaAtiva = 'cat';
 var catAtiva = -1;
 var subAtiva = -1;
-var modoZip = 'todos'; // 'todos' | 'editados'
+var modoZip  = 'todos';
 
 // ===== TEMA =====
-(function() {
+(function(){
   var salvo = localStorage.getItem('cine-drive-tema') || 'escuro';
   if (salvo === 'claro') {
     document.body.classList.add('tema-claro');
@@ -373,33 +387,92 @@ var modoZip = 'todos'; // 'todos' | 'editados'
 })();
 
 function alternarTema(ligado) {
-  if (ligado) {
-    document.body.classList.add('tema-claro');
-    localStorage.setItem('cine-drive-tema', 'claro');
-    document.getElementById('tema-label').textContent = 'Light';
+  if (ligado) { document.body.classList.add('tema-claro'); localStorage.setItem('cine-drive-tema','claro'); document.getElementById('tema-label').textContent='Light'; }
+  else         { document.body.classList.remove('tema-claro'); localStorage.setItem('cine-drive-tema','escuro'); document.getElementById('tema-label').textContent='Dark'; }
+}
+
+// ===== EXTRAIR DRIVE ID =====
+// Formatos suportados:
+//   /file/d/ID/view            → drive.google.com/file/d/ID/view[?usp=...]
+//   /file/d/ID/edit            → docs.google.com/file/d/ID/edit
+//   ?id=ID  /  &id=ID          → /open?id=  /uc?id=  /uc?export=download&id=
+//   /folders/ID                → drive.google.com/drive/folders/ID
+//   valor puro sem http        → já é o ID, devolve como está
+function extrairDriveId(valor) {
+  if (!valor) return null;
+  var v = valor.trim();
+  if (!v) return null;
+  // Já é só um ID (sem barra nem protocolo)
+  if (!/https?:\/\//.test(v) && /^[a-zA-Z0-9_-]{15,}$/.test(v)) return v;
+  // Padrão /d/ID  ou  /folders/ID
+  var m = v.match(/\/(?:d|folders)\/([a-zA-Z0-9_-]{15,})/);
+  if (m) return m[1];
+  // Padrão ?id=ID  ou  &id=ID
+  m = v.match(/[?&]id=([a-zA-Z0-9_-]{15,})/);
+  if (m) return m[1];
+  return null;
+}
+
+function filtrarId(btn, inputEl) {
+  var id = extrairDriveId(inputEl.value);
+  if (id && id !== inputEl.value.trim()) {
+    inputEl.value = id;
+    inputEl.dispatchEvent(new Event('input', { bubbles: true }));
+    btn.textContent = '✓';
+    btn.classList.add('ok');
+    setTimeout(function(){ btn.textContent = 'F'; btn.classList.remove('ok'); }, 1400);
+  } else if (id) {
+    // Valor já era o ID puro — pisca verde mesmo assim para confirmar
+    btn.textContent = '✓';
+    btn.classList.add('ok');
+    setTimeout(function(){ btn.textContent = 'F'; btn.classList.remove('ok'); }, 1000);
   } else {
-    document.body.classList.remove('tema-claro');
-    localStorage.setItem('cine-drive-tema', 'escuro');
-    document.getElementById('tema-label').textContent = 'Dark';
+    btn.textContent = '!';
+    btn.classList.add('err');
+    setTimeout(function(){ btn.textContent = 'F'; btn.classList.remove('err'); }, 1400);
+    toast('Nenhum ID do Drive encontrado na URL', 'erro');
+  }
+}
+
+// ===== NORMALIZAR URL DO TMDB =====
+// Extrai o nome do arquivo de qualquer URL do TMDB e remonta com domínio oficial w500
+// Entrada:  https://www.themoviedb.org/t/p/w600_and_h900_face/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg
+// Saída:    https://image.tmdb.org/t/p/w500/5mdeUBc5hQX8NrTCerfAUim7XY0.jpg
+// Também aceita URLs já corretas (image.tmdb.org) — normaliza o tamanho para w500
+function normalizarUrlTmdb(valor) {
+  if (!valor) return null;
+  var v = valor.trim();
+  if (!v) return null;
+  // Extrai o nome do arquivo — último segmento do path com extensão de imagem
+  var m = v.match(/\/([^\/]+\.(jpg|jpeg|png|webp))(\?.*)?$/i);
+  if (!m) return null;
+  return 'https://image.tmdb.org/t/p/w500/' + m[1];
+}
+
+function filtrarThumb(btn, inputEl) {
+  var url = normalizarUrlTmdb(inputEl.value);
+  if (url) {
+    inputEl.value = url;
+    inputEl.dispatchEvent(new Event('input', { bubbles: true }));
+    btn.textContent = '✓';
+    btn.classList.add('ok');
+    setTimeout(function(){ btn.textContent = 'F'; btn.classList.remove('ok'); }, 1400);
+  } else {
+    btn.textContent = '!';
+    btn.classList.add('err');
+    setTimeout(function(){ btn.textContent = 'F'; btn.classList.remove('err'); }, 1400);
+    toast('Nenhuma URL de imagem TMDB reconhecida', 'erro');
   }
 }
 
 // ===== MODO ZIP =====
 function selecionarModoZip(modo) {
   modoZip = modo;
-  var elTodos    = document.getElementById('opcao-todos');
-  var elEditados = document.getElementById('opcao-editados');
-  if (modo === 'todos') {
-    elTodos.classList.add('selecionada','modo-todos');
-    elEditados.classList.remove('selecionada');
-  } else {
-    elEditados.classList.add('selecionada');
-    elTodos.classList.remove('selecionada','modo-todos');
-  }
-  // Recalcula lista exibida
-  if (document.getElementById('modal-salvar').classList.contains('aberto')) {
-    atualizarListaSalvar();
-  }
+  var elT = document.getElementById('opcao-todos');
+  var elE = document.getElementById('opcao-editados');
+  if (modo === 'todos') { elT.classList.add('selecionada','modo-todos'); elE.classList.remove('selecionada'); }
+  else { elE.classList.add('selecionada'); elT.classList.remove('selecionada','modo-todos'); }
+  if (document.getElementById('modal-salvar').classList.contains('aberto')) atualizarListaSalvar();
 }
 
 function atualizarListaSalvar() {
@@ -407,37 +480,27 @@ function atualizarListaSalvar() {
   lista.innerHTML = '';
   var arquivos = listarArquivosComStatus();
   var incluidos = 0;
-
   for (var i = 0; i < arquivos.length; i++) {
     var arq = arquivos[i];
     var incluir = modoZip === 'todos' ? true : arq.editado;
-
     var div = document.createElement('div');
     div.className = 'salvar-item' + (incluir ? '' : ' nao-incluido');
-    div.innerHTML =
-      '<span class="icone">' + arq.icone + '</span>' +
-      '<span class="path">' + arq.path + '</span>' +
-      (incluir && arq.statusBadge ? '<span class="' + arq.statusBadge.cls + '">' + arq.statusBadge.label + '</span>' : '') +
-      (!incluir ? '<span class="badge-sem-dados">ignorado</span>' : '') +
-      '<span class="tipo">' + arq.tipo + '</span>';
+    div.innerHTML = '<span class="icone">'+arq.icone+'</span><span class="path">'+arq.path+'</span>'+
+      (incluir && arq.statusBadge ? '<span class="'+arq.statusBadge.cls+'">'+arq.statusBadge.label+'</span>' : '')+
+      (!incluir ? '<span class="badge-sem-dados">ignorado</span>' : '')+
+      '<span class="tipo">'+arq.tipo+'</span>';
     lista.appendChild(div);
-
     if (incluir) incluidos++;
   }
-
-  // Atualiza preview
   var preview = document.getElementById('zip-preview');
-  if (modoZip === 'editados') {
-    preview.innerHTML = '<b>' + incluidos + '</b> de <b>' + arquivos.length + '</b> arquivo(s) serao incluidos no ZIP &mdash; os demais ja existem no GitHub e serao preservados.';
-  } else {
-    preview.innerHTML = '<b>' + incluidos + '</b> arquivo(s) serao incluidos no ZIP.';
-  }
+  preview.innerHTML = modoZip === 'editados'
+    ? '<b>'+incluidos+'</b> de <b>'+arquivos.length+'</b> arquivo(s) serao incluidos &mdash; os demais serao preservados no GitHub.'
+    : '<b>'+incluidos+'</b> arquivo(s) serao incluidos no ZIP.';
 }
 
 // ===== ABRIR ARQUIVO =====
 document.getElementById('input-arquivo').addEventListener('change', function(e) {
-  var file = e.target.files[0];
-  if (!file) return;
+  var file = e.target.files[0]; if (!file) return;
   document.getElementById('arquivo-info').textContent = file.name;
   var reader = new FileReader();
   reader.onload = function(ev) {
@@ -446,14 +509,10 @@ document.getElementById('input-arquivo').addEventListener('change', function(e) 
       catalogo = normalizarIndice(data);
       catAtiva = catalogo.length > 0 ? 0 : -1;
       subAtiva = -1;
-      renderSidebar();
-      renderSubsSidebar();
-      renderConteudo();
+      renderSidebar(); renderSubsSidebar(); renderConteudo();
       setStatus('Carregado: ' + file.name, 'ok');
       toast('Catalogo carregado!', 'sucesso');
-    } catch(err) {
-      toast('JSON invalido!', 'erro');
-    }
+    } catch(err) { toast('JSON invalido!', 'erro'); }
   };
   reader.readAsText(file);
 });
@@ -462,29 +521,9 @@ function normalizarIndice(data) {
   if (data.length > 0 && data[0].arquivo) return data;
   var resultado = [];
   for (var i = 0; i < data.length; i++) {
-    var cat = data[i];
-    var slug = slugify(cat.categoria);
-    var temSubs = cat.subs && cat.subs.length > 0;
-    var entrada = {
-      categoria: cat.categoria,
-      tipo: temSubs ? 'series' : 'filmes',
-      arquivo: temSubs ? (slug + '/index.json') : (slug + '.json'),
-      itens: cat.itens || [],
-      subs: [],
-      _novo: true
-    };
-    if (temSubs) {
-      for (var j = 0; j < cat.subs.length; j++) {
-        var sub = cat.subs[j];
-        entrada.subs.push({
-          nome: sub.nome,
-          arquivo: slug + '/' + slugify(sub.nome) + '.json',
-          thumb: sub.thumb || '',
-          totalEpisodios: sub.episodios ? sub.episodios.length : 0,
-          episodios: sub.episodios || []
-        });
-      }
-    }
+    var cat = data[i], slug = slugify(cat.categoria), temSubs = cat.subs && cat.subs.length > 0;
+    var entrada = { categoria:cat.categoria, tipo:temSubs?'series':'filmes', arquivo:temSubs?(slug+'/index.json'):(slug+'.json'), itens:cat.itens||[], subs:[], _novo:true };
+    if (temSubs) for (var j=0;j<cat.subs.length;j++) { var s=cat.subs[j]; entrada.subs.push({ nome:s.nome, arquivo:slug+'/'+slugify(s.nome)+'.json', thumb:s.thumb||'', totalEpisodios:s.episodios?s.episodios.length:0, episodios:s.episodios||[] }); }
     resultado.push(entrada);
   }
   return resultado;
@@ -492,24 +531,20 @@ function normalizarIndice(data) {
 
 function slugify(str) {
   return str.toLowerCase()
-    .replace(/[áàãâä]/g,'a').replace(/[éèêë]/g,'e')
-    .replace(/[íìîï]/g,'i').replace(/[óòõôö]/g,'o')
-    .replace(/[úùûü]/g,'u').replace(/[ç]/g,'c')
+    .replace(/[áàãâä]/g,'a').replace(/[éèêë]/g,'e').replace(/[íìîï]/g,'i')
+    .replace(/[óòõôö]/g,'o').replace(/[úùûü]/g,'u').replace(/[ç]/g,'c')
     .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
 }
 
-// ===== ABAS =====
 function mudarAba(aba) {
   abaAtiva = aba;
-  document.getElementById('aba-cat').className = 'sidebar-aba' + (aba==='cat'?' ativa':'');
-  document.getElementById('aba-sub').className = 'sidebar-aba' + (aba==='sub'?' ativa sub':'');
+  document.getElementById('aba-cat').className = 'sidebar-aba'+(aba==='cat'?' ativa':'');
+  document.getElementById('aba-sub').className = 'sidebar-aba'+(aba==='sub'?' ativa sub':'');
   document.getElementById('painel-cat').style.display = aba==='cat'?'flex':'none';
   document.getElementById('painel-sub').style.display = aba==='sub'?'flex':'none';
-  if (aba==='sub') { subAtiva=-1; renderSubsSidebar(); renderConteudoSubs(); }
-  else renderConteudo();
+  if (aba==='sub') { subAtiva=-1; renderSubsSidebar(); renderConteudoSubs(); } else renderConteudo();
 }
 
-// ===== SIDEBAR CATEGORIAS =====
 function renderSidebar() {
   var lista = document.getElementById('lista-cats');
   lista.innerHTML = '';
@@ -522,42 +557,19 @@ function criarItemCat(i) {
   var item = document.createElement('div');
   item.className = 'cat-item'+(i===catAtiva&&abaAtiva==='cat'?' ativa':'');
   item.dataset.idx = i;
-
-  var nome = document.createElement('span');
-  nome.className = 'cat-nome';
-  nome.textContent = cat.categoria;
-
-  var count = document.createElement('span');
-  count.className = 'cat-count';
-  count.textContent = cat.tipo==='series' ? (cat.subs?cat.subs.length:0) : (cat.itens?cat.itens.length:0);
-
-  var del = document.createElement('button');
-  del.className = 'btn-del-cat';
-  del.innerHTML = '&#10005;';
-  del.dataset.idx = i;
-  del.addEventListener('click', function(e) {
-    e.stopPropagation();
-    var idx = parseInt(this.dataset.idx);
-    if (confirm('Remover "'+catalogo[idx].categoria+'" e todo seu conteudo?')) {
-      catalogo.splice(idx,1);
-      if (catAtiva>=catalogo.length) catAtiva=catalogo.length-1;
-      renderSidebar(); renderSubsSidebar(); renderConteudo();
-      toast('Categoria removida!','sucesso');
-    }
-  });
-
+  var nome = document.createElement('span'); nome.className='cat-nome'; nome.textContent=cat.categoria;
+  var count = document.createElement('span'); count.className='cat-count';
+  count.textContent = cat.tipo==='series'?(cat.subs?cat.subs.length:0):(cat.itens?cat.itens.length:0);
+  var del = document.createElement('button'); del.className='btn-del-cat'; del.innerHTML='&#10005;'; del.dataset.idx=i;
+  del.addEventListener('click',function(e){ e.stopPropagation(); var idx=parseInt(this.dataset.idx);
+    if(confirm('Remover "'+catalogo[idx].categoria+'" e todo seu conteudo?')){ catalogo.splice(idx,1); if(catAtiva>=catalogo.length) catAtiva=catalogo.length-1; renderSidebar(); renderSubsSidebar(); renderConteudo(); toast('Categoria removida!','sucesso'); } });
   item.appendChild(nome); item.appendChild(count); item.appendChild(del);
-  item.addEventListener('click', function() {
-    catAtiva=parseInt(this.dataset.idx);
-    renderSidebar(); renderConteudo();
-  });
+  item.addEventListener('click',function(){ catAtiva=parseInt(this.dataset.idx); renderSidebar(); renderConteudo(); });
   return item;
 }
 
-// ===== SIDEBAR SUBCATEGORIAS =====
 function renderSubsSidebar() {
-  var lista = document.getElementById('lista-subs');
-  lista.innerHTML='';
+  var lista = document.getElementById('lista-subs'); lista.innerHTML='';
   var todas = getTodasSubs();
   document.getElementById('total-subs').textContent = todas.length;
   for (var i=0;i<todas.length;i++) lista.appendChild(criarItemSub(i,todas[i]));
@@ -565,99 +577,63 @@ function renderSubsSidebar() {
 
 function getTodasSubs() {
   var subs=[];
-  for (var i=0;i<catalogo.length;i++) {
-    if (catalogo[i].tipo!=='series') continue;
-    var subsArr = catalogo[i].subs||[];
-    for (var j=0;j<subsArr.length;j++) {
-      subs.push({catIdx:i,subIdx:j,catNome:catalogo[i].categoria,sub:subsArr[j]});
-    }
-  }
+  for (var i=0;i<catalogo.length;i++) { if(catalogo[i].tipo!=='series') continue; var arr=catalogo[i].subs||[]; for(var j=0;j<arr.length;j++) subs.push({catIdx:i,subIdx:j,catNome:catalogo[i].categoria,sub:arr[j]}); }
   return subs;
 }
 
 function criarItemSub(gIdx, info) {
   var item = document.createElement('div');
   item.className='cat-item'+(gIdx===subAtiva?' ativa sub':'');
-  item.dataset.gidx=gIdx;
-  item.dataset.catidx=info.catIdx;
-  item.dataset.subidx=info.subIdx;
-
+  item.dataset.gidx=gIdx; item.dataset.catidx=info.catIdx; item.dataset.subidx=info.subIdx;
   var nome=document.createElement('span'); nome.className='cat-nome'; nome.textContent=info.sub.nome;
   var tag=document.createElement('span'); tag.className='cat-tag'; tag.textContent=info.catNome;
   var count=document.createElement('span'); count.className='cat-count'; count.textContent=(info.sub.episodios?info.sub.episodios.length:0);
   var del=document.createElement('button'); del.className='btn-del-cat'; del.innerHTML='&#10005;';
   del.dataset.catidx=info.catIdx; del.dataset.subidx=info.subIdx;
-  del.addEventListener('click',function(e){
-    e.stopPropagation();
-    var ci=parseInt(this.dataset.catidx), si=parseInt(this.dataset.subidx);
-    if(confirm('Remover "'+catalogo[ci].subs[si].nome+'"?')){
-      catalogo[ci].subs.splice(si,1);
-      subAtiva=-1; renderSubsSidebar(); renderConteudoSubs();
-      toast('Subcategoria removida!','sucesso');
-    }
-  });
-
+  del.addEventListener('click',function(e){ e.stopPropagation(); var ci=parseInt(this.dataset.catidx),si=parseInt(this.dataset.subidx);
+    if(confirm('Remover "'+catalogo[ci].subs[si].nome+'"?')){ catalogo[ci].subs.splice(si,1); subAtiva=-1; renderSubsSidebar(); renderConteudoSubs(); toast('Subcategoria removida!','sucesso'); } });
   item.appendChild(nome); item.appendChild(tag); item.appendChild(count); item.appendChild(del);
-  item.addEventListener('click',function(){
-    subAtiva=parseInt(this.dataset.gidx); renderSubsSidebar(); renderConteudoSubs();
-  });
+  item.addEventListener('click',function(){ subAtiva=parseInt(this.dataset.gidx); renderSubsSidebar(); renderConteudoSubs(); });
   return item;
 }
 
-// ===== CONTEUDO CATEGORIAS =====
 function renderConteudo() {
   var el=document.getElementById('conteudo');
-  if (catAtiva<0||!catalogo[catAtiva]){
-    el.innerHTML='<div class="conteudo-vazio"><div class="ico">🎬</div><div style="font-size:16px;font-weight:600;">Selecione uma categoria</div></div>';
-    return;
-  }
+  if (catAtiva<0||!catalogo[catAtiva]){ el.innerHTML='<div class="conteudo-vazio"><div class="ico">🎬</div><div style="font-size:16px;font-weight:600;">Selecione uma categoria</div></div>'; return; }
   var cat=catalogo[catAtiva];
   if (cat.tipo==='series'){
-    var temSubs = cat.subs && cat.subs.length > 0;
-    el.innerHTML=
-      '<div class="secao-header">'+
-        '<div><div class="secao-titulo">'+cat.categoria+'<span>'+(cat.subs?cat.subs.length:0)+' series</span></div>'+
-        '<div style="font-size:11px;color:var(--suave);font-family:monospace;margin-top:2px;">'+cat.arquivo+'</div></div>'+
-      '</div>'+
+    var temSubs=cat.subs&&cat.subs.length>0;
+    el.innerHTML='<div class="secao-header"><div><div class="secao-titulo">'+cat.categoria+'<span>'+(cat.subs?cat.subs.length:0)+' series</span></div><div style="font-size:11px;color:var(--suave);font-family:monospace;margin-top:2px;">'+cat.arquivo+'</div></div></div>'+
       '<div style="color:var(--suave);font-size:13px;margin-bottom:16px;">Esta categoria usa subcategorias. Gerencie as series na aba <b>Subcategorias</b>.</div>'+
-      (!temSubs ?
-        '<div style="display:flex;gap:10px;align-items:center;">'+
-        '<label class="btn btn-sec" for="json-idx-cat-'+catAtiva+'" style="cursor:pointer;border-color:var(--ouro);color:var(--ouro);">&#128194; Carregar '+cat.arquivo+'</label>'+
+      (!temSubs?
+        '<div style="display:flex;gap:10px;align-items:center;"><label class="btn btn-sec" for="json-idx-cat-'+catAtiva+'" style="cursor:pointer;border-color:var(--ouro);color:var(--ouro);">&#128194; Carregar '+cat.arquivo+'</label>'+
         '<input type="file" id="json-idx-cat-'+catAtiva+'" accept=".json" style="display:none" onchange="carregarIndexCategoriaSeries(this,'+catAtiva+')">'+
-        '<span style="font-size:12px;color:var(--suave);">Carregue o index.json desta categoria para importar as series existentes</span>'+
-        '</div>'
+        '<span style="font-size:12px;color:var(--suave);">Carregue o index.json desta categoria para importar as series existentes</span></div>'
         :
-        '<div style="display:flex;gap:10px;align-items:center;">'+
-        '<label class="btn btn-sec" for="json-idx-cat-r-'+catAtiva+'" style="cursor:pointer;border-color:var(--suave);color:var(--suave);font-size:12px;">&#128260; Recarregar '+cat.arquivo+'</label>'+
-        '<input type="file" id="json-idx-cat-r-'+catAtiva+'" accept=".json" style="display:none" onchange="carregarIndexCategoriaSeries(this,'+catAtiva+')">'+
-        '</div>'
-      );
+        '<div style="display:flex;gap:10px;align-items:center;"><label class="btn btn-sec" for="json-idx-cat-r-'+catAtiva+'" style="cursor:pointer;border-color:var(--suave);color:var(--suave);font-size:12px;">&#128260; Recarregar '+cat.arquivo+'</label>'+
+        '<input type="file" id="json-idx-cat-r-'+catAtiva+'" accept=".json" style="display:none" onchange="carregarIndexCategoriaSeries(this,'+catAtiva+')"></div>');
     return;
   }
-  var temItens = cat.itens && cat.itens.length > 0;
-  var jsonBtnHTML = '<label class="btn btn-sec" for="json-cat-IDX" style="cursor:pointer;border-color:var(--ouro);color:var(--ouro);">&#128194; Carregar '+cat.arquivo+'</label>'+
+  var temItens=cat.itens&&cat.itens.length>0;
+  var jsonBtnHTML='<label class="btn btn-sec" for="json-cat-IDX" style="cursor:pointer;border-color:var(--ouro);color:var(--ouro);">&#128194; Carregar '+cat.arquivo+'</label>'+
     '<input type="file" id="json-cat-IDX" accept=".json" style="display:none" onchange="carregarJSONCategoria(this,IDX)">';
-  jsonBtnHTML = jsonBtnHTML.replace(/IDX/g, catAtiva);
-  el.innerHTML=
-    '<div class="secao-header">'+
-      '<div><div class="secao-titulo">'+cat.categoria+'<span>'+(cat.itens?cat.itens.length:0)+' filmes</span></div>'+
-      '<div style="font-size:11px;color:var(--suave);font-family:monospace;margin-top:2px;">'+cat.arquivo+'</div></div>'+
-      (!temItens ? '<div style="margin-left:auto;">'+jsonBtnHTML+'</div>' : '')+
-    '</div>'+
-    '<div class="lista-filmes" id="lista-filmes"></div>'+
+  jsonBtnHTML=jsonBtnHTML.replace(/IDX/g,catAtiva);
+  el.innerHTML='<div class="secao-header"><div><div class="secao-titulo">'+cat.categoria+'<span>'+(cat.itens?cat.itens.length:0)+' filmes</span></div>'+
+    '<div style="font-size:11px;color:var(--suave);font-family:monospace;margin-top:2px;">'+cat.arquivo+'</div></div>'+
+    (!temItens?'<div style="margin-left:auto;">'+jsonBtnHTML+'</div>':'')+
+    '</div><div class="lista-filmes" id="lista-filmes"></div>'+
     '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">'+
     '<button class="btn btn-vm" onclick="adicionarFilme()">+ Adicionar Filme</button>'+
     '<label class="btn btn-ouro" for="csv-filmes" style="cursor:pointer;">&#128229; Importar CSV</label>'+
     '<input type="file" id="csv-filmes" accept=".csv" style="display:none" onchange="importarCSVFilmes(this)">'+
-    (temItens ? '<label class="btn btn-sec" for="json-sub-r" style="cursor:pointer;border-color:var(--suave);color:var(--suave);font-size:12px;">&#128260; Recarregar JSON</label>'+
-    '<input type="file" id="json-sub-r" accept=".json" style="display:none" onchange="carregarJSONCategoria(this,'+catAtiva+')">': '')+
+    (temItens?'<label class="btn btn-sec" for="json-sub-r" style="cursor:pointer;border-color:var(--suave);color:var(--suave);font-size:12px;">&#128260; Recarregar JSON</label>'+
+    '<input type="file" id="json-sub-r" accept=".json" style="display:none" onchange="carregarJSONCategoria(this,'+catAtiva+')">':'')+
     '</div>';
   renderFilmes();
 }
 
 function renderFilmes() {
-  var lista=document.getElementById('lista-filmes');
-  if(!lista) return;
+  var lista=document.getElementById('lista-filmes'); if(!lista) return;
   lista.innerHTML='';
   var itens=catalogo[catAtiva].itens||[];
   for(var i=0;i<itens.length;i++) lista.appendChild(criarCard(i,itens[i],false,null));
@@ -665,121 +641,143 @@ function renderFilmes() {
 
 function adicionarFilme(){
   if(!catalogo[catAtiva].itens) catalogo[catAtiva].itens=[];
-  var idx=catalogo[catAtiva].itens.length;
-  catalogo[catAtiva].itens.push({id:pad(idx+1),titulo:'',thumb:'',driveId:''});
-  catalogo[catAtiva]._editado = true;
+  catalogo[catAtiva].itens.push({id:pad(catalogo[catAtiva].itens.length+1),titulo:'',thumb:'',driveId:''});
+  catalogo[catAtiva]._editado=true;
   renderConteudo();
   setTimeout(function(){var c=document.getElementById('conteudo');c.scrollTop=c.scrollHeight;},80);
 }
 
-// ===== CONTEUDO SUBCATEGORIAS =====
 function renderConteudoSubs(){
   var el=document.getElementById('conteudo');
-  if(subAtiva<0){
-    el.innerHTML='<div class="conteudo-vazio"><div class="ico">📺</div><div style="font-size:16px;font-weight:600;">Selecione uma subcategoria</div></div>';
-    return;
-  }
-  var todas=getTodasSubs();
-  if(!todas[subAtiva]){el.innerHTML='';return;}
-  var info=todas[subAtiva];
-  var sub=info.sub;
+  if(subAtiva<0){ el.innerHTML='<div class="conteudo-vazio"><div class="ico">📺</div><div style="font-size:16px;font-weight:600;">Selecione uma subcategoria</div></div>'; return; }
+  var todas=getTodasSubs(); if(!todas[subAtiva]){el.innerHTML='';return;}
+  var info=todas[subAtiva], sub=info.sub;
   if(!sub.episodios) sub.episodios=[];
-  el.innerHTML=
-    '<div class="secao-header">'+
-      '<div><div class="breadcrumb">Categoria: <b>'+info.catNome+'</b></div>'+
-      '<div class="secao-titulo" style="color:var(--roxo)">'+sub.nome+'<span>'+sub.episodios.length+' episodios</span></div>'+
-      '<div style="font-size:11px;color:var(--suave);font-family:monospace;margin-top:2px;">'+sub.arquivo+'</div></div>'+
-    '</div>'+
+  el.innerHTML='<div class="secao-header"><div><div class="breadcrumb">Categoria: <b>'+info.catNome+'</b></div>'+
+    '<div class="secao-titulo" style="color:var(--roxo)">'+sub.nome+'<span>'+sub.episodios.length+' episodios</span></div>'+
+    '<div style="font-size:11px;color:var(--suave);font-family:monospace;margin-top:2px;">'+sub.arquivo+'</div></div></div>'+
     '<div class="lista-filmes" id="lista-eps"></div>'+
     '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">'+
     '<button class="btn btn-roxo" onclick="adicionarEpisodio()">+ Adicionar Episodio</button>'+
     '<label class="btn btn-ouro" for="csv-eps" style="cursor:pointer;">&#128229; Importar CSV</label>'+
     '<input type="file" id="csv-eps" accept=".csv" style="display:none" onchange="importarCSVEpisodios(this)">'+
-    (sub.episodios.length===0 ?
+    (sub.episodios.length===0?
       '<label class="btn btn-sec" for="json-sub-'+info.catIdx+'-'+info.subIdx+'" style="cursor:pointer;border-color:var(--ouro);color:var(--ouro);">&#128194; Carregar '+sub.arquivo+'</label>'+
       '<input type="file" id="json-sub-'+info.catIdx+'-'+info.subIdx+'" accept=".json" style="display:none" onchange="carregarJSONSub(this,'+info.catIdx+','+info.subIdx+')">'
       :
       '<label class="btn btn-sec" for="json-sub-r-'+info.catIdx+'-'+info.subIdx+'" style="cursor:pointer;border-color:var(--suave);color:var(--suave);font-size:12px;">&#128260; Recarregar JSON</label>'+
-      '<input type="file" id="json-sub-r-'+info.catIdx+'-'+info.subIdx+'" accept=".json" style="display:none" onchange="carregarJSONSub(this,'+info.catIdx+','+info.subIdx+')">'
-    )+
+      '<input type="file" id="json-sub-r-'+info.catIdx+'-'+info.subIdx+'" accept=".json" style="display:none" onchange="carregarJSONSub(this,'+info.catIdx+','+info.subIdx+')">')+
     '</div>';
   renderEpisodios(info);
 }
 
 function renderEpisodios(info){
-  var lista=document.getElementById('lista-eps');
-  if(!lista) return;
+  var lista=document.getElementById('lista-eps'); if(!lista) return;
   lista.innerHTML='';
   var eps=info.sub.episodios||[];
   for(var i=0;i<eps.length;i++) lista.appendChild(criarCard(i,eps[i],true,info));
 }
 
-function marcarSubEditada(){
-  var todas=getTodasSubs();
-  var info=todas[subAtiva];
-  if(info) info.sub._editado=true;
-}
+function marcarSubEditada(){ var todas=getTodasSubs(); var info=todas[subAtiva]; if(info) info.sub._editado=true; }
 
 function adicionarEpisodio(){
-  var todas=getTodasSubs();
-  var info=todas[subAtiva];
-  if(!info) return;
+  var todas=getTodasSubs(); var info=todas[subAtiva]; if(!info) return;
   if(!info.sub.episodios) info.sub.episodios=[];
-  var idx=info.sub.episodios.length;
-  info.sub.episodios.push({id:pad(idx+1),titulo:'',thumb:'',driveId:''});
-  marcarSubEditada();
-  renderConteudoSubs();
+  info.sub.episodios.push({id:pad(info.sub.episodios.length+1),titulo:'',thumb:'',driveId:''});
+  marcarSubEditada(); renderConteudoSubs();
   setTimeout(function(){var c=document.getElementById('conteudo');c.scrollTop=c.scrollHeight;},80);
 }
 
-// ===== CARD GENERICO =====
-function criarCard(idx,item,isEp,info){
-  var card=document.createElement('div');
-  card.className='filme-card'+(isEp?' episodio':'');
-  card.innerHTML=
-    '<div class="filme-num">'+(idx+1)+'</div>'+
-    '<div class="campo"><label>Titulo</label><input type="text" placeholder="'+(isEp?'Ep '+(idx+1)+' - Titulo':'Nome do filme')+'" value="'+esc(item.titulo)+'" data-campo="titulo" data-idx="'+idx+'"></div>'+
-    '<div class="campo"><label>URL da Capa</label><input type="text" placeholder="https://... ou thumbs/capa.jpg" value="'+esc(item.thumb)+'" data-campo="thumb" data-idx="'+idx+'"></div>'+
-    '<div class="campo"><label>Drive ID</label><input type="text" placeholder="ID do Google Drive" value="'+esc(item.driveId)+'" data-campo="driveId" data-idx="'+idx+'"></div>'+
-    '<button class="btn-del-filme" data-idx="'+idx+'" title="Remover">&#10005;</button>';
+// ===== CARD GENÉRICO =====
+function criarCard(idx, item, isEp, info) {
+  var card = document.createElement('div');
+  card.className = 'filme-card' + (isEp ? ' episodio' : '');
 
-  var inputs=card.querySelectorAll('input');
-  for(var j=0;j<inputs.length;j++){
-    inputs[j].addEventListener('input',(function(isEpisodio,infoRef){
+  var numDiv = document.createElement('div');
+  numDiv.className = 'filme-num';
+  numDiv.textContent = idx + 1;
+
+  var campoTitulo = criarCampoInput('Titulo', isEp ? 'Ep '+(idx+1)+' - Titulo' : 'Nome do filme', item.titulo, 'titulo', idx);
+  var campoThumb  = criarCampoInput('URL da Capa', 'https://... ou thumbs/capa.jpg', item.thumb, 'thumb', idx);
+  var campoDrive  = criarCampoInput('Drive ID', 'ID do Google Drive', item.driveId, 'driveId', idx);
+
+  // Botão F — Thumb (TMDB): coluna própria entre URL Capa e Drive ID
+  var btnFThumb = document.createElement('button');
+  btnFThumb.className = 'btn-filtrar-id btn-filtrar-thumb';
+  btnFThumb.textContent = 'F';
+  btnFThumb.title = 'Normalizar URL da capa para image.tmdb.org/t/p/w500/';
+  var inputThumb = campoThumb.querySelector('input');
+  btnFThumb.addEventListener('click', function(){ filtrarThumb(btnFThumb, inputThumb); });
+
+  // Coluna de ações finais: F-drive + X
+  var acoes = document.createElement('div');
+  acoes.className = 'card-acoes';
+
+  // Botão F — Drive ID
+  var btnF = document.createElement('button');
+  btnF.className = 'btn-filtrar-id';
+  btnF.textContent = 'F';
+  btnF.title = 'Extrair ID do Google Drive da URL colada no campo Drive ID';
+  var inputDrive = campoDrive.querySelector('input');
+  btnF.addEventListener('click', function(){ filtrarId(btnF, inputDrive); });
+
+  // Botão X
+  var btnDel = document.createElement('button');
+  btnDel.className = 'btn-del-filme';
+  btnDel.innerHTML = '&#10005;';
+  btnDel.title = 'Remover';
+
+  acoes.appendChild(btnF);
+  acoes.appendChild(btnDel);
+
+  // Ordem no grid: nº | título | url-capa | F-thumb | drive-id | F-drive+X
+  card.appendChild(numDiv);
+  card.appendChild(campoTitulo);
+  card.appendChild(campoThumb);
+  card.appendChild(btnFThumb);
+  card.appendChild(campoDrive);
+  card.appendChild(acoes);
+
+  // Eventos de input
+  var inputs = card.querySelectorAll('input');
+  for (var j = 0; j < inputs.length; j++) {
+    inputs[j].addEventListener('input', (function(isEpisodio, infoRef){
       return function(){
-        var i=parseInt(this.dataset.idx), campo=this.dataset.campo;
-        if(isEpisodio&&infoRef){ infoRef.sub.episodios[i][campo]=this.value; marcarSubEditada(); }
-        else if(catalogo[catAtiva]){ catalogo[catAtiva].itens[i][campo]=this.value; catalogo[catAtiva]._editado=true; }
+        var i = parseInt(this.dataset.idx), campo = this.dataset.campo;
+        if (isEpisodio && infoRef) { infoRef.sub.episodios[i][campo] = this.value; marcarSubEditada(); }
+        else if (catalogo[catAtiva]) { catalogo[catAtiva].itens[i][campo] = this.value; catalogo[catAtiva]._editado = true; }
       };
-    })(isEp,info));
+    })(isEp, info));
   }
-  card.querySelector('.btn-del-filme').addEventListener('click',(function(isEpisodio,infoRef){
+
+  // Evento remover — usa dataset.idx do inputDrive para pegar o índice correto
+  btnDel.addEventListener('click', (function(isEpisodio, infoRef){
     return function(){
-      var i=parseInt(this.dataset.idx);
-      if(isEpisodio&&infoRef){ infoRef.sub.episodios.splice(i,1); marcarSubEditada(); renderConteudoSubs(); }
+      var i = parseInt(inputDrive.dataset.idx);
+      if (isEpisodio && infoRef) { infoRef.sub.episodios.splice(i,1); marcarSubEditada(); renderConteudoSubs(); }
       else { catalogo[catAtiva].itens.splice(i,1); catalogo[catAtiva]._editado=true; renderConteudo(); }
     };
-  })(isEp,info));
+  })(isEp, info));
+
   return card;
 }
 
-// ===== MODAIS CATEGORIA / SUBCATEGORIA =====
-function abrirModalCat(){
-  document.getElementById('modal-cat').classList.add('aberto');
-  setTimeout(function(){document.getElementById('input-nome-cat').focus();},100);
+function criarCampoInput(labelTxt, placeholder, valor, campo, idx) {
+  var wrap = document.createElement('div'); wrap.className = 'campo';
+  var lbl = document.createElement('label'); lbl.textContent = labelTxt;
+  var inp = document.createElement('input');
+  inp.type = 'text'; inp.placeholder = placeholder; inp.value = valor || '';
+  inp.dataset.campo = campo; inp.dataset.idx = idx;
+  wrap.appendChild(lbl); wrap.appendChild(inp);
+  return wrap;
 }
 
+// ===== MODAIS =====
+function abrirModalCat(){ document.getElementById('modal-cat').classList.add('aberto'); setTimeout(function(){document.getElementById('input-nome-cat').focus();},100); }
+
 function abrirModalSub(){
-  var sel=document.getElementById('select-cat-pai');
-  sel.innerHTML='';
-  var temSeries=false;
-  for(var i=0;i<catalogo.length;i++){
-    if(catalogo[i].tipo==='series'){
-      var opt=document.createElement('option');
-      opt.value=i; opt.textContent=catalogo[i].categoria;
-      sel.appendChild(opt); temSeries=true;
-    }
-  }
+  var sel=document.getElementById('select-cat-pai'); sel.innerHTML=''; var temSeries=false;
+  for(var i=0;i<catalogo.length;i++){ if(catalogo[i].tipo==='series'){ var opt=document.createElement('option'); opt.value=i; opt.textContent=catalogo[i].categoria; sel.appendChild(opt); temSeries=true; } }
   if(!temSeries){toast('Crie uma categoria do tipo "Series" primeiro!','erro');return;}
   document.getElementById('modal-sub').classList.add('aberto');
   setTimeout(function(){document.getElementById('input-nome-sub').focus();},100);
@@ -787,34 +785,19 @@ function abrirModalSub(){
 
 function fecharModal(id){
   document.getElementById(id).classList.remove('aberto');
-  if(id==='modal-cat'){document.getElementById('input-nome-cat').value='';}
-  if(id==='modal-sub'){document.getElementById('input-nome-sub').value='';document.getElementById('input-thumb-sub').value='';}
+  if(id==='modal-cat') document.getElementById('input-nome-cat').value='';
+  if(id==='modal-sub'){ document.getElementById('input-nome-sub').value=''; document.getElementById('input-thumb-sub').value=''; }
 }
 
-function fecharModalFora(e,id){
-  if(e.target===document.getElementById(id)) fecharModal(id);
-}
+function fecharModalFora(e,id){ if(e.target===document.getElementById(id)) fecharModal(id); }
 
 function confirmarCat(){
-  var input=document.getElementById('input-nome-cat');
-  var nome=input.value.trim();
-  var tipo=document.getElementById('select-tipo-cat').value;
+  var input=document.getElementById('input-nome-cat'); var nome=input.value.trim(); var tipo=document.getElementById('select-tipo-cat').value;
   if(!nome){toast('Digite o nome!','erro');input.focus();return;}
-  for(var i=0;i<catalogo.length;i++){
-    if(catalogo[i].categoria.toLowerCase()===nome.toLowerCase()){toast('Categoria ja existe!','erro');return;}
-  }
+  for(var i=0;i<catalogo.length;i++) if(catalogo[i].categoria.toLowerCase()===nome.toLowerCase()){toast('Categoria ja existe!','erro');return;}
   var slug=slugify(nome);
-  catalogo.push({
-    categoria:nome,
-    tipo:tipo,
-    arquivo: tipo==='series'?(slug+'/index.json'):(slug+'.json'),
-    itens:[],
-    subs:[],
-    _novo:true
-  });
-  catAtiva=catalogo.length-1;
-  fecharModal('modal-cat');
-  renderSidebar(); renderConteudo();
+  catalogo.push({categoria:nome,tipo:tipo,arquivo:tipo==='series'?(slug+'/index.json'):(slug+'.json'),itens:[],subs:[],_novo:true});
+  catAtiva=catalogo.length-1; fecharModal('modal-cat'); renderSidebar(); renderConteudo();
   toast('Categoria "'+nome+'" criada!','sucesso');
 }
 
@@ -824,342 +807,180 @@ function confirmarSub(){
   var thumb=document.getElementById('input-thumb-sub').value.trim();
   if(!nome){toast('Digite o nome!','erro');return;}
   if(!catalogo[catIdx].subs) catalogo[catIdx].subs=[];
-  var slug=slugify(catalogo[catIdx].categoria);
-  var subSlug=slugify(nome);
-  catalogo[catIdx].subs.push({
-    nome:nome,
-    arquivo:slug+'/'+subSlug+'.json',
-    thumb:thumb,
-    totalEpisodios:0,
-    episodios:[],
-    _novo:true
-  });
-  fecharModal('modal-sub');
-  subAtiva=getTodasSubs().length-1;
+  var slug=slugify(catalogo[catIdx].categoria), subSlug=slugify(nome);
+  catalogo[catIdx].subs.push({nome:nome,arquivo:slug+'/'+subSlug+'.json',thumb:thumb,totalEpisodios:0,episodios:[],_novo:true});
+  fecharModal('modal-sub'); subAtiva=getTodasSubs().length-1;
   renderSubsSidebar(); renderConteudoSubs();
   toast('Subcategoria "'+nome+'" criada!','sucesso');
 }
 
 document.addEventListener('keydown',function(e){
   if(e.key==='Escape'){fecharModal('modal-cat');fecharModal('modal-sub');fecharModal('modal-salvar');}
-  if(e.key==='Enter'){
-    if(document.getElementById('modal-cat').classList.contains('aberto')) confirmarCat();
-  }
+  if(e.key==='Enter'){ if(document.getElementById('modal-cat').classList.contains('aberto')) confirmarCat(); }
 });
 
 // ===== MODAL SALVAR =====
 function abrirModalSalvar(){
   if(catalogo.length===0){toast('Catalogo vazio!','erro');return;}
-  // Reseta para modo 'todos' ao abrir
-  selecionarModoZip('todos');
-  atualizarListaSalvar();
+  selecionarModoZip('todos'); atualizarListaSalvar();
   document.getElementById('modal-salvar').classList.add('aberto');
 }
 
-// ===== LISTAR ARQUIVOS COM STATUS =====
 function listarArquivosComStatus(){
   var arquivos=[];
-
-  // index.json principal — sempre considerado editado (reflete estrutura atual)
-  arquivos.push({
-    path:'index.json',
-    icone:'📄',
-    tipo:'indice principal',
-    editado:true,
-    statusBadge:{ cls:'badge-editado', label:'sempre' }
-  });
-
+  arquivos.push({path:'index.json',icone:'📄',tipo:'indice principal',editado:true,statusBadge:{cls:'badge-editado',label:'sempre'}});
   for(var i=0;i<catalogo.length;i++){
-    var cat=catalogo[i];
-    var catEditada = !!(cat._editado || cat._novo);
-
+    var cat=catalogo[i], catEditada=!!(cat._editado||cat._novo);
     if(cat.tipo==='filmes'){
-      var temItens = cat.itens && cat.itens.length > 0;
-      var foiEditada = catEditada || temItens;
-      arquivos.push({
-        path: cat.arquivo,
-        icone: '🎬',
-        tipo: cat.categoria,
-        editado: foiEditada,
-        statusBadge: cat._novo
-          ? { cls:'badge-novo', label:'novo' }
-          : (foiEditada ? { cls:'badge-editado', label:'editado' } : null)
-      });
+      var temItens=cat.itens&&cat.itens.length>0, foiEditada=catEditada||temItens;
+      arquivos.push({path:cat.arquivo,icone:'🎬',tipo:cat.categoria,editado:foiEditada,
+        statusBadge:cat._novo?{cls:'badge-novo',label:'novo'}:(foiEditada?{cls:'badge-editado',label:'editado'}:null)});
     } else {
-      // index da categoria de series — editado se a lista de subs mudou
-      arquivos.push({
-        path: cat.arquivo,
-        icone: '📁',
-        tipo: 'indice ' + cat.categoria,
-        editado: catEditada || !!(cat.subs && cat.subs.length > 0 && cat.subs.some(function(s){ return s._novo; })),
-        statusBadge: cat._novo
-          ? { cls:'badge-novo', label:'novo' }
-          : (catEditada ? { cls:'badge-editado', label:'editado' } : null)
-      });
-
-      var subs = cat.subs||[];
+      arquivos.push({path:cat.arquivo,icone:'📁',tipo:'indice '+cat.categoria,
+        editado:catEditada||!!(cat.subs&&cat.subs.length>0&&cat.subs.some(function(s){return s._novo;})),
+        statusBadge:cat._novo?{cls:'badge-novo',label:'novo'}:(catEditada?{cls:'badge-editado',label:'editado'}:null)});
+      var subs=cat.subs||[];
       for(var j=0;j<subs.length;j++){
-        var sub = subs[j];
-        var subEditada = !!(sub._editado || sub._novo);
-        var temEps = sub.episodios && sub.episodios.length > 0;
-        var incluir = subEditada || temEps;
-        arquivos.push({
-          path: sub.arquivo,
-          icone: '📺',
-          tipo: sub.nome,
-          editado: incluir,
-          statusBadge: sub._novo
-            ? { cls:'badge-novo', label:'novo' }
-            : (incluir ? { cls:'badge-editado', label:'editado' } : null)
-        });
+        var sub=subs[j], subEditada=!!(sub._editado||sub._novo), temEps=sub.episodios&&sub.episodios.length>0, incl=subEditada||temEps;
+        arquivos.push({path:sub.arquivo,icone:'📺',tipo:sub.nome,editado:incl,
+          statusBadge:sub._novo?{cls:'badge-novo',label:'novo'}:(incl?{cls:'badge-editado',label:'editado'}:null)});
       }
     }
   }
   return arquivos;
 }
 
-// ===== GERAR ZIP =====
 function gerarZip(){
   var zip=new JSZip();
-  var arquivos = listarArquivosComStatus();
-
-  // index.json principal
   var indiceSimples=[];
+  for(var i=0;i<catalogo.length;i++) indiceSimples.push({categoria:catalogo[i].categoria,tipo:catalogo[i].tipo,arquivo:catalogo[i].arquivo});
+  zip.file('index.json',JSON.stringify(indiceSimples,null,2));
   for(var i=0;i<catalogo.length;i++){
-    var cat=catalogo[i];
-    indiceSimples.push({categoria:cat.categoria,tipo:cat.tipo,arquivo:cat.arquivo});
-  }
-  zip.file('index.json', JSON.stringify(indiceSimples,null,2));
-
-  for(var i=0;i<catalogo.length;i++){
-    var cat=catalogo[i];
-    var catEditada = !!(cat._editado || cat._novo);
-
+    var cat=catalogo[i], catEditada=!!(cat._editado||cat._novo);
     if(cat.tipo==='filmes'){
-      var temItens = cat.itens && cat.itens.length > 0;
-      var deveIncluir = modoZip==='todos' || catEditada || temItens;
-      if(deveIncluir){
-        var itensLimpos=[];
-        var itens=cat.itens||[];
-        for(var j=0;j<itens.length;j++){
-          if(itens[j].titulo||itens[j].driveId){
-            itensLimpos.push({id:pad(j+1),titulo:itens[j].titulo||'',thumb:itens[j].thumb||'',driveId:itens[j].driveId||''});
-          }
-        }
-        zip.file(cat.arquivo, JSON.stringify(itensLimpos,null,2));
-      }
+      var temItens=cat.itens&&cat.itens.length>0, deveIncluir=modoZip==='todos'||catEditada||temItens;
+      if(deveIncluir){ var itensL=[],itens=cat.itens||[]; for(var j=0;j<itens.length;j++) if(itens[j].titulo||itens[j].driveId) itensL.push({id:pad(j+1),titulo:itens[j].titulo||'',thumb:itens[j].thumb||'',driveId:itens[j].driveId||''}); zip.file(cat.arquivo,JSON.stringify(itensL,null,2)); }
     } else {
-      // series/index.json
-      var subs=cat.subs||[];
-      var algumSubEditado = subs.some(function(s){ return s._novo; });
-      var deveIncluirIdx = modoZip==='todos' || catEditada || algumSubEditado;
-      if(deveIncluirIdx){
-        var subsSimples=[];
-        for(var j=0;j<subs.length;j++){
-          var totalEps = subs[j].episodios && subs[j].episodios.length > 0
-            ? subs[j].episodios.length
-            : (subs[j].totalEpisodios || 0);
-          subsSimples.push({nome:subs[j].nome,arquivo:subs[j].arquivo,thumb:subs[j].thumb||'',totalEpisodios:totalEps});
-        }
-        zip.file(cat.arquivo, JSON.stringify(subsSimples,null,2));
-      }
-
+      var subs=cat.subs||[], algumN=subs.some(function(s){return s._novo;}), deveIdx=modoZip==='todos'||catEditada||algumN;
+      if(deveIdx){ var subsL=[]; for(var j=0;j<subs.length;j++){ var te=subs[j].episodios&&subs[j].episodios.length>0?subs[j].episodios.length:(subs[j].totalEpisodios||0); subsL.push({nome:subs[j].nome,arquivo:subs[j].arquivo,thumb:subs[j].thumb||'',totalEpisodios:te}); } zip.file(cat.arquivo,JSON.stringify(subsL,null,2)); }
       for(var j=0;j<subs.length;j++){
-        var sub=subs[j];
-        var eps=sub.episodios||[];
-        var subEditada = !!(sub._editado || sub._novo);
-        var temEps = eps.length > 0;
-        var deveIncluirSub = modoZip==='todos' ? (subEditada||temEps) : (subEditada||temEps);
-        // No modo 'editados', so inclui se foi editado/novo nesta sessao
-        if(modoZip==='editados') deveIncluirSub = subEditada || temEps;
-
-        if(deveIncluirSub){
-          var epsLimpos=[];
-          for(var k=0;k<eps.length;k++){
-            if(eps[k].titulo||eps[k].driveId){
-              epsLimpos.push({id:pad(k+1),titulo:eps[k].titulo||'',thumb:eps[k].thumb||'',driveId:eps[k].driveId||''});
-            }
-          }
-          zip.file(sub.arquivo, JSON.stringify({nome:sub.nome,thumb:sub.thumb||'',episodios:epsLimpos},null,2));
-        }
+        var sub=subs[j],eps=sub.episodios||[],subEd=!!(sub._editado||sub._novo),temEp=eps.length>0,deveS=subEd||temEp;
+        if(deveS){ var epsL=[]; for(var k=0;k<eps.length;k++) if(eps[k].titulo||eps[k].driveId) epsL.push({id:pad(k+1),titulo:eps[k].titulo||'',thumb:eps[k].thumb||'',driveId:eps[k].driveId||''}); zip.file(sub.arquivo,JSON.stringify({nome:sub.nome,thumb:sub.thumb||'',episodios:epsL},null,2)); }
       }
     }
   }
-
   zip.generateAsync({type:'blob'}).then(function(content){
-    var url=URL.createObjectURL(content);
-    var a=document.createElement('a');
-    a.href=url; a.download='cine-drive-catalogo.zip'; a.click();
-    URL.revokeObjectURL(url);
-    fecharModal('modal-salvar');
-    setStatus('ZIP baixado! Extraia e suba para o GitHub.','ok');
+    var url=URL.createObjectURL(content), a=document.createElement('a');
+    a.href=url; a.download='cine-drive-catalogo.zip'; a.click(); URL.revokeObjectURL(url);
+    fecharModal('modal-salvar'); setStatus('ZIP baixado! Extraia e suba para o GitHub.','ok');
     toast('ZIP gerado com sucesso!','sucesso');
   });
 }
 
 // ===== CARREGAR JSON =====
-function carregarIndexCategoriaSeries(input, catIdx) {
-  var file = input.files[0];
-  if (!file) return;
-  var reader = new FileReader();
-  reader.onload = function(ev) {
-    try {
-      var data = JSON.parse(ev.target.result);
-      if (!Array.isArray(data)) { toast('Formato invalido!', 'erro'); return; }
-      if (!catalogo[catIdx].subs) catalogo[catIdx].subs = [];
-      var existentes = catalogo[catIdx].subs;
-      var adicionadas = 0;
-      for (var i = 0; i < data.length; i++) {
-        var item = data[i];
-        var nome = item.nome || item.name || item.titulo || '';
-        var arquivo = item.arquivo || '';
-        var jaExiste = false;
-        for (var j = 0; j < existentes.length; j++) {
-          if (existentes[j].arquivo === arquivo || existentes[j].nome.toLowerCase() === nome.toLowerCase()) {
-            jaExiste = true;
-            if (item.thumb) existentes[j].thumb = item.thumb;
-            break;
-          }
-        }
-        if (!jaExiste && nome) {
-          existentes.push({ nome: nome, arquivo: arquivo, thumb: item.thumb || '', totalEpisodios: item.totalEpisodios || 0, episodios: [] });
-          adicionadas++;
-        }
-      }
-      renderSubsSidebar(); renderConteudo();
-      if (adicionadas > 0) { mudarAba('sub'); subAtiva=0; renderSubsSidebar(); renderConteudoSubs(); }
-      toast(adicionadas + ' series importadas de ' + file.name + '!', 'sucesso');
-      input.value = '';
-    } catch(err) { toast('JSON invalido!', 'erro'); }
-  };
-  reader.readAsText(file, 'UTF-8');
+function carregarIndexCategoriaSeries(input,catIdx){
+  var file=input.files[0]; if(!file) return;
+  var reader=new FileReader();
+  reader.onload=function(ev){ try{
+    var data=JSON.parse(ev.target.result); if(!Array.isArray(data)){toast('Formato invalido!','erro');return;}
+    if(!catalogo[catIdx].subs) catalogo[catIdx].subs=[];
+    var existentes=catalogo[catIdx].subs, adicionadas=0;
+    for(var i=0;i<data.length;i++){
+      var item=data[i],nome=item.nome||item.name||item.titulo||'',arquivo=item.arquivo||'',jaExiste=false;
+      for(var j=0;j<existentes.length;j++) if(existentes[j].arquivo===arquivo||existentes[j].nome.toLowerCase()===nome.toLowerCase()){jaExiste=true;if(item.thumb)existentes[j].thumb=item.thumb;break;}
+      if(!jaExiste&&nome){existentes.push({nome:nome,arquivo:arquivo,thumb:item.thumb||'',totalEpisodios:item.totalEpisodios||0,episodios:[]});adicionadas++;}
+    }
+    renderSubsSidebar(); renderConteudo();
+    if(adicionadas>0){mudarAba('sub');subAtiva=0;renderSubsSidebar();renderConteudoSubs();}
+    toast(adicionadas+' series importadas de '+file.name+'!','sucesso'); input.value='';
+  }catch(err){toast('JSON invalido!','erro');}};
+  reader.readAsText(file,'UTF-8');
 }
 
-function carregarJSONCategoria(input, catIdx) {
-  var file = input.files[0];
-  if (!file) return;
-  var reader = new FileReader();
-  reader.onload = function(ev) {
-    try {
-      var data = JSON.parse(ev.target.result);
-      var itens = [];
-      if (Array.isArray(data)) {
-        for (var i=0; i<data.length; i++) {
-          var item = data[i];
-          itens.push({ id: pad(i+1), titulo: item.titulo||item.title||item.nome||'', thumb: item.thumb||item.capa||item.url||'', driveId: item.driveId||item.id||item.driveID||'' });
-        }
-      }
-      catalogo[catIdx].itens = itens;
-      // Nao marca como editado ao apenas carregar — preserva status original
-      catAtiva = catIdx;
-      renderSidebar(); renderConteudo();
-      toast(itens.length + ' filmes carregados de ' + file.name + '!', 'sucesso');
-      input.value = '';
-    } catch(err) { toast('JSON invalido!', 'erro'); }
-  };
-  reader.readAsText(file, 'UTF-8');
+function carregarJSONCategoria(input,catIdx){
+  var file=input.files[0]; if(!file) return;
+  var reader=new FileReader();
+  reader.onload=function(ev){ try{
+    var data=JSON.parse(ev.target.result),itens=[];
+    if(Array.isArray(data)) for(var i=0;i<data.length;i++){var item=data[i];itens.push({id:pad(i+1),titulo:item.titulo||item.title||item.nome||'',thumb:item.thumb||item.capa||item.url||'',driveId:item.driveId||item.id||item.driveID||''});}
+    catalogo[catIdx].itens=itens; catAtiva=catIdx;
+    renderSidebar(); renderConteudo();
+    toast(itens.length+' filmes carregados de '+file.name+'!','sucesso'); input.value='';
+  }catch(err){toast('JSON invalido!','erro');}};
+  reader.readAsText(file,'UTF-8');
 }
 
-function carregarJSONSub(input, catIdx, subIdx) {
-  var file = input.files[0];
-  if (!file) return;
-  var reader = new FileReader();
-  reader.onload = function(ev) {
-    try {
-      var data = JSON.parse(ev.target.result);
-      var eps = [];
-      var fonte = Array.isArray(data) ? data : (data.episodios || []);
-      for (var i=0; i<fonte.length; i++) {
-        var ep = fonte[i];
-        eps.push({ id: pad(i+1), titulo: ep.titulo||ep.title||ep.nome||'', thumb: ep.thumb||ep.capa||ep.url||'', driveId: ep.driveId||ep.id||ep.driveID||'' });
-      }
-      catalogo[catIdx].subs[subIdx].episodios = eps;
-      // Nao marca como _editado ao carregar — so marca se o usuario editar depois
-      if (!Array.isArray(data) && data.thumb) catalogo[catIdx].subs[subIdx].thumb = data.thumb;
-      renderSubsSidebar(); renderConteudoSubs();
-      toast(eps.length + ' episodios carregados de ' + file.name + '!', 'sucesso');
-      input.value = '';
-    } catch(err) { toast('JSON invalido!', 'erro'); }
-  };
-  reader.readAsText(file, 'UTF-8');
+function carregarJSONSub(input,catIdx,subIdx){
+  var file=input.files[0]; if(!file) return;
+  var reader=new FileReader();
+  reader.onload=function(ev){ try{
+    var data=JSON.parse(ev.target.result),eps=[],fonte=Array.isArray(data)?data:(data.episodios||[]);
+    for(var i=0;i<fonte.length;i++){var ep=fonte[i];eps.push({id:pad(i+1),titulo:ep.titulo||ep.title||ep.nome||'',thumb:ep.thumb||ep.capa||ep.url||'',driveId:ep.driveId||ep.id||ep.driveID||''});}
+    catalogo[catIdx].subs[subIdx].episodios=eps;
+    if(!Array.isArray(data)&&data.thumb) catalogo[catIdx].subs[subIdx].thumb=data.thumb;
+    renderSubsSidebar(); renderConteudoSubs();
+    toast(eps.length+' episodios carregados de '+file.name+'!','sucesso'); input.value='';
+  }catch(err){toast('JSON invalido!','erro');}};
+  reader.readAsText(file,'UTF-8');
 }
 
-// ===== IMPORTAR CSV =====
-function parseCSV(text) {
-  var linhas = text.trim().split('\n');
-  if (linhas.length < 2) return [];
-  var sep = linhas[0].indexOf(';') > -1 ? ';' : ',';
-  var headers = linhas[0].split(sep).map(function(h){ return h.trim().replace(/^\uFEFF/,''); });
-  function findCol(keys) {
-    for (var k=0; k<keys.length; k++) for (var h=0; h<headers.length; h++) if (headers[h].toLowerCase().indexOf(keys[k]) > -1) return h;
-    return -1;
-  }
-  var iThumb  = findCol(['url','capa','thumb','imagem','cover']);
-  var iDrive  = findCol(['id','drive']);
-  var iTitulo = findCol(['titulo','title','nome','name']);
-  var itens = [];
-  for (var i=1; i<linhas.length; i++) {
-    var cols = linhas[i].split(sep);
-    var thumb   = iThumb  > -1 ? (cols[iThumb]  || '').trim() : '';
-    var driveId = iDrive  > -1 ? (cols[iDrive]  || '').trim() : '';
-    var titulo  = iTitulo > -1 ? (cols[iTitulo] || '').trim() : '';
-    if (titulo || driveId) itens.push({ thumb: thumb, driveId: driveId, titulo: titulo });
+// ===== CSV =====
+function parseCSV(text){
+  var linhas=text.trim().split('\n'); if(linhas.length<2) return [];
+  var sep=linhas[0].indexOf(';')>-1?';':',';
+  var headers=linhas[0].split(sep).map(function(h){return h.trim().replace(/^\uFEFF/,'');});
+  function findCol(keys){for(var k=0;k<keys.length;k++) for(var h=0;h<headers.length;h++) if(headers[h].toLowerCase().indexOf(keys[k])>-1) return h; return -1;}
+  var iThumb=findCol(['url','capa','thumb','imagem','cover']),iDrive=findCol(['id','drive']),iTitulo=findCol(['titulo','title','nome','name']),itens=[];
+  for(var i=1;i<linhas.length;i++){
+    var cols=linhas[i].split(sep);
+    var thumb=iThumb>-1?(cols[iThumb]||'').trim():'',driveId=iDrive>-1?(cols[iDrive]||'').trim():'',titulo=iTitulo>-1?(cols[iTitulo]||'').trim():'';
+    if(titulo||driveId) itens.push({thumb:thumb,driveId:driveId,titulo:titulo});
   }
   return itens;
 }
 
-function importarCSVFilmes(input) {
-  var file = input.files[0]; if (!file) return;
-  var reader = new FileReader();
-  reader.onload = function(ev) {
-    var itens = parseCSV(ev.target.result);
-    if (!itens.length) { toast('CSV vazio ou formato invalido!', 'erro'); return; }
-    if (!catalogo[catAtiva].itens) catalogo[catAtiva].itens = [];
-    var base = catalogo[catAtiva].itens.length;
-    for (var i=0; i<itens.length; i++) catalogo[catAtiva].itens.push({ id: pad(base+i+1), titulo: itens[i].titulo, thumb: itens[i].thumb, driveId: itens[i].driveId });
-    catalogo[catAtiva]._editado = true;
-    renderConteudo();
-    toast(itens.length + ' filmes importados!', 'sucesso');
-    input.value = '';
+function importarCSVFilmes(input){
+  var file=input.files[0]; if(!file) return;
+  var reader=new FileReader();
+  reader.onload=function(ev){
+    var itens=parseCSV(ev.target.result); if(!itens.length){toast('CSV vazio ou formato invalido!','erro');return;}
+    if(!catalogo[catAtiva].itens) catalogo[catAtiva].itens=[];
+    var base=catalogo[catAtiva].itens.length;
+    for(var i=0;i<itens.length;i++) catalogo[catAtiva].itens.push({id:pad(base+i+1),titulo:itens[i].titulo,thumb:itens[i].thumb,driveId:itens[i].driveId});
+    catalogo[catAtiva]._editado=true; renderConteudo();
+    toast(itens.length+' filmes importados!','sucesso'); input.value='';
   };
-  reader.readAsText(file, 'UTF-8');
+  reader.readAsText(file,'UTF-8');
 }
 
-function importarCSVEpisodios(input) {
-  var file = input.files[0]; if (!file) return;
-  var reader = new FileReader();
-  reader.onload = function(ev) {
-    var itens = parseCSV(ev.target.result);
-    if (!itens.length) { toast('CSV vazio ou formato invalido!', 'erro'); return; }
-    var todas = getTodasSubs(); var info = todas[subAtiva];
-    if (!info) return;
-    if (!info.sub.episodios) info.sub.episodios = [];
-    var base = info.sub.episodios.length;
-    for (var i=0; i<itens.length; i++) info.sub.episodios.push({ id: pad(base+i+1), titulo: itens[i].titulo, thumb: itens[i].thumb, driveId: itens[i].driveId });
-    marcarSubEditada();
-    renderConteudoSubs();
-    toast(itens.length + ' episodios importados!', 'sucesso');
-    input.value = '';
+function importarCSVEpisodios(input){
+  var file=input.files[0]; if(!file) return;
+  var reader=new FileReader();
+  reader.onload=function(ev){
+    var itens=parseCSV(ev.target.result); if(!itens.length){toast('CSV vazio ou formato invalido!','erro');return;}
+    var todas=getTodasSubs(),info=todas[subAtiva]; if(!info) return;
+    if(!info.sub.episodios) info.sub.episodios=[];
+    var base=info.sub.episodios.length;
+    for(var i=0;i<itens.length;i++) info.sub.episodios.push({id:pad(base+i+1),titulo:itens[i].titulo,thumb:itens[i].thumb,driveId:itens[i].driveId});
+    marcarSubEditada(); renderConteudoSubs();
+    toast(itens.length+' episodios importados!','sucesso'); input.value='';
   };
-  reader.readAsText(file, 'UTF-8');
+  reader.readAsText(file,'UTF-8');
 }
 
-// ===== VER JSON =====
 function verJson(){
   var json=JSON.stringify(catalogo,null,2);
   var w=window.open('','_blank');
   w.document.write('<pre style="background:#0d0d10;color:#f0f0f5;padding:20px;font-size:13px;font-family:monospace;white-space:pre-wrap;">'+json+'</pre>');
 }
 
-// ===== UTILITARIOS =====
 function pad(n){return String(n).padStart(3,'0');}
 function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;');}
 function setStatus(msg,tipo){var el=document.getElementById('status');el.textContent=msg;el.className='status '+(tipo||'');}
 function toast(msg,tipo){
   var el=document.getElementById('toast');
   el.textContent=msg; el.className='toast '+(tipo||'');
-  el.classList.add('show');
-  clearTimeout(window._tt);
+  el.classList.add('show'); clearTimeout(window._tt);
   window._tt=setTimeout(function(){el.classList.remove('show');},3000);
 }
 </script>
