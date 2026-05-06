@@ -1,0 +1,318 @@
+{
+  "nome": "Black Kamen Rider (1987)",
+  "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpg",
+  "episodios": [
+    {
+      "id": "001",
+      "titulo": "Kamem Rider Black-01",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "15-0be3OFEZhd3AkBFV0pOK77TJhWvNzh"
+    },
+    {
+      "id": "002",
+      "titulo": "Kamem Rider Black-02",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1AgerK9G5q2JCL2WlorQn5Q6UUhJqgzQ9"
+    },
+    {
+      "id": "003",
+      "titulo": "Kamem Rider Black-03",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1vrN_1fznaBU8Mrg6SViQYfa905h8Vvym"
+    },
+    {
+      "id": "004",
+      "titulo": "Kamem Rider Black-04",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1Q0OINQ_efU0baX1ViVh0zY6Rndcej223"
+    },
+    {
+      "id": "005",
+      "titulo": "Kamem Rider Black-05",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1g7uCDNUghPExzaTK1qCk7QRfoYQbR2RW"
+    },
+    {
+      "id": "006",
+      "titulo": "Kamem Rider Black-06",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1xx--f2q3Kr6gCbWBHE4nR0ZBTReV_m2b"
+    },
+    {
+      "id": "007",
+      "titulo": "Kamem Rider Black-07",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1o7l6Indm6cGh0mrC374El2QSF_QM-8hm"
+    },
+    {
+      "id": "008",
+      "titulo": "Kamem Rider Black-08",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1IC3jyG3z6RkaVF94zdRRnf-Muvw_zFG9"
+    },
+    {
+      "id": "009",
+      "titulo": "Kamem Rider Black-09",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1kdMYhtRZTFpT8FHoFs_PCVDtBP_6h70-"
+    },
+    {
+      "id": "010",
+      "titulo": "Kamem Rider Black-10",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1EGYOVJodJFiyP28URAg-bYu9tC6HRSqQ"
+    },
+    {
+      "id": "011",
+      "titulo": "Kamem Rider Black-11",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1qozvqDB713HaKd6YhrkE94HsgZJQJ_ox"
+    },
+    {
+      "id": "012",
+      "titulo": "Kamem Rider Black-12",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1BM7NfonhHDaRfgDHrefJcx179OxgQKvT"
+    },
+    {
+      "id": "013",
+      "titulo": "Kamem Rider Black-13",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1NrWoWwRGKYSDbDBjiyHr2ZHe_UVbpm2W"
+    },
+    {
+      "id": "014",
+      "titulo": "Kamem Rider Black-14",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1RPQdkfRRSOsNho7yfhI9754nCUJz3tUa"
+    },
+    {
+      "id": "015",
+      "titulo": "Kamem Rider Black-15",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1HG15xC8E3PWJLWk5OrT7K6-jKW7fJzgQ"
+    },
+    {
+      "id": "016",
+      "titulo": "Kamem Rider Black-16",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1EeKYPP3i_-SXk0BmqJxEeJmA4tat3Ea2"
+    },
+    {
+      "id": "017",
+      "titulo": "Kamem Rider Black-17",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1TWtfJ-Bxl2sJnvPaC-EVrMUKsQAnC-6X"
+    },
+    {
+      "id": "018",
+      "titulo": "Kamem Rider Black-18",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1spKMHMHridJRHeqLa-rWLPP9mBQrX3cH"
+    },
+    {
+      "id": "019",
+      "titulo": "Kamem Rider Black-19",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1M1GlCfyj4Geel2Azuc1Fuh8_2J2Br5TG"
+    },
+    {
+      "id": "020",
+      "titulo": "Kamem Rider Black-20",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1U_1nn2e9QmaYbdYjeNEAG9KFybtARhhp"
+    },
+    {
+      "id": "021",
+      "titulo": "Kamem Rider Black-21",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1NTQlLlFP8QiTfEdOYHq5mgrKPtvVSdNW"
+    },
+    {
+      "id": "022",
+      "titulo": "Kamem Rider Black-22",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1lwCpze2lmnsoizP01m4JBmeXnfHIH5Jm"
+    },
+    {
+      "id": "023",
+      "titulo": "Kamem Rider Black-23",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "19pV38e9Z3addXw9w8VpogL0eaAfyVUQW"
+    },
+    {
+      "id": "024",
+      "titulo": "Kamem Rider Black-24",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "17mS7K7A4BDGF709FxQIEoTOKuDAT0IFW"
+    },
+    {
+      "id": "025",
+      "titulo": "Kamem Rider Black-25",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1cSjJ0gRUWIYqeqHKfvMP0RAmJ3nn9bsq"
+    },
+    {
+      "id": "026",
+      "titulo": "Kamem Rider Black-26",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1MH8bay5hTtewsd1dK442EiCnODLiPM_n"
+    },
+    {
+      "id": "027",
+      "titulo": "Kamem Rider Black-27",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1O02ImtEmGQuP-OZ3DZsOVnnHRNaskt3T"
+    },
+    {
+      "id": "028",
+      "titulo": "Kamem Rider Black-28",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1n-oEo3YA0CB3jtm3KR1TFA3jgmMbfjJ0"
+    },
+    {
+      "id": "029",
+      "titulo": "Kamem Rider Black-29",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "12QUDKNPDukQGM_ZWlt-7y-1Mj7XF20XY"
+    },
+    {
+      "id": "030",
+      "titulo": "Kamem Rider Black-30",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1_768S71rPxdYHGr_ET2usnIkaAV4lJCL"
+    },
+    {
+      "id": "031",
+      "titulo": "Kamem Rider Black-31",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "18CQP3ovashitYNyPQ0ldqKg47B1mOcsP"
+    },
+    {
+      "id": "032",
+      "titulo": "Kamem Rider Black-32",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1f8eeaNT1QGNNkM4dx9-PJqeXDM9NiXuN"
+    },
+    {
+      "id": "033",
+      "titulo": "Kamem Rider Black-33",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1-8qtqTdShbCVG30nKRQ1wlv00STj5LWl"
+    },
+    {
+      "id": "034",
+      "titulo": "Kamem Rider Black-34",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1xPy8q_A9z4skVhdfXenuulV6Gbe7xO3S"
+    },
+    {
+      "id": "035",
+      "titulo": "Kamem Rider Black-35",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1r5fYgGySzUrMX0maM4xupWwu0jO2_i4J"
+    },
+    {
+      "id": "036",
+      "titulo": "Kamem Rider Black-36",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "113heLuvF8ibKwT6jR1gc8u062nKOf4TA"
+    },
+    {
+      "id": "037",
+      "titulo": "Kamem Rider Black-37",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1ExeEucemk6T-R10vrOUJ7I7JBmFihr_9"
+    },
+    {
+      "id": "038",
+      "titulo": "Kamem Rider Black-38",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "16B2lJVPdXw5faptrCliWIxu12W_73_hG"
+    },
+    {
+      "id": "039",
+      "titulo": "Kamem Rider Black-39",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1H4MFCCaKGT-JmBRn3A6SrQcascHrX0Ol"
+    },
+    {
+      "id": "040",
+      "titulo": "Kamem Rider Black-40",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1IPyWjp9MVQzgIeBWb9bWoosRjXPXesqL"
+    },
+    {
+      "id": "041",
+      "titulo": "Kamem Rider Black-41",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1zEG2o440dQ2HtHQvchawBcQKc-UmyoBe"
+    },
+    {
+      "id": "042",
+      "titulo": "Kamem Rider Black-42",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1aveErK1N9Wuyy746cDHXz3OGu8rt11sm"
+    },
+    {
+      "id": "043",
+      "titulo": "Kamem Rider Black-43",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1nFw1yXA2IxKHITmsdOV03enCVDgML-Vc"
+    },
+    {
+      "id": "044",
+      "titulo": "Kamem Rider Black-44",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1d4-c4X5cDXLckWf3lxp9oSF_oCY8kpQZ"
+    },
+    {
+      "id": "045",
+      "titulo": "Kamem Rider Black-45",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1kYo45bw5LiK_BODXtL6YU3rBnO9Ev4O7"
+    },
+    {
+      "id": "046",
+      "titulo": "Kamem Rider Black-46",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "N/A"
+    },
+    {
+      "id": "047",
+      "titulo": "Kamem Rider Black-47",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1ippwVynR5OkHC5hn13bI5-2_ic10W5jh"
+    },
+    {
+      "id": "048",
+      "titulo": "Kamem Rider Black-48",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1JK_r0DsJBH5mQYoae6Zu8WhZ11kHANo2"
+    },
+    {
+      "id": "049",
+      "titulo": "Kamem Rider Black-49",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "17NP55GEXBdJ70aOEdfst-Q4tCCTkCeGo"
+    },
+    {
+      "id": "050",
+      "titulo": "Kamem Rider Black-50",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1-_T9G1sh24yKL99RqUcI4Ba9foYYlD1l"
+    },
+    {
+      "id": "051",
+      "titulo": "Kamem Rider Black-51",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1V6LvR5qIrhZ7pSNg3Stjr4592h96fAJ6"
+    },
+    {
+      "id": "052",
+      "titulo": "Kamem Rider Black-52",
+      "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpgg",
+      "driveId": "1mFRUQJ3CJi-od9I9a0YkM9rNp4upEKox"
+    }
+  ]
+}
