@@ -64,5 +64,11 @@
     "arquivo": "tokusatsus/b-fighterkabuto.json",
     "thumb": "https://1.bp.blogspot.com/-nAIiLtkBqi8/YYQ2ZmxLCSI/AAAAAAAACcc/chjO-nULX3YR2o9AdJSpyb7YaTRxkLd2gCLcBGAsYHQ/s0/B-FighterKB.png",
     "totalEpisodios": 15
+  },
+  {
+    "nome": "Black Kamen Rider (1987)",
+    "arquivo": "tokusatsus/black-kamen-rider-1987.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpg",
+    "totalEpisodios": 52
   }
 ]
