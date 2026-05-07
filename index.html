@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -114,7 +115,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 
 .conteudo { 
   flex:1; 
-  padding:24px 36px 24px; 
+  padding:24px 36px 120px; 
   overflow-y:scroll; 
   height: calc(100vh - 65px);
   max-height: calc(100vh - 65px);
@@ -779,7 +780,7 @@ function renderConteudo() {
     '<div style="font-size:11px;color:var(--suave);font-family:monospace;margin-top:2px;">'+cat.arquivo+'</div></div>'+
     (!temItens?'<div style="margin-left:auto;">'+jsonBtnHTML+'</div>':'')+
     '</div><div class="lista-filmes" id="lista-filmes"></div>'+
-    '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">'+
+    '<div style=" width: 100%; position:fixed; bottom: 65px; left:282px;padding:10px 16px;background:var(--painel);display:flex;gap:10px;align-items:center;flex-wrap:wrap;z-index:99;border-top:1px solid var(--borda);border-right:1px solid var(--borda);">'+
     '<button class="btn btn-vm" onclick="adicionarFilme()">+ Adicionar Filme</button>'+
     '<label class="btn btn-ouro" for="csv-filmes" style="cursor:pointer;">&#128229; Importar CSV</label>'+
     '<input type="file" id="csv-filmes" accept=".csv" style="display:none" onchange="importarCSVFilmes(this)">'+
@@ -816,7 +817,7 @@ function renderConteudoSubs(){
     '<div class="secao-titulo" style="color:var(--roxo)">'+sub.nome+'<span>'+sub.episodios.length+' episodios</span></div>'+
     '<div style="font-size:11px;color:var(--suave);font-family:monospace;margin-top:2px;">'+sub.arquivo+'</div></div></div>'+
     '<div class="lista-filmes" id="lista-eps"></div>'+
-    '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">'+
+    '<div style="position:fixed;bottom:57px;left:282px;padding:10px 16px;background:var(--painel);display:flex;gap:10px;align-items:center;flex-wrap:wrap;z-index:99;border-top:1px solid var(--borda);border-right:1px solid var(--borda);">'+
     '<button class="btn btn-roxo" onclick="adicionarEpisodio()">+ Adicionar Episodio</button>'+
     '<label class="btn btn-ouro" for="csv-eps" style="cursor:pointer;">&#128229; Importar CSV</label>'+
     '<input type="file" id="csv-eps" accept=".csv" style="display:none" onchange="importarCSVEpisodios(this)">'+
