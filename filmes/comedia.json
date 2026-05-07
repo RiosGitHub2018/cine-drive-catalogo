@@ -59,8 +59,14 @@
     {
       "id": "010",
       "titulo": "American Pie 3: O Casamento",
-      "thumb": "https://media.themoviedb.org/t/p/w300_and_h450_face/uG1eEKdLIq8Lxlq9AQMtdYQ4rk0.jpg",
+      "thumb": "https://image.tmdb.org/t/p/w500/uG1eEKdLIq8Lxlq9AQMtdYQ4rk0.jpg",
       "driveId": "1foq1nflqpuAxxhjhUIqj2HggvPeMXvOU"
+    },
+    {
+      "id": "011",
+      "titulo": "American Pie 4: Tocando a Maior Zona",
+      "thumb": "https://image.tmdb.org/t/p/w500/uyISJ1zmoppCusa7WOmmsrluU72.jpg",
+      "driveId": "12tPjUGUAtXvTHzZoVyKAJ7CDZhpUX0tB"
     }
   ]
 }
