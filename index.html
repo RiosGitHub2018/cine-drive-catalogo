@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Cine-Drive — Editor de Catalogo</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230d0d10'/><rect x='6' y='6' width='88' height='88' rx='14' fill='%2313131a'/><text x='50' y='46' text-anchor='middle' font-family='sans-serif' font-size='36' font-weight='700' fill='%23e50914'>CD</text><rect x='18' y='52' width='64' height='3' rx='1.5' fill='%23e50914' opacity='0.7'/><text x='50' y='72' text-anchor='middle' font-family='sans-serif' font-size='11' font-weight='600' letter-spacing='4' fill='%23f5c518'>CINE</text></svg>">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap');
@@ -74,7 +75,16 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 
 .layout { display:flex; flex:1; overflow:hidden; height:calc(100vh - 65px); }
 
-.sidebar { width:272px; min-width:272px; background:var(--painel); border-right:1px solid var(--borda); display:flex; flex-direction:column; height:100%; transition:background 0.3s,border-color 0.3s; }
+.sidebar { width:272px; min-width:272px; background:var(--painel); border-right:1px solid var(--borda); display:flex; flex-direction:column; height:100%; overflow:hidden; transition:background 0.3s,border-color 0.3s; }
+.painel-interno { display:flex; flex-direction:column; flex:1; min-height:0; overflow:hidden; position:relative; }
+.lista-cats {
+  overflow-y:scroll;
+  padding:6px;
+  scrollbar-width:thin;
+  scrollbar-color:var(--borda) transparent;
+  height: calc(100vh - 270px);
+  max-height: calc(100vh - 270px);
+}
 .sidebar-abas { display:flex; border-bottom:1px solid var(--borda); flex-shrink:0; }
 .sidebar-aba { flex:1; padding:11px 4px; text-align:center; font-size:10px; font-weight:600; letter-spacing:0.5px; text-transform:uppercase; color:var(--suave); cursor:pointer; border-bottom:2px solid transparent; transition:all 0.2s; }
 .sidebar-aba.ativa       { color:var(--texto);  border-bottom-color:var(--vm); }
@@ -86,7 +96,10 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .badge-ouro  { background:rgba(245,197,24,0.15);  color:var(--ouro); }
 .badge-roxo  { background:rgba(124,58,237,0.15);  color:var(--roxo); }
 .badge-azul  { background:rgba(59,130,246,0.15);  color:var(--azul); }
-.lista-cats { flex:1; overflow-y:auto; padding:6px; }
+.lista-cats::-webkit-scrollbar { width:6px; }
+.lista-cats::-webkit-scrollbar-track { background:transparent; }
+.lista-cats::-webkit-scrollbar-thumb { background:var(--borda); border-radius:3px; }
+.lista-cats::-webkit-scrollbar-thumb:hover { background:var(--suave); }
 .cat-item { display:flex; align-items:center; gap:7px; padding:9px 11px; border-radius:7px; cursor:pointer; transition:background 0.15s; font-size:13px; font-weight:500; border-left:3px solid transparent; }
 .cat-item:hover { background:rgba(128,128,128,0.08); }
 .cat-item.ativa      { background:rgba(229,9,20,0.1);    border-left-color:var(--vm); }
@@ -97,9 +110,21 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .cat-count { font-size:11px; color:var(--suave); background:var(--entrada); padding:1px 6px; border-radius:20px; }
 .btn-del-cat { background:none; border:none; color:var(--suave); cursor:pointer; font-size:13px; width:20px; height:20px; border-radius:4px; display:flex; align-items:center; justify-content:center; transition:color 0.2s,background 0.2s; flex-shrink:0; }
 .btn-del-cat:hover { color:var(--vm); background:rgba(229,9,20,0.1); }
-.sidebar-footer { padding:10px 14px; border-top:1px solid var(--borda); flex-shrink:0; }
+.sidebar-footer { padding:10px 14px; border-top:1px solid var(--borda); flex-shrink:0; background:var(--painel); }
 
-.conteudo { flex:1; padding:24px 36px 100px; overflow-y:auto; height:100%; }
+.conteudo { 
+  flex:1; 
+  padding:24px 36px 24px; 
+  overflow-y:scroll; 
+  height: calc(100vh - 65px);
+  max-height: calc(100vh - 65px);
+  scrollbar-width:thin; 
+  scrollbar-color:var(--borda) transparent; 
+}
+.conteudo::-webkit-scrollbar { width:6px; }
+.conteudo::-webkit-scrollbar-track { background:transparent; }
+.conteudo::-webkit-scrollbar-thumb { background:var(--borda); border-radius:3px; }
+.conteudo::-webkit-scrollbar-thumb:hover { background:var(--suave); }
 .conteudo-vazio { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; gap:12px; color:var(--suave); text-align:center; }
 .conteudo-vazio .ico { font-size:52px; opacity:0.2; }
 .secao-header { display:flex; align-items:center; margin-bottom:18px; gap:14px; flex-wrap:wrap; }
@@ -294,7 +319,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
     </div>
 
     <!-- PAINEL CATEGORIAS -->
-    <div id="painel-cat" style="display:flex;flex-direction:column;flex:1;overflow:hidden;">
+    <div id="painel-cat" class="painel-interno" style="display:flex;">
       <div class="sidebar-top">
         <span class="sidebar-label">Categorias</span>
         <span class="badge-count badge-ouro" id="total-cats">0</span>
@@ -306,7 +331,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
     </div>
 
     <!-- PAINEL SUBCATEGORIAS -->
-    <div id="painel-sub" style="display:none;flex-direction:column;flex:1;overflow:hidden;">
+    <div id="painel-sub" class="painel-interno" style="display:none;">
       <div class="sidebar-top">
         <span class="sidebar-label">Subcategorias</span>
         <span class="badge-count badge-roxo" id="total-subs">0</span>
@@ -318,7 +343,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
     </div>
 
     <!-- PAINEL INFORMAÇÕES -->
-    <div id="painel-infor" style="display:none;flex-direction:column;flex:1;overflow:hidden;">
+    <div id="painel-infor" class="painel-interno" style="display:none;">
       <div class="sidebar-top">
         <span class="sidebar-label">Informações</span>
         <span class="badge-count badge-azul" id="total-infor">0</span>
@@ -623,10 +648,12 @@ function mudarAba(aba) {
   document.getElementById('aba-cat').className   = 'sidebar-aba' + (aba==='cat'?'   ativa':'');
   document.getElementById('aba-sub').className   = 'sidebar-aba' + (aba==='sub'?'   ativa sub':'');
   document.getElementById('aba-infor').className = 'sidebar-aba' + (aba==='infor'?' ativa infor':'');
-  document.getElementById('painel-cat').style.display   = aba==='cat'?'flex':'none';
-  document.getElementById('painel-sub').style.display   = aba==='sub'?'flex':'none';
-  document.getElementById('painel-infor').style.display = aba==='infor'?'flex':'none';
+  // usar flex para manter a estrutura de altura correta
+  document.getElementById('painel-cat').style.display   = aba==='cat'  ? 'flex' : 'none';
+  document.getElementById('painel-sub').style.display   = aba==='sub'  ? 'flex' : 'none';
+  document.getElementById('painel-infor').style.display = aba==='infor'? 'flex' : 'none';
   if (aba==='sub')   { subAtiva=-1; renderSubsSidebar(); renderConteudoSubs(); }
+  // Ao voltar para categorias, garantir que subs sejam atualizadas
   else if (aba==='infor') { renderInforSidebar(); renderConteudoInfor(); }
   else renderConteudo();
 }
@@ -651,27 +678,42 @@ function criarItemCat(i) {
   del.addEventListener('click',function(e){ e.stopPropagation(); var idx=parseInt(this.dataset.idx);
     if(confirm('Remover "'+catalogo[idx].categoria+'" e todo seu conteudo?')){ catalogo.splice(idx,1); if(catAtiva>=catalogo.length) catAtiva=catalogo.length-1; renderSidebar(); renderSubsSidebar(); renderConteudo(); toast('Categoria removida!','sucesso'); } });
   item.appendChild(nome); item.appendChild(count); item.appendChild(del);
-  item.addEventListener('click',function(){ catAtiva=parseInt(this.dataset.idx); renderSidebar(); renderConteudo(); });
+  item.addEventListener('click',function(){
+    catAtiva=parseInt(this.dataset.idx);
+    subAtiva=-1; // reseta sub selecionada ao trocar categoria (usa -1 como sentinela)
+    renderSidebar();
+    renderSubsSidebar(); // atualiza subs filtradas pela nova categoria
+    renderConteudo();
+  });
   return item;
 }
 
 // ===== SIDEBAR SUBCATEGORIAS =====
 function renderSubsSidebar() {
   var lista = document.getElementById('lista-subs'); lista.innerHTML='';
-  var todas = getTodasSubs();
+  var todas = getTodasSubs(true); // filtra pela categoria ativa
   document.getElementById('total-subs').textContent = todas.length;
+  if (todas.length === 0) {
+    lista.innerHTML = '<div style="padding:16px;color:var(--suave);font-size:12px;text-align:center;">Nenhuma subcategoria<br>nesta categoria</div>';
+  }
   for (var i=0;i<todas.length;i++) lista.appendChild(criarItemSub(i,todas[i]));
 }
 
-function getTodasSubs() {
+function getTodasSubs(apenasAtiva) {
   var subs=[];
-  for (var i=0;i<catalogo.length;i++) { if(catalogo[i].tipo!=='series') continue; var arr=catalogo[i].subs||[]; for(var j=0;j<arr.length;j++) subs.push({catIdx:i,subIdx:j,catNome:catalogo[i].categoria,sub:arr[j]}); }
+  for (var i=0;i<catalogo.length;i++) {
+    // Se apenasAtiva=true, filtra só a categoria selecionada
+    if (apenasAtiva && catAtiva >= 0 && i !== catAtiva) continue;
+    if(catalogo[i].tipo!=='series') continue;
+    var arr=catalogo[i].subs||[];
+    for(var j=0;j<arr.length;j++) subs.push({catIdx:i,subIdx:j,catNome:catalogo[i].categoria,sub:arr[j]});
+  }
   return subs;
 }
 
 function criarItemSub(gIdx, info) {
   var item = document.createElement('div');
-  item.className='cat-item'+(gIdx===subAtiva?' ativa sub':'');
+  item.className='cat-item'+(subAtiva&&subAtiva.catIdx===info.catIdx&&subAtiva.subIdx===info.subIdx?' ativa sub':'');
   item.dataset.gidx=gIdx; item.dataset.catidx=info.catIdx; item.dataset.subidx=info.subIdx;
   var nome=document.createElement('span'); nome.className='cat-nome'; nome.textContent=info.sub.nome;
   var tag=document.createElement('span'); tag.className='cat-tag'; tag.textContent=info.catNome;
@@ -681,7 +723,10 @@ function criarItemSub(gIdx, info) {
   del.addEventListener('click',function(e){ e.stopPropagation(); var ci=parseInt(this.dataset.catidx),si=parseInt(this.dataset.subidx);
     if(confirm('Remover "'+catalogo[ci].subs[si].nome+'"?')){ catalogo[ci].subs.splice(si,1); subAtiva=-1; renderSubsSidebar(); renderConteudoSubs(); toast('Subcategoria removida!','sucesso'); } });
   item.appendChild(nome); item.appendChild(tag); item.appendChild(count); item.appendChild(del);
-  item.addEventListener('click',function(){ subAtiva=parseInt(this.dataset.gidx); renderSubsSidebar(); renderConteudoSubs(); });
+  item.addEventListener('click',function(){
+    subAtiva = { catIdx: parseInt(this.dataset.catidx), subIdx: parseInt(this.dataset.subidx) };
+    renderSubsSidebar(); renderConteudoSubs();
+  });
   return item;
 }
 
@@ -762,9 +807,10 @@ function adicionarFilme(){
 // ===== CONTEUDO SUBCATEGORIAS =====
 function renderConteudoSubs(){
   var el=document.getElementById('conteudo');
-  if(subAtiva<0){ el.innerHTML='<div class="conteudo-vazio"><div class="ico">📺</div><div style="font-size:16px;font-weight:600;">Selecione uma subcategoria</div></div>'; return; }
-  var todas=getTodasSubs(); if(!todas[subAtiva]){el.innerHTML='';return;}
-  var info=todas[subAtiva], sub=info.sub;
+  if(!subAtiva||subAtiva===-1){ el.innerHTML='<div class="conteudo-vazio"><div class="ico">📺</div><div style="font-size:16px;font-weight:600;">Selecione uma subcategoria</div></div>'; return; }
+  var cat=catalogo[subAtiva.catIdx]; if(!cat){el.innerHTML='';return;}
+  var sub=cat.subs[subAtiva.subIdx]; if(!sub){el.innerHTML='';return;}
+  var info={catIdx:subAtiva.catIdx,subIdx:subAtiva.subIdx,catNome:cat.categoria,sub:sub};
   if(!sub.episodios) sub.episodios=[];
   el.innerHTML='<div class="secao-header"><div><div class="breadcrumb">Categoria: <b>'+info.catNome+'</b></div>'+
     '<div class="secao-titulo" style="color:var(--roxo)">'+sub.nome+'<span>'+sub.episodios.length+' episodios</span></div>'+
@@ -791,12 +837,17 @@ function renderEpisodios(info){
   for(var i=0;i<eps.length;i++) lista.appendChild(criarCard(i,eps[i],true,info));
 }
 
-function marcarSubEditada(){ var todas=getTodasSubs(); var info=todas[subAtiva]; if(info) info.sub._editado=true; }
+function marcarSubEditada(){
+  if(!subAtiva||subAtiva===-1) return;
+  var sub=catalogo[subAtiva.catIdx].subs[subAtiva.subIdx];
+  if(sub) sub._editado=true;
+}
 
 function adicionarEpisodio(){
-  var todas=getTodasSubs(); var info=todas[subAtiva]; if(!info) return;
-  if(!info.sub.episodios) info.sub.episodios=[];
-  info.sub.episodios.push({id:pad(info.sub.episodios.length+1),titulo:'',thumb:'',driveId:''});
+  if(!subAtiva||subAtiva===-1) return;
+  var sub=catalogo[subAtiva.catIdx].subs[subAtiva.subIdx]; if(!sub) return;
+  if(!sub.episodios) sub.episodios=[];
+  sub.episodios.push({id:pad(sub.episodios.length+1),titulo:'',thumb:'',driveId:''});
   marcarSubEditada(); renderConteudoSubs();
   setTimeout(function(){var c=document.getElementById('conteudo');c.scrollTop=c.scrollHeight;},80);
 }
@@ -1058,7 +1109,9 @@ function confirmarSub(){
   if(!catalogo[catIdx].subs) catalogo[catIdx].subs=[];
   var slug=slugify(catalogo[catIdx].categoria), subSlug=slugify(nome);
   catalogo[catIdx].subs.push({nome:nome,arquivo:slug+'/'+subSlug+'.json',thumb:thumb,totalEpisodios:0,episodios:[],_novo:true});
-  fecharModal('modal-sub'); subAtiva=getTodasSubs().length-1;
+  fecharModal('modal-sub');
+  var novoSubIdx = catalogo[catIdx].subs.length - 1;
+  subAtiva = { catIdx: catIdx, subIdx: novoSubIdx };
   renderSubsSidebar(); renderConteudoSubs();
   toast('Subcategoria "'+nome+'" criada!','sucesso');
 }
@@ -1227,10 +1280,11 @@ function importarCSVEpisodios(input){
   var reader=new FileReader();
   reader.onload=function(ev){
     var itens=parseCSV(ev.target.result); if(!itens.length){toast('CSV vazio ou formato invalido!','erro');return;}
-    var todas=getTodasSubs(),info=todas[subAtiva]; if(!info) return;
-    if(!info.sub.episodios) info.sub.episodios=[];
-    var base=info.sub.episodios.length;
-    for(var i=0;i<itens.length;i++) info.sub.episodios.push({id:pad(base+i+1),titulo:itens[i].titulo,thumb:itens[i].thumb,driveId:itens[i].driveId});
+    if(!subAtiva||subAtiva===-1) return;
+    var subCSV=catalogo[subAtiva.catIdx].subs[subAtiva.subIdx]; if(!subCSV) return;
+    if(!subCSV.episodios) subCSV.episodios=[];
+    var base=subCSV.episodios.length;
+    for(var i=0;i<itens.length;i++) subCSV.episodios.push({id:pad(base+i+1),titulo:itens[i].titulo,thumb:itens[i].thumb,driveId:itens[i].driveId});
     marcarSubEditada(); renderConteudoSubs();
     toast(itens.length+' episodios importados!','sucesso'); input.value='';
   };
