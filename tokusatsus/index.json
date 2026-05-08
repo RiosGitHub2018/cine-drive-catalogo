@@ -70,11 +70,6 @@
     "arquivo": "tokusatsus/black-kamen-rider-1987.json",
     "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpg",
     "totalEpisodios": 52
-  },
-  {
-    "nome": "Teste subir",
-    "arquivo": "tokusatsus/teste-subir.json",
-    "thumb": "",
-    "totalEpisodios": 1
   }
+  
 ]
