@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -82,7 +81,20 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .btn-azul { background:var(--azul); color:#fff; font-weight:700; }
 .btn-azul:hover { background:#2563eb; }
 
-.layout { display:flex; flex:1; overflow:hidden; height:calc(100vh - 65px); }
+.layout { display:flex; overflow:hidden; height:calc(100vh - 122px); }
+.layout-inner { display:flex; flex-direction:column; flex:1; overflow:hidden; }
+.conteudo-lista { 
+  height: calc(100vh - 122px - 57px);
+  overflow-y: scroll;
+  padding: 24px 36px 24px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--borda) transparent;
+}
+.conteudo-lista::-webkit-scrollbar { width:6px; }
+.conteudo-lista::-webkit-scrollbar-track { background:transparent; }
+.conteudo-lista::-webkit-scrollbar-thumb { background:var(--borda); border-radius:3px; }
+.conteudo-lista::-webkit-scrollbar-thumb:hover { background:var(--suave); }
+.barra-inferior { display:flex; align-items:center; gap:10px; padding:10px 16px; background:var(--painel); border-top:1px solid var(--borda); flex-shrink:0; flex-wrap:wrap; }
 
 .sidebar { width:272px; min-width:272px; background:var(--painel); border-right:1px solid var(--borda); display:flex; flex-direction:column; height:100%; overflow:hidden; transition:background 0.3s,border-color 0.3s; }
 .painel-interno { display:flex; flex-direction:column; flex:1; min-height:0; overflow:hidden; position:relative; }
@@ -119,21 +131,9 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .cat-count { font-size:11px; color:var(--suave); background:var(--entrada); padding:1px 6px; border-radius:20px; }
 .btn-del-cat { background:none; border:none; color:var(--suave); cursor:pointer; font-size:13px; width:20px; height:20px; border-radius:4px; display:flex; align-items:center; justify-content:center; transition:color 0.2s,background 0.2s; flex-shrink:0; }
 .btn-del-cat:hover { color:var(--vm); background:rgba(229,9,20,0.1); }
-.sidebar-footer { padding:10px 14px; border-top:1px solid var(--borda); flex-shrink:0; background:var(--painel); }
+.sidebar-footer { display:none; }
 
-.conteudo { 
-  flex:1; 
-  padding:24px 36px 120px; 
-  overflow-y:scroll; 
-  height: calc(100vh - 65px);
-  max-height: calc(100vh - 65px);
-  scrollbar-width:thin; 
-  scrollbar-color:var(--borda) transparent; 
-}
-.conteudo::-webkit-scrollbar { width:6px; }
-.conteudo::-webkit-scrollbar-track { background:transparent; }
-.conteudo::-webkit-scrollbar-thumb { background:var(--borda); border-radius:3px; }
-.conteudo::-webkit-scrollbar-thumb:hover { background:var(--suave); }
+.conteudo-wrapper { display:none; }
 .conteudo-vazio { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; gap:12px; color:var(--suave); text-align:center; }
 .conteudo-vazio .ico { font-size:52px; opacity:0.2; }
 .secao-header { display:flex; align-items:center; margin-bottom:18px; gap:14px; flex-wrap:wrap; }
@@ -141,7 +141,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .secao-titulo span { font-size:12px; font-family:'DM Sans',sans-serif; font-weight:400; letter-spacing:0; color:var(--suave); margin-left:8px; }
 .breadcrumb { font-size:12px; color:var(--suave); }
 .breadcrumb b { color:var(--roxo); }
-.lista-filmes { display:flex; flex-direction:column; gap:8px; margin-bottom:16px; }
+.lista-filmes { display:flex; flex-direction:column; gap:8px; margin-bottom:16px; width:100%; }
 
 .filme-card {
   background:var(--painel);
@@ -314,7 +314,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
   <div id="arquivo-info" style="color:var(--suave);font-size:12px;margin-left:auto;">Nenhum arquivo carregado</div>
   <div id="github-status" style="font-size:12px;padding:5px 12px;border-radius:6px;background:rgba(34,197,94,0.1);color:var(--verde);border:1px solid rgba(34,197,94,0.3);display:none;">✅ GitHub conectado</div>
   <button class="btn btn-sec" onclick="abrirModalGithub()" title="Configurar GitHub">⚙️ GitHub</button>
-  <button class="btn btn-azul" id="btn-carregar-github" onclick="carregarDoGithub()" style="display:none;">☁️ Carregar</button>
+  <button class="btn btn-azul" id="btn-carregar-github" onclick="carregarDoGithub()">☁️ Carregar</button>
   <label class="btn btn-sec" for="input-arquivo">&#128194; Abrir JSON local</label>
   <input type="file" id="input-arquivo" accept=".json" style="display:none">
 </header>
@@ -346,9 +346,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
         <span class="badge-count badge-roxo" id="total-subs">0</span>
       </div>
       <div class="lista-cats" id="lista-subs"></div>
-      <div class="sidebar-footer">
-        <button class="btn btn-roxo" style="width:100%;padding:10px;justify-content:center;" onclick="abrirModalSub()">+ Nova Subcategoria</button>
-      </div>
+
     </div>
 
     <!-- PAINEL INFORMAÇÕES -->
@@ -358,22 +356,27 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
         <span class="badge-count badge-azul" id="total-infor">0</span>
       </div>
       <div class="lista-cats" id="lista-infor"></div>
-      <div class="sidebar-footer">
-        <button class="btn btn-azul" style="width:100%;padding:10px;justify-content:center;" onclick="adicionarInfor()">+ Informações</button>
-      </div>
+
     </div>
   </aside>
 
-  <main class="conteudo" id="conteudo">
-    <div class="conteudo-vazio">
-      <div class="ico">🎬</div>
-      <div style="font-size:16px;font-weight:600;">Bem-vindo ao Editor</div>
-      <div style="font-size:13px;">Abra um index.json ou crie novas categorias</div>
+  <div class="layout-inner">
+    <div class="conteudo-lista" id="conteudo">
+      <div class="conteudo-vazio">
+        <div class="ico">🎬</div>
+        <div style="font-size:16px;font-weight:600;">Bem-vindo ao Editor</div>
+        <div style="font-size:13px;">Abra um index.json ou crie novas categorias</div>
+      </div>
     </div>
-  </main>
+
+  </div>
 </div>
 
 <div class="barra-salvar">
+  <div id="barra-acoes-esq" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-right:auto;">
+    <button id="btn-acao-esq" class="btn btn-vm" onclick="abrirModalCat()">+ Nova Categoria</button>
+    <div id="barra-dir" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;"></div>
+  </div>
   <div class="status" id="status">Pronto</div>
   <div class="barra-botoes">
     <button class="btn btn-sec" onclick="verJson()">&#128065; Ver JSON</button>
@@ -661,10 +664,17 @@ function mudarAba(aba) {
   document.getElementById('painel-cat').style.display   = aba==='cat'  ? 'flex' : 'none';
   document.getElementById('painel-sub').style.display   = aba==='sub'  ? 'flex' : 'none';
   document.getElementById('painel-infor').style.display = aba==='infor'? 'flex' : 'none';
-  if (aba==='sub')   { subAtiva=-1; renderSubsSidebar(); renderConteudoSubs(); }
-  // Ao voltar para categorias, garantir que subs sejam atualizadas
-  else if (aba==='infor') { renderInforSidebar(); renderConteudoInfor(); }
-  else renderConteudo();
+  if (aba==='sub') {
+    atualizarBarraEsq('+ Nova Subcategoria', 'btn-roxo', abrirModalSub);
+    subAtiva=-1; renderSubsSidebar(); renderConteudoSubs();
+  } else if (aba==='infor') {
+    atualizarBarraEsq('+ Informações', 'btn-azul', adicionarInfor);
+    renderInforSidebar(); renderConteudoInfor();
+  } else {
+    atualizarBarraEsq('+ Nova Categoria', 'btn-vm', abrirModalCat);
+    atualizarBarraDir('');
+    renderConteudo();
+  }
 }
 
 // ===== SIDEBAR CATEGORIAS =====
@@ -765,10 +775,11 @@ function renderInforSidebar() {
 // ===== CONTEUDO CATEGORIAS =====
 function renderConteudo() {
   var el=document.getElementById('conteudo');
-  if (catAtiva<0||!catalogo[catAtiva]){ el.innerHTML='<div class="conteudo-vazio"><div class="ico">🎬</div><div style="font-size:16px;font-weight:600;">Selecione uma categoria</div></div>'; return; }
+  if (catAtiva<0||!catalogo[catAtiva]){ el.innerHTML='<div class="conteudo-vazio"><div class="ico">🎬</div><div style="font-size:16px;font-weight:600;">Selecione uma categoria</div></div>'; atualizarBarraEsq('+ Nova Categoria','btn-vm',abrirModalCat); atualizarBarraDir(''); return; }
   var cat=catalogo[catAtiva];
   if (cat.tipo==='series'){
     var temSubs=cat.subs&&cat.subs.length>0;
+    atualizarBarraDir('<span style="color:var(--suave);font-size:13px;">Gerencie as séries na aba Subcategorias</span>');
     el.innerHTML='<div class="secao-header"><div><div class="secao-titulo">'+cat.categoria+'<span>'+(cat.subs?cat.subs.length:0)+' series</span></div><div style="font-size:11px;color:var(--suave);font-family:monospace;margin-top:2px;">'+cat.arquivo+'</div></div></div>'+
       '<div style="color:var(--suave);font-size:13px;margin-bottom:16px;">Esta categoria usa subcategorias. Gerencie as series na aba <b>Subcategorias</b>.</div>'+
       (!temSubs?
@@ -787,14 +798,13 @@ function renderConteudo() {
   el.innerHTML='<div class="secao-header"><div><div class="secao-titulo">'+cat.categoria+'<span>'+(cat.itens?cat.itens.length:0)+' filmes</span></div>'+
     '<div style="font-size:11px;color:var(--suave);font-family:monospace;margin-top:2px;">'+cat.arquivo+'</div></div>'+
     (!temItens?'<div style="margin-left:auto;">'+jsonBtnHTML+'</div>':'')+
-    '</div><div class="lista-filmes" id="lista-filmes"></div>'+
-    '<div style=" width: 100%; position:fixed; bottom: 65px; left:282px;padding:10px 16px;background:var(--painel);display:flex;gap:10px;align-items:center;flex-wrap:wrap;z-index:99;border-top:1px solid var(--borda);border-right:1px solid var(--borda);">'+
-    '<button class="btn btn-vm" onclick="adicionarFilme()">+ Adicionar Filme</button>'+
+    '</div><div class="lista-filmes" id="lista-filmes"></div>';
+  atualizarBarraEsq('+ Nova Categoria', 'btn-vm', abrirModalCat);
+  atualizarBarraDir('<button class="btn btn-vm" onclick="adicionarFilme()">+ Adicionar Filme</button>'+
     '<label class="btn btn-ouro" for="csv-filmes" style="cursor:pointer;">&#128229; Importar CSV</label>'+
     '<input type="file" id="csv-filmes" accept=".csv" style="display:none" onchange="importarCSVFilmes(this)">'+
     (temItens?'<label class="btn btn-sec" for="json-sub-r" style="cursor:pointer;border-color:var(--suave);color:var(--suave);font-size:12px;">&#128260; Recarregar JSON</label>'+
-    '<input type="file" id="json-sub-r" accept=".json" style="display:none" onchange="carregarJSONCategoria(this,'+catAtiva+')">':'')+
-    '</div>';
+    '<input type="file" id="json-sub-r" accept=".json" style="display:none" onchange="carregarJSONCategoria(this,'+catAtiva+')">':''));
   renderFilmes();
 }
 
@@ -810,13 +820,19 @@ function adicionarFilme(){
   catalogo[catAtiva].itens.push({id:pad(catalogo[catAtiva].itens.length+1),titulo:'',thumb:'',driveId:''});
   catalogo[catAtiva]._editado=true;
   renderConteudo();
-  setTimeout(function(){var c=document.getElementById('conteudo');c.scrollTop=c.scrollHeight;},80);
+  setTimeout(function(){
+    var c=document.getElementById('conteudo');
+    if(c) c.scrollTop=c.scrollHeight;
+    // Focar no último input adicionado
+    var cards=c.querySelectorAll('.filme-card');
+    if(cards.length>0) cards[cards.length-1].scrollIntoView({behavior:'smooth',block:'end'});
+  },100);
 }
 
 // ===== CONTEUDO SUBCATEGORIAS =====
 function renderConteudoSubs(){
   var el=document.getElementById('conteudo');
-  if(!subAtiva||subAtiva===-1){ el.innerHTML='<div class="conteudo-vazio"><div class="ico">📺</div><div style="font-size:16px;font-weight:600;">Selecione uma subcategoria</div></div>'; return; }
+  if(!subAtiva||subAtiva===-1){ el.innerHTML='<div class="conteudo-vazio"><div class="ico">📺</div><div style="font-size:16px;font-weight:600;">Selecione uma subcategoria</div></div>'; atualizarBarraEsq('+ Nova Subcategoria','btn-roxo',abrirModalSub); atualizarBarraDir(''); return; }
   var cat=catalogo[subAtiva.catIdx]; if(!cat){el.innerHTML='';return;}
   var sub=cat.subs[subAtiva.subIdx]; if(!sub){el.innerHTML='';return;}
   var info={catIdx:subAtiva.catIdx,subIdx:subAtiva.subIdx,catNome:cat.categoria,sub:sub};
@@ -824,9 +840,9 @@ function renderConteudoSubs(){
   el.innerHTML='<div class="secao-header"><div><div class="breadcrumb">Categoria: <b>'+info.catNome+'</b></div>'+
     '<div class="secao-titulo" style="color:var(--roxo)">'+sub.nome+'<span>'+sub.episodios.length+' episodios</span></div>'+
     '<div style="font-size:11px;color:var(--suave);font-family:monospace;margin-top:2px;">'+sub.arquivo+'</div></div></div>'+
-    '<div class="lista-filmes" id="lista-eps"></div>'+
-    '<div style="width: 85%; position:fixed; bottom:63px; left:270px;padding:10px 16px;background:var(--painel);display:flex;gap:10px;align-items:center;flex-wrap:wrap;z-index:99;border-top:1px solid var(--borda);border-right:1px solid var(--borda);">'+
-    '<button class="btn btn-roxo" onclick="adicionarEpisodio()">+ Adicionar Episodio</button>'+
+    '<div class="lista-filmes" id="lista-eps"></div>';
+  atualizarBarraEsq('+ Nova Subcategoria', 'btn-roxo', abrirModalSub);
+  atualizarBarraDir('<button class="btn btn-roxo" onclick="adicionarEpisodio()">+ Adicionar Episodio</button>'+
     '<label class="btn btn-ouro" for="csv-eps" style="cursor:pointer;">&#128229; Importar CSV</label>'+
     '<input type="file" id="csv-eps" accept=".csv" style="display:none" onchange="importarCSVEpisodios(this)">'+
     (sub.episodios.length===0?
@@ -834,8 +850,8 @@ function renderConteudoSubs(){
       '<input type="file" id="json-sub-'+info.catIdx+'-'+info.subIdx+'" accept=".json" style="display:none" onchange="carregarJSONSub(this,'+info.catIdx+','+info.subIdx+')">'
       :
       '<label class="btn btn-sec" for="json-sub-r-'+info.catIdx+'-'+info.subIdx+'" style="cursor:pointer;border-color:var(--suave);color:var(--suave);font-size:12px;">&#128260; Recarregar JSON</label>'+
-      '<input type="file" id="json-sub-r-'+info.catIdx+'-'+info.subIdx+'" accept=".json" style="display:none" onchange="carregarJSONSub(this,'+info.catIdx+','+info.subIdx+')">')+
-    '</div>';
+      '<input type="file" id="json-sub-r-'+info.catIdx+'-'+info.subIdx+'" accept=".json" style="display:none" onchange="carregarJSONSub(this,'+info.catIdx+','+info.subIdx+')">'
+    ));
   renderEpisodios(info);
 }
 
@@ -858,17 +874,24 @@ function adicionarEpisodio(){
   if(!sub.episodios) sub.episodios=[];
   sub.episodios.push({id:pad(sub.episodios.length+1),titulo:'',thumb:'',driveId:''});
   marcarSubEditada(); renderConteudoSubs();
-  setTimeout(function(){var c=document.getElementById('conteudo');c.scrollTop=c.scrollHeight;},80);
+  setTimeout(function(){
+    var c=document.getElementById('conteudo');
+    if(c) c.scrollTop=c.scrollHeight;
+    // Focar no último input adicionado
+    var cards=c.querySelectorAll('.filme-card');
+    if(cards.length>0) cards[cards.length-1].scrollIntoView({behavior:'smooth',block:'end'});
+  },100);
 }
 
 // ===== CONTEUDO INFORMAÇÕES =====
 function renderConteudoInfor() {
   var el = document.getElementById('conteudo');
+  atualizarBarraDir('<button class="btn btn-azul" onclick="adicionarInfor()">+ Adicionar</button><label class="btn btn-ouro" for="csv-infor" style="cursor:pointer;">&#128229; Importar CSV</label><input type="file" id="csv-infor" accept=".csv" style="display:none" onchange="importarCSVInfor(this)">');
   el.innerHTML =
     '<div class="secao-header">' +
       '<div><div class="secao-titulo" style="color:var(--azul)">INFORMAÇÕES<span>' + informacoes.length + ' registros</span></div>' +
       '<div style="font-size:11px;color:var(--suave);font-family:monospace;margin-top:2px;">infor.json</div></div>' +
-      (informacoes.length > 0 ?
+    (informacoes.length > 0 ?
         '<label class="btn btn-sec" for="json-infor-r" style="cursor:pointer;border-color:var(--suave);color:var(--suave);font-size:12px;margin-left:auto;">&#128260; Recarregar JSON</label>' +
         '<input type="file" id="json-infor-r" accept=".json" style="display:none" onchange="carregarJSONInfor(this)">'
         :
@@ -1138,22 +1161,25 @@ function abrirModalSalvar(){
 
 function listarArquivosComStatus(){
   var arquivos=[];
-  arquivos.push({path:'index.json',icone:'📄',tipo:'indice principal',editado:true,statusBadge:{cls:'badge-editado',label:'sempre'}});
+  var indexEditado = catalogo.some(function(c){ return c._novo; });
+  arquivos.push({path:'index.json',icone:'📄',tipo:'indice principal',editado:indexEditado,statusBadge:indexEditado?{cls:'badge-novo',label:'novo'}:null});
   for(var i=0;i<catalogo.length;i++){
     var cat=catalogo[i], catEditada=!!(cat._editado||cat._novo);
     if(cat.tipo==='filmes'){
-      var temItens=cat.itens&&cat.itens.length>0, foiEditada=catEditada||temItens;
-      arquivos.push({path:cat.arquivo,icone:'🎬',tipo:cat.categoria,editado:foiEditada,
-        statusBadge:cat._novo?{cls:'badge-novo',label:'novo'}:(foiEditada?{cls:'badge-editado',label:'editado'}:null)});
+      // Só marca como editado se foi explicitamente modificado ou é novo
+      arquivos.push({path:cat.arquivo,icone:'🎬',tipo:cat.categoria,editado:catEditada,
+        statusBadge:cat._novo?{cls:'badge-novo',label:'novo'}:(cat._editado?{cls:'badge-editado',label:'editado'}:null)});
     } else {
+      var algumSubNovo = cat.subs&&cat.subs.some(function(s){return s._novo;});
       arquivos.push({path:cat.arquivo,icone:'📁',tipo:'indice '+cat.categoria,
-        editado:catEditada||!!(cat.subs&&cat.subs.length>0&&cat.subs.some(function(s){return s._novo;})),
-        statusBadge:cat._novo?{cls:'badge-novo',label:'novo'}:(catEditada?{cls:'badge-editado',label:'editado'}:null)});
+        editado:cat._novo||algumSubNovo,
+        statusBadge:cat._novo?{cls:'badge-novo',label:'novo'}:(algumSubNovo?{cls:'badge-editado',label:'editado'}:null)});
       var subs=cat.subs||[];
       for(var j=0;j<subs.length;j++){
-        var sub=subs[j], subEditada=!!(sub._editado||sub._novo), temEps=sub.episodios&&sub.episodios.length>0, incl=subEditada||temEps;
-        arquivos.push({path:sub.arquivo,icone:'📺',tipo:sub.nome,editado:incl,
-          statusBadge:sub._novo?{cls:'badge-novo',label:'novo'}:(incl?{cls:'badge-editado',label:'editado'}:null)});
+        // Só marca como editado se foi explicitamente modificado (_editado) ou é novo (_novo)
+        var sub=subs[j], subEditada=!!(sub._editado||sub._novo);
+        arquivos.push({path:sub.arquivo,icone:'📺',tipo:sub.nome,editado:subEditada,
+          statusBadge:sub._novo?{cls:'badge-novo',label:'novo'}:(sub._editado?{cls:'badge-editado',label:'editado'}:null)});
       }
     }
   }
@@ -1306,6 +1332,19 @@ function verJson(){
   w.document.write('<pre style="background:#0d0d10;color:#f0f0f5;padding:20px;font-size:13px;font-family:monospace;white-space:pre-wrap;">'+JSON.stringify(obj,null,2)+'</pre>');
 }
 
+function atualizarBarraEsq(labelBtn, corBtnExtra, acaoBtn) {
+  var btn = document.getElementById('btn-acao-esq');
+  if (!btn) return;
+  btn.textContent = labelBtn;
+  btn.className = 'btn ' + corBtnExtra;
+  btn.onclick = acaoBtn;
+}
+
+function atualizarBarraDir(html) {
+  var el = document.getElementById('barra-dir');
+  if (el) el.innerHTML = html;
+}
+
 function pad(n){return String(n).padStart(3,'0');}
 function setStatus(msg,tipo){var el=document.getElementById('status');el.textContent=msg;el.className='status '+(tipo||'');}
 function toast(msg,tipo){
@@ -1355,13 +1394,11 @@ function salvarConfigGithub() {
 function atualizarStatusGithub() {
   var cfg = ghConfig();
   var statusEl    = document.getElementById('github-status');
-  var btnCarregar = document.getElementById('btn-carregar-github');
+  // Botão sempre visível — só o status de conectado que aparece/some
   if (cfg.token) {
-    statusEl.style.display    = 'block';
-    btnCarregar.style.display = 'inline-flex';
+    statusEl.style.display = 'block';
   } else {
-    statusEl.style.display    = 'none';
-    btnCarregar.style.display = 'none';
+    statusEl.style.display = 'none';
   }
 }
 
@@ -1420,9 +1457,9 @@ async function ghPutFile(path, conteudo, mensagem) {
 
 async function carregarDoGithub() {
   var cfg = ghConfig();
-  if (!cfg.token) { toast('Configure o GitHub primeiro!', 'erro'); abrirModalGithub(); return; }
+  if (!cfg.token) { toast('Configure o GitHub primeiro! Clique em ⚙️ GitHub', 'erro'); abrirModalGithub(); return; }
   setStatus('Carregando do GitHub...', '');
-  toast('Carregando catálogo...', 'info');
+  toast('☁️ Conectando ao GitHub...', 'info');
   try {
     var indexTxt = await ghGetFile('index.json');
     if (!indexTxt) { toast('index.json não encontrado!', 'erro'); return; }
@@ -1547,6 +1584,10 @@ function gerarConteudoArquivo(path) {
 }
 
 // Inicializar status GitHub ao carregar
+// Rodar imediatamente também (caso DOMContentLoaded já tenha disparado)
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+  setTimeout(atualizarStatusGithub, 100);
+}
 document.addEventListener('DOMContentLoaded', function() {
   atualizarStatusGithub();
   // Adicionar botão Salvar no GitHub na barra
