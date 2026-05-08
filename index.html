@@ -84,7 +84,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .layout { display:flex; overflow:hidden; height:calc(100vh - 122px); }
 .layout-inner { display:flex; flex-direction:column; flex:1; overflow:hidden; }
 .conteudo-lista { 
-  height: calc(100vh - 110px - 57px);
+  height: calc(100vh - 122px - 57px);
   overflow-y: scroll;
   padding: 24px 36px 24px;
   scrollbar-width: thin;
@@ -103,8 +103,8 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
   padding:6px;
   scrollbar-width:thin;
   scrollbar-color:var(--borda) transparent;
-  height: calc(100vh - 200px);
-  max-height: calc(100vh - 200px);
+  height: calc(100vh - 270px);
+  max-height: calc(100vh - 270px);
 }
 .sidebar-abas { display:flex; border-bottom:1px solid var(--borda); flex-shrink:0; }
 .sidebar-aba { flex:1; padding:11px 4px; text-align:center; font-size:10px; font-weight:600; letter-spacing:0.5px; text-transform:uppercase; color:var(--suave); cursor:pointer; border-bottom:2px solid transparent; transition:all 0.2s; }
@@ -294,6 +294,35 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 ::-webkit-scrollbar { width:4px; }
 ::-webkit-scrollbar-track { background:transparent; }
 ::-webkit-scrollbar-thumb { background:var(--borda); border-radius:2px; }
+
+/* ===== LOADING OVERLAY ===== */
+#loading-overlay {
+  position:fixed; inset:0; background:var(--fundo);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  z-index:99999; transition:opacity 0.5s ease;
+}
+#loading-overlay.escondendo { opacity:0; pointer-events:none; }
+#loading-overlay.oculto { display:none; }
+.loading-logo {
+  font-family:'Bebas Neue',sans-serif; font-size:52px; letter-spacing:6px;
+  background:linear-gradient(135deg,var(--vm),var(--ouro));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+  margin-bottom:8px;
+}
+.loading-sub {
+  font-size:13px; color:var(--suave); letter-spacing:3px;
+  text-transform:uppercase; margin-bottom:40px;
+}
+.loading-barra-wrap {
+  width:280px; height:4px; background:var(--borda); border-radius:2px; overflow:hidden; margin-bottom:16px;
+}
+.loading-barra {
+  height:100%; width:0%; background:linear-gradient(90deg,var(--vm),var(--ouro));
+  border-radius:2px; transition:width 0.4s ease;
+}
+.loading-msg {
+  font-size:12px; color:var(--suave); letter-spacing:1px; min-height:18px; text-align:center;
+}
 </style>
 </head>
 <body>
@@ -373,11 +402,11 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 </div>
 
 <div class="barra-salvar">
-  <div id="barra-acoes-esq" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-right:auto; ">
+  <div id="barra-acoes-esq" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-right:auto;">
     <button id="btn-acao-esq" class="btn btn-vm" onclick="abrirModalCat()">+ Nova Categoria</button>
     <div id="barra-dir" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;"></div>
   </div>
-  <div class="status" id="status" style="transform: translateX(100px);">Pronto</div>
+  <div class="status" id="status">Pronto</div>
   <div class="barra-botoes">
     <button class="btn btn-sec" onclick="verJson()">&#128065; Ver JSON</button>
     <button class="btn btn-verde" onclick="abrirModalSalvar()">&#128190; Salvar e Baixar ZIP</button>
@@ -428,7 +457,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
     </div>
     <div class="modal-botoes">
       <button class="btn btn-sec" onclick="fecharModal('modal-sub')">Cancelar</button>
-      <button class="btn btn-roxo"  onclick="confirmarSub()">Adicionar Subcategoria</button>
+      <button class="btn btn-roxo" onclick="confirmarSub()">Adicionar Subcategoria</button>
     </div>
   </div>
 </div>
@@ -473,7 +502,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
     </div>
     <div class="github-campo">
       <label>Usuário GitHub</label>
-      <input class="modal-input azul" type="text" id="gh-usuario" value="RiosGitHub2018" >
+      <input class="modal-input azul" type="text" id="gh-usuario" value="RiosGitHub2018">
     </div>
     <div class="github-campo">
       <label>Repositório</label>
@@ -505,6 +534,16 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
       <button class="btn btn-verde" id="btn-confirmar-push" onclick="confirmarPushGithub()">🚀 Enviar para GitHub</button>
     </div>
   </div>
+</div>
+
+<!-- LOADING OVERLAY -->
+<div id="loading-overlay">
+  <div class="loading-logo">CINE DRIVE</div>
+  <div class="loading-sub">Editor de Catálogo</div>
+  <div class="loading-barra-wrap">
+    <div class="loading-barra" id="loading-barra"></div>
+  </div>
+  <div class="loading-msg" id="loading-msg">Iniciando...</div>
 </div>
 
 <script>
@@ -695,7 +734,23 @@ function criarItemCat(i) {
   count.textContent = cat.tipo==='series'?(cat.subs?cat.subs.length:0):(cat.itens?cat.itens.length:0);
   var del = document.createElement('button'); del.className='btn-del-cat'; del.innerHTML='&#10005;'; del.dataset.idx=i;
   del.addEventListener('click',function(e){ e.stopPropagation(); var idx=parseInt(this.dataset.idx);
-    if(confirm('Remover "'+catalogo[idx].categoria+'" e todo seu conteudo?')){ catalogo.splice(idx,1); if(catAtiva>=catalogo.length) catAtiva=catalogo.length-1; renderSidebar(); renderSubsSidebar(); renderConteudo(); toast('Categoria removida!','sucesso'); } });
+    if(confirm('Remover "'+catalogo[idx].categoria+'" e todo seu conteudo?')){
+      var cat = catalogo[idx];
+      // Marcar index.json como editado (lista de categorias mudou)
+      _arquivosEditados.add('index.json');
+      // Marcar arquivo da categoria para deletar
+      _arquivosParaDeletar.add(cat.arquivo);
+      // Se for série, deletar também todos os JSONs das subcategorias
+      if (cat.tipo === 'series' && cat.subs) {
+        for (var s = 0; s < cat.subs.length; s++) {
+          _arquivosParaDeletar.add(cat.subs[s].arquivo);
+        }
+      }
+      catalogo.splice(idx,1);
+      if(catAtiva>=catalogo.length) catAtiva=catalogo.length-1;
+      renderSidebar(); renderSubsSidebar(); renderConteudo();
+      toast('Categoria removida!','sucesso');
+    } });
   item.appendChild(nome); item.appendChild(count); item.appendChild(del);
   item.addEventListener('click',function(){
     catAtiva=parseInt(this.dataset.idx);
@@ -739,8 +794,16 @@ function criarItemSub(gIdx, info) {
   var count=document.createElement('span'); count.className='cat-count'; count.textContent=(info.sub.episodios?info.sub.episodios.length:0);
   var del=document.createElement('button'); del.className='btn-del-cat'; del.innerHTML='&#10005;';
   del.dataset.catidx=info.catIdx; del.dataset.subidx=info.subIdx;
-  del.addEventListener('click',function(e){ e.stopPropagation(); var ci=parseInt(this.dataset.catidx),si=parseInt(this.dataset.subidx);
-    if(confirm('Remover "'+catalogo[ci].subs[si].nome+'"?')){ catalogo[ci].subs.splice(si,1); subAtiva=-1; renderSubsSidebar(); renderConteudoSubs(); toast('Subcategoria removida!','sucesso'); } });
+  del.addEventListener('click',function(e){ e.stopPropagation(); 
+    var ci=parseInt(this.dataset.catidx),si=parseInt(this.dataset.subidx);
+    if(confirm('Remover "'+catalogo[ci].subs[si].nome+'"?')){ 
+      // Marcar index da categoria como editado e arquivo da sub para DELETAR
+      _arquivosEditados.add(catalogo[ci].arquivo);
+      _arquivosParaDeletar.add(catalogo[ci].subs[si].arquivo);
+      catalogo[ci].subs.splice(si,1); 
+      subAtiva=-1; renderSubsSidebar(); renderConteudoSubs(); 
+      toast('Subcategoria removida!','sucesso'); 
+    } });
   item.appendChild(nome); item.appendChild(tag); item.appendChild(count); item.appendChild(del);
   item.addEventListener('click',function(){
     subAtiva = { catIdx: parseInt(this.dataset.catidx), subIdx: parseInt(this.dataset.subidx) };
@@ -818,7 +881,7 @@ function renderFilmes() {
 function adicionarFilme(){
   if(!catalogo[catAtiva].itens) catalogo[catAtiva].itens=[];
   catalogo[catAtiva].itens.push({id:pad(catalogo[catAtiva].itens.length+1),titulo:'',thumb:'',driveId:''});
-  catalogo[catAtiva]._editado=true;
+  _arquivosEditados.add(catalogo[catAtiva].arquivo);
   renderConteudo();
   setTimeout(function(){
     var c=document.getElementById('conteudo');
@@ -842,15 +905,15 @@ function renderConteudoSubs(){
     '<div style="font-size:11px;color:var(--suave);font-family:monospace;margin-top:2px;">'+sub.arquivo+'</div></div></div>'+
     '<div class="lista-filmes" id="lista-eps"></div>';
   atualizarBarraEsq('+ Nova Subcategoria', 'btn-roxo', abrirModalSub);
-  atualizarBarraDir('<button class="btn btn-roxo" onclick="adicionarEpisodio()" style="transform: translateX(100px);">+ Adicionar Episodio</button>'+
-    '<label class="btn btn-ouro" for="csv-eps" style="cursor:pointer; transform: translateX(100px)">&#128229; Importar CSV</label>'+
+  atualizarBarraDir('<button class="btn btn-roxo" onclick="adicionarEpisodio()">+ Adicionar Episodio</button>'+
+    '<label class="btn btn-ouro" for="csv-eps" style="cursor:pointer;">&#128229; Importar CSV</label>'+
     '<input type="file" id="csv-eps" accept=".csv" style="display:none" onchange="importarCSVEpisodios(this)">'+
     (sub.episodios.length===0?
-      '<label class="btn btn-sec" for="json-sub-'+info.catIdx+'-'+info.subIdx+'" style="cursor:pointer;border-color:var(--ouro);color:var(--ouro); ">&#128194; Carregar '+sub.arquivo+'</label>'+
+      '<label class="btn btn-sec" for="json-sub-'+info.catIdx+'-'+info.subIdx+'" style="cursor:pointer;border-color:var(--ouro);color:var(--ouro);">&#128194; Carregar '+sub.arquivo+'</label>'+
       '<input type="file" id="json-sub-'+info.catIdx+'-'+info.subIdx+'" accept=".json" style="display:none" onchange="carregarJSONSub(this,'+info.catIdx+','+info.subIdx+')">'
       :
-      '<label class="btn btn-sec" for="json-sub-r-'+info.catIdx+'-'+info.subIdx+'" style="cursor:pointer;border-color:var(--suave);color:var(--suave);font-size:12px; transform: translateX(100px);">&#128260; Recarregar JSON</label>'+
-      '<input type="file" id="json-sub-r-'+info.catIdx+'-'+info.subIdx+'" accept=".json" style="display:none; " onchange="carregarJSONSub(this,'+info.catIdx+','+info.subIdx+')">'
+      '<label class="btn btn-sec" for="json-sub-r-'+info.catIdx+'-'+info.subIdx+'" style="cursor:pointer;border-color:var(--suave);color:var(--suave);font-size:12px;">&#128260; Recarregar JSON</label>'+
+      '<input type="file" id="json-sub-r-'+info.catIdx+'-'+info.subIdx+'" accept=".json" style="display:none" onchange="carregarJSONSub(this,'+info.catIdx+','+info.subIdx+')">'
     ));
   renderEpisodios(info);
 }
@@ -873,7 +936,8 @@ function adicionarEpisodio(){
   var sub=catalogo[subAtiva.catIdx].subs[subAtiva.subIdx]; if(!sub) return;
   if(!sub.episodios) sub.episodios=[];
   sub.episodios.push({id:pad(sub.episodios.length+1),titulo:'',thumb:'',driveId:''});
-  marcarSubEditada(); renderConteudoSubs();
+  _arquivosEditados.add(sub.arquivo);
+  renderConteudoSubs();
   setTimeout(function(){
     var c=document.getElementById('conteudo');
     if(c) c.scrollTop=c.scrollHeight;
@@ -916,6 +980,7 @@ function renderInforCards() {
 
 function adicionarInfor() {
   informacoes.push({ video:'', ano:'', generos:'', nota:'', sinopse:'' });
+  _arquivosEditados.add('infor.json');
   if (abaAtiva !== 'infor') mudarAba('infor');
   else { renderInforSidebar(); renderConteudoInfor(); }
   setTimeout(function(){ var c=document.getElementById('conteudo'); c.scrollTop=c.scrollHeight; }, 80);
@@ -1084,18 +1149,28 @@ function criarCard(idx, item, isEp, info) {
     inputs[j].addEventListener('input', (function(isEpisodio, infoRef){
       return function(){
         var i = parseInt(this.dataset.idx), campo = this.dataset.campo;
-        if (isEpisodio && infoRef) { infoRef.sub.episodios[i][campo] = this.value; marcarSubEditada(); }
-        else if (catalogo[catAtiva]) { catalogo[catAtiva].itens[i][campo] = this.value; catalogo[catAtiva]._editado = true; }
+        if (isEpisodio && infoRef) { infoRef.sub.episodios[i][campo] = this.value; _arquivosEditados.add(infoRef.sub.arquivo); }
+        else if (catalogo[catAtiva]) { catalogo[catAtiva].itens[i][campo] = this.value; _arquivosEditados.add(catalogo[catAtiva].arquivo); }
       };
     })(isEp, info));
   }
-  btnDel.addEventListener('click', (function(isEpisodio, infoRef){
+  btnDel.addEventListener('click', (function(isEpisodio, snapCatIdx, snapSubIdx){
     return function(){
       var i = parseInt(inputDrive.dataset.idx);
-      if (isEpisodio && infoRef) { infoRef.sub.episodios.splice(i,1); marcarSubEditada(); renderConteudoSubs(); }
-      else { catalogo[catAtiva].itens.splice(i,1); catalogo[catAtiva]._editado=true; renderConteudo(); }
+      if (isEpisodio && snapCatIdx >= 0 && snapSubIdx >= 0) {
+        var subDirect = catalogo[snapCatIdx] && catalogo[snapCatIdx].subs[snapSubIdx];
+        if (subDirect) {
+          subDirect.episodios.splice(i, 1);
+          _arquivosEditados.add(subDirect.arquivo);
+        }
+        renderConteudoSubs();
+      } else {
+        catalogo[catAtiva].itens.splice(i, 1);
+        _arquivosEditados.add(catalogo[catAtiva].arquivo);
+        renderConteudo();
+      }
     };
-  })(isEp, info));
+  })(isEp, info ? info.catIdx : -1, info ? info.subIdx : -1));
   return card;
 }
 
@@ -1129,7 +1204,10 @@ function confirmarCat(){
   if(!nome){toast('Digite o nome!','erro');input.focus();return;}
   for(var i=0;i<catalogo.length;i++) if(catalogo[i].categoria.toLowerCase()===nome.toLowerCase()){toast('Categoria ja existe!','erro');return;}
   var slug=slugify(nome);
-  catalogo.push({categoria:nome,tipo:tipo,arquivo:tipo==='series'?(slug+'/index.json'):(slug+'.json'),itens:[],subs:[],_novo:true});
+  var novaCatArquivo = tipo==='series'?(slug+'/index.json'):(slug+'.json');
+  catalogo.push({categoria:nome,tipo:tipo,arquivo:novaCatArquivo,itens:[],subs:[],_novo:true});
+  _arquivosEditados.add('index.json');
+  _arquivosEditados.add(novaCatArquivo);
   catAtiva=catalogo.length-1; fecharModal('modal-cat'); renderSidebar(); renderConteudo();
   toast('Categoria "'+nome+'" criada!','sucesso');
 }
@@ -1140,7 +1218,10 @@ function confirmarSub(){
   if(!nome){toast('Digite o nome!','erro');return;}
   if(!catalogo[catIdx].subs) catalogo[catIdx].subs=[];
   var slug=slugify(catalogo[catIdx].categoria), subSlug=slugify(nome);
-  catalogo[catIdx].subs.push({nome:nome,arquivo:slug+'/'+subSlug+'.json',thumb:thumb,totalEpisodios:0,episodios:[],_novo:true});
+  var novaSubArquivo = slug+'/'+subSlug+'.json';
+  catalogo[catIdx].subs.push({nome:nome,arquivo:novaSubArquivo,thumb:thumb,totalEpisodios:0,episodios:[],_novo:true});
+  _arquivosEditados.add(catalogo[catIdx].arquivo); // index da categoria
+  _arquivosEditados.add(novaSubArquivo);
   fecharModal('modal-sub');
   var novoSubIdx = catalogo[catIdx].subs.length - 1;
   subAtiva = { catIdx: catIdx, subIdx: novoSubIdx };
@@ -1161,31 +1242,30 @@ function abrirModalSalvar(){
 
 function listarArquivosComStatus(){
   var arquivos=[];
-  var indexEditado = catalogo.some(function(c){ return c._novo; });
-  arquivos.push({path:'index.json',icone:'📄',tipo:'indice principal',editado:indexEditado,statusBadge:indexEditado?{cls:'badge-novo',label:'novo'}:null});
+  // Usar _arquivosEditados para detectar mudanças com precisão
+  var indexEditado = _arquivosEditados.has('index.json');
+  arquivos.push({path:'index.json',icone:'📄',tipo:'indice principal',editado:indexEditado,statusBadge:indexEditado?{cls:'badge-editado',label:'editado'}:null});
   for(var i=0;i<catalogo.length;i++){
-    var cat=catalogo[i], catEditada=!!(cat._editado||cat._novo);
+    var cat=catalogo[i];
+    var catEditado = _arquivosEditados.has(cat.arquivo);
     if(cat.tipo==='filmes'){
-      // Só marca como editado se foi explicitamente modificado ou é novo
-      arquivos.push({path:cat.arquivo,icone:'🎬',tipo:cat.categoria,editado:catEditada,
-        statusBadge:cat._novo?{cls:'badge-novo',label:'novo'}:(cat._editado?{cls:'badge-editado',label:'editado'}:null)});
+      arquivos.push({path:cat.arquivo,icone:'🎬',tipo:cat.categoria,editado:catEditado,
+        statusBadge:catEditado?{cls:'badge-editado',label:'editado'}:null});
     } else {
-      var algumSubNovo = cat.subs&&cat.subs.some(function(s){return s._novo;});
       arquivos.push({path:cat.arquivo,icone:'📁',tipo:'indice '+cat.categoria,
-        editado:cat._novo||algumSubNovo,
-        statusBadge:cat._novo?{cls:'badge-novo',label:'novo'}:(algumSubNovo?{cls:'badge-editado',label:'editado'}:null)});
+        editado:catEditado,statusBadge:catEditado?{cls:'badge-editado',label:'editado'}:null});
       var subs=cat.subs||[];
       for(var j=0;j<subs.length;j++){
-        // Só marca como editado se foi explicitamente modificado (_editado) ou é novo (_novo)
-        var sub=subs[j], subEditada=!!(sub._editado||sub._novo);
-        arquivos.push({path:sub.arquivo,icone:'📺',tipo:sub.nome,editado:subEditada,
-          statusBadge:sub._novo?{cls:'badge-novo',label:'novo'}:(sub._editado?{cls:'badge-editado',label:'editado'}:null)});
+        var sub=subs[j], subEditado=_arquivosEditados.has(sub.arquivo);
+        arquivos.push({path:sub.arquivo,icone:'📺',tipo:sub.nome,editado:subEditado,
+          statusBadge:subEditado?{cls:'badge-editado',label:'editado'}:null});
       }
     }
   }
   // infor.json
-  if (informacoes.length > 0) {
-    arquivos.push({path:'infor.json',icone:'ℹ️',tipo:'informacoes',editado:true,statusBadge:{cls:'badge-editado',label:'editado'}});
+  if (_arquivosEditados.has('infor.json') || informacoes.length > 0) {
+    var inforEdit = _arquivosEditados.has('infor.json');
+    arquivos.push({path:'infor.json',icone:'ℹ️',tipo:'informacoes',editado:inforEdit,statusBadge:inforEdit?{cls:'badge-editado',label:'editado'}:null});
   }
   return arquivos;
 }
@@ -1304,7 +1384,7 @@ function importarCSVFilmes(input){
     if(!catalogo[catAtiva].itens) catalogo[catAtiva].itens=[];
     var base=catalogo[catAtiva].itens.length;
     for(var i=0;i<itens.length;i++) catalogo[catAtiva].itens.push({id:pad(base+i+1),titulo:itens[i].titulo,thumb:itens[i].thumb,driveId:itens[i].driveId});
-    catalogo[catAtiva]._editado=true; renderConteudo();
+    _arquivosEditados.add(catalogo[catAtiva].arquivo); renderConteudo();
     toast(itens.length+' filmes importados!','sucesso'); input.value='';
   };
   reader.readAsText(file,'UTF-8');
@@ -1320,7 +1400,8 @@ function importarCSVEpisodios(input){
     if(!subCSV.episodios) subCSV.episodios=[];
     var base=subCSV.episodios.length;
     for(var i=0;i<itens.length;i++) subCSV.episodios.push({id:pad(base+i+1),titulo:itens[i].titulo,thumb:itens[i].thumb,driveId:itens[i].driveId});
-    marcarSubEditada(); renderConteudoSubs();
+    if(subAtiva && subAtiva !== -1) _arquivosEditados.add(catalogo[subAtiva.catIdx].subs[subAtiva.subIdx].arquivo);
+    renderConteudoSubs();
     toast(itens.length+' episodios importados!','sucesso'); input.value='';
   };
   reader.readAsText(file,'UTF-8');
@@ -1330,6 +1411,34 @@ function verJson(){
   var obj = { catalogo: catalogo, informacoes: informacoes };
   var w=window.open('','_blank');
   w.document.write('<pre style="background:#0d0d10;color:#f0f0f5;padding:20px;font-size:13px;font-family:monospace;white-space:pre-wrap;">'+JSON.stringify(obj,null,2)+'</pre>');
+}
+
+// ===== LOADING =====
+function mostrarLoading(msg, pct) {
+  var overlay = document.getElementById('loading-overlay');
+  var barra   = document.getElementById('loading-barra');
+  var msgEl   = document.getElementById('loading-msg');
+  if (overlay) { overlay.classList.remove('escondendo','oculto'); }
+  if (barra)   { barra.style.width = (pct||0) + '%'; }
+  if (msgEl)   { msgEl.textContent = msg || ''; }
+}
+
+function iniciarAutoLoad() {
+  var cfg = ghConfig();
+  if (cfg.token) {
+    // Tem token salvo — carrega automaticamente
+    carregarDoGithub();
+  } else {
+    // Sem token — esconde o loading e mostra a tela normal
+    esconderLoading();
+  }
+}
+
+function esconderLoading() {
+  var overlay = document.getElementById('loading-overlay');
+  if (!overlay) return;
+  overlay.classList.add('escondendo');
+  setTimeout(function(){ overlay.classList.add('oculto'); }, 500);
 }
 
 function atualizarBarraEsq(labelBtn, corBtnExtra, acaoBtn) {
@@ -1356,6 +1465,8 @@ function toast(msg,tipo){
 
 // ===== GITHUB API =====
 var _ghShas = {};
+var _arquivosEditados = new Set(); // rastrea arquivos modificados nesta sessão
+var _arquivosParaDeletar = new Set(); // rastrea arquivos removidos para deletar do GitHub
 
 function ghConfig() {
   return {
@@ -1434,6 +1545,28 @@ async function ghGetFile(path) {
   return decodeURIComponent(escape(atob(data.content.replace(/\n/g,''))));
 }
 
+async function ghDeleteFile(path, mensagem) {
+  var cfg = ghConfig();
+  // Precisa do SHA atual para deletar
+  var sha = _ghShas[path] || null;
+  if (!sha) {
+    try {
+      var check = await fetch('https://api.github.com/repos/' + cfg.usuario + '/' + cfg.repo + '/contents/' + path + '?ref=' + cfg.branch, {
+        headers: { 'Authorization': 'token ' + cfg.token, 'Accept': 'application/vnd.github.v3+json' }
+      });
+      if (check.ok) { var cd = await check.json(); sha = cd.sha; _ghShas[path] = sha; }
+    } catch(e) {}
+  }
+  if (!sha) return false; // arquivo não existe no GitHub — nada a deletar
+  var resp = await fetch('https://api.github.com/repos/' + cfg.usuario + '/' + cfg.repo + '/contents/' + path, {
+    method: 'DELETE',
+    headers: { 'Authorization': 'token ' + cfg.token, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+    body: JSON.stringify({ message: mensagem || 'Editor Cine Drive: remover ' + path, sha: sha, branch: cfg.branch })
+  });
+  if (resp.ok) { delete _ghShas[path]; return true; }
+  return false;
+}
+
 async function ghPutFile(path, conteudo, mensagem) {
   var cfg = ghConfig();
   var sha = _ghShas[path] || null;
@@ -1458,15 +1591,28 @@ async function ghPutFile(path, conteudo, mensagem) {
 async function carregarDoGithub() {
   var cfg = ghConfig();
   if (!cfg.token) { toast('Configure o GitHub primeiro! Clique em ⚙️ GitHub', 'erro'); abrirModalGithub(); return; }
-  setStatus('Carregando do GitHub...', '');
-  toast('☁️ Conectando ao GitHub...', 'info');
+  mostrarLoading('Conectando ao GitHub...', 5);
   try {
+    // index.json
+    mostrarLoading('Carregando índice...', 10);
     var indexTxt = await ghGetFile('index.json');
-    if (!indexTxt) { toast('index.json não encontrado!', 'erro'); return; }
+    if (!indexTxt) { esconderLoading(); toast('index.json não encontrado!', 'erro'); return; }
     catalogo = normalizarIndice(JSON.parse(indexTxt));
+
+    // Calcular total de arquivos para a barra de progresso
+    var totalArqs = 1;
+    for (var i = 0; i < catalogo.length; i++) {
+      totalArqs++; // arquivo da categoria
+      if (catalogo[i].tipo === 'series') totalArqs += (catalogo[i].subs||[]).length;
+    }
+    var carregados = 1;
+
     for (var i = 0; i < catalogo.length; i++) {
       var cat = catalogo[i];
+      var pct = Math.round((carregados / totalArqs) * 85) + 10;
+      mostrarLoading('Carregando ' + cat.categoria + '...', pct);
       var catTxt = await ghGetFile(cat.arquivo);
+      carregados++;
       if (!catTxt) continue;
       var catData = JSON.parse(catTxt);
       if (cat.tipo === 'filmes') {
@@ -1474,7 +1620,10 @@ async function carregarDoGithub() {
       } else {
         cat.subs = catData.map(function(s){ return {nome:s.nome,arquivo:s.arquivo,thumb:s.thumb||'',totalEpisodios:s.totalEpisodios||0,episodios:[]}; });
         for (var j = 0; j < cat.subs.length; j++) {
+          var pctSub = Math.round((carregados / totalArqs) * 85) + 10;
+          mostrarLoading('Carregando ' + cat.subs[j].nome + '...', pctSub);
           var subTxt = await ghGetFile(cat.subs[j].arquivo);
+          carregados++;
           if (!subTxt) continue;
           var subData = JSON.parse(subTxt);
           var eps = Array.isArray(subData) ? subData : (subData.episodios||[]);
@@ -1483,7 +1632,9 @@ async function carregarDoGithub() {
         }
       }
     }
+
     // infor.json opcional
+    mostrarLoading('Carregando informações extras...', 95);
     try {
       var inforTxt = await ghGetFile('infor.json');
       if (inforTxt) {
@@ -1495,19 +1646,22 @@ async function carregarDoGithub() {
         }
       }
     } catch(e) {}
+
+    mostrarLoading('Finalizando...', 100);
     catAtiva = catalogo.length > 0 ? 0 : -1; subAtiva = -1;
     renderSidebar(); renderSubsSidebar(); renderConteudo();
     document.getElementById('arquivo-info').textContent = cfg.usuario + '/' + cfg.repo;
     setStatus('Catálogo carregado do GitHub!', 'ok');
-    toast('Catálogo carregado com sucesso!', 'sucesso');
-  } catch(e) { toast('Erro: ' + e.message, 'erro'); }
+    setTimeout(function(){ esconderLoading(); toast('Catálogo carregado com sucesso!', 'sucesso'); }, 400);
+  } catch(e) { esconderLoading(); toast('Erro: ' + e.message, 'erro'); }
 }
 
 function abrirModalSalvarGithub() {
   var cfg = ghConfig();
   if (!cfg.token) { toast('Configure o GitHub primeiro!', 'erro'); abrirModalGithub(); return; }
   var arquivos = listarArquivosComStatus().filter(function(a){ return a.editado; });
-  if (!arquivos.length) { toast('Nenhuma alteração para salvar!', 'info'); return; }
+  var paraDeletar = Array.from(_arquivosParaDeletar);
+  if (!arquivos.length && !paraDeletar.length) { toast('Nenhuma alteração para salvar!', 'info'); return; }
   var lista = document.getElementById('salvar-lista-github');
   lista.innerHTML = '';
   for (var i = 0; i < arquivos.length; i++) {
@@ -1517,6 +1671,14 @@ function abrirModalSalvarGithub() {
       '<span class="tipo">'+arquivos[i].tipo+'</span>';
     lista.appendChild(div);
   }
+  // Mostrar arquivos a deletar
+  for (var j = 0; j < paraDeletar.length; j++) {
+    var divD = document.createElement('div'); divD.className = 'salvar-item';
+    divD.innerHTML = '<span class="icone">🗑️</span><span class="path" style="text-decoration:line-through;color:var(--vm);">'+paraDeletar[j]+'</span>'+
+      '<span class="badge-editado" style="background:rgba(229,9,20,0.15);color:var(--vm);font-size:10px;padding:2px 7px;border-radius:20px;font-weight:700;">remover</span>'+
+      '<span class="tipo">arquivo removido</span>';
+    lista.appendChild(divD);
+  }
   document.getElementById('gh-salvar-status').innerHTML = '';
   document.getElementById('progress-fill').style.width = '0%';
   document.getElementById('btn-confirmar-push').disabled = false;
@@ -1525,28 +1687,45 @@ function abrirModalSalvarGithub() {
 
 async function confirmarPushGithub() {
   var arquivos = listarArquivosComStatus().filter(function(a){ return a.editado; });
+  var paraDeletar = Array.from(_arquivosParaDeletar);
+  var total = arquivos.length + paraDeletar.length;
   var statusEl  = document.getElementById('gh-salvar-status');
   var progressEl = document.getElementById('progress-fill');
   var btn = document.getElementById('btn-confirmar-push');
   btn.disabled = true;
-  var ok = 0, erro = 0;
+  var ok = 0, erro = 0, count = 0;
+
+  // Enviar arquivos editados
   for (var i = 0; i < arquivos.length; i++) {
     statusEl.innerHTML = '🔄 Enviando ' + arquivos[i].path + '...';
-    progressEl.style.width = Math.round((i / arquivos.length) * 100) + '%';
+    progressEl.style.width = Math.round((count / total) * 100) + '%';
     var conteudo = gerarConteudoArquivo(arquivos[i].path);
-    if (conteudo === null) continue;
+    if (conteudo === null) { count++; continue; }
     var res = await ghPutFile(arquivos[i].path, conteudo, 'Editor Cine Drive: ' + arquivos[i].path);
     if (res) ok++; else erro++;
+    count++;
   }
+
+  // Deletar arquivos removidos
+  for (var j = 0; j < paraDeletar.length; j++) {
+    statusEl.innerHTML = '🗑️ Removendo ' + paraDeletar[j] + '...';
+    progressEl.style.width = Math.round((count / total) * 100) + '%';
+    var res2 = await ghDeleteFile(paraDeletar[j], 'Editor Cine Drive: remover ' + paraDeletar[j]);
+    if (res2) ok++; else erro++;
+    count++;
+  }
+
   progressEl.style.width = '100%';
   if (erro === 0) {
-    statusEl.innerHTML = '<span style="color:var(--verde); transform: translateX(100px);">✅ ' + ok + ' arquivo(s) enviado(s) com sucesso!</span>';
+    statusEl.innerHTML = '<span style="color:var(--verde)">✅ ' + ok + ' operação(ões) concluída(s) com sucesso!</span>';
     setStatus('Salvo no GitHub! (' + ok + ' arquivos)', 'ok');
     toast('Salvo no GitHub!', 'sucesso');
+    _arquivosEditados.clear();
+    _arquivosParaDeletar.clear();
     setTimeout(function(){ fecharModal('modal-salvar-github'); }, 2000);
   } else {
     statusEl.innerHTML = '<span style="color:var(--vm)">⚠️ ' + ok + ' ok, ' + erro + ' com erro.</span>';
-    toast(erro + ' arquivo(s) com erro!', 'erro');
+    toast(erro + ' operação(ões) com erro!', 'erro');
   }
   btn.disabled = false;
 }
@@ -1586,10 +1765,11 @@ function gerarConteudoArquivo(path) {
 // Inicializar status GitHub ao carregar
 // Rodar imediatamente também (caso DOMContentLoaded já tenha disparado)
 if (document.readyState === 'complete' || document.readyState === 'interactive') {
-  setTimeout(atualizarStatusGithub, 100);
+  setTimeout(function(){ atualizarStatusGithub(); iniciarAutoLoad(); }, 100);
 }
 document.addEventListener('DOMContentLoaded', function() {
   atualizarStatusGithub();
+  iniciarAutoLoad();
   // Adicionar botão Salvar no GitHub na barra
   var barraBotoes = document.querySelector('.barra-botoes');
   if (barraBotoes) {
