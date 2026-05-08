@@ -8,5 +8,10 @@
     "categoria": "Filmes",
     "tipo": "series",
     "arquivo": "filmes/index.json"
+  },
+  {
+    "categoria": "Desenhos",
+    "tipo": "series",
+    "arquivo": "desenhos/index.json"
   }
 ]
