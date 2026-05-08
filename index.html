@@ -84,7 +84,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .layout { display:flex; overflow:hidden; height:calc(100vh - 122px); }
 .layout-inner { display:flex; flex-direction:column; flex:1; overflow:hidden; }
 .conteudo-lista { 
-  height: calc(100vh - 122px - 57px);
+  height: calc(100vh - 110px - 57px);
   overflow-y: scroll;
   padding: 24px 36px 24px;
   scrollbar-width: thin;
@@ -103,8 +103,8 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
   padding:6px;
   scrollbar-width:thin;
   scrollbar-color:var(--borda) transparent;
-  height: calc(100vh - 270px);
-  max-height: calc(100vh - 270px);
+  height: calc(100vh - 200px);
+  max-height: calc(100vh - 200px);
 }
 .sidebar-abas { display:flex; border-bottom:1px solid var(--borda); flex-shrink:0; }
 .sidebar-aba { flex:1; padding:11px 4px; text-align:center; font-size:10px; font-weight:600; letter-spacing:0.5px; text-transform:uppercase; color:var(--suave); cursor:pointer; border-bottom:2px solid transparent; transition:all 0.2s; }
@@ -373,11 +373,11 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 </div>
 
 <div class="barra-salvar">
-  <div id="barra-acoes-esq" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-right:auto;">
+  <div id="barra-acoes-esq" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-right:auto; ">
     <button id="btn-acao-esq" class="btn btn-vm" onclick="abrirModalCat()">+ Nova Categoria</button>
     <div id="barra-dir" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;"></div>
   </div>
-  <div class="status" id="status">Pronto</div>
+  <div class="status" id="status" style="transform: translateX(100px);">Pronto</div>
   <div class="barra-botoes">
     <button class="btn btn-sec" onclick="verJson()">&#128065; Ver JSON</button>
     <button class="btn btn-verde" onclick="abrirModalSalvar()">&#128190; Salvar e Baixar ZIP</button>
@@ -428,7 +428,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
     </div>
     <div class="modal-botoes">
       <button class="btn btn-sec" onclick="fecharModal('modal-sub')">Cancelar</button>
-      <button class="btn btn-roxo" onclick="confirmarSub()">Adicionar Subcategoria</button>
+      <button class="btn btn-roxo"  onclick="confirmarSub()">Adicionar Subcategoria</button>
     </div>
   </div>
 </div>
@@ -473,7 +473,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
     </div>
     <div class="github-campo">
       <label>Usuário GitHub</label>
-      <input class="modal-input azul" type="text" id="gh-usuario" value="RiosGitHub2018">
+      <input class="modal-input azul" type="text" id="gh-usuario" value="RiosGitHub2018" >
     </div>
     <div class="github-campo">
       <label>Repositório</label>
@@ -842,15 +842,15 @@ function renderConteudoSubs(){
     '<div style="font-size:11px;color:var(--suave);font-family:monospace;margin-top:2px;">'+sub.arquivo+'</div></div></div>'+
     '<div class="lista-filmes" id="lista-eps"></div>';
   atualizarBarraEsq('+ Nova Subcategoria', 'btn-roxo', abrirModalSub);
-  atualizarBarraDir('<button class="btn btn-roxo" onclick="adicionarEpisodio()">+ Adicionar Episodio</button>'+
-    '<label class="btn btn-ouro" for="csv-eps" style="cursor:pointer;">&#128229; Importar CSV</label>'+
+  atualizarBarraDir('<button class="btn btn-roxo" onclick="adicionarEpisodio()" style="transform: translateX(100px);">+ Adicionar Episodio</button>'+
+    '<label class="btn btn-ouro" for="csv-eps" style="cursor:pointer; transform: translateX(100px)">&#128229; Importar CSV</label>'+
     '<input type="file" id="csv-eps" accept=".csv" style="display:none" onchange="importarCSVEpisodios(this)">'+
     (sub.episodios.length===0?
-      '<label class="btn btn-sec" for="json-sub-'+info.catIdx+'-'+info.subIdx+'" style="cursor:pointer;border-color:var(--ouro);color:var(--ouro);">&#128194; Carregar '+sub.arquivo+'</label>'+
+      '<label class="btn btn-sec" for="json-sub-'+info.catIdx+'-'+info.subIdx+'" style="cursor:pointer;border-color:var(--ouro);color:var(--ouro); ">&#128194; Carregar '+sub.arquivo+'</label>'+
       '<input type="file" id="json-sub-'+info.catIdx+'-'+info.subIdx+'" accept=".json" style="display:none" onchange="carregarJSONSub(this,'+info.catIdx+','+info.subIdx+')">'
       :
-      '<label class="btn btn-sec" for="json-sub-r-'+info.catIdx+'-'+info.subIdx+'" style="cursor:pointer;border-color:var(--suave);color:var(--suave);font-size:12px;">&#128260; Recarregar JSON</label>'+
-      '<input type="file" id="json-sub-r-'+info.catIdx+'-'+info.subIdx+'" accept=".json" style="display:none" onchange="carregarJSONSub(this,'+info.catIdx+','+info.subIdx+')">'
+      '<label class="btn btn-sec" for="json-sub-r-'+info.catIdx+'-'+info.subIdx+'" style="cursor:pointer;border-color:var(--suave);color:var(--suave);font-size:12px; transform: translateX(100px);">&#128260; Recarregar JSON</label>'+
+      '<input type="file" id="json-sub-r-'+info.catIdx+'-'+info.subIdx+'" accept=".json" style="display:none; " onchange="carregarJSONSub(this,'+info.catIdx+','+info.subIdx+')">'
     ));
   renderEpisodios(info);
 }
@@ -1540,7 +1540,7 @@ async function confirmarPushGithub() {
   }
   progressEl.style.width = '100%';
   if (erro === 0) {
-    statusEl.innerHTML = '<span style="color:var(--verde)">✅ ' + ok + ' arquivo(s) enviado(s) com sucesso!</span>';
+    statusEl.innerHTML = '<span style="color:var(--verde); transform: translateX(100px);">✅ ' + ok + ' arquivo(s) enviado(s) com sucesso!</span>';
     setStatus('Salvo no GitHub! (' + ok + ' arquivos)', 'ok');
     toast('Salvo no GitHub!', 'sucesso');
     setTimeout(function(){ fecharModal('modal-salvar-github'); }, 2000);
