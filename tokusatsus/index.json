@@ -70,5 +70,11 @@
     "arquivo": "tokusatsus/black-kamen-rider-1987.json",
     "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpg",
     "totalEpisodios": 52
+  },
+  {
+    "nome": "He-Man Segunda temporada",
+    "arquivo": "tokusatsus/he-man-segunda-temporada.json",
+    "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcJE9tSoLrqqcB3umZKChCWE66XQ0ThIROJsLs5ijoMzm-EJJvOVtpbF4zbwPvXPpHD4KN5fgCZ_9d-q3zExSDIpaa-kFFrg9v4xpEgawhKWcKRbcB3T7-6J4Ehe8ze10u56QweWLUJZfTWTWzjD93DctrbKKP6zzx-iS4dUlJWXcq9ehdjCjlM084kEQ/s1600/heman_temp2.jpg",
+    "totalEpisodios": 1
   }
 ]
