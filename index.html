@@ -96,7 +96,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .conteudo-lista::-webkit-scrollbar-thumb:hover { background:var(--suave); }
 .barra-inferior { display:flex; align-items:center; gap:10px; padding:10px 16px; background:var(--painel); border-top:1px solid var(--borda); flex-shrink:0; flex-wrap:wrap; }
 
-.sidebar { width:272px; min-width:272px; background:var(--painel); border-right:1px solid var(--borda); display:flex; flex-direction:column; height:100%; overflow:hidden; transition:background 0.3s,border-color 0.3s; }
+.sidebar { width:372px; min-width:272px; background:var(--painel); border-right:1px solid var(--borda); display:flex; flex-direction:column; height:100%; overflow:hidden; transition:background 0.3s,border-color 0.3s; }
 .painel-interno { display:flex; flex-direction:column; flex:1; min-height:0; overflow:hidden; position:relative; }
 .lista-cats {
   overflow-y:scroll;
@@ -364,7 +364,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
       </div>
       <div class="lista-cats" id="lista-cats"></div>
       <div class="sidebar-footer">
-        <button class="btn btn-vm" style="width:100%;padding:10px;justify-content:center;" onclick="abrirModalCat()">+ Nova Categoria</button>
+        <button class="btn btn-vm" style="width:100%;padding:10px;justify-content:center; " onclick="abrirModalCat()">+ Nova Categoria</button>
       </div>
     </div>
 
@@ -895,7 +895,7 @@ function adicionarFilme(){
 // ===== CONTEUDO SUBCATEGORIAS =====
 function renderConteudoSubs(){
   var el=document.getElementById('conteudo');
-  if(!subAtiva||subAtiva===-1){ el.innerHTML='<div class="conteudo-vazio"><div class="ico">📺</div><div style="font-size:16px;font-weight:600;">Selecione uma subcategoria</div></div>'; atualizarBarraEsq('+ Nova Subcategoria','btn-roxo',abrirModalSub); atualizarBarraDir(''); return; }
+  if(!subAtiva||subAtiva===-1){ el.innerHTML='<div class="conteudo-vazio"  ><div class="ico">📺</div><div style="font-size:16px;font-weight:600;">Selecione uma subcategoria</div></div>'; atualizarBarraEsq('+ Nova Subcategoria','btn-roxo',abrirModalSub); atualizarBarraDir(''); return; }
   var cat=catalogo[subAtiva.catIdx]; if(!cat){el.innerHTML='';return;}
   var sub=cat.subs[subAtiva.subIdx]; if(!sub){el.innerHTML='';return;}
   var info={catIdx:subAtiva.catIdx,subIdx:subAtiva.subIdx,catNome:cat.categoria,sub:sub};
@@ -905,7 +905,7 @@ function renderConteudoSubs(){
     '<div style="font-size:11px;color:var(--suave);font-family:monospace;margin-top:2px;">'+sub.arquivo+'</div></div></div>'+
     '<div class="lista-filmes" id="lista-eps"></div>';
   atualizarBarraEsq('+ Nova Subcategoria', 'btn-roxo', abrirModalSub);
-  atualizarBarraDir('<button class="btn btn-roxo" onclick="adicionarEpisodio()">+ Adicionar Episodio</button>'+
+  atualizarBarraDir('<button class="btn btn-verde" onclick="adicionarEpisodio()" style=" width: 170px;  margin-left: 200px;">+ Adicionar Episodio</button>'+
     '<label class="btn btn-ouro" for="csv-eps" style="cursor:pointer;">&#128229; Importar CSV</label>'+
     '<input type="file" id="csv-eps" accept=".csv" style="display:none" onchange="importarCSVEpisodios(this)">'+
     (sub.episodios.length===0?
