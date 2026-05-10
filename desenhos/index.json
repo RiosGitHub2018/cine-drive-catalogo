@@ -22,5 +22,11 @@
     "arquivo": "desenhos/os-smurfs.json",
     "thumb": "https://image.tmdb.org/t/p/w500/uXLeMyXWvzihqvtPtnHDJpWz8VD.jpg",
     "totalEpisodios": 28
+  },
+  {
+    "nome": "She-Ra: A Princesa do Poder",
+    "arquivo": "desenhos/she-ra-a-princesa-do-poder.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/qRfuxL9T1tm2ZJzcl8utcdXEoOa.jpg",
+    "totalEpisodios": 64
   }
 ]
