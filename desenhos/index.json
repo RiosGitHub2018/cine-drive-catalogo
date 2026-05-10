@@ -16,5 +16,11 @@
     "arquivo": "desenhos/rambo-a-forca-da-liberdade.json",
     "thumb": "https://image.tmdb.org/t/p/w500/6VxKeCxPZBQhfzy4FyixKtxhlbU.jpg",
     "totalEpisodios": 38
+  },
+  {
+    "nome": "Os Smurfs",
+    "arquivo": "desenhos/os-smurfs.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/uXLeMyXWvzihqvtPtnHDJpWz8VD.jpg",
+    "totalEpisodios": 28
   }
 ]
