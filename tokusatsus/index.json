@@ -70,11 +70,5 @@
     "arquivo": "tokusatsus/black-kamen-rider-1987.json",
     "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpg",
     "totalEpisodios": 52
-  },
-  {
-    "nome": "Os Smurfs",
-    "arquivo": "tokusatsus/os-smurfs.json",
-    "thumb": "https://image.tmdb.org/t/p/w500/uXLeMyXWvzihqvtPtnHDJpWz8VD.jpg",
-    "totalEpisodios": 0
   }
 ]
