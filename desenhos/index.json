@@ -124,5 +124,11 @@
     "arquivo": "desenhos/thundarr-o-barbaro.json",
     "thumb": "https://image.tmdb.org/t/p/w500/pZIu3iWaiCrm9gyMpNOLjukiv8l.jpg",
     "totalEpisodios": 17
+  },
+  {
+    "nome": "ThunderCats",
+    "arquivo": "desenhos/thundercats.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/6TO2Ma9S6lhlZaXRNH7OVuPwh0U.jpg",
+    "totalEpisodios": 130
   }
 ]
