@@ -94,5 +94,11 @@
     "arquivo": "desenhos/o-marinheiro-popeye.json",
     "thumb": "https://image.tmdb.org/t/p/w500/iQRxHKkrR7DPuXcwPfwGFtYiCfM.jpg",
     "totalEpisodios": 12
+  },
+  {
+    "nome": "Scooby-Doo e Convidados",
+    "arquivo": "desenhos/scooby-doo-e-convidados.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/zegzuP8lJP2AIHqGgDbLraZLzhQ.jpg",
+    "totalEpisodios": 40
   }
 ]
