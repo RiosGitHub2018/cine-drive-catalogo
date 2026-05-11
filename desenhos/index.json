@@ -64,5 +64,11 @@
     "arquivo": "desenhos/dennis-o-pimentinha.json",
     "thumb": "https://image.tmdb.org/t/p/w500/Z5NPNEnLeCiDGF5jiBUqRTDxxX.jpg",
     "totalEpisodios": 13
+  },
+  {
+    "nome": "Os Flintstones",
+    "arquivo": "desenhos/os-flintstones.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/kJpL6zkMyoN0CuoPKftWxEJ6Y9T.jpg",
+    "totalEpisodios": 27
   }
 ]
