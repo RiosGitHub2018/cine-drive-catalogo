@@ -28,5 +28,11 @@
     "arquivo": "desenhos/she-ra-a-princesa-do-poder.json",
     "thumb": "https://image.tmdb.org/t/p/w500/qRfuxL9T1tm2ZJzcl8utcdXEoOa.jpg",
     "totalEpisodios": 64
+  },
+  {
+    "nome": "Os Novos Caça Fantasmas",
+    "arquivo": "desenhos/os-novos-caca-fantasmas.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/7E3jimDtr5oNNM3NGf8MP8So3yp.jpg",
+    "totalEpisodios": 40
   }
 ]
