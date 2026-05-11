@@ -118,5 +118,11 @@
     "arquivo": "desenhos/super-amigos.json",
     "thumb": "https://image.tmdb.org/t/p/w500/8XLq57nkeLB5YuX9r5pZw7sQ3IM.jpg",
     "totalEpisodios": 28
+  },
+  {
+    "nome": "Thundarr, O bárbaro",
+    "arquivo": "desenhos/thundarr-o-barbaro.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/pZIu3iWaiCrm9gyMpNOLjukiv8l.jpg",
+    "totalEpisodios": 17
   }
 ]
