@@ -70,5 +70,11 @@
     "arquivo": "desenhos/os-flintstones.json",
     "thumb": "https://image.tmdb.org/t/p/w500/kJpL6zkMyoN0CuoPKftWxEJ6Y9T.jpg",
     "totalEpisodios": 27
+  },
+  {
+    "nome": "Jonny Quest",
+    "arquivo": "desenhos/jonny-quest.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/r2KUXlkfGdUz8wKir0gznnXymsh.jpg",
+    "totalEpisodios": 26
   }
 ]
