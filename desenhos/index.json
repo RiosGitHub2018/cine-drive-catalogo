@@ -34,5 +34,11 @@
     "arquivo": "desenhos/os-novos-caca-fantasmas.json",
     "thumb": "https://image.tmdb.org/t/p/w500/7E3jimDtr5oNNM3NGf8MP8So3yp.jpg",
     "totalEpisodios": 40
+  },
+  {
+    "nome": "Capitão Planeta",
+    "arquivo": "desenhos/capitao-planeta.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/8MBuy8wWfenL00ORgNHOZslMjiN.jpg",
+    "totalEpisodios": 25
   }
 ]
