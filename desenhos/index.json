@@ -76,5 +76,11 @@
     "arquivo": "desenhos/jonny-quest.json",
     "thumb": "https://image.tmdb.org/t/p/w500/r2KUXlkfGdUz8wKir0gznnXymsh.jpg",
     "totalEpisodios": 26
+  },
+  {
+    "nome": "Macross Frontier",
+    "arquivo": "desenhos/macross-frontier.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/tV4FhGyWbkGQO0zV8arsrgnYXyT.jpg",
+    "totalEpisodios": 36
   }
 ]
