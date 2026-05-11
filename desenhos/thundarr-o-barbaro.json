@@ -1,0 +1,108 @@
+{
+  "nome": "Thundarr, O bárbaro",
+  "thumb": "https://image.tmdb.org/t/p/w500/pZIu3iWaiCrm9gyMpNOLjukiv8l.jpg",
+  "episodios": [
+    {
+      "id": "001",
+      "titulo": "Thundarr 01",
+      "thumb": "https://image.tmdb.org/t/p/w500/pZIu3iWaiCrm9gyMpNOLjukiv8l.jpg",
+      "driveId": "1NFb1qCa0Lheaj3EsFeZDIhUGS5WTU163"
+    },
+    {
+      "id": "002",
+      "titulo": "Thundarr 02",
+      "thumb": "https://image.tmdb.org/t/p/w500/pZIu3iWaiCrm9gyMpNOLjukiv8l.jpg",
+      "driveId": "1aRCL_sblc2krqMzTBuJgEZlJiitmtuxJ"
+    },
+    {
+      "id": "003",
+      "titulo": "Thundarr 03",
+      "thumb": "https://image.tmdb.org/t/p/w500/pZIu3iWaiCrm9gyMpNOLjukiv8l.jpg",
+      "driveId": "19OsIf7YhRfl7w_0gAPILb3n4KDaIT8Bx"
+    },
+    {
+      "id": "004",
+      "titulo": "Thundarr 04",
+      "thumb": "https://image.tmdb.org/t/p/w500/pZIu3iWaiCrm9gyMpNOLjukiv8l.jpg",
+      "driveId": "1AxArgVxJGKo-yDDlDnurOpUPWNYoqU6x"
+    },
+    {
+      "id": "005",
+      "titulo": "Thundarr 05",
+      "thumb": "https://image.tmdb.org/t/p/w500/pZIu3iWaiCrm9gyMpNOLjukiv8l.jpg",
+      "driveId": "1QiNCufqpK6NgLbX7dHqUi0TupcZJYLyN"
+    },
+    {
+      "id": "006",
+      "titulo": "Thundarr 06",
+      "thumb": "https://image.tmdb.org/t/p/w500/pZIu3iWaiCrm9gyMpNOLjukiv8l.jpg",
+      "driveId": "1GHP3V7b0KEi1CIqBaLGYMI25ba4Urqm_"
+    },
+    {
+      "id": "007",
+      "titulo": "Thundarr 07",
+      "thumb": "https://image.tmdb.org/t/p/w500/pZIu3iWaiCrm9gyMpNOLjukiv8l.jpg",
+      "driveId": "1PHcqM2GTiDRMlJA9j7EnvayhAA3a3xRW"
+    },
+    {
+      "id": "008",
+      "titulo": "Thundarr 08",
+      "thumb": "https://image.tmdb.org/t/p/w500/pZIu3iWaiCrm9gyMpNOLjukiv8l.jpg",
+      "driveId": "1IWVffp-m2GBV8xP2g6V1B-RX7ZAD1QjI"
+    },
+    {
+      "id": "009",
+      "titulo": "Thundarr 09",
+      "thumb": "https://image.tmdb.org/t/p/w500/pZIu3iWaiCrm9gyMpNOLjukiv8l.jpg",
+      "driveId": "1AJ9mMyCrv3U6Tst6sZoaPq_NxHJkonjd"
+    },
+    {
+      "id": "010",
+      "titulo": "Thundarr 10",
+      "thumb": "https://image.tmdb.org/t/p/w500/pZIu3iWaiCrm9gyMpNOLjukiv8l.jpg",
+      "driveId": "1g5ZarG52B7RBCl88TI2bkE0nODXTKcPs"
+    },
+    {
+      "id": "011",
+      "titulo": "Thundarr 11",
+      "thumb": "https://image.tmdb.org/t/p/w500/pZIu3iWaiCrm9gyMpNOLjukiv8l.jpg",
+      "driveId": "1CxBUL0hyycj-e_9ut7aNW9EUhoJycePg"
+    },
+    {
+      "id": "012",
+      "titulo": "Thundarr 12",
+      "thumb": "https://image.tmdb.org/t/p/w500/pZIu3iWaiCrm9gyMpNOLjukiv8l.jpg",
+      "driveId": "1O3KwZNr-QBSbwdk22oGnavW-w04Midx6"
+    },
+    {
+      "id": "013",
+      "titulo": "Thundarr 14",
+      "thumb": "https://image.tmdb.org/t/p/w500/pZIu3iWaiCrm9gyMpNOLjukiv8l.jpg",
+      "driveId": "1LT3SROY5-tftd2tB2AdWl5ZysXcDzFIA"
+    },
+    {
+      "id": "014",
+      "titulo": "Thundarr 15",
+      "thumb": "https://image.tmdb.org/t/p/w500/pZIu3iWaiCrm9gyMpNOLjukiv8l.jpg",
+      "driveId": "1WIH7p4VNHow3muzdtvQioise87aHDODJ"
+    },
+    {
+      "id": "015",
+      "titulo": "Thundarr 17",
+      "thumb": "https://image.tmdb.org/t/p/w500/pZIu3iWaiCrm9gyMpNOLjukiv8l.jpg",
+      "driveId": "1X8z7gKtI4veFEJQj8nRLUz7XSdUlUEwZ"
+    },
+    {
+      "id": "016",
+      "titulo": "Thundarr 18",
+      "thumb": "https://image.tmdb.org/t/p/w500/pZIu3iWaiCrm9gyMpNOLjukiv8l.jpg",
+      "driveId": "1S3YdoBMM0fSNvRQXWlw7l-Do2mtVQBar"
+    },
+    {
+      "id": "017",
+      "titulo": "Thundarr 19",
+      "thumb": "https://image.tmdb.org/t/p/w500/pZIu3iWaiCrm9gyMpNOLjukiv8l.jpg",
+      "driveId": "1u0IaPPvHnq8tcVLwFDzDluy8NEfinn4A"
+    }
+  ]
+}
