@@ -88,5 +88,11 @@
     "arquivo": "desenhos/o-maskara-a-serie-animada.json",
     "thumb": "https://image.tmdb.org/t/p/w500/bOmWfBKD7ommflceQOccCKXjSh0.jpg",
     "totalEpisodios": 15
+  },
+  {
+    "nome": "O Marinheiro Popeye",
+    "arquivo": "desenhos/o-marinheiro-popeye.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/iQRxHKkrR7DPuXcwPfwGFtYiCfM.jpg",
+    "totalEpisodios": 12
   }
 ]
