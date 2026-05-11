@@ -58,5 +58,11 @@
     "arquivo": "desenhos/centurions.json",
     "thumb": "https://image.tmdb.org/t/p/w500/iQpTDb8VTMylGRK861BPxkLwVbs.jpg",
     "totalEpisodios": 40
+  },
+  {
+    "nome": "Dennis, o Pimentinha",
+    "arquivo": "desenhos/dennis-o-pimentinha.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/Z5NPNEnLeCiDGF5jiBUqRTDxxX.jpg",
+    "totalEpisodios": 13
   }
 ]
