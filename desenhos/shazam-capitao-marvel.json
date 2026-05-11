@@ -1,0 +1,72 @@
+{
+  "nome": "Shazam! - Capitão Marvel",
+  "thumb": "https://image.tmdb.org/t/p/w500/rxeXd7ZoCisy42S7IcZ6sgyNrSB.jpg",
+  "episodios": [
+    {
+      "id": "001",
+      "titulo": "Shazam 01",
+      "thumb": "https://image.tmdb.org/t/p/w500/rxeXd7ZoCisy42S7IcZ6sgyNrSB.jpg",
+      "driveId": "0B6T0wmQZ3SBga1A1VEdfX0VaUjA"
+    },
+    {
+      "id": "002",
+      "titulo": "Shazam 02",
+      "thumb": "https://image.tmdb.org/t/p/w500/rxeXd7ZoCisy42S7IcZ6sgyNrSB.jpg",
+      "driveId": "0B6T0wmQZ3SBgMWFOcFNObnY2eXM"
+    },
+    {
+      "id": "003",
+      "titulo": "Shazam 03",
+      "thumb": "https://image.tmdb.org/t/p/w500/rxeXd7ZoCisy42S7IcZ6sgyNrSB.jpg",
+      "driveId": "0B6T0wmQZ3SBgeFdMZXNjSHVCcFE"
+    },
+    {
+      "id": "004",
+      "titulo": "Shazam 04",
+      "thumb": "https://image.tmdb.org/t/p/w500/rxeXd7ZoCisy42S7IcZ6sgyNrSB.jpg",
+      "driveId": "0B6T0wmQZ3SBgYzI5N0h1MFZwbEk"
+    },
+    {
+      "id": "005",
+      "titulo": "Shazam 05",
+      "thumb": "https://image.tmdb.org/t/p/w500/rxeXd7ZoCisy42S7IcZ6sgyNrSB.jpg",
+      "driveId": "0B6T0wmQZ3SBgSTdGQjNHazl2ZDA"
+    },
+    {
+      "id": "006",
+      "titulo": "Shazam 06",
+      "thumb": "https://image.tmdb.org/t/p/w500/rxeXd7ZoCisy42S7IcZ6sgyNrSB.jpg",
+      "driveId": "0B6T0wmQZ3SBgTVJGSWlqYmUtWE0"
+    },
+    {
+      "id": "007",
+      "titulo": "Shazam 07",
+      "thumb": "https://image.tmdb.org/t/p/w500/rxeXd7ZoCisy42S7IcZ6sgyNrSB.jpg",
+      "driveId": "0B6T0wmQZ3SBgNXNWZGVnaXJZUlE"
+    },
+    {
+      "id": "008",
+      "titulo": "Shazam 08",
+      "thumb": "https://image.tmdb.org/t/p/w500/rxeXd7ZoCisy42S7IcZ6sgyNrSB.jpg",
+      "driveId": "0B6T0wmQZ3SBgVDQ3ZFRmRnpXbHc"
+    },
+    {
+      "id": "009",
+      "titulo": "Shazam 09",
+      "thumb": "https://image.tmdb.org/t/p/w500/rxeXd7ZoCisy42S7IcZ6sgyNrSB.jpg",
+      "driveId": "0B6T0wmQZ3SBgaURqQ1FGYkg1MXM"
+    },
+    {
+      "id": "010",
+      "titulo": "Shazam 10",
+      "thumb": "https://image.tmdb.org/t/p/w500/rxeXd7ZoCisy42S7IcZ6sgyNrSB.jpg",
+      "driveId": "0B6T0wmQZ3SBgM0dncEhzc3loR1E"
+    },
+    {
+      "id": "011",
+      "titulo": "Shazam 11",
+      "thumb": "https://image.tmdb.org/t/p/w500/rxeXd7ZoCisy42S7IcZ6sgyNrSB.jpg",
+      "driveId": "0B6T0wmQZ3SBgV3QtOEZCaFIwRDg"
+    }
+  ]
+}
