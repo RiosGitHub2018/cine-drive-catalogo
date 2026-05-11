@@ -82,5 +82,11 @@
     "arquivo": "desenhos/macross-frontier.json",
     "thumb": "https://image.tmdb.org/t/p/w500/tV4FhGyWbkGQO0zV8arsrgnYXyT.jpg",
     "totalEpisodios": 36
+  },
+  {
+    "nome": "O Máskara: A Série Animada",
+    "arquivo": "desenhos/o-maskara-a-serie-animada.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/bOmWfBKD7ommflceQOccCKXjSh0.jpg",
+    "totalEpisodios": 15
   }
 ]
