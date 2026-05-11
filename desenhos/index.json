@@ -130,5 +130,11 @@
     "arquivo": "desenhos/thundercats.json",
     "thumb": "https://image.tmdb.org/t/p/w500/6TO2Ma9S6lhlZaXRNH7OVuPwh0U.jpg",
     "totalEpisodios": 130
+  },
+  {
+    "nome": "Transformers- 1ª Temporda",
+    "arquivo": "desenhos/transformers-1-temporda.json",
+    "thumb": "https://2.bp.blogspot.com/-Sz4y0fuRLn4/Xhy-dW99pHI/AAAAAAAACIA/mVicIL_cFIEekjl2HmEBZlcmGvT1C5tSACLcBGAsYHQ/s1600/transfsTp1.png",
+    "totalEpisodios": 33
   }
 ]
