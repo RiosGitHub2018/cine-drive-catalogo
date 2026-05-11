@@ -112,5 +112,11 @@
     "arquivo": "desenhos/silverhawks.json",
     "thumb": "https://image.tmdb.org/t/p/w500/mOEWtpkuqNMfY9c2UcWEIDQzo0o.jpg",
     "totalEpisodios": 21
+  },
+  {
+    "nome": "Super Amigos",
+    "arquivo": "desenhos/super-amigos.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/8XLq57nkeLB5YuX9r5pZw7sQ3IM.jpg",
+    "totalEpisodios": 28
   }
 ]
