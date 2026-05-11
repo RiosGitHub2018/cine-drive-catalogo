@@ -106,5 +106,11 @@
     "arquivo": "desenhos/shazam-capitao-marvel.json",
     "thumb": "https://image.tmdb.org/t/p/w500/rxeXd7ZoCisy42S7IcZ6sgyNrSB.jpg",
     "totalEpisodios": 11
+  },
+  {
+    "nome": "SilverHawks",
+    "arquivo": "desenhos/silverhawks.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/mOEWtpkuqNMfY9c2UcWEIDQzo0o.jpg",
+    "totalEpisodios": 21
   }
 ]
