@@ -46,5 +46,11 @@
     "arquivo": "desenhos/cavalo-de-fogo.json",
     "thumb": "https://image.tmdb.org/t/p/w500/t8AEnQDZHYiJtoGb2YqAZZlr8LU.jpg",
     "totalEpisodios": 13
+  },
+  {
+    "nome": "Caverna do Dragão",
+    "arquivo": "desenhos/caverna-do-dragao.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/4fFRnZwlOwhcZkwLK8DCxtApyYP.jpg",
+    "totalEpisodios": 28
   }
 ]
