@@ -40,5 +40,11 @@
     "arquivo": "desenhos/capitao-planeta.json",
     "thumb": "https://image.tmdb.org/t/p/w500/8MBuy8wWfenL00ORgNHOZslMjiN.jpg",
     "totalEpisodios": 25
+  },
+  {
+    "nome": "Cavalo de Fogo",
+    "arquivo": "desenhos/cavalo-de-fogo.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/t8AEnQDZHYiJtoGb2YqAZZlr8LU.jpg",
+    "totalEpisodios": 13
   }
 ]
