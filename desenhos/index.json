@@ -52,5 +52,11 @@
     "arquivo": "desenhos/caverna-do-dragao.json",
     "thumb": "https://image.tmdb.org/t/p/w500/4fFRnZwlOwhcZkwLK8DCxtApyYP.jpg",
     "totalEpisodios": 28
+  },
+  {
+    "nome": "Centurions",
+    "arquivo": "desenhos/centurions.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/iQpTDb8VTMylGRK861BPxkLwVbs.jpg",
+    "totalEpisodios": 40
   }
 ]
