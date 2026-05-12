@@ -4,5 +4,11 @@
     "arquivo": "series/macgyver-profissao-perigo.json",
     "thumb": "https://image.tmdb.org/t/p/w500/82khlAyEMPQ4Vawb39EU42qJc53.jpg",
     "totalEpisodios": 22
+  },
+  {
+    "nome": "Todo Mundo Odeia o Cris - 1ª Temporada",
+    "arquivo": "series/todo-mundo-odeia-o-cris-1-temporada.json",
+    "thumb": "https://2.bp.blogspot.com/-dFVd6anemC0/XAp0jvC8wNI/AAAAAAAABwU/xgd4LGwQbbM0iYINU3rJAtB32QBNbqODQCLcBGAs/s1600/tmdodcristp01.png",
+    "totalEpisodios": 22
   }
 ]
