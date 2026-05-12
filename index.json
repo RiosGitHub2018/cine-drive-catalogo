@@ -13,5 +13,10 @@
     "categoria": "Desenhos",
     "tipo": "series",
     "arquivo": "desenhos/index.json"
+  },
+  {
+    "categoria": "Séries",
+    "tipo": "series",
+    "arquivo": "series/index.json"
   }
 ]
