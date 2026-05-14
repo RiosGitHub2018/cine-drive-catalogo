@@ -18,5 +18,10 @@
     "categoria": "Séries",
     "tipo": "series",
     "arquivo": "series/index.json"
+  },
+  {
+    "categoria": "Canais de TV",
+    "tipo": "filmes",
+    "arquivo": "canais-de-tv.json"
   }
 ]
