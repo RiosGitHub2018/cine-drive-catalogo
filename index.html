@@ -149,7 +149,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
   border-radius:10px;
   padding:12px 16px;
   display:grid;
-  grid-template-columns: 40px 1fr 1fr auto 1fr auto;
+  grid-template-columns: 40px 1fr 1fr auto 1fr 1fr auto;
   gap:10px;
   align-items:end;
   transition:border-color 0.2s,background 0.3s;
@@ -880,7 +880,7 @@ function renderFilmes() {
 
 function adicionarFilme(){
   if(!catalogo[catAtiva].itens) catalogo[catAtiva].itens=[];
-  catalogo[catAtiva].itens.push({id:pad(catalogo[catAtiva].itens.length+1),titulo:'',thumb:'',driveId:''});
+  catalogo[catAtiva].itens.push({id:pad(catalogo[catAtiva].itens.length+1),titulo:'',thumb:'',driveId:'',url:''});
   _arquivosEditados.add(catalogo[catAtiva].arquivo);
   renderConteudo();
   setTimeout(function(){
@@ -935,7 +935,7 @@ function adicionarEpisodio(){
   if(!subAtiva||subAtiva===-1) return;
   var sub=catalogo[subAtiva.catIdx].subs[subAtiva.subIdx]; if(!sub) return;
   if(!sub.episodios) sub.episodios=[];
-  sub.episodios.push({id:pad(sub.episodios.length+1),titulo:'',thumb:'',driveId:''});
+  sub.episodios.push({id:pad(sub.episodios.length+1),titulo:'',thumb:'',driveId:'',url:''});
   _arquivosEditados.add(sub.arquivo);
   renderConteudoSubs();
   setTimeout(function(){
@@ -1131,6 +1131,7 @@ function criarCard(idx, item, isEp, info) {
   var campoTitulo = criarCampoInput('Titulo', isEp ? 'Ep '+(idx+1)+' - Titulo' : 'Nome do filme', item.titulo, 'titulo', idx);
   var campoThumb  = criarCampoInput('URL da Capa', 'https://... ou thumbs/capa.jpg', item.thumb, 'thumb', idx);
   var campoDrive  = criarCampoInput('Drive ID', 'ID do Google Drive', item.driveId, 'driveId', idx);
+  var campoUrl    = criarCampoInput('URL Externa', 'https://site.com/filme (opcional)', item.url, 'url', idx);
   var btnFThumb = document.createElement('button');
   btnFThumb.className = 'btn-filtrar-id btn-filtrar-thumb'; btnFThumb.textContent = 'F';
   btnFThumb.title = 'Normalizar URL da capa para image.tmdb.org/t/p/w500/';
@@ -1143,7 +1144,7 @@ function criarCard(idx, item, isEp, info) {
   btnF.addEventListener('click', function(){ filtrarId(btnF, inputDrive); });
   var btnDel = document.createElement('button'); btnDel.className = 'btn-del-filme'; btnDel.innerHTML = '&#10005;'; btnDel.title = 'Remover';
   acoes.appendChild(btnF); acoes.appendChild(btnDel);
-  card.appendChild(numDiv); card.appendChild(campoTitulo); card.appendChild(campoThumb); card.appendChild(btnFThumb); card.appendChild(campoDrive); card.appendChild(acoes);
+  card.appendChild(numDiv); card.appendChild(campoTitulo); card.appendChild(campoThumb); card.appendChild(btnFThumb); card.appendChild(campoDrive); card.appendChild(campoUrl); card.appendChild(acoes);
   var inputs = card.querySelectorAll('input');
   for (var j = 0; j < inputs.length; j++) {
     inputs[j].addEventListener('input', (function(isEpisodio, infoRef){
@@ -1339,7 +1340,7 @@ function carregarJSONCategoria(input,catIdx){
   var reader=new FileReader();
   reader.onload=function(ev){ try{
     var data=JSON.parse(ev.target.result),itens=[];
-    if(Array.isArray(data)) for(var i=0;i<data.length;i++){var item=data[i];itens.push({id:pad(i+1),titulo:item.titulo||item.title||item.nome||'',thumb:item.thumb||item.capa||item.url||'',driveId:item.driveId||item.id||item.driveID||''});}
+    if(Array.isArray(data)) for(var i=0;i<data.length;i++){var item=data[i];itens.push({id:pad(i+1),titulo:item.titulo||item.title||item.nome||'',thumb:item.thumb||item.capa||'',driveId:item.driveId||item.id||item.driveID||'',url:item.url||''});}
     catalogo[catIdx].itens=itens; catAtiva=catIdx;
     renderSidebar(); renderConteudo();
     toast(itens.length+' filmes carregados de '+file.name+'!','sucesso'); input.value='';
@@ -1352,7 +1353,7 @@ function carregarJSONSub(input,catIdx,subIdx){
   var reader=new FileReader();
   reader.onload=function(ev){ try{
     var data=JSON.parse(ev.target.result),eps=[],fonte=Array.isArray(data)?data:(data.episodios||[]);
-    for(var i=0;i<fonte.length;i++){var ep=fonte[i];eps.push({id:pad(i+1),titulo:ep.titulo||ep.title||ep.nome||'',thumb:ep.thumb||ep.capa||ep.url||'',driveId:ep.driveId||ep.id||ep.driveID||''});}
+    for(var i=0;i<fonte.length;i++){var ep=fonte[i];eps.push({id:pad(i+1),titulo:ep.titulo||ep.title||ep.nome||'',thumb:ep.thumb||ep.capa||'',driveId:ep.driveId||ep.id||ep.driveID||'',url:ep.url||''});}
     catalogo[catIdx].subs[subIdx].episodios=eps;
     if(!Array.isArray(data)&&data.thumb) catalogo[catIdx].subs[subIdx].thumb=data.thumb;
     renderSubsSidebar(); renderConteudoSubs();
@@ -1616,7 +1617,7 @@ async function carregarDoGithub() {
       if (!catTxt) continue;
       var catData = JSON.parse(catTxt);
       if (cat.tipo === 'filmes') {
-        cat.itens = catData.map(function(it,j){ return {id:pad(j+1),titulo:it.titulo||'',thumb:it.thumb||'',driveId:it.driveId||''}; });
+        cat.itens = catData.map(function(it,j){ return {id:pad(j+1),titulo:it.titulo||'',thumb:it.thumb||'',driveId:it.driveId||'',url:it.url||''}; });
       } else {
         cat.subs = catData.map(function(s){ return {nome:s.nome,arquivo:s.arquivo,thumb:s.thumb||'',totalEpisodios:s.totalEpisodios||0,episodios:[]}; });
         for (var j = 0; j < cat.subs.length; j++) {
@@ -1627,7 +1628,7 @@ async function carregarDoGithub() {
           if (!subTxt) continue;
           var subData = JSON.parse(subTxt);
           var eps = Array.isArray(subData) ? subData : (subData.episodios||[]);
-          cat.subs[j].episodios = eps.map(function(ep,k){ return {id:pad(k+1),titulo:ep.titulo||'',thumb:ep.thumb||'',driveId:ep.driveId||''}; });
+          cat.subs[j].episodios = eps.map(function(ep,k){ return {id:pad(k+1),titulo:ep.titulo||'',thumb:ep.thumb||'',driveId:ep.driveId||'',url:ep.url||''}; });
           if (!Array.isArray(subData) && subData.thumb) cat.subs[j].thumb = subData.thumb;
         }
       }
@@ -1745,7 +1746,11 @@ function gerarConteudoArquivo(path) {
   for (var i = 0; i < catalogo.length; i++) {
     var cat = catalogo[i];
     if (cat.arquivo === path && cat.tipo === 'filmes') {
-      return JSON.stringify((cat.itens||[]).filter(function(it){return it.titulo||it.driveId;}).map(function(it,j){return {id:pad(j+1),titulo:it.titulo||'',thumb:it.thumb||'',driveId:it.driveId||''};}), null, 2);
+      return JSON.stringify((cat.itens||[]).filter(function(it){return it.titulo||it.driveId||it.url;}).map(function(it,j){
+        var obj = {id:pad(j+1),titulo:it.titulo||'',thumb:it.thumb||'',driveId:it.driveId||''};
+        if (it.url) obj.url = it.url;
+        return obj;
+      }), null, 2);
     }
     if (cat.tipo === 'series') {
       if (cat.arquivo === path) {
@@ -1753,7 +1758,11 @@ function gerarConteudoArquivo(path) {
       }
       for (var j = 0; j < (cat.subs||[]).length; j++) {
         if (cat.subs[j].arquivo === path) {
-          var epsL = (cat.subs[j].episodios||[]).filter(function(ep){return ep.titulo||ep.driveId;}).map(function(ep,k){return {id:pad(k+1),titulo:ep.titulo||'',thumb:ep.thumb||'',driveId:ep.driveId||''};});
+          var epsL = (cat.subs[j].episodios||[]).filter(function(ep){return ep.titulo||ep.driveId||ep.url;}).map(function(ep,k){
+            var obj = {id:pad(k+1),titulo:ep.titulo||'',thumb:ep.thumb||'',driveId:ep.driveId||''};
+            if (ep.url) obj.url = ep.url;
+            return obj;
+          });
           return JSON.stringify({nome:cat.subs[j].nome,thumb:cat.subs[j].thumb||'',episodios:epsL}, null, 2);
         }
       }
