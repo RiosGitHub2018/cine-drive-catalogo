@@ -23,5 +23,10 @@
     "categoria": "Canais de TV",
     "tipo": "filmes",
     "arquivo": "canais-de-tv.json"
+  },
+  {
+    "categoria": "Radios",
+    "tipo": "filmes",
+    "arquivo": "radios.json"
   }
 ]
