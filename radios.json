@@ -12,5 +12,12 @@
     "thumb": "https://img.radios.com.br/radio/lg/radio14215_1732190432.png",
     "driveId": "",
     "url": "https://8923.brasilstream.com.br/stream?1778814826675"
+  },
+  {
+    "id": "003",
+    "titulo": "Rádio Bandeirantes 90.9 FM",
+    "thumb": "https://img.radios.com.br/radio/lg/radio10410_1778074394.jpg",
+    "driveId": "",
+    "url": "https://26483.live.streamtheworld.com/RADIOBANDEIRANTESAAC/HLS/fa160fa3-4f46-42dd-8c18-395877e49c38/0/playlist.m3u8"
   }
 ]
