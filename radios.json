@@ -19,5 +19,12 @@
     "thumb": "https://img.radios.com.br/radio/lg/radio10410_1778074394.jpg",
     "driveId": "",
     "url": "https://www.radios.com.br/play/playlist/10410/listen-radio.m3u"
+  },
+  {
+    "id": "004",
+    "titulo": "Rádio Meio Norte 99.9 FM",
+    "thumb": "https://img.radios.com.br/radio/lg/radio13846_1712244731.jpg",
+    "driveId": "",
+    "url": "https://webradio.amsolution.com.br/radio/8280/meionorte"
   }
 ]
