@@ -26,5 +26,12 @@
     "thumb": "https://img.radios.com.br/radio/lg/radio13846_1712244731.jpg",
     "driveId": "",
     "url": "https://webradio.amsolution.com.br/radio/8280/meionorte"
+  },
+  {
+    "id": "005",
+    "titulo": "Rádio Jornal 90.3 FM",
+    "thumb": "https://img.radios.com.br/radio/lg/radio40385_1712244574.jpg",
+    "driveId": "",
+    "url": "https://webradio.amsolution.com.br/radio/8270/jmn"
   }
 ]
