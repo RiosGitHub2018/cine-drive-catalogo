@@ -40,5 +40,12 @@
     "thumb": "https://img.radios.com.br/radio/lg/radio8816_1573682720.jpg",
     "driveId": "",
     "url": "https://download.sgr.globo.com/audios/mp3/audiolog/CBN-SP/CBN-SP_20260515-21.mp3"
+  },
+  {
+    "id": "007",
+    "titulo": "\tRádio Jovem Guarda",
+    "thumb": "\thttps://img.radios.com.br/radio/xl/radio96955_1545298552.jpg",
+    "driveId": "",
+    "url": "https://stm5.painelcast.com:7534/stream?1778897444561"
   }
 ]
