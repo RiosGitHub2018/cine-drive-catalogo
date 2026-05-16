@@ -33,5 +33,12 @@
     "thumb": "https://img.radios.com.br/radio/lg/radio40385_1712244574.jpg",
     "driveId": "",
     "url": "https://webradio.amsolution.com.br/radio/8270/jmn"
+  },
+  {
+    "id": "006",
+    "titulo": "Rádio CBN São Paulo 90.5 FM",
+    "thumb": "https://img.radios.com.br/radio/lg/radio8816_1573682720.jpg",
+    "driveId": "",
+    "url": "https://download.sgr.globo.com/audios/mp3/audiolog/CBN-SP/CBN-SP_20260515-21.mp3"
   }
 ]
