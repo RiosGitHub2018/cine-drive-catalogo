@@ -75,5 +75,19 @@
     "thumb": "\thttps://img.radios.com.br/radio/xl/radio13520_1775763209.jpg",
     "driveId": "",
     "url": "https://stream-288.zeno.fm/xuh02vfzurhvv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJ4dWgwMnZmenVyaHZ2IiwiaG9zdCI6InN0cmVhbS0yODguemVuby5mbSIsInJ0dGwiOjUsImp0aSI6IlE1NXA0ZTlQUlJpV3BranVUc01NUGciLCJpYXQiOjE3Nzg4OTg0MDAsImV4cCI6MTc3ODg5ODQ2MH0.kon4zwM_Kp_O5Xtq1fxCop58RmgRbgVxHV5nZZExxaM&1778898400789"
+  },
+  {
+    "id": "012",
+    "titulo": "Rádio Mirante News FM 104.1",
+    "thumb": "https://img.radios.com.br/radio/xl/radio13694_1761681964.jpg",
+    "driveId": "",
+    "url": "https://cdn.live.br1.jmvstream.com/w/LVW-16705/LVW16705_KlTdtt3p0x/chunklist.m3u8"
+  },
+  {
+    "id": "013",
+    "titulo": "Rádio Mirante FM 96.1",
+    "thumb": "\thttps://img.radios.com.br/radio/xl/radio13935_1744986574.png",
+    "driveId": "",
+    "url": "\thttps://mirante2.jmvstream.com/stream?1778984066613"
   }
 ]
