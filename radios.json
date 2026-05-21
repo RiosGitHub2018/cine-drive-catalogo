@@ -44,7 +44,7 @@
   {
     "id": "007",
     "titulo": "Rádio Jovem Guarda",
-    "thumb": "\thttps://img.radios.com.br/radio/xl/radio96955_1545298552.jpg",
+    "thumb": "https://img.radios.com.br/radio/xl/radio96955_1545298552.jpg",
     "driveId": "",
     "url": "https://stm5.painelcast.com:7534/stream?1778897444561"
   },
@@ -58,9 +58,9 @@
   {
     "id": "009",
     "titulo": "Rádio TMC 100.1 FM",
-    "thumb": "\thttps://img.radios.com.br/radio/xl/radio8803_1760319906.png",
+    "thumb": "https://img.radios.com.br/radio/xl/radio8803_1760319906.png",
     "driveId": "",
-    "url": "\thttps://27573.live.streamtheworld.com/RT_SP.mp3?dist=RadiosComBr-TMC&1778898117967"
+    "url": "https://27573.live.streamtheworld.com/RT_SP.mp3?dist=RadiosComBr-TMC&1778898117967"
   },
   {
     "id": "010",
@@ -72,7 +72,7 @@
   {
     "id": "011",
     "titulo": "Rádio Jangadeiro FM 88.9",
-    "thumb": "\thttps://img.radios.com.br/radio/xl/radio13520_1775763209.jpg",
+    "thumb": "https://img.radios.com.br/radio/xl/radio13520_1775763209.jpg",
     "driveId": "",
     "url": "https://stream-288.zeno.fm/xuh02vfzurhvv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJ4dWgwMnZmenVyaHZ2IiwiaG9zdCI6InN0cmVhbS0yODguemVuby5mbSIsInJ0dGwiOjUsImp0aSI6IlE1NXA0ZTlQUlJpV3BranVUc01NUGciLCJpYXQiOjE3Nzg4OTg0MDAsImV4cCI6MTc3ODg5ODQ2MH0.kon4zwM_Kp_O5Xtq1fxCop58RmgRbgVxHV5nZZExxaM&1778898400789"
   },
@@ -86,35 +86,35 @@
   {
     "id": "013",
     "titulo": "Rádio Mirante FM 96.1",
-    "thumb": "\thttps://img.radios.com.br/radio/xl/radio13935_1744986574.png",
+    "thumb": "https://img.radios.com.br/radio/xl/radio13935_1744986574.png",
     "driveId": "",
     "url": "\thttps://mirante2.jmvstream.com/stream?1778984066613"
   },
   {
     "id": "014",
     "titulo": "Rádio Cidade Verde FM 93.5",
-    "thumb": "\thttps://img.radios.com.br/radio/xl/radio42987_1573498279.jpg",
+    "thumb": "https://img.radios.com.br/radio/xl/radio42987_1573498279.jpg",
     "driveId": "",
     "url": "\thttps://ssl1.transmissaodigital.com:20010/;?1778987431756"
   },
   {
     "id": "015",
     "titulo": "Rádio Itatiaia 610 AM 95.7 FM",
-    "thumb": "\thttps://img.radios.com.br/radio/xl/radio14_1646746883.jpeg",
+    "thumb": "https://img.radios.com.br/radio/xl/radio14_1646746883.jpeg",
     "driveId": "",
     "url": "\thttps://8903.brasilstream.com.br/stream?1778987564678"
   },
   {
     "id": "016",
     "titulo": "Rádio Cocais 89.5 FM",
-    "thumb": "\thttps://img.radios.com.br/radio/xl/radio42685_1744342885.jpg",
+    "thumb": "https://img.radios.com.br/radio/xl/radio42685_1744342885.jpg",
     "driveId": "",
     "url": "\thttps://webradio.amsolution.com.br/radio/8230/cocais?1778987628817"
   },
   {
     "id": "017",
     "titulo": "Rádio Verdinha FM 92.5",
-    "thumb": "\thttps://img.radios.com.br/radio/xl/radio14216_1768909187.png",
+    "thumb": "https://img.radios.com.br/radio/xl/radio14216_1768909187.png",
     "driveId": "",
     "url": "https://jvcs2dtro0.zoeweb.tv/z18-live/stream/chunklist.m3u8"
   }
