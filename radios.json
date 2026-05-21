@@ -131,5 +131,12 @@
     "thumb": "https://img.radios.com.br/radio/xl/radio13176_1628168105.png",
     "driveId": "",
     "url": "https://liverdgaupoa.rbsdirect.com.br/primary/gaucha_rbs.sdp/chunklist_a0bc675d-0f00-428a-b7eb-6737210ace9d.m3u8"
+  },
+  {
+    "id": "020",
+    "titulo": "Rádio Capital FM",
+    "thumb": "https://img.radios.com.br/radio/xl/radio175968_1619189596.png",
+    "driveId": "",
+    "url": "https://stm16.xcast.com.br:8960/stream?1779391851227"
   }
 ]
