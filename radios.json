@@ -18,7 +18,7 @@
     "titulo": "Rádio Bandeirantes 90.9 FM",
     "thumb": "https://img.radios.com.br/radio/lg/radio10410_1778074394.jpg",
     "driveId": "",
-    "url": "https://27433.live.streamtheworld.com/RADIOBANDEIRANTESAAC/HLS/80d9f09b-6644-41c5-a8eb-e07f05264ba5/0/playlist.m3u8"
+    "url": "https://cine-drive-proxy.mauricioadobeps.workers.dev/?url=https://playerservices.streamtheworld.com/api/livestream-redirect/RadioBandeirantes.mp3"
   },
   {
     "id": "004",
