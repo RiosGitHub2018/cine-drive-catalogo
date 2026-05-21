@@ -138,5 +138,12 @@
     "thumb": "https://img.radios.com.br/radio/xl/radio175968_1619189596.png",
     "driveId": "",
     "url": "https://stm16.xcast.com.br:8960/stream?1779391851227"
+  },
+  {
+    "id": "021",
+    "titulo": "Rádio Globo 98.1 FM",
+    "thumb": "https://img.radios.com.br/radio/xl/radio8817_1676300226.png",
+    "driveId": "",
+    "url": "https://24423.live.streamtheworld.com/RADIO_GLOBO_RJAAC.aac?dist=radioscombr&1779392015771"
   }
 ]
