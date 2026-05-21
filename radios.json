@@ -124,5 +124,12 @@
     "thumb": "https://img.radios.com.br/radio/xl/radio24477_1779129361.png",
     "driveId": "",
     "url": "\thttps://26593.live.streamtheworld.com/BANDNEWSFM_SPAAC.aac?dist=radios.com.br&1779391308230"
+  },
+  {
+    "id": "019",
+    "titulo": "Rádio Gaúcha FM 93.7",
+    "thumb": "https://img.radios.com.br/radio/xl/radio13176_1628168105.png",
+    "driveId": "",
+    "url": "https://liverdgaupoa.rbsdirect.com.br/primary/gaucha_rbs.sdp/chunklist_a0bc675d-0f00-428a-b7eb-6737210ace9d.m3u8"
   }
 ]
