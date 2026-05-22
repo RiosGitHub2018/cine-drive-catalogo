@@ -2,7 +2,13 @@
   {
     "nome": "Comédia",
     "arquivo": "filmes/comedia.json",
-    "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgaWHjACi1wx6nE_mLxEYbtNCCE_HXYAZq-OiVe-ztt7IVGGAnFIOtxk1nWENVv5Xh6cE2f5ceQKeMpx46oBkTZmFZF7SZ77U8xk-o9uyopHpHrliVrcZJ1zlq_dDYaAUaq7TCUP7DGI523WcvQmwZuQgAAM34YzWKMFdSpGz15sebqgoS_BlRw4TJ6FOE/s1600/comedia.png",
-    "totalEpisodios": 6
+    "thumb": "https://raw.githubusercontent.com/RiosGitHub2018/cine-drive-catalogo/refs/heads/main/Imagens/nQIa9dm.jpeg",
+    "totalEpisodios": 14
+  },
+  {
+    "nome": "Ação",
+    "arquivo": "filmes/acao.json",
+    "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJx63DWXaOVECOI6mqhUWfQhcLw70dpe86ziQv6AqsU_onEp8Jjxlw8UI_SFW8Dw33iGBwfY_ok67fNNDZRQmgiTtgYNkk_5Ql2PZx4ZjiNZO4yml84cM9Iv2_iqEosiWs-N-m7lXdzQxkpSg-ZhOUxtvTSF_OKjblMQOxxO9oFJWgfayVt5NnRvl_VPA/s1600/acao.png",
+    "totalEpisodios": 1
   }
 ]
