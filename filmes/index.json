@@ -2,31 +2,31 @@
   {
     "nome": "Comédia",
     "arquivo": "filmes/comedia.json",
-    "thumb": "https://raw.githubusercontent.com/RiosGitHub2018/cine-drive-catalogo/refs/heads/main/Imagens/nQIa9dm.jpeg",
+    "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2hgnGK7T9r_LZsvZc-SSFCPvh2UEtZTEOZvs-Ghu0AybKMjWmmSmZK5Fa_vUiqWw1ga-EA6Ll89J81KohE7f_Z9KIFxEquVPq0V39LEZXEQemyBtRnS61MS0LaiBUOKbdF4Uh-pb1sIHT3G0EQxlAn48xVZ2eez7RB8DRtXds1ARMRZhZ-Db3yS1MII0/s1600/comedia.png",
     "totalEpisodios": 14
   },
   {
     "nome": "Ação",
     "arquivo": "filmes/acao.json",
-    "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJx63DWXaOVECOI6mqhUWfQhcLw70dpe86ziQv6AqsU_onEp8Jjxlw8UI_SFW8Dw33iGBwfY_ok67fNNDZRQmgiTtgYNkk_5Ql2PZx4ZjiNZO4yml84cM9Iv2_iqEosiWs-N-m7lXdzQxkpSg-ZhOUxtvTSF_OKjblMQOxxO9oFJWgfayVt5NnRvl_VPA/s1600/acao.png",
+    "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTs1bSakzmLLxEGvNvWnrzZKWPf7tY9TbdZFFSs3AOuI9RD61_1B2pa6mBnEVXUj3hpT3cHG1bR1N5nqEJQrNKW3dmYTQLaHwFMat8bxc0RJrE_uhOgF8QRK8hs_Ybg_C0rqyUsVEdgdTNgPvlMEaNFedlS5ayKHMICHlUlbJJB0OS4wvJCPIGKvw5-Qg/s1600/acao.png",
     "totalEpisodios": 1
   },
   {
     "nome": "Animação",
     "arquivo": "filmes/animacao.json",
-    "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5_aLLnnumKN4Nf3nE92lW4ZwE_5XRAlVkceby3JMndlriueY5wNkV7XilPpe09iQn4eMCX66qYsEwS2b_1arVLVKyCbsW2W3_m7zQKK1nYH_3SP9yY5kH7ct-O6J5YKtGhNDQAlt0SLUosc1nzICDoc1uuA0d3Jfx1j1v64sLRBPOSRBnj30pVPYgbfs/s1600/anima.png",
+    "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5q274WntihrS3arYtfmUZ8yUNi7nEUgSlAGMH4sZDeBNqKTK5AkZP2Uv3SjliFuUBmBq3qKBF4pq_B1zIkBzcec8Kyd4HvydQp5JAxLTJe3hBxRBn92hVRWVW_-edzOULZF0RH2PgC3j95tpaNhUq_Yc0KsmAZ_JMcWR9AN9OjPdlVGGKGtsICC7SPkk/s1600/anima.png",
     "totalEpisodios": 1
   },
   {
     "nome": "Romance",
     "arquivo": "filmes/romance.json",
-    "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVFct6rkhphIa17wrS3AIMXzXqjjpdxLB04FMAtpy6LXCNQycSViGFoTFF7A2LtjH0F03LNMuZhp7h9frcebqN0wcyWiU-PyVb2Les-EdzIdWLGasogVoTFjiWieHQCCPhxHAlZWyiEiXt6RY9TeM9PMoKrtNR0okkb130hNZrgdaPdKOXYnVsbhAu3a0/s1600/romance.png",
+    "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2-GQ0ggAU1mcvCVPtTz5xd9VTwOy-vUum31xSjDdGE7o6F884iFT49LgvPnqij4ccE8k0fgHAG8-Pg12lL-vzRMNF4Uu0FaGufSWZz-BjgGY4tcoNTFJXMRnsfiWGc7P715FBegAQVRkMcXNheWMJQet3NMn7C64QxhupdYJWXC8oC3EoHN_V0IRROxo/s1600/romance.png",
     "totalEpisodios": 1
   },
   {
     "nome": "Terror",
     "arquivo": "filmes/terror.json",
-    "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj0DrBAxStqR_fbg51r9YgAsnd713S2GthZ-6sNkHI_TgM-dDQuYX3I8G1r7PYeFNNiQcoRtWd6m47-_af53gndzsMidBwTuvW4waPsOhhhEksfzj_OK0HHIikT7jBbF2ndmAb-EvIhj8rkHh3HIkIlQH7WlaokFq7lTjboWrdX_oSLCL3Jw_4JXI5OB2k/s1600/terror.png",
+    "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgWCkOBQvtFUkWXLUCnRauVfPGhqZUVJaWdz9EI_-bfXXCLPJK-8TTxPlERr8QaWEr67KvJaKCJ-UfxjebjkYXURHjxykdT_APySYiE-27V6ufOETljsUQsY-zXxmgPh-iIcSILhnwZgrJ3TuxZqwX_yLNVvJdsANW3qS-CxtEVEstuPCi6KFFOn94En0s/s1600/terror.png",
     "totalEpisodios": 1
   }
 ]
