@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,6 +14,7 @@
 </svg>'>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap');
 
@@ -144,15 +146,15 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .lista-filmes { display:flex; flex-direction:column; gap:8px; margin-bottom:16px; width:100%; }
 
 .filme-card {
-  background:var(--painel);
-  border:1px solid var(--borda);
-  border-radius:10px;
-  padding:12px 16px;
-  display:grid;
-  grid-template-columns: 40px 1fr 1fr auto 1fr 1fr auto;
-  gap:10px;
-  align-items:end;
-  transition:border-color 0.2s,background 0.3s;
+  background: var(--painel);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: grid;
+  grid-template-columns: 45px 1.2fr 1.2fr 32px 1fr 32px 1fr auto;
+  gap: 8px;
+  align-items: center;
+  transition: border-color 0.2s, background 0.3s;
 }
 .filme-card:hover { border-color:rgba(229,9,20,0.2); }
 .filme-card.episodio:hover { border-color:rgba(124,58,237,0.2); }
@@ -188,7 +190,13 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .campo textarea:focus { border-color:var(--azul); }
 .campo textarea::placeholder { color:var(--suave); font-size:11px; }
 
-.card-acoes { display:flex; flex-direction:row; gap:4px; align-items:flex-end; padding-bottom:1px; }
+.card-acoes {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
 
 .btn-filtrar-id {
   background: rgba(245,197,24,0.12);
@@ -207,6 +215,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
   justify-content: center;
   transition: background 0.2s, border-color 0.2s, transform 0.15s, color 0.2s;
   flex-shrink: 0;
+  transform: translateY(8px);
 }
 .btn-filtrar-id:hover { background: rgba(245,197,24,0.26); border-color: var(--ouro); transform: scale(1.07); }
 .btn-filtrar-id:active { transform: scale(0.95); }
@@ -219,6 +228,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
   background:rgba(229,9,20,0.08); border:1px solid rgba(229,9,20,0.2); border-radius:7px;
   color:var(--vm); cursor:pointer; width:34px; height:34px; font-size:14px;
   display:flex; align-items:center; justify-content:center; transition:all 0.2s; flex-shrink:0;
+  transform: translateY(8px);
 }
 .btn-del-filme:hover { background:rgba(229,9,20,0.2); }
 
@@ -323,7 +333,16 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .loading-msg {
   font-size:12px; color:var(--suave); letter-spacing:1px; min-height:18px; text-align:center;
 }
+
+
+.btn-filtrar-id{
+
+}
+
 </style>
+
+
+
 </head>
 <body>
 
@@ -574,9 +593,12 @@ function extrairDriveId(valor) {
   if (!valor) return null;
   var v = valor.trim();
   if (!v) return null;
+  // Se já for ID puro (letras/números/underscore/hífen, mínimo 15 chars)
   if (!/https?:\/\//.test(v) && /^[a-zA-Z0-9_-]{15,}$/.test(v)) return v;
+  // Extrai de /d/ID ou /folders/ID
   var m = v.match(/\/(?:d|folders)\/([a-zA-Z0-9_-]{15,})/);
   if (m) return m[1];
+  // Extrai de ?id=ID
   m = v.match(/[?&]id=([a-zA-Z0-9_-]{15,})/);
   if (m) return m[1];
   return null;
@@ -1127,34 +1149,75 @@ function importarCSVInfor(input) {
 function criarCard(idx, item, isEp, info) {
   var card = document.createElement('div');
   card.className = 'filme-card' + (isEp ? ' episodio' : '');
-  var numDiv = document.createElement('div'); numDiv.className = 'filme-num'; numDiv.textContent = idx + 1;
+  
+  // Número
+  var numDiv = document.createElement('div'); 
+  numDiv.className = 'filme-num'; 
+  numDiv.textContent = idx + 1;
+  
+  // Título
   var campoTitulo = criarCampoInput('Titulo', isEp ? 'Ep '+(idx+1)+' - Titulo' : 'Nome do filme', item.titulo, 'titulo', idx);
-  var campoThumb  = criarCampoInput('URL da Capa', 'https://... ou thumbs/capa.jpg', item.thumb, 'thumb', idx);
-  var campoDrive  = criarCampoInput('Drive ID', 'ID do Google Drive', item.driveId, 'driveId', idx);
-  var campoUrl    = criarCampoInput('URL Externa', 'https://site.com/filme (opcional)', item.url, 'url', idx);
+  
+  // URL da Capa
+  var campoThumb = criarCampoInput('URL da Capa', 'https://... ou thumbs/capa.jpg', item.thumb, 'thumb', idx);
+  
+  // Botão Thumb (normalizar TMDB)
   var btnFThumb = document.createElement('button');
-  btnFThumb.className = 'btn-filtrar-id btn-filtrar-thumb'; btnFThumb.textContent = 'F';
+  btnFThumb.className = 'btn-filtrar-id btn-filtrar-thumb'; 
+  btnFThumb.textContent = 'F';
   btnFThumb.title = 'Normalizar URL da capa para image.tmdb.org/t/p/w500/';
   var inputThumb = campoThumb.querySelector('input');
   btnFThumb.addEventListener('click', function(){ filtrarThumb(btnFThumb, inputThumb); });
-  var acoes = document.createElement('div'); acoes.className = 'card-acoes';
-  var btnF = document.createElement('button'); btnF.className = 'btn-filtrar-id'; btnF.textContent = 'F';
-  btnF.title = 'Extrair ID do Google Drive da URL';
+  
+  // Drive ID
+  var campoDrive = criarCampoInput('Drive ID', 'ID do Google Drive', item.driveId, 'driveId', idx);
+  
+  // Botão Drive (extrair ID)
+  var btnDrive = document.createElement('button'); 
+  btnDrive.className = 'btn-filtrar-id'; 
+  btnDrive.textContent = 'F';
+  btnDrive.title = 'Extrair ID do Google Drive da URL';
   var inputDrive = campoDrive.querySelector('input');
-  btnF.addEventListener('click', function(){ filtrarId(btnF, inputDrive); });
-  var btnDel = document.createElement('button'); btnDel.className = 'btn-del-filme'; btnDel.innerHTML = '&#10005;'; btnDel.title = 'Remover';
-  acoes.appendChild(btnF); acoes.appendChild(btnDel);
-  card.appendChild(numDiv); card.appendChild(campoTitulo); card.appendChild(campoThumb); card.appendChild(btnFThumb); card.appendChild(campoDrive); card.appendChild(campoUrl); card.appendChild(acoes);
+  btnDrive.addEventListener('click', function(){ filtrarId(btnDrive, inputDrive); });
+  
+  // URL Externa
+  var campoUrl = criarCampoInput('URL Externa', 'https://site.com/filme (opcional)', item.url, 'url', idx);
+  
+  // Botão deletar
+  var btnDel = document.createElement('button'); 
+  btnDel.className = 'btn-del-filme'; 
+  btnDel.innerHTML = '&#10005;'; 
+  btnDel.title = 'Remover';
+  
+  // Ordem correta: Nº | Título | Capa | BtnThumb | Drive ID | BtnDrive | URL Externa | Delete
+  card.appendChild(numDiv);
+  card.appendChild(campoTitulo);
+  card.appendChild(campoThumb);
+  card.appendChild(btnFThumb);
+  card.appendChild(campoDrive);
+  card.appendChild(btnDrive);
+  card.appendChild(campoUrl);
+  card.appendChild(btnDel);
+  
+  // Event listeners para inputs
   var inputs = card.querySelectorAll('input');
   for (var j = 0; j < inputs.length; j++) {
     inputs[j].addEventListener('input', (function(isEpisodio, infoRef){
       return function(){
         var i = parseInt(this.dataset.idx), campo = this.dataset.campo;
-        if (isEpisodio && infoRef) { infoRef.sub.episodios[i][campo] = this.value; _arquivosEditados.add(infoRef.sub.arquivo); }
-        else if (catalogo[catAtiva]) { catalogo[catAtiva].itens[i][campo] = this.value; _arquivosEditados.add(catalogo[catAtiva].arquivo); }
+        if (isEpisodio && infoRef) { 
+          infoRef.sub.episodios[i][campo] = this.value; 
+          _arquivosEditados.add(infoRef.sub.arquivo); 
+        }
+        else if (catalogo[catAtiva]) { 
+          catalogo[catAtiva].itens[i][campo] = this.value; 
+          _arquivosEditados.add(catalogo[catAtiva].arquivo); 
+        }
       };
     })(isEp, info));
   }
+  
+  // Evento do botão deletar
   btnDel.addEventListener('click', (function(isEpisodio, snapCatIdx, snapSubIdx){
     return function(){
       var i = parseInt(inputDrive.dataset.idx);
@@ -1172,9 +1235,9 @@ function criarCard(idx, item, isEp, info) {
       }
     };
   })(isEp, info ? info.catIdx : -1, info ? info.subIdx : -1));
+  
   return card;
 }
-
 function criarCampoInput(labelTxt, placeholder, valor, campo, idx) {
   var wrap = document.createElement('div'); wrap.className = 'campo';
   var lbl = document.createElement('label'); lbl.textContent = labelTxt;
