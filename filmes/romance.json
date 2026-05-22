@@ -1,0 +1,12 @@
+{
+  "nome": "Romance",
+  "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVFct6rkhphIa17wrS3AIMXzXqjjpdxLB04FMAtpy6LXCNQycSViGFoTFF7A2LtjH0F03LNMuZhp7h9frcebqN0wcyWiU-PyVb2Les-EdzIdWLGasogVoTFjiWieHQCCPhxHAlZWyiEiXt6RY9TeM9PMoKrtNR0okkb130hNZrgdaPdKOXYnVsbhAu3a0/s1600/romance.png",
+  "episodios": [
+    {
+      "id": "001",
+      "titulo": "01",
+      "thumb": "",
+      "driveId": ""
+    }
+  ]
+}
