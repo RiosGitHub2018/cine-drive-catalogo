@@ -1,11 +1,5 @@
 [
   {
-    "nome": "Comédia",
-    "arquivo": "filmes/comedia.json",
-    "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2hgnGK7T9r_LZsvZc-SSFCPvh2UEtZTEOZvs-Ghu0AybKMjWmmSmZK5Fa_vUiqWw1ga-EA6Ll89J81KohE7f_Z9KIFxEquVPq0V39LEZXEQemyBtRnS61MS0LaiBUOKbdF4Uh-pb1sIHT3G0EQxlAn48xVZ2eez7RB8DRtXds1ARMRZhZ-Db3yS1MII0/s1600/comedia.png",
-    "totalEpisodios": 14
-  },
-  {
     "nome": "Ação",
     "arquivo": "filmes/acao.json",
     "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTs1bSakzmLLxEGvNvWnrzZKWPf7tY9TbdZFFSs3AOuI9RD61_1B2pa6mBnEVXUj3hpT3cHG1bR1N5nqEJQrNKW3dmYTQLaHwFMat8bxc0RJrE_uhOgF8QRK8hs_Ybg_C0rqyUsVEdgdTNgPvlMEaNFedlS5ayKHMICHlUlbJJB0OS4wvJCPIGKvw5-Qg/s1600/acao.png",
@@ -16,6 +10,12 @@
     "arquivo": "filmes/animacao.json",
     "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5q274WntihrS3arYtfmUZ8yUNi7nEUgSlAGMH4sZDeBNqKTK5AkZP2Uv3SjliFuUBmBq3qKBF4pq_B1zIkBzcec8Kyd4HvydQp5JAxLTJe3hBxRBn92hVRWVW_-edzOULZF0RH2PgC3j95tpaNhUq_Yc0KsmAZ_JMcWR9AN9OjPdlVGGKGtsICC7SPkk/s1600/anima.png",
     "totalEpisodios": 1
+  },
+  {
+    "nome": "Comédia",
+    "arquivo": "filmes/comedia.json",
+    "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2hgnGK7T9r_LZsvZc-SSFCPvh2UEtZTEOZvs-Ghu0AybKMjWmmSmZK5Fa_vUiqWw1ga-EA6Ll89J81KohE7f_Z9KIFxEquVPq0V39LEZXEQemyBtRnS61MS0LaiBUOKbdF4Uh-pb1sIHT3G0EQxlAn48xVZ2eez7RB8DRtXds1ARMRZhZ-Db3yS1MII0/s1600/comedia.png",
+    "totalEpisodios": 14
   },
   {
     "nome": "Romance",
