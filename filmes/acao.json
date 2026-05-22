@@ -4,9 +4,9 @@
   "episodios": [
     {
       "id": "001",
-      "titulo": "01",
-      "thumb": "",
-      "driveId": ""
+      "titulo": "Guerra nas Estrelas: O Império Contra-Ataca",
+      "thumb": "https://image.tmdb.org/t/p/w500/dLGT8b4Ut10z44uYLaip4QiwKta.jpg",
+      "driveId": "1fgV62Bx6e3jhk-SjyU9LiY5aJZUxZFAJ"
     }
   ]
 }
