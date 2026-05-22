@@ -10,5 +10,11 @@
     "arquivo": "filmes/acao.json",
     "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJx63DWXaOVECOI6mqhUWfQhcLw70dpe86ziQv6AqsU_onEp8Jjxlw8UI_SFW8Dw33iGBwfY_ok67fNNDZRQmgiTtgYNkk_5Ql2PZx4ZjiNZO4yml84cM9Iv2_iqEosiWs-N-m7lXdzQxkpSg-ZhOUxtvTSF_OKjblMQOxxO9oFJWgfayVt5NnRvl_VPA/s1600/acao.png",
     "totalEpisodios": 1
+  },
+  {
+    "nome": "Animação",
+    "arquivo": "filmes/animacao.json",
+    "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5_aLLnnumKN4Nf3nE92lW4ZwE_5XRAlVkceby3JMndlriueY5wNkV7XilPpe09iQn4eMCX66qYsEwS2b_1arVLVKyCbsW2W3_m7zQKK1nYH_3SP9yY5kH7ct-O6J5YKtGhNDQAlt0SLUosc1nzICDoc1uuA0d3Jfx1j1v64sLRBPOSRBnj30pVPYgbfs/s1600/anima.png",
+    "totalEpisodios": 1
   }
 ]
