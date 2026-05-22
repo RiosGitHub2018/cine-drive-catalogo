@@ -22,5 +22,11 @@
     "arquivo": "filmes/romance.json",
     "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVFct6rkhphIa17wrS3AIMXzXqjjpdxLB04FMAtpy6LXCNQycSViGFoTFF7A2LtjH0F03LNMuZhp7h9frcebqN0wcyWiU-PyVb2Les-EdzIdWLGasogVoTFjiWieHQCCPhxHAlZWyiEiXt6RY9TeM9PMoKrtNR0okkb130hNZrgdaPdKOXYnVsbhAu3a0/s1600/romance.png",
     "totalEpisodios": 1
+  },
+  {
+    "nome": "Terror",
+    "arquivo": "filmes/terror.json",
+    "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj0DrBAxStqR_fbg51r9YgAsnd713S2GthZ-6sNkHI_TgM-dDQuYX3I8G1r7PYeFNNiQcoRtWd6m47-_af53gndzsMidBwTuvW4waPsOhhhEksfzj_OK0HHIikT7jBbF2ndmAb-EvIhj8rkHh3HIkIlQH7WlaokFq7lTjboWrdX_oSLCL3Jw_4JXI5OB2k/s1600/terror.png",
+    "totalEpisodios": 1
   }
 ]
