@@ -317,6 +317,32 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 }
 .btn-edit-cat:hover { color: #fff; background: var(--azul); }
 
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ===== DRAG AND DROP ===== */
+.drag-handle {
+  cursor: grab;
+  color: var(--suave);
+  font-size: 14px;
+  padding: 0 4px;
+  user-select: none;
+  flex-shrink: 0;
+  opacity: 0.4;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+}
+.drag-handle:active { cursor: grabbing; }
+.filme-card:hover .drag-handle,
+.cat-item:hover .drag-handle { opacity: 1; }
+
+.filme-card.dragging  { opacity: 0.35; background: var(--entrada); }
+.cat-item.dragging    { opacity: 0.35; }
+
+.filme-card.drag-over { border-top: 2px solid var(--vm);  margin-top: -2px; }
+.filme-card.drag-over.episodio { border-top-color: var(--roxo); }
+.cat-item.drag-over   { border-top: 2px solid var(--roxo); margin-top: -2px; }
+
 ::-webkit-scrollbar { width:4px; }
 ::-webkit-scrollbar-track { background:transparent; }
 ::-webkit-scrollbar-thumb { background:var(--borda); border-radius:2px; }
@@ -820,8 +846,26 @@ function renderSubsSidebar() {
   document.getElementById('total-subs').textContent = todas.length;
   if (todas.length === 0) {
     lista.innerHTML = '<div style="padding:16px;color:var(--suave);font-size:12px;text-align:center;">Nenhuma subcategoria<br>nesta categoria</div>';
+    return;
   }
   for (var i=0;i<todas.length;i++) lista.appendChild(criarItemSub(i,todas[i]));
+  // Drag and drop na lista de subcategorias (só se todas da mesma categoria)
+  if (todas.length > 1 && catAtiva >= 0 && catalogo[catAtiva] && catalogo[catAtiva].tipo === 'series') {
+    var subsArray = catalogo[catAtiva].subs;
+    ativarDragDrop(lista, subsArray, function(){
+      _arquivosEditados.add(catalogo[catAtiva].arquivo);
+      renderSubsSidebar();
+      // Atualizar subAtiva se necessário (índice pode ter mudado)
+      if (subAtiva && subAtiva !== -1) {
+        var nomeSub = subAtiva._nome;
+        if (nomeSub) {
+          for (var s = 0; s < subsArray.length; s++) {
+            if (subsArray[s].nome === nomeSub) { subAtiva.subIdx = s; break; }
+          }
+        }
+      }
+    });
+  }
 }
 
 function getTodasSubs(apenasAtiva) {
@@ -860,7 +904,8 @@ function criarItemSub(gIdx, info) {
   editSub.addEventListener('click',function(e){e.stopPropagation();abrirModalEditarSub(parseInt(this.dataset.catidx),parseInt(this.dataset.subidx));});
   item.appendChild(nome); item.appendChild(tag); item.appendChild(count); item.appendChild(editSub); item.appendChild(del);
   item.addEventListener('click',function(){
-    subAtiva = { catIdx: parseInt(this.dataset.catidx), subIdx: parseInt(this.dataset.subidx) };
+    var ci = parseInt(this.dataset.catidx), si = parseInt(this.dataset.subidx);
+    subAtiva = { catIdx: ci, subIdx: si, _nome: catalogo[ci].subs[si].nome };
     renderSubsSidebar(); renderConteudoSubs();
   });
   return item;
@@ -930,6 +975,10 @@ function renderFilmes() {
   lista.innerHTML='';
   var itens=catalogo[catAtiva].itens||[];
   for(var i=0;i<itens.length;i++) lista.appendChild(criarCard(i,itens[i],false,null));
+  if(itens.length > 1) ativarDragDrop(lista, itens, function(){
+    _arquivosEditados.add(catalogo[catAtiva].arquivo);
+    renderFilmes();
+  });
 }
 
 function adicionarFilme(){
@@ -953,6 +1002,26 @@ function renderConteudoSubs(){
   var cat=catalogo[subAtiva.catIdx]; if(!cat){el.innerHTML='';return;}
   var sub=cat.subs[subAtiva.subIdx]; if(!sub){el.innerHTML='';return;}
   var info={catIdx:subAtiva.catIdx,subIdx:subAtiva.subIdx,catNome:cat.categoria,sub:sub};
+
+  // Lazy load: episodios===null significa ainda não carregado do GitHub
+  if (sub.episodios === null) {
+    // NÃO setar sub.episodios aqui — carregarEpisodiosLazy precisa ver null
+    el.innerHTML=
+      '<div class="secao-header"><div>'+
+        '<div class="breadcrumb">Categoria: <b>'+info.catNome+'</b></div>'+
+        '<div class="secao-titulo" style="color:var(--roxo)">'+sub.nome+'</div>'+
+      '</div></div>'+
+      '<div class="lista-filmes" id="lista-eps">'+
+        '<div style="display:flex;align-items:center;gap:10px;padding:24px 0;color:var(--suave);font-size:13px;">'+
+          '<div style="width:20px;height:20px;border:2px solid var(--borda);border-top-color:var(--roxo);border-radius:50%;animation:spin 0.7s linear infinite;flex-shrink:0;"></div>'+
+          ' Carregando episódios de <b style="color:var(--roxo);margin-left:4px;">'+sub.nome+'</b>...'+
+        '</div>'+
+      '</div>';
+    atualizarBarraEsq('+ Nova Subcategoria','btn-roxo',abrirModalSub);
+    atualizarBarraDir('');
+    carregarEpisodiosLazy(subAtiva.catIdx, subAtiva.subIdx);
+    return;
+  }
   if(!sub.episodios) sub.episodios=[];
   el.innerHTML='<div class="secao-header"><div><div class="breadcrumb">Categoria: <b>'+info.catNome+'</b></div>'+
     '<div class="secao-titulo" style="color:var(--roxo)">'+sub.nome+'<span>'+sub.episodios.length+' episodios</span></div>'+
@@ -977,6 +1046,10 @@ function renderEpisodios(info){
   lista.innerHTML='';
   var eps=info.sub.episodios||[];
   for(var i=0;i<eps.length;i++) lista.appendChild(criarCard(i,eps[i],true,info));
+  if(eps.length > 1) ativarDragDrop(lista, eps, function(){
+    marcarSubEditada();
+    renderEpisodios(info);
+  });
 }
 
 function marcarSubEditada(){
@@ -1549,6 +1622,8 @@ function carregarJSONCategoria(input,catIdx){
 }
 
 function carregarJSONSub(input,catIdx,subIdx){
+  // Ao carregar arquivo local, invalidar cache para não usar dado antigo
+  delete _ghCache[catalogo[catIdx].subs[subIdx].arquivo];
   var file=input.files[0]; if(!file) return;
   var reader=new FileReader();
   reader.onload=function(ev){ try{
@@ -1655,6 +1730,67 @@ function atualizarBarraDir(html) {
   if (el) el.innerHTML = html;
 }
 
+
+// ===== DRAG AND DROP GENÉRICO =====
+// container : elemento DOM com os itens filhos
+// array     : array de dados a reordenar (itens, episodios, subs)
+// onReorder : callback chamado após reordenar (para re-renderizar e marcar editado)
+function ativarDragDrop(container, array, onReorder) {
+  var dragIdx = null;
+
+  var filhos = container.children;
+  for (var i = 0; i < filhos.length; i++) {
+    (function(el, idx) {
+      el.setAttribute('draggable', 'true');
+
+      el.addEventListener('dragstart', function(e) {
+        dragIdx = idx;
+        setTimeout(function(){ el.classList.add('dragging'); }, 0);
+        e.dataTransfer.effectAllowed = 'move';
+      });
+
+      el.addEventListener('dragend', function() {
+        el.classList.remove('dragging');
+        // Limpar todos os drag-over
+        var todos = container.querySelectorAll('.drag-over');
+        for (var t = 0; t < todos.length; t++) todos[t].classList.remove('drag-over');
+        dragIdx = null;
+      });
+
+      el.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        if (dragIdx !== null && dragIdx !== idx) {
+          var todos = container.querySelectorAll('.drag-over');
+          for (var t = 0; t < todos.length; t++) todos[t].classList.remove('drag-over');
+          el.classList.add('drag-over');
+        }
+      });
+
+      el.addEventListener('dragleave', function() {
+        el.classList.remove('drag-over');
+      });
+
+      el.addEventListener('drop', function(e) {
+        e.preventDefault();
+        el.classList.remove('drag-over');
+        if (dragIdx === null || dragIdx === idx) return;
+
+        // Reordenar o array
+        var item = array.splice(dragIdx, 1)[0];
+        array.splice(idx, 0, item);
+
+        // Reindexar IDs
+        for (var r = 0; r < array.length; r++) {
+          if (array[r].id !== undefined) array[r].id = pad(r + 1);
+        }
+
+        onReorder();
+      });
+    })(filhos[i], i);
+  }
+}
+
 function pad(n){return String(n).padStart(3,'0');}
 function setStatus(msg,tipo){var el=document.getElementById('status');el.textContent=msg;el.className='status '+(tipo||'');}
 function toast(msg,tipo){
@@ -1666,7 +1802,8 @@ function toast(msg,tipo){
 
 // ===== GITHUB API =====
 var _ghShas = {};
-var _arquivosEditados = new Set(); // rastrea arquivos modificados nesta sessão
+var _arquivosEditados  = new Set(); // rastrea arquivos modificados nesta sessão
+var _ghCache           = {};           // cache lazy: path -> conteúdo já carregado
 var _arquivosParaDeletar = new Set(); // rastrea arquivos removidos para deletar do GitHub
 
 function ghConfig() {
@@ -1735,15 +1872,19 @@ async function testarConexaoGithub() {
   }
 }
 
-async function ghGetFile(path) {
+async function ghGetFile(path, forcarReload) {
+  // Retorna do cache se já foi carregado (e não for reload forçado)
+  if (!forcarReload && _ghCache[path] !== undefined) return _ghCache[path];
   var cfg = ghConfig();
   var resp = await fetch('https://api.github.com/repos/' + cfg.usuario + '/' + cfg.repo + '/contents/' + path + '?ref=' + cfg.branch, {
     headers: { 'Authorization': 'token ' + cfg.token, 'Accept': 'application/vnd.github.v3+json' }
   });
-  if (!resp.ok) return null;
+  if (!resp.ok) { _ghCache[path] = null; return null; }
   var data = await resp.json();
   _ghShas[path] = data.sha;
-  return decodeURIComponent(escape(atob(data.content.replace(/\n/g,''))));
+  var txt = decodeURIComponent(escape(atob(data.content.replace(/\n/g,''))));
+  _ghCache[path] = txt; // armazena no cache
+  return txt;
 }
 
 async function ghDeleteFile(path, mensagem) {
@@ -1794,48 +1935,37 @@ async function carregarDoGithub() {
   if (!cfg.token) { toast('Configure o GitHub primeiro! Clique em ⚙️ GitHub', 'erro'); abrirModalGithub(); return; }
   mostrarLoading('Conectando ao GitHub...', 5);
   try {
-    // index.json
-    mostrarLoading('Carregando índice...', 10);
+    // ── Carrega apenas index.json + índice de cada categoria (rápido) ──
+    mostrarLoading('Carregando índice principal...', 15);
     var indexTxt = await ghGetFile('index.json');
     if (!indexTxt) { esconderLoading(); toast('index.json não encontrado!', 'erro'); return; }
     catalogo = normalizarIndice(JSON.parse(indexTxt));
 
-    // Calcular total de arquivos para a barra de progresso
-    var totalArqs = 1;
-    for (var i = 0; i < catalogo.length; i++) {
-      totalArqs++; // arquivo da categoria
-      if (catalogo[i].tipo === 'series') totalArqs += (catalogo[i].subs||[]).length;
-    }
-    var carregados = 1;
-
+    var total = catalogo.length, carregados = 0;
     for (var i = 0; i < catalogo.length; i++) {
       var cat = catalogo[i];
-      var pct = Math.round((carregados / totalArqs) * 85) + 10;
+      var pct = 20 + Math.round((carregados / Math.max(total,1)) * 65);
       mostrarLoading('Carregando ' + cat.categoria + '...', pct);
       var catTxt = await ghGetFile(cat.arquivo);
       carregados++;
       if (!catTxt) continue;
       var catData = JSON.parse(catTxt);
       if (cat.tipo === 'filmes') {
-        cat.itens = catData.map(function(it,j){ return {id:pad(j+1),titulo:it.titulo||'',thumb:it.thumb||'',driveId:it.driveId||'',url:it.url||''}; });
+        // Filmes: carrega tudo de uma vez (arquivo único, sem sub-requisições)
+        cat.itens = catData.map(function(it,j){
+          return {id:pad(j+1),titulo:it.titulo||'',thumb:it.thumb||'',driveId:it.driveId||'',url:it.url||''};
+        });
       } else {
-        cat.subs = catData.map(function(s){ return {nome:s.nome,arquivo:s.arquivo,thumb:s.thumb||'',totalEpisodios:s.totalEpisodios||0,episodios:[]}; });
-        for (var j = 0; j < cat.subs.length; j++) {
-          var pctSub = Math.round((carregados / totalArqs) * 85) + 10;
-          mostrarLoading('Carregando ' + cat.subs[j].nome + '...', pctSub);
-          var subTxt = await ghGetFile(cat.subs[j].arquivo);
-          carregados++;
-          if (!subTxt) continue;
-          var subData = JSON.parse(subTxt);
-          var eps = Array.isArray(subData) ? subData : (subData.episodios||[]);
-          cat.subs[j].episodios = eps.map(function(ep,k){ return {id:pad(k+1),titulo:ep.titulo||'',thumb:ep.thumb||'',driveId:ep.driveId||'',url:ep.url||''}; });
-          if (!Array.isArray(subData) && subData.thumb) cat.subs[j].thumb = subData.thumb;
-        }
+        // Séries: carrega só o índice (lista de subs) — episódios são lazy
+        cat.subs = catData.map(function(s){
+          return {nome:s.nome,arquivo:s.arquivo,thumb:s.thumb||'',totalEpisodios:s.totalEpisodios||0,episodios:null};
+          // episodios:null = ainda não carregado; [] = carregado mas vazio
+        });
       }
     }
 
-    // infor.json opcional
-    mostrarLoading('Carregando informações extras...', 95);
+    // infor.json opcional — leve, carrega junto
+    mostrarLoading('Carregando informações...', 90);
     try {
       var inforTxt = await ghGetFile('infor.json');
       if (inforTxt) {
@@ -1848,13 +1978,42 @@ async function carregarDoGithub() {
       }
     } catch(e) {}
 
-    mostrarLoading('Finalizando...', 100);
+    mostrarLoading('Pronto!', 100);
     catAtiva = catalogo.length > 0 ? 0 : -1; subAtiva = -1;
     renderSidebar(); renderSubsSidebar(); renderConteudo();
     document.getElementById('arquivo-info').textContent = cfg.usuario + '/' + cfg.repo;
     setStatus('Catálogo carregado do GitHub!', 'ok');
-    setTimeout(function(){ esconderLoading(); toast('Catálogo carregado com sucesso!', 'sucesso'); }, 400);
+    setTimeout(function(){ esconderLoading(); toast('Catálogo carregado! Episódios carregam ao clicar na série.', 'sucesso'); }, 400);
   } catch(e) { esconderLoading(); toast('Erro: ' + e.message, 'erro'); }
+}
+
+// ── Carregamento lazy de episódios de uma subcategoria ──────────────────────
+// Chamado automaticamente ao renderizar a subcategoria se episodios===null
+async function carregarEpisodiosLazy(catIdx, subIdx) {
+  var sub = catalogo[catIdx].subs[subIdx];
+  if (!sub || sub.episodios !== null) return; // já carregado (null = pendente)
+
+  try {
+    var subTxt = await ghGetFile(sub.arquivo);
+    if (subTxt) {
+      var subData = JSON.parse(subTxt);
+      var eps = Array.isArray(subData) ? subData : (subData.episodios || []);
+      sub.episodios = eps.map(function(ep, k){
+        return {id:pad(k+1),titulo:ep.titulo||'',thumb:ep.thumb||'',driveId:ep.driveId||'',url:ep.url||''};
+      });
+      if (!Array.isArray(subData) && subData.thumb) sub.thumb = subData.thumb;
+    } else {
+      sub.episodios = []; // arquivo não existe no GitHub — inicia vazio
+    }
+  } catch(e) {
+    sub.episodios = [];
+    toast('Erro ao carregar ' + sub.nome + ': ' + e.message, 'erro');
+  }
+
+  // Re-renderiza com os episódios já carregados (agora episodios !== null)
+  if (subAtiva && subAtiva !== -1 && subAtiva.catIdx === catIdx && subAtiva.subIdx === subIdx) {
+    renderConteudoSubs();
+  }
 }
 
 function abrirModalSalvarGithub() {
@@ -1922,6 +2081,9 @@ async function confirmarPushGithub() {
     setStatus('Salvo no GitHub! (' + ok + ' arquivos)', 'ok');
     toast('Salvo no GitHub!', 'sucesso');
     _arquivosEditados.clear();
+    // Limpar cache apenas dos arquivos que foram enviados,
+    // para que uma nova abertura busque a versão atualizada do GitHub
+    for (var _cp = 0; _cp < arquivos.length; _cp++) { delete _ghCache[arquivos[_cp].path]; }
     _arquivosParaDeletar.clear();
     setTimeout(function(){ fecharModal('modal-salvar-github'); }, 2000);
   } else {
