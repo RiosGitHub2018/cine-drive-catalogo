@@ -28,5 +28,11 @@
     "arquivo": "series/familia-dinossauros.json",
     "thumb": "https://image.tmdb.org/t/p/w500/tmho9KQniTBvsPfJMn60CJQ3akM.jpg",
     "totalEpisodios": 32
+  },
+  {
+    "nome": "Chaves",
+    "arquivo": "series/chaves.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/nSpP9aS9LAQd7wwzzOoCAYIluco.jpg",
+    "totalEpisodios": 62
   }
 ]
