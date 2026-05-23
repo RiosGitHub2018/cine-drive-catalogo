@@ -301,6 +301,22 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 .progress-bar { height:4px; background:var(--borda); border-radius:2px; overflow:hidden; margin-top:4px; }
 .progress-fill { height:100%; background:var(--azul); border-radius:2px; transition:width 0.3s; width:0%; }
 
+.btn-edit-cat {
+  background: rgba(59,130,246,0.1);
+  border: none;
+  color: var(--azul);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  width: 20px; height: 20px;
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  transition: color 0.2s, background 0.2s;
+  flex-shrink: 0;
+}
+.btn-edit-cat:hover { color: #fff; background: var(--azul); }
+
 ::-webkit-scrollbar { width:4px; }
 ::-webkit-scrollbar-track { background:transparent; }
 ::-webkit-scrollbar-thumb { background:var(--borda); border-radius:2px; }
@@ -325,6 +341,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 }
 .loading-barra-wrap {
   width:280px; height:4px; background:var(--borda); border-radius:2px; overflow:hidden; margin-bottom:16px;
+  transform: translateY(-30px);
 }
 .loading-barra {
   height:100%; width:0%; background:linear-gradient(90deg,var(--vm),var(--ouro));
@@ -332,6 +349,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 }
 .loading-msg {
   font-size:12px; color:var(--suave); letter-spacing:1px; min-height:18px; text-align:center;
+  transform: translateY(-30px);
 }
 
 
@@ -437,8 +455,11 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 <!-- MODAL NOVA CATEGORIA -->
 <div class="modal-overlay" id="modal-cat" onclick="fecharModalFora(event,'modal-cat')">
   <div class="modal">
-    <div class="modal-titulo vm">Nova Categoria</div>
-    <div class="modal-desc">Defina o nome e o tipo da categoria.</div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="modal-titulo vm" id="modal-cat-titulo">Nova Categoria</div>
+      <span id="modal-cat-badge" style="display:none;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;background:rgba(59,130,246,0.15);color:var(--azul);letter-spacing:1px;">EDITAR</span>
+    </div>
+    <div class="modal-desc" id="modal-cat-desc">Defina o nome e o tipo da categoria.</div>
     <div class="campo">
       <label>Nome da categoria</label>
       <input class="modal-input" type="text" id="input-nome-cat" placeholder="Ex: Comedia, Acao, Series..." maxlength="40">
@@ -452,7 +473,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
     </div>
     <div class="modal-botoes">
       <button class="btn btn-sec" onclick="fecharModal('modal-cat')">Cancelar</button>
-      <button class="btn btn-vm" onclick="confirmarCat()">Criar Categoria</button>
+      <button class="btn btn-vm" id="btn-confirmar-cat" onclick="confirmarCat()">Criar Categoria</button>
     </div>
   </div>
 </div>
@@ -460,8 +481,11 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
 <!-- MODAL NOVA SUBCATEGORIA -->
 <div class="modal-overlay" id="modal-sub" onclick="fecharModalFora(event,'modal-sub')">
   <div class="modal">
-    <div class="modal-titulo roxo">Nova Subcategoria</div>
-    <div class="modal-desc">Selecione a categoria pai e defina os dados da serie.</div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="modal-titulo roxo" id="modal-sub-titulo">Nova Subcategoria</div>
+      <span id="modal-sub-badge" style="display:none;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;background:rgba(59,130,246,0.15);color:var(--azul);letter-spacing:1px;">EDITAR</span>
+    </div>
+    <div class="modal-desc" id="modal-sub-desc">Selecione a categoria pai e defina os dados da serie.</div>
     <div class="campo">
       <label>Categoria pai</label>
       <select class="modal-select" id="select-cat-pai"></select>
@@ -476,7 +500,7 @@ header { display:flex; align-items:center; gap:16px; padding:16px 32px; border-b
     </div>
     <div class="modal-botoes">
       <button class="btn btn-sec" onclick="fecharModal('modal-sub')">Cancelar</button>
-      <button class="btn btn-roxo" onclick="confirmarSub()">Adicionar Subcategoria</button>
+      <button class="btn btn-roxo" id="btn-confirmar-sub" onclick="confirmarSub()">Adicionar Subcategoria</button>
     </div>
   </div>
 </div>
@@ -572,6 +596,9 @@ var abaAtiva = 'cat';
 var catAtiva = -1;
 var subAtiva = -1;
 var modoZip  = 'todos';
+var _editandoCatIdx    = -1;
+var _editandoSubCatIdx = -1;
+var _editandoSubIdx    = -1;
 
 // ===== TEMA =====
 (function(){
@@ -773,12 +800,14 @@ function criarItemCat(i) {
       renderSidebar(); renderSubsSidebar(); renderConteudo();
       toast('Categoria removida!','sucesso');
     } });
-  item.appendChild(nome); item.appendChild(count); item.appendChild(del);
+  var editCat=document.createElement('button'); editCat.className='btn-edit-cat'; editCat.innerHTML='E'; editCat.title='Editar categoria'; editCat.dataset.idx=i;
+  editCat.addEventListener('click',function(e){e.stopPropagation();abrirModalEditarCat(parseInt(this.dataset.idx));});
+  item.appendChild(nome); item.appendChild(count); item.appendChild(editCat); item.appendChild(del);
   item.addEventListener('click',function(){
     catAtiva=parseInt(this.dataset.idx);
-    subAtiva=-1; // reseta sub selecionada ao trocar categoria (usa -1 como sentinela)
+    subAtiva=-1;
     renderSidebar();
-    renderSubsSidebar(); // atualiza subs filtradas pela nova categoria
+    renderSubsSidebar();
     renderConteudo();
   });
   return item;
@@ -826,7 +855,10 @@ function criarItemSub(gIdx, info) {
       subAtiva=-1; renderSubsSidebar(); renderConteudoSubs(); 
       toast('Subcategoria removida!','sucesso'); 
     } });
-  item.appendChild(nome); item.appendChild(tag); item.appendChild(count); item.appendChild(del);
+  var editSub=document.createElement('button'); editSub.className='btn-edit-cat'; editSub.innerHTML='E'; editSub.title='Editar subcategoria';
+  editSub.dataset.catidx=info.catIdx; editSub.dataset.subidx=info.subIdx;
+  editSub.addEventListener('click',function(e){e.stopPropagation();abrirModalEditarSub(parseInt(this.dataset.catidx),parseInt(this.dataset.subidx));});
+  item.appendChild(nome); item.appendChild(tag); item.appendChild(count); item.appendChild(editSub); item.appendChild(del);
   item.addEventListener('click',function(){
     subAtiva = { catIdx: parseInt(this.dataset.catidx), subIdx: parseInt(this.dataset.subidx) };
     renderSubsSidebar(); renderConteudoSubs();
@@ -1250,46 +1282,151 @@ function criarCampoInput(labelTxt, placeholder, valor, campo, idx) {
 
 // ===== MODAIS =====
 function abrirModalCat(){ document.getElementById('modal-cat').classList.add('aberto'); setTimeout(function(){document.getElementById('input-nome-cat').focus();},100); }
-function abrirModalSub(){
+function _popularSelectCatPai(selecionadoIdx) {
   var sel=document.getElementById('select-cat-pai'); sel.innerHTML=''; var temSeries=false;
-  for(var i=0;i<catalogo.length;i++){ if(catalogo[i].tipo==='series'){ var opt=document.createElement('option'); opt.value=i; opt.textContent=catalogo[i].categoria; sel.appendChild(opt); temSeries=true; } }
-  if(!temSeries){toast('Crie uma categoria do tipo "Series" primeiro!','erro');return;}
+  for(var i=0;i<catalogo.length;i++){
+    if(catalogo[i].tipo==='series'){
+      var opt=document.createElement('option'); opt.value=i; opt.textContent=catalogo[i].categoria;
+      if(i===selecionadoIdx) opt.selected=true;
+      sel.appendChild(opt); temSeries=true;
+    }
+  }
+  return temSeries;
+}
+
+function abrirModalSub(){
+  _editandoSubCatIdx=-1; _editandoSubIdx=-1;
+  var selIdx=catAtiva>=0&&catalogo[catAtiva]&&catalogo[catAtiva].tipo==='series'?catAtiva:-1;
+  if(!_popularSelectCatPai(selIdx)){toast('Crie uma categoria do tipo "Series" primeiro!','erro');return;}
+  document.getElementById('modal-sub-titulo').textContent='Nova Subcategoria';
+  document.getElementById('modal-sub-badge').style.display='none';
+  document.getElementById('modal-sub-desc').textContent='Selecione a categoria pai e defina os dados da serie.';
+  document.getElementById('btn-confirmar-sub').textContent='Adicionar Subcategoria';
+  document.getElementById('input-nome-sub').value='';
+  document.getElementById('input-thumb-sub').value='';
   document.getElementById('modal-sub').classList.add('aberto');
   setTimeout(function(){document.getElementById('input-nome-sub').focus();},100);
 }
+
+function abrirModalEditarSub(catIdx, subIdx) {
+  var sub=catalogo[catIdx].subs[subIdx];
+  _editandoSubCatIdx=catIdx; _editandoSubIdx=subIdx;
+  if(!_popularSelectCatPai(catIdx)){toast('Nenhuma categoria de series disponível!','erro');return;}
+  document.getElementById('modal-sub-titulo').textContent='Editar Subcategoria';
+  document.getElementById('modal-sub-badge').style.display='inline-block';
+  document.getElementById('modal-sub-desc').textContent='Altere os dados. Pode mover para outra categoria pai.';
+  document.getElementById('btn-confirmar-sub').textContent='Salvar Edição';
+  document.getElementById('input-nome-sub').value=sub.nome;
+  document.getElementById('input-thumb-sub').value=sub.thumb||'';
+  document.getElementById('modal-sub').classList.add('aberto');
+  setTimeout(function(){document.getElementById('input-nome-sub').focus();},100);
+}
+
+function abrirModalCat(){
+  _editandoCatIdx=-1;
+  document.getElementById('modal-cat-titulo').textContent='Nova Categoria';
+  document.getElementById('modal-cat-badge').style.display='none';
+  document.getElementById('modal-cat-desc').textContent='Defina o nome e o tipo da categoria.';
+  document.getElementById('btn-confirmar-cat').textContent='Criar Categoria';
+  document.getElementById('input-nome-cat').value='';
+  document.getElementById('select-tipo-cat').value='filmes';
+  document.getElementById('modal-cat').classList.add('aberto');
+  setTimeout(function(){document.getElementById('input-nome-cat').focus();},100);
+}
+
+function abrirModalEditarCat(idx) {
+  var cat=catalogo[idx]; _editandoCatIdx=idx;
+  document.getElementById('modal-cat-titulo').textContent='Editar Categoria';
+  document.getElementById('modal-cat-badge').style.display='inline-block';
+  document.getElementById('modal-cat-desc').textContent='Altere os dados da categoria.';
+  document.getElementById('btn-confirmar-cat').textContent='Salvar Edição';
+  document.getElementById('input-nome-cat').value=cat.categoria;
+  document.getElementById('select-tipo-cat').value=cat.tipo;
+  document.getElementById('modal-cat').classList.add('aberto');
+  setTimeout(function(){document.getElementById('input-nome-cat').focus();},100);
+}
 function fecharModal(id){
   document.getElementById(id).classList.remove('aberto');
-  if(id==='modal-cat') document.getElementById('input-nome-cat').value='';
-  if(id==='modal-sub'){ document.getElementById('input-nome-sub').value=''; document.getElementById('input-thumb-sub').value=''; }
+  if(id==='modal-cat'){ document.getElementById('input-nome-cat').value=''; _editandoCatIdx=-1; }
+  if(id==='modal-sub'){ document.getElementById('input-nome-sub').value=''; document.getElementById('input-thumb-sub').value=''; _editandoSubCatIdx=-1; _editandoSubIdx=-1; }
 }
-function fecharModalFora(e,id){ if(e.target===document.getElementById(id)) fecharModal(id); }
 function confirmarCat(){
   var input=document.getElementById('input-nome-cat'); var nome=input.value.trim(); var tipo=document.getElementById('select-tipo-cat').value;
   if(!nome){toast('Digite o nome!','erro');input.focus();return;}
+  if (_editandoCatIdx >= 0) {
+    // MODO EDIÇÃO
+    var cat=catalogo[_editandoCatIdx];
+    for(var i=0;i<catalogo.length;i++){
+      if(i!==_editandoCatIdx&&catalogo[i].categoria.toLowerCase()===nome.toLowerCase()){toast('Já existe outra categoria com esse nome!','erro');return;}
+    }
+    var slugNovo=slugify(nome), slugAntigo=slugify(cat.categoria), arqAntigo=cat.arquivo;
+    cat.categoria=nome;
+    if(tipo!==cat.tipo) cat.tipo=tipo;
+    cat.arquivo=tipo==='series'?(slugNovo+'/index.json'):(slugNovo+'.json');
+    if(slugNovo!==slugAntigo){
+      if(cat.tipo==='series'&&cat.subs){
+        for(var s=0;s<cat.subs.length;s++){
+          var saAnt=cat.subs[s].arquivo;
+          cat.subs[s].arquivo=slugNovo+'/'+slugify(cat.subs[s].nome)+'.json';
+          _arquivosParaDeletar.add(saAnt); _arquivosEditados.add(cat.subs[s].arquivo);
+        }
+      }
+      _arquivosParaDeletar.add(arqAntigo);
+    }
+    _arquivosEditados.add('index.json'); _arquivosEditados.add(cat.arquivo); cat._editado=true;
+    fecharModal('modal-cat'); renderSidebar(); renderSubsSidebar(); renderConteudo();
+    toast('Categoria "'+nome+'" atualizada!','sucesso'); return;
+  }
+  // MODO CRIAÇÃO
   for(var i=0;i<catalogo.length;i++) if(catalogo[i].categoria.toLowerCase()===nome.toLowerCase()){toast('Categoria ja existe!','erro');return;}
   var slug=slugify(nome);
-  var novaCatArquivo = tipo==='series'?(slug+'/index.json'):(slug+'.json');
-  catalogo.push({categoria:nome,tipo:tipo,arquivo:novaCatArquivo,itens:[],subs:[],_novo:true});
+  catalogo.push({categoria:nome,tipo:tipo,arquivo:tipo==='series'?(slug+'/index.json'):(slug+'.json'),itens:[],subs:[],_novo:true});
   _arquivosEditados.add('index.json');
-  _arquivosEditados.add(novaCatArquivo);
   catAtiva=catalogo.length-1; fecharModal('modal-cat'); renderSidebar(); renderConteudo();
   toast('Categoria "'+nome+'" criada!','sucesso');
 }
 function confirmarSub(){
-  var catIdx=parseInt(document.getElementById('select-cat-pai').value);
+  var novaCatIdx=parseInt(document.getElementById('select-cat-pai').value);
   var nome=document.getElementById('input-nome-sub').value.trim();
   var thumb=document.getElementById('input-thumb-sub').value.trim();
   if(!nome){toast('Digite o nome!','erro');return;}
-  if(!catalogo[catIdx].subs) catalogo[catIdx].subs=[];
-  var slug=slugify(catalogo[catIdx].categoria), subSlug=slugify(nome);
-  var novaSubArquivo = slug+'/'+subSlug+'.json';
-  catalogo[catIdx].subs.push({nome:nome,arquivo:novaSubArquivo,thumb:thumb,totalEpisodios:0,episodios:[],_novo:true});
-  _arquivosEditados.add(catalogo[catIdx].arquivo); // index da categoria
-  _arquivosEditados.add(novaSubArquivo);
+  if (_editandoSubCatIdx>=0 && _editandoSubIdx>=0) {
+    // MODO EDIÇÃO
+    var catOrigem=catalogo[_editandoSubCatIdx];
+    var sub=catOrigem.subs[_editandoSubIdx];
+    var arqAntigo=sub.arquivo;
+    var arqNovo=slugify(catalogo[novaCatIdx].categoria)+'/'+slugify(nome)+'.json';
+    var mudouCategoria=(novaCatIdx!==_editandoSubCatIdx);
+    if(mudouCategoria){
+      var subData=catOrigem.subs.splice(_editandoSubIdx,1)[0];
+      subData.nome=nome; subData.thumb=thumb; subData.arquivo=arqNovo; subData._editado=true;
+      if(!catalogo[novaCatIdx].subs) catalogo[novaCatIdx].subs=[];
+      catalogo[novaCatIdx].subs.push(subData);
+      _arquivosEditados.add(catOrigem.arquivo); _arquivosEditados.add(catalogo[novaCatIdx].arquivo);
+      _arquivosParaDeletar.add(arqAntigo); _arquivosEditados.add(arqNovo);
+      subAtiva={catIdx:novaCatIdx,subIdx:catalogo[novaCatIdx].subs.length-1};
+      catAtiva=novaCatIdx;
+      toast('Subcategoria movida para "'+catalogo[novaCatIdx].categoria+'"!','sucesso');
+    } else {
+      sub.nome=nome; sub.thumb=thumb;
+      if(arqNovo!==arqAntigo){ sub.arquivo=arqNovo; _arquivosParaDeletar.add(arqAntigo); _arquivosEditados.add(arqNovo); }
+      else { _arquivosEditados.add(sub.arquivo); }
+      sub._editado=true; _arquivosEditados.add(catOrigem.arquivo);
+      subAtiva={catIdx:_editandoSubCatIdx,subIdx:_editandoSubIdx};
+      toast('Subcategoria "'+nome+'" atualizada!','sucesso');
+    }
+    fecharModal('modal-sub'); renderSidebar(); renderSubsSidebar(); renderConteudoSubs(); return;
+  }
+  // MODO CRIAÇÃO
+  if(!catalogo[novaCatIdx].subs) catalogo[novaCatIdx].subs=[];
+  var slug=slugify(catalogo[novaCatIdx].categoria), subSlug=slugify(nome);
+  var arqCriado=slug+'/'+subSlug+'.json';
+  catalogo[novaCatIdx].subs.push({nome:nome,arquivo:arqCriado,thumb:thumb,totalEpisodios:0,episodios:[],_novo:true});
+  _arquivosEditados.add(catalogo[novaCatIdx].arquivo); _arquivosEditados.add(arqCriado);
   fecharModal('modal-sub');
-  var novoSubIdx = catalogo[catIdx].subs.length - 1;
-  subAtiva = { catIdx: catIdx, subIdx: novoSubIdx };
-  renderSubsSidebar(); renderConteudoSubs();
+  subAtiva={catIdx:novaCatIdx,subIdx:catalogo[novaCatIdx].subs.length-1};
+  catAtiva=novaCatIdx;
+  renderSidebar(); renderSubsSidebar(); renderConteudoSubs();
   toast('Subcategoria "'+nome+'" criada!','sucesso');
 }
 document.addEventListener('keydown',function(e){
