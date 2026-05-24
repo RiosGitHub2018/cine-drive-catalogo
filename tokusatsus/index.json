@@ -76,5 +76,11 @@
     "arquivo": "tokusatsus/battle-fever-j.json",
     "thumb": "https://image.tmdb.org/t/p/w500/ceZbDt23saHFMYSasCfVpCj4Rac.jpg",
     "totalEpisodios": 52
+  },
+  {
+    "nome": "Esquadrão Super Atômico Bioman",
+    "arquivo": "tokusatsus/esquadrao-super-atomico-bioman.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+    "totalEpisodios": 51
   }
 ]
