@@ -30,8 +30,8 @@
     "arquivo": "radios.json"
   },
   {
-    "categoria": "M Favoritos",
+    "categoria": "Favoritos",
     "tipo": "series",
-    "arquivo": "m-favoritos/index.json"
+    "arquivo": "favoritos/index.json"
   }
 ]
