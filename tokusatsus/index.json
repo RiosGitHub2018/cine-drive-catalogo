@@ -94,5 +94,11 @@
     "arquivo": "tokusatsus/esquadrao-eletronico-denziman.json",
     "thumb": "https://image.tmdb.org/t/p/w500/HiVKcMQvGln1UAaMzbdYu9dBua.jpg",
     "totalEpisodios": 51
+  },
+  {
+    "nome": "Esquadrão Científico Dynaman",
+    "arquivo": "tokusatsus/esquadrao-cientifico-dynaman.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/hou7b1cRw7cpo1JS3Vk8Torr1gH.jpg",
+    "totalEpisodios": 51
   }
 ]
