@@ -154,5 +154,11 @@
     "arquivo": "tokusatsus/esquadrao-eletromagnetico-megaranger.json",
     "thumb": "https://image.tmdb.org/t/p/w500/gKtYenCKKsf69xDPXDIpdpt9iT2.jpg",
     "totalEpisodios": 51
+  },
+  {
+    "nome": "Metalder, o Homem Máquina",
+    "arquivo": "tokusatsus/metalder-o-homem-maquina.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+    "totalEpisodios": 39
   }
 ]
