@@ -1,0 +1,336 @@
+{
+  "nome": "Esquadrão Relâmpago Changeman",
+  "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+  "episodios": [
+    {
+      "id": "001",
+      "titulo": "Os Defensores do Planeta Terra",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1-2FJAbmlOArrRyv4GedMSgeRY-P6bJcW"
+    },
+    {
+      "id": "002",
+      "titulo": "A Ira do Poderoso Bazoo",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1k90GXam0ghjEeSB17CggsC4zhB3lEyio"
+    },
+    {
+      "id": "003",
+      "titulo": "O Desespero de Zoobie",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "N/A"
+    },
+    {
+      "id": "004",
+      "titulo": "O Desparecimento de Togo",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1xtQrkezLZo4TaeU2F5qrooIhztdpN4FT"
+    },
+    {
+      "id": "005",
+      "titulo": "O mistério do Cristal X",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1L1T0kNEP3M4S___Nxlutq_Vxo21q-bIM"
+    },
+    {
+      "id": "006",
+      "titulo": "Cuidado! Meninas de Virgem",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1Vd47_RGRuaUCKMf6yrJqjqoxnZeAV1b2"
+    },
+    {
+      "id": "007",
+      "titulo": "O enviado do Planeta Atlanta",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1C150dPK0xJPx47W2tkJHisyCbWb4_JKv"
+    },
+    {
+      "id": "008",
+      "titulo": "As mulheres vampiras",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1-bS291V2520TvDdjIVkwHy5LSsgIXih5"
+    },
+    {
+      "id": "009",
+      "titulo": "A Bola do Dragão salva a humanidade",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "15XyjaS60xopiwsSOEgd6rzYHd6Xs3OKD"
+    },
+    {
+      "id": "010",
+      "titulo": "O Toque dos bonecos",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1JvP-p-oMIm7QxzGQfUvSLijCe_QlbTQ1"
+    },
+    {
+      "id": "011",
+      "titulo": "A visita de Koko e Kiki",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "16Boj0arou9FEFDMiBbyJsAMTJagwki4U"
+    },
+    {
+      "id": "012",
+      "titulo": "Mermaid se torna mãe",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1d5bq4D3w1kcIyF2gdKIPJCQxWm0QAUL8"
+    },
+    {
+      "id": "013",
+      "titulo": "A Garota do Planeta Technolíquel",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1GCqrkcEEy4trO_4gUlD68mDg6dEaaMeJ"
+    },
+    {
+      "id": "014",
+      "titulo": "Perdida na Terra",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "18SzCeKYR4KZYZh5oTJIjD5UCcecyvfk8"
+    },
+    {
+      "id": "015",
+      "titulo": "A motoqueira Mai",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1m81DuYWOkeDUukau9wTxy4_mJZkTnRlU"
+    },
+    {
+      "id": "016",
+      "titulo": "O Anjo do Planeta Merill",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1uDiT1IFktAtWiL-mMBWqaKEJHs5rQ8Un"
+    },
+    {
+      "id": "017",
+      "titulo": "O Navio Fantasma",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1SyG41V53lwNoJOPtHvvKNzhxop6AAwd3"
+    },
+    {
+      "id": "018",
+      "titulo": "O Poder de Ahames",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1on24qCopi1UCxZql0iMDbpDQcVmaxqUY"
+    },
+    {
+      "id": "019",
+      "titulo": "A Fúria de Sayaka",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1iIsSS9t2IZylZCuRD-iRpk4L1YmNOGSP"
+    },
+    {
+      "id": "020",
+      "titulo": "A Revanche de Giluke",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1XWp4bz-cVr8zyDVus9RP2rAM_tupL0Op"
+    },
+    {
+      "id": "021",
+      "titulo": "O Metaleiro Espacial",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1wltklqwLDSo6lL6I3OABO9UHu27yTCCx"
+    },
+    {
+      "id": "022",
+      "titulo": "A Prisioneira do Espelho",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "11QR4acEew3sws4_6H2nTcTklL-vQi7WZ"
+    },
+    {
+      "id": "023",
+      "titulo": "O menino e o golfinho",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1XR-9L62SUGrJY18geBF3j9zFDQZO352O"
+    },
+    {
+      "id": "024",
+      "titulo": "A fuga de Gyodai",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "15fDkRFoimLQLF0rb8G7BH9fWiYTikMxd"
+    },
+    {
+      "id": "025",
+      "titulo": "Canção Fatal",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1NKcknEd5W4Mpna4ECdNLydBp_GM3JekB"
+    },
+    {
+      "id": "026",
+      "titulo": "Toque de Primavera",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1pb0zYPRjs1MzcNzFvbnLF7i5biQmP0sn"
+    },
+    {
+      "id": "027",
+      "titulo": "O sonho da Família Gaatha",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "15L95SXnYnzo-QD01NO7i4AKEqOnrCtrO"
+    },
+    {
+      "id": "028",
+      "titulo": "A maldição sangreta",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1YJ1pZOEtuw_3D0-ADtv1fpFFYNo1RFBc"
+    },
+    {
+      "id": "029",
+      "titulo": "A lenda da Borboleta Dourada",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1Q4miaj6VYRfMR-ufqaliJuSrgGuWoZ13"
+    },
+    {
+      "id": "030",
+      "titulo": "Avante",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1SGcMgms8zXzi-lR61Z55N2LF-9IJ6Z45"
+    },
+    {
+      "id": "031",
+      "titulo": "O segredo de Bazoo",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1NCsUI5wukSqdEt26_oEiIS8pQCnAN3Y2"
+    },
+    {
+      "id": "032",
+      "titulo": "Reencontro Perigoso",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1JI2nGli7EQeYuK24P4KxFykCRjx48oba"
+    },
+    {
+      "id": "033",
+      "titulo": "O fim de Giluke",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1wCzJaW_v2INA-PWdN_DmvRet2yuUAA3b"
+    },
+    {
+      "id": "034",
+      "titulo": "Invencível Ahames",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1x1x3lYtB8jRhHFS0TfgquYOM_QmgWnNh"
+    },
+    {
+      "id": "035",
+      "titulo": "SOS Planeta Terra",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1rdKKDSmIab1Q4f6ibMnf9cWLX8Eh1N_3"
+    },
+    {
+      "id": "036",
+      "titulo": "A Super Potência",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1QQBs6_pMiKgmQmUYIlSMeHR5xbBVU7FL"
+    },
+    {
+      "id": "037",
+      "titulo": "O desaparecimento de Dragon",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1c65A_I8FttPOrlSPSc-VaG4MZSIdERDV"
+    },
+    {
+      "id": "038",
+      "titulo": "O espectro do Baseball",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1w2zxiYTozs4MV5SrGI4yEKYJxTxRbE9W"
+    },
+    {
+      "id": "039",
+      "titulo": "Jogo do Medo",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1oWvC3Xfw1QW1Dhyu1a7paumppzKjm6wy"
+    },
+    {
+      "id": "040",
+      "titulo": "O Estranho Doce",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1VPlZoLM2R1h-lLEsCAFkUCV2Xt9Yl-XP"
+    },
+    {
+      "id": "041",
+      "titulo": "O príncipe das Estrelas",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1X3zU6HRz2I6siiKr0ACDTfxzQWrcSdKA"
+    },
+    {
+      "id": "042",
+      "titulo": "A garota do Uniforme Escolar",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1uZhF779_DKvlC7VJbSFdwXfEmwMACOLf"
+    },
+    {
+      "id": "043",
+      "titulo": "Super Giluke",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1NLETMeAOhFh2e8kQD9tN5yR4MKpx5HOz"
+    },
+    {
+      "id": "044",
+      "titulo": "Mai em ação!",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1q91ZlSCrGbRmmoyJM5HWuetl_rywjsFl"
+    },
+    {
+      "id": "045",
+      "titulo": "Ayra",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1crSJCgXulrgWaz-tuZdH9ouFtGxW5WlW"
+    },
+    {
+      "id": "046",
+      "titulo": "A transformação de Shima",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1hfU0wbQqu8VqMERr3V9MwH9VQt5doXsh"
+    },
+    {
+      "id": "047",
+      "titulo": "O sofrimento da Família Gaatha",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1Z-NbjX3vpOqXDBSjCRQlZ20BDkkRLESr"
+    },
+    {
+      "id": "048",
+      "titulo": "A paixão de Booba",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "13KdHjAmzJP6bygErgKzjZ4ZuPtO7-A4Z"
+    },
+    {
+      "id": "049",
+      "titulo": "A Aflição de Shima",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1VdayfPTGPy31vxU7QwyxiLTK1O8hVjp8"
+    },
+    {
+      "id": "050",
+      "titulo": "O Abalo de Gozma",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1HpTMMwtYGmYMFxrOHsVR3GOqLrV6nvnV"
+    },
+    {
+      "id": "051",
+      "titulo": "A mensagem de Nana",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1O-qtkAClKMaRLvv3cpjCw-4vGX5ddWU9"
+    },
+    {
+      "id": "052",
+      "titulo": "A morte de Booba",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1m4dwSYFiZJHP4fe0VWh4t0dmXFia_929"
+    },
+    {
+      "id": "053",
+      "titulo": "A vingança de Ahames",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1VcGvX2JX7o2G8Ah13ynVpRMBfoGmWPv9"
+    },
+    {
+      "id": "054",
+      "titulo": "A Batalha Final",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1hLpC67T3uIa76VgK59zOb2hal2hG6DFz"
+    },
+    {
+      "id": "055",
+      "titulo": "Adeus",
+      "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+      "driveId": "1QD3VUF9sEVxykq4nmMp1sWZAYlCjIFhw"
+    }
+  ]
+}
