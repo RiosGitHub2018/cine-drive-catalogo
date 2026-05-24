@@ -1,5 +1,10 @@
 [
   {
+    "categoria": "Favoritos",
+    "tipo": "series",
+    "arquivo": "favoritos/index.json"
+  },
+  {
     "categoria": "Tokusatsus",
     "tipo": "series",
     "arquivo": "tokusatsus/index.json"
@@ -28,10 +33,6 @@
     "categoria": "Rádios",
     "tipo": "filmes",
     "arquivo": "radios.json"
-  },
-  {
-    "categoria": "Favoritos",
-    "tipo": "series",
-    "arquivo": "favoritos/index.json"
   }
+ 
 ]
