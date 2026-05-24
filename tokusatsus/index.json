@@ -184,5 +184,11 @@
     "arquivo": "tokusatsus/esquadrao-dinossauro-zyuranger.json",
     "thumb": "https://image.tmdb.org/t/p/w500/uCx5e9u4f43Afhpvycad1giUU4e.jpg",
     "totalEpisodios": 50
+  },
+  {
+    "nome": "Kamen Rider Amazon",
+    "arquivo": "tokusatsus/kamen-rider-amazon.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/4QjrLtMtAxKejzKMERoghaHOlFO.jpg",
+    "totalEpisodios": 24
   }
 ]
