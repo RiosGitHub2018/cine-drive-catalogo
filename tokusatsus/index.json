@@ -136,5 +136,11 @@
     "arquivo": "tokusatsus/esquadrao-super-feras-liveman.json",
     "thumb": "https://image.tmdb.org/t/p/w500/hbMV06yJ6nHWj0LweEQCDXWhXcq.jpg",
     "totalEpisodios": 49
+  },
+  {
+    "nome": "Machineman",
+    "arquivo": "tokusatsus/machineman.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+    "totalEpisodios": 36
   }
 ]
