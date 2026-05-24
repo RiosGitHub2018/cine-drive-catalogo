@@ -148,5 +148,11 @@
     "arquivo": "tokusatsus/defensores-da-luz-maskman.json",
     "thumb": "https://image.tmdb.org/t/p/w500/4LWws4P5FjbVtKb9huQUssPWvsR.jpg",
     "totalEpisodios": 51
+  },
+  {
+    "nome": "Esquadrão Eletromagnético Megaranger",
+    "arquivo": "tokusatsus/esquadrao-eletromagnetico-megaranger.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/gKtYenCKKsf69xDPXDIpdpt9iT2.jpg",
+    "totalEpisodios": 51
   }
 ]
