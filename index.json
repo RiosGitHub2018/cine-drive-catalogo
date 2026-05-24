@@ -28,5 +28,10 @@
     "categoria": "Rádios",
     "tipo": "filmes",
     "arquivo": "radios.json"
+  },
+  {
+    "categoria": "Favoritos",
+    "tipo": "series",
+    "arquivo": "favoritos/index.json"
   }
 ]
