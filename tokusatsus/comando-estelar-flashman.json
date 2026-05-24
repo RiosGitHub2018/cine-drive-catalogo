@@ -1,0 +1,306 @@
+{
+  "nome": "Comando Estelar Flashman",
+  "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+  "episodios": [
+    {
+      "id": "001",
+      "titulo": "Os Defensores do Planeta Terra",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1ejLByXGnjzEgVwBW8dbGfg-Y9AUWFVMM"
+    },
+    {
+      "id": "002",
+      "titulo": "O Robô Gigante",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1zBHetwOZT1fu-JFUqXNNrxefjp_m5jKU"
+    },
+    {
+      "id": "003",
+      "titulo": "O Caçador",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1_vDBSDReT8KmwZJtQylufc6j6tU08M6a"
+    },
+    {
+      "id": "004",
+      "titulo": "O Robô Mag",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1JWVgx6PKPyzkYoGVn37iKf1LZkdp_zd9"
+    },
+    {
+      "id": "005",
+      "titulo": "O Sucesso das Guerreiras",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1w8Sgy4YaVej7D9sJdETN6U4WEc3GZDdo"
+    },
+    {
+      "id": "006",
+      "titulo": "A Super Máquina",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "10K7qB1zBkbuurDjLDyFG7ZJYMOxWDRx8"
+    },
+    {
+      "id": "007",
+      "titulo": "O Balão dos Sonhos",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1qUOLehWKKZunBriU06mWlPI6aAqezybA"
+    },
+    {
+      "id": "008",
+      "titulo": "A Família",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1ax316ya4bcjHckQos3kPQUUQ2NyFj2jI"
+    },
+    {
+      "id": "009",
+      "titulo": "O Guerreiro do Tempo",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1b-eau55KYAsCs8zQluAvOC2LFHMEsYuQ"
+    },
+    {
+      "id": "010",
+      "titulo": "A Cilada da Menina",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1wpzBdZzyr-ez5679NoJ9sTiuTv_91OKS"
+    },
+    {
+      "id": "011",
+      "titulo": "A Mãe do Monstro",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "101lbCS4LCj9M6YHaaFO8rPhfa_eFnO4N"
+    },
+    {
+      "id": "012",
+      "titulo": "Wandar",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "15dvNtw8e7KDY0nIPNa_irQC1VeY6Ay_U"
+    },
+    {
+      "id": "013",
+      "titulo": "Guerreiro Intrépido",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1GansD6Hnh_Uu63fzwc5q4LLmHBJ79oz2"
+    },
+    {
+      "id": "014",
+      "titulo": "O Sonho de Go",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "119VZ-b40qFJGWGux5_3BIlIT1BjYi4u2"
+    },
+    {
+      "id": "015",
+      "titulo": "O Extermínio do Robô",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1CHdaaLp1B1ym6IhU1DdIAHyTDPLsPxhe"
+    },
+    {
+      "id": "016",
+      "titulo": "A Estratégia",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1HILbhoHRASlvrpW4mX8Ej2llqZDPFpdp"
+    },
+    {
+      "id": "017",
+      "titulo": "Máquina Enigmática",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1EVHMTrsLHcIi2l6C5-lsopmKFNAuYBMX"
+    },
+    {
+      "id": "018",
+      "titulo": "A Reviravolta do Robô",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "16zzkfjlH9dTYRh0QXOeacCNs7sE1fMMB"
+    },
+    {
+      "id": "019",
+      "titulo": "Mensagem Mortal",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1e9yIfJeg6cUfbWCXzhKX20AV2w7J6Mn6"
+    },
+    {
+      "id": "020",
+      "titulo": "A Ressureição do Robô",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1buRke8sKH7cg0U-yMpLLshehxFiu0Opp"
+    },
+    {
+      "id": "021",
+      "titulo": "Triste Guerreira",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1Xqn-1K6owEXfsTn_6B9-QVOChwqjfKgk"
+    },
+    {
+      "id": "022",
+      "titulo": "Pássaro Imortal",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1mPR2IylL2ax5QTG9qL_1GHf1Oq4aV1q_"
+    },
+    {
+      "id": "023",
+      "titulo": "Sonho Dourado",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1i_oH6fzATm0noX4jxIwvvKGjWHCOtcR8"
+    },
+    {
+      "id": "024",
+      "titulo": "Férias Secretas",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "19qLs8OKN2ONYG1YGla-zQab7maX7dwr0"
+    },
+    {
+      "id": "025",
+      "titulo": "Fusão-Conversão",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1r7fEbZOqKRhwhudWTTRQT6FxqOuDmc80"
+    },
+    {
+      "id": "026",
+      "titulo": "Abóboras Selvagens",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1Vffo9BcyNmmO04ZOR5xA_RwrjyTnjSC6"
+    },
+    {
+      "id": "027",
+      "titulo": "Golpe da Amizade",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "18YX26vyatN9JoOjtAwJY_jmQGhsfkOCT"
+    },
+    {
+      "id": "028",
+      "titulo": "O Magnífico Gals",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1OR023JxVmIcRbckeLJJSzbwcumyxhJCH"
+    },
+    {
+      "id": "029",
+      "titulo": "Abominável Alienigena",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1ggnEyR8OQW8_WfNpT9CqXWoUjT3u2c7G"
+    },
+    {
+      "id": "030",
+      "titulo": "Diabólica Nefer",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1w1CqV0QV_czKjtLzBmP7r8buxnrnkU6N"
+    },
+    {
+      "id": "031",
+      "titulo": "Guerreiros Indefesos",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1PbRGo4GJr1G_8LPOiR3YgVU9JMfiUssV"
+    },
+    {
+      "id": "032",
+      "titulo": "Querido Mascote",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1eM9IdIWG5A_cviUxoH5zx17WVKMbQFk2"
+    },
+    {
+      "id": "033",
+      "titulo": "Meu Pai",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1GV2JjSdOREtrMtNZIP8e7MH_wgJmQFKN"
+    },
+    {
+      "id": "034",
+      "titulo": "O Destino de Go",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1KffRbnVQ9cxg4HbCfSMGzHNP0cUAT7TU"
+    },
+    {
+      "id": "035",
+      "titulo": "Canção Celestial",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1BYQqNWCyp9Qjuhwp7Tk9HHDbMehpFNiA"
+    },
+    {
+      "id": "036",
+      "titulo": "Bicho Metálico",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1TD4cyOtPse2WPSDDCmmWzy92jadR3H4U"
+    },
+    {
+      "id": "037",
+      "titulo": "Amor das Trevas",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1_V0SqLX3MAlFugD0eZn6fixaxjCenSl-"
+    },
+    {
+      "id": "038",
+      "titulo": "A Hora Fatal",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1v_v4O3R9HjPV4TrsFUuvQ0Cia2KeHZA0"
+    },
+    {
+      "id": "039",
+      "titulo": "Furor da Tempestade",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "18xbxWRMTCEia2sDOUorp006zZIzlzM2p"
+    },
+    {
+      "id": "040",
+      "titulo": "A Cidade do Terror",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1fcaX7ym40GS89vjn-qn45Tebc413P51x"
+    },
+    {
+      "id": "041",
+      "titulo": "A Infância",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1sCFWb_E2fyokhyOrAI76sFVUEl7IOO7i"
+    },
+    {
+      "id": "042",
+      "titulo": "Não Chore",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1ZpDEuDBnds7Au4fgVPGcSOQfPev7D-VK"
+    },
+    {
+      "id": "043",
+      "titulo": "A Revolta de Kaura",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1g-y3bhtVlH4Fwyr24sxNayFmTeXDRsZ7"
+    },
+    {
+      "id": "044",
+      "titulo": "A Vinda do Monstro Guerreiro",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1szRxxhgC4cBavNI1U0JKl2r8jjr0_EKC"
+    },
+    {
+      "id": "045",
+      "titulo": "Deixem a Terra em Paz!",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1vhXiFG6H6i4wv9t2v9JLORcuSBt4RTco"
+    },
+    {
+      "id": "046",
+      "titulo": "20 Dias de Vida",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1R01-r_g4TirTwsaSGqyvr4tH_PiofKkw"
+    },
+    {
+      "id": "047",
+      "titulo": "O Grito da Morte",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1HzURxZg2uDHCeAH7__QjXIcvZ48uEZZD"
+    },
+    {
+      "id": "048",
+      "titulo": "Kaura",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1-7-7-5CI-TXBlTT31jGhOlQtLs6CDW1Y"
+    },
+    {
+      "id": "049",
+      "titulo": "De Encontro à La Deus",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "1J9go-ahEaO0157YPRBAk3pJSVgElv2mj"
+    },
+    {
+      "id": "050",
+      "titulo": "Adeus Planeta Terra!",
+      "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+      "driveId": "13nIWMcYH8RpyohrIcxPZP5QdFKORrVOo"
+    }
+  ]
+}
