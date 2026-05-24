@@ -1,0 +1,210 @@
+{
+  "nome": "Cyber Cop",
+  "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+  "episodios": [
+    {
+      "id": "001",
+      "titulo": "A Chegada de Júpiter",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "15_Q0FzMSrXbM2VgETXuQI1ti1k5iBATT"
+    },
+    {
+      "id": "002",
+      "titulo": "O Desaparecimento da Cidade do Futuro",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1WiDw2_al7yzvOkUFiErw5hC89z7wM-2o"
+    },
+    {
+      "id": "003",
+      "titulo": "O Combate ao Tanque Cyborg",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1enXtchHqxggiifl1cyNvoKRTzCq4vl3m"
+    },
+    {
+      "id": "004",
+      "titulo": "Pânico na Cidade! A Ameaça do Computador",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1uIWIi0lyKjVbpc7ZT66Kus_JyEXNBRXM"
+    },
+    {
+      "id": "005",
+      "titulo": "Um Príncipe em Apuros",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1H5sZR6NZdSxYh7KTJQCGkwe2vP9YlTu5"
+    },
+    {
+      "id": "006",
+      "titulo": "O Rapto de Oda! O ZAC em Apuros",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1NkV9t53XPFf0YIFUNrLobbfXMVyWU6bT"
+    },
+    {
+      "id": "007",
+      "titulo": "O Avião de Combate Ataca a Metrópole",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1mreNZpc6UCMefp3YguDfb55-mr9gqmQW"
+    },
+    {
+      "id": "008",
+      "titulo": "A Usina de Energia Por um Triz",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1YkCdytGAWmlvmbskJHuOngmxwXU_y0xC"
+    },
+    {
+      "id": "009",
+      "titulo": "Segurança em Risco: Corra",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1czZ7zqiOJf6bG7-6eRp4-csi8I-3zUXn"
+    },
+    {
+      "id": "010",
+      "titulo": "Arrepios no Hotel Mal-Assombrado",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1bu7JuFOiW-iipkuJsQscwxWcSrtuEC28"
+    },
+    {
+      "id": "011",
+      "titulo": "Ameaça na Auto Estrada: Surge o Tanque Aéreo",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1VWbUOnK5C-kqzA548LW22qqNC3vdsNax"
+    },
+    {
+      "id": "012",
+      "titulo": "O Menino e o Dragão",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "10M3vYak_p1et0ypcVlGRGNj1hwhua4iS"
+    },
+    {
+      "id": "013",
+      "titulo": "Satélite Ameaça Destruir Tóquio",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1rD7R2QGbfBTDEu8lMYWbdBj1tZjlYLpe"
+    },
+    {
+      "id": "014",
+      "titulo": "O Segredo de Takeda",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1t_r9kYCa5ZsoIhm1qJ413Ee8pQTQ5ByO"
+    },
+    {
+      "id": "015",
+      "titulo": "Júpiter",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "14aFwC76wJvT5VmZL-N-WkkapcGMqV29H"
+    },
+    {
+      "id": "016",
+      "titulo": "Lúcifer",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1Wdku92LLXKQ8yMe-6F8hzlWb2dGSEyBk"
+    },
+    {
+      "id": "017",
+      "titulo": "O Desafio de Lúcifer",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1Hq0blnsxRgHZv2_VmPdkxOabVpiUYRvC"
+    },
+    {
+      "id": "018",
+      "titulo": "Cristalo",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "160rxApgHOReJSwrtD4Ot5TgZjw1bbABH"
+    },
+    {
+      "id": "019",
+      "titulo": "A Revolta de Tomoko",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1xmMarVNIeguHfr8gYTpxPC_rk2kPkCaD"
+    },
+    {
+      "id": "020",
+      "titulo": "O Segredo dos Cybercops",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1eZr-Y0rNaOYjXAlA17zzdAHWnKWuyN6q"
+    },
+    {
+      "id": "021",
+      "titulo": "A Hora da Verdade",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1sCzaK4YBVjCALIJA1TPbIyErSVuOV-LS"
+    },
+    {
+      "id": "022",
+      "titulo": "Os Falsos Cybercops",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1J4T0VBDqxObuOgW4b8FZAfncCHM7KeVw"
+    },
+    {
+      "id": "023",
+      "titulo": "O Homem de Hong Kong",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1VCRJS-VmBMewqAEyNckGshyLDfQ5qz03"
+    },
+    {
+      "id": "024",
+      "titulo": "O Ataque dos Mísseis Subterrâneos",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1Ggp_2JB51jOXHET4O6qNqK7JT9zocm3y"
+    },
+    {
+      "id": "025",
+      "titulo": "A Vingança de Luna",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1MugPv4WxF4rCSd32cyTF4k8GSoQAca1Q"
+    },
+    {
+      "id": "026",
+      "titulo": "A Fortaleza Inimiga",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1SFNfJllfahpaEBPZA1dqWtVLr7vE4HG9"
+    },
+    {
+      "id": "027",
+      "titulo": "Falha na Unidade Cyber",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1tni-jx7DAI0W1sSu9S8CLqx_HIYVIoTN"
+    },
+    {
+      "id": "028",
+      "titulo": "O Dirigível Bomba",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1vaAYHXVweDFWPA1d4Q6ArehhnMyi-RfE"
+    },
+    {
+      "id": "029",
+      "titulo": "Tomoko na Mira da Destrap",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1XNQb1v7KwtRYskavzjXeZ9EvlndpSFpE"
+    },
+    {
+      "id": "030",
+      "titulo": "A Carga da Morte",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "18XowHMfSl6H4-TX_dTbZVPq_hbeb_wYz"
+    },
+    {
+      "id": "031",
+      "titulo": "O Roubo do Cyber Thunder Arm",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1qT7Ztamq1HKOiWCpi6BhYvfZIzxorEeQ"
+    },
+    {
+      "id": "032",
+      "titulo": "Ataque ao Alojamento dos Cybercops",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1OWqTuEMebFjgLdoIg7YIp3zX4eEhd-s7"
+    },
+    {
+      "id": "033",
+      "titulo": "Proteção ao Trem Expresso",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "14eVcDE_GGJ1mz0bgm7DF-e_j8PvRkD3s"
+    },
+    {
+      "id": "034",
+      "titulo": "Neo Tóquio em Perigo: A Vitória Final",
+      "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+      "driveId": "1vyAGC6_d0wdc7giYC7UsO5-hfopDbgQ-"
+    }
+  ]
+}
