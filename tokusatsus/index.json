@@ -178,5 +178,11 @@
     "arquivo": "tokusatsus/cyber-cop.json",
     "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
     "totalEpisodios": 34
+  },
+  {
+    "nome": "Esquadrão Dinossauro Zyuranger",
+    "arquivo": "tokusatsus/esquadrao-dinossauro-zyuranger.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/uCx5e9u4f43Afhpvycad1giUU4e.jpg",
+    "totalEpisodios": 50
   }
 ]
