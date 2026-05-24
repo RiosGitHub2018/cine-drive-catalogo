@@ -1,0 +1,240 @@
+{
+  "nome": "Metalder, o Homem Máquina",
+  "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+  "episodios": [
+    {
+      "id": "001",
+      "titulo": "O portal de Neroz",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1Qg_dydgoedTQ-Cov5T9jhFTOP1OscnH1"
+    },
+    {
+      "id": "002",
+      "titulo": "Eu sou o Universo",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1F8epLRoLvMyjT1KwrD_J9BI2AHRijoEZ"
+    },
+    {
+      "id": "003",
+      "titulo": "O homem-máquina",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1sy-6oPK5BbZO_rJDSgXKt3j_1-XcM5dO"
+    },
+    {
+      "id": "004",
+      "titulo": "Metalder versus Torpedo",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1Bmyiqj0ZnZzZ9gJXTRav67SDZcq__mJS"
+    },
+    {
+      "id": "005",
+      "titulo": "O assassino profissional",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1Jl8lSMU_yrDqVWF9Ix5FNHQQH9OoA_y7"
+    },
+    {
+      "id": "006",
+      "titulo": "Pugilista em ação",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1Ox_YjkXL8--6XWJS5T57oZ3nE4Dgzb8P"
+    },
+    {
+      "id": "007",
+      "titulo": "As chamas do desafio",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1OMYlk_oMKvQYJkoUb_59j2G34wLYlfgD"
+    },
+    {
+      "id": "008",
+      "titulo": "A despedida de Barlock",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1tYTTXpUYRXJckcQ_3FOxZ5DzHFxImxMO"
+    },
+    {
+      "id": "009",
+      "titulo": "O sonho e a esperança",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1N6F0kY3pDp8HDFUs2-zlGHvcOJzsRmK-"
+    },
+    {
+      "id": "010",
+      "titulo": "O robô filarmônica",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1GVciS2JF8b2zlIiD6dTHfbTu-usHlSPY"
+    },
+    {
+      "id": "011",
+      "titulo": "Caça ao ex-alfa",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1nMR_K6IYGTZ5FHE46pB9-jVeNAzpt28S"
+    },
+    {
+      "id": "012",
+      "titulo": "O cerco dos ninjas",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "17f_6tdDVQCcOZNZfRhJJLtGdGZGRBbb0"
+    },
+    {
+      "id": "013",
+      "titulo": "O fugitivo Momento crítico!",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1cfA7T4uNu0MyE_kaAjClUZ-Y1xalj-1T"
+    },
+    {
+      "id": "014",
+      "titulo": "A guerreira Madonna",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1rPWKfl8-958nMD_QxfvMG-INKYNlduVz"
+    },
+    {
+      "id": "015",
+      "titulo": "Amor de mãe",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "18VVAYYqBbbZM0UQw7Z_TuiF6I5s-dqUW"
+    },
+    {
+      "id": "016",
+      "titulo": "O motoqueiro rival",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "18u0y8kBKPslI0fMEYICvGCDeoZ03w50C"
+    },
+    {
+      "id": "017",
+      "titulo": "O desertor",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1A6MeYgYvcLx4v-XLq76j5lqb46Ud8TIp"
+    },
+    {
+      "id": "018",
+      "titulo": "Informações secretas",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1SuL2dr4FYvxB7DcwRmihvxblqMIpVp-Q"
+    },
+    {
+      "id": "019",
+      "titulo": "A volta triunfal de Top Gunder",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1Xwa_v67QS9jV6ydIygI9lkuKfjob7X-q"
+    },
+    {
+      "id": "020",
+      "titulo": "A tropa Mecanol em combate",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "18dsW4P-zi6qXOPwil5SD4N53vjuEwJ82"
+    },
+    {
+      "id": "021",
+      "titulo": "O mistério do vaga-lume",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1Fxhd5wyNrl4T_YKGseJ7ag95XHa1C3Le"
+    },
+    {
+      "id": "022",
+      "titulo": "A guerra sobre patins",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "17CvyDPHsf00i9Q-Alth8v8mjn7bI5ty_"
+    },
+    {
+      "id": "023",
+      "titulo": "As olimpíadas do colosso",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1Lsp8QEeVC9hTvZh-NJT3M2QfrTVTxReP"
+    },
+    {
+      "id": "024",
+      "titulo": "O confronto dos bruxos",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "10_j43RrWtBC9yZeEO0NBX2_zp48kSEvS"
+    },
+    {
+      "id": "025",
+      "titulo": "Reencontro inesperado",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1o-Le7x9DwLEBqOb66layDbrbVHOpInQd"
+    },
+    {
+      "id": "026",
+      "titulo": "Jovens imbatíveis",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1-IdU5yV5hQKc9r8WBuSVsCPMSTRwh_g2"
+    },
+    {
+      "id": "027",
+      "titulo": "O diário de um fugitivo",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1yO7SGYVnty0YN7ejmFh38YSsDfPNlHOb"
+    },
+    {
+      "id": "028",
+      "titulo": "A pantera vermelha",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1mOlOVUKGeaRdkvXuJfVC2yVuPfmezzFW"
+    },
+    {
+      "id": "029",
+      "titulo": "A triste história de um cão",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1fSq_VhMVgMQHdDppOrD3ILF5z2xJGbrh"
+    },
+    {
+      "id": "030",
+      "titulo": "Silvercaps em perigo",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1GFjAa9VGlKTeb9WWGa5tBWOapGYrr1wE"
+    },
+    {
+      "id": "031",
+      "titulo": "Instante fatal",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1tMyh6JJ8VtXalWv4pYjQa6JaDqnFOGtP"
+    },
+    {
+      "id": "032",
+      "titulo": "Flor amaldiçoada",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1xa_vR-EsJEETECgCX8k88qahaKG3Ulx4"
+    },
+    {
+      "id": "033",
+      "titulo": "Amizade em risco",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1LA-4cTzBCvB2hNsWMPUGwdnzPJTKyY4n"
+    },
+    {
+      "id": "034",
+      "titulo": "As mil e uma faces de Neroz",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1cRTidMcbwcuDI00e7WXHm2wgnaFGRqUs"
+    },
+    {
+      "id": "035",
+      "titulo": "O império do mal",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1cRTidMcbwcuDI00e7WXHm2wgnaFGRqUs"
+    },
+    {
+      "id": "036",
+      "titulo": "A missão da Unidade Cibernética",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "N/A"
+    },
+    {
+      "id": "037",
+      "titulo": "A ruína do Colosso",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1PCR_gA14c5I5G_2j_YWChYB3LPR5IBxR"
+    },
+    {
+      "id": "038",
+      "titulo": "Contra-ataque sangrento",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1FhIUJZbKvAsGvIac4YRh5bkSFixu0sMC"
+    },
+    {
+      "id": "039",
+      "titulo": "Eternamente Metalder",
+      "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+      "driveId": "1V4s3V97txmCg-I9Nb6xaU7xZnFxG2kzl"
+    }
+  ]
+}
