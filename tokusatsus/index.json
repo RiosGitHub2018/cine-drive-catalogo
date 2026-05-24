@@ -172,5 +172,11 @@
     "arquivo": "tokusatsus/super-star-fleet-sazer-x-the-movie-fight-star-warriors.json",
     "thumb": "https://image.tmdb.org/t/p/w500/eLF0ikwxdhBMNXmMDhfiB9r9rlS.jpg",
     "totalEpisodios": 38
+  },
+  {
+    "nome": "Cyber Cop",
+    "arquivo": "tokusatsus/cyber-cop.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+    "totalEpisodios": 34
   }
 ]
