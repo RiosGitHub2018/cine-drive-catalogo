@@ -142,5 +142,11 @@
     "arquivo": "tokusatsus/machineman.json",
     "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
     "totalEpisodios": 36
+  },
+  {
+    "nome": "Defensores da Luz Maskman",
+    "arquivo": "tokusatsus/defensores-da-luz-maskman.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/4LWws4P5FjbVtKb9huQUssPWvsR.jpg",
+    "totalEpisodios": 51
   }
 ]
