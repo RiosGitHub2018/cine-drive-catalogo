@@ -118,5 +118,11 @@
     "arquivo": "tokusatsus/gigantes-guerreiros-goggle-five.json",
     "thumb": "https://image.tmdb.org/t/p/w500/t7SQZjVKIhltErMw2eytfPDTANB.jpg",
     "totalEpisodios": 50
+  },
+  {
+    "nome": "Esquadrão Homens-Pássaros Jetman",
+    "arquivo": "tokusatsus/esquadrao-homens-passaros-jetman.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/6UKmUHYTzSFZKoioIXQ2I4cFuzT.jpg",
+    "totalEpisodios": 50
   }
 ]
