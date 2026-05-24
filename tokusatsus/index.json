@@ -88,5 +88,11 @@
     "arquivo": "tokusatsus/esquadrao-relampago-changeman.json",
     "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
     "totalEpisodios": 55
+  },
+  {
+    "nome": "Esquadrão Eletrônico Denziman",
+    "arquivo": "tokusatsus/esquadrao-eletronico-denziman.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/HiVKcMQvGln1UAaMzbdYu9dBua.jpg",
+    "totalEpisodios": 51
   }
 ]
