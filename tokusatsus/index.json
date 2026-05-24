@@ -72,12 +72,6 @@
     "totalEpisodios": 15
   },
   {
-    "nome": "Kamen Rider Amazon",
-    "arquivo": "tokusatsus/kamen-rider-amazon.json",
-    "thumb": "https://image.tmdb.org/t/p/w500/4QjrLtMtAxKejzKMERoghaHOlFO.jpg",
-    "totalEpisodios": 24
-  },
-  {
     "nome": "Black Kamen Rider (1987)",
     "arquivo": "tokusatsus/black-kamen-rider-1987.json",
     "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpg",
