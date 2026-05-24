@@ -106,5 +106,11 @@
     "arquivo": "tokusatsus/esquadrao-terrestre-fiveman.json",
     "thumb": "https://image.tmdb.org/t/p/w500/wZZTqkVoA5SmYoRvDPtuPHBIwLg.jpg",
     "totalEpisodios": 48
+  },
+  {
+    "nome": "Comando Estelar Flashman",
+    "arquivo": "tokusatsus/comando-estelar-flashman.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+    "totalEpisodios": 50
   }
 ]
