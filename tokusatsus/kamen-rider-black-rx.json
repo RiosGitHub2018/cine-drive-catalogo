@@ -1,0 +1,282 @@
+{
+  "nome": "Kamen Rider Black RX",
+  "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+  "episodios": [
+    {
+      "id": "001",
+      "titulo": "KamRideBRX_01",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1T5RQHdGwVxeSY5UbCFEQrBWd0McKItNf"
+    },
+    {
+      "id": "002",
+      "titulo": "KamRideBRX_02",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1rCpXZn4WSTInb9EQZ3bLD_hXzHV72CFP"
+    },
+    {
+      "id": "003",
+      "titulo": "KamRideBRX_03",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1n4IpiEFwBbaE6mrQEweblG34LtzkG_H_"
+    },
+    {
+      "id": "004",
+      "titulo": "KamRideBRX_04",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "11W_xd23cQLAGn-Vsaydvq11BkIQEIjEC"
+    },
+    {
+      "id": "005",
+      "titulo": "KamRideBRX_05",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1vWxecN-layLGQ8XQ-vN_rDZKvKhKoLno"
+    },
+    {
+      "id": "006",
+      "titulo": "KamRideBRX_06",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1Sa3yLG_IxOrulY1Gx0PxNquXcgdMQdqj"
+    },
+    {
+      "id": "007",
+      "titulo": "KamRideBRX_07",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1N1Tyv5_P4KK-6_qHQnm7DvJZc6SAhSMT"
+    },
+    {
+      "id": "008",
+      "titulo": "KamRideBRX_08",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1Z_1RV9KmYy35f23NFg2gfKPfg3cCYJxI"
+    },
+    {
+      "id": "009",
+      "titulo": "KamRideBRX_09",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1iMy27KI-VPSV0BvO4nPx7pKh77cn87w9"
+    },
+    {
+      "id": "010",
+      "titulo": "KamRideBRX_10",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1zyGoTYzAMMDNbUumg4Sdq9M4R3RpQ88r"
+    },
+    {
+      "id": "011",
+      "titulo": "KamRideBRX_11",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1qOvs2P1mZMfPpsz2thejNIOmEjM_ddB4"
+    },
+    {
+      "id": "012",
+      "titulo": "KamRideBRX_12",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1VTgrqJHdljGecC4D4GdMbvUzWEMqS6Lm"
+    },
+    {
+      "id": "013",
+      "titulo": "KamRideBRX_13",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1AxBk2f-S84Fd2aG-z1wuzi6jXyU4DHAA"
+    },
+    {
+      "id": "014",
+      "titulo": "KamRideBRX_14",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1r5VI-Ta4minwlp7o3dnZmAqL0dHkCCww"
+    },
+    {
+      "id": "015",
+      "titulo": "KamRideBRX_15",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1WwrnWUJZWGKhbv-DcNLk73PICIawMkRt"
+    },
+    {
+      "id": "016",
+      "titulo": "KamRideBRX_16",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1ArcextdFxZra9Jll_91B2F0LIhTkuNR_"
+    },
+    {
+      "id": "017",
+      "titulo": "KamRideBRX_17",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1SCtLDmv18-Mhv212sccPr46NUu2-aF5C"
+    },
+    {
+      "id": "018",
+      "titulo": "KamRideBRX_18",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1pREStFJbPfbsZyF3uPRCJmPhOfBe7WUZ"
+    },
+    {
+      "id": "019",
+      "titulo": "KamRideBRX_19",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1smfL2Wl9O4h0vCqCfaS0hnuIe2jPU3FK"
+    },
+    {
+      "id": "020",
+      "titulo": "KamRideBRX_20",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1M-koDlfFkbOy-AjrRsoHEBr7p-5L2ZIH"
+    },
+    {
+      "id": "021",
+      "titulo": "KamRideBRX_21",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1F341kSboXRa791BnyyrxAPpjZA_CRq7H"
+    },
+    {
+      "id": "022",
+      "titulo": "KamRideBRX_22",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "18KUewgxBW30Mh7-2RF7vnlR_GeQPkH1_"
+    },
+    {
+      "id": "023",
+      "titulo": "KamRideBRX_23",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1scwSFJ6_MHW5F2AA_PMC7tG7udmPV2Jb"
+    },
+    {
+      "id": "024",
+      "titulo": "KamRideBRX_24",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1JwRJP8pW-Ag7ByTaG6Th_n3JBt0inVI6"
+    },
+    {
+      "id": "025",
+      "titulo": "KamRideBRX_25",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1NyYpDM_20Y9DS3kCZ5s0GfYq5yTJSXTH"
+    },
+    {
+      "id": "026",
+      "titulo": "KamRideBRX_26",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1XcAn7fbTHejgFKxG9KjX4w7bgKiWEpZE"
+    },
+    {
+      "id": "027",
+      "titulo": "KamRideBRX_27",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1-1NtCAdmQubBcii6qKW5z_EhpvnfdNnG"
+    },
+    {
+      "id": "028",
+      "titulo": "KamRideBRX_28",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1EBimEVrf-B8nOvUSuUdfcdHTfZoVvYQw"
+    },
+    {
+      "id": "029",
+      "titulo": "KamRideBRX_29",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1iIuo8MXuxLh9apbS-qmng_cetWx7wnTr"
+    },
+    {
+      "id": "030",
+      "titulo": "KamRideBRX_30",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1lZWMPvILKrhh-WgraWS27TIR2Z7W5KQv"
+    },
+    {
+      "id": "031",
+      "titulo": "KamRideBRX_31",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1DX2MuppFdBcF76l_IFZPCTeltEdLn8Iz"
+    },
+    {
+      "id": "032",
+      "titulo": "KamRideBRX_32",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1qpeRkoiMdCLtedspBykF7SRa9sSuXg4p"
+    },
+    {
+      "id": "033",
+      "titulo": "KamRideBRX_33",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1vknOIam2vnWEGfVCiCNChyo8xty3EnPm"
+    },
+    {
+      "id": "034",
+      "titulo": "KamRideBRX_34",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1ZiHWCMqcAHI5Ku5XVAQ4u4laPuYtWe0y"
+    },
+    {
+      "id": "035",
+      "titulo": "KamRideBRX_35",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1TPJ_lC-ftltLqvhWv5cFxna3Na2vec0v"
+    },
+    {
+      "id": "036",
+      "titulo": "KamRideBRX_36",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1R41ZwQY60fq9yv3QoyeUdb32ZqdHdqt8"
+    },
+    {
+      "id": "037",
+      "titulo": "KamRideBRX_37",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1Q3lGjp04JSuxYWvkVopa-U7lRVg5g8Kv"
+    },
+    {
+      "id": "038",
+      "titulo": "KamRideBRX_38",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1fw6CgIWEuCBYTZL3tNeBFCiHWfIEV2Jq"
+    },
+    {
+      "id": "039",
+      "titulo": "KamRideBRX_39",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "118Xj34d6Fm5-03OG9nwmT00P_wFu314d"
+    },
+    {
+      "id": "040",
+      "titulo": "KamRideBRX_40",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "13NbTfm3LE-K334d64X_CVlr9KZ92G92N"
+    },
+    {
+      "id": "041",
+      "titulo": "KamRideBRX_41",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1Q8fJTFhrN11a6aoXCof7isf6P_xu3Fau"
+    },
+    {
+      "id": "042",
+      "titulo": "KamRideBRX_42",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1T0wvn5dAAdKfl_rq3djseQz85AyaziXC"
+    },
+    {
+      "id": "043",
+      "titulo": "KamRideBRX_43",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1funsy1za1zWdwX7Uxo8cfN5HlxPnEzmr"
+    },
+    {
+      "id": "044",
+      "titulo": "KamRideBRX_44",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1-cEPG2tgbvdkBKKWcmXGmSFUVaB8rm8Y"
+    },
+    {
+      "id": "045",
+      "titulo": "KamRideBRX_45",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1oK28cu7Id9WLOMqkrfWNkM0rIiG_f6_W"
+    },
+    {
+      "id": "046",
+      "titulo": "KamRideBRX_46",
+      "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+      "driveId": "1VTsV0z5nxBWqsHzSrRISKg2SaZcpFeFE"
+    }
+  ]
+}
