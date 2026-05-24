@@ -144,6 +144,12 @@
     "totalEpisodios": 49
   },
   {
+    "nome": "Esquadrão Dinossauro Zyuranger",
+    "arquivo": "tokusatsus/esquadrao-dinossauro-zyuranger.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/uCx5e9u4f43Afhpvycad1giUU4e.jpg",
+    "totalEpisodios": 50
+  },
+  {
     "nome": "Machineman",
     "arquivo": "tokusatsus/machineman.json",
     "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
@@ -184,12 +190,6 @@
     "arquivo": "tokusatsus/cyber-cop.json",
     "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
     "totalEpisodios": 34
-  },
-  {
-    "nome": "Esquadrão Dinossauro Zyuranger",
-    "arquivo": "tokusatsus/esquadrao-dinossauro-zyuranger.json",
-    "thumb": "https://image.tmdb.org/t/p/w500/uCx5e9u4f43Afhpvycad1giUU4e.jpg",
-    "totalEpisodios": 50
   },
   {
     "nome": "Kamen Rider Amazon",
