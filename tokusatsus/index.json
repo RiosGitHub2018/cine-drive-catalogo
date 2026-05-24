@@ -166,5 +166,11 @@
     "arquivo": "tokusatsus/robo-gigante.json",
     "thumb": "https://image.tmdb.org/t/p/w500/ugOdAjj1jpb6ZaBKS8v0MN0dp40.jpg",
     "totalEpisodios": 26
+  },
+  {
+    "nome": "Super Star Fleet Sazer-X the Movie: Fight! Star Warriors",
+    "arquivo": "tokusatsus/super-star-fleet-sazer-x-the-movie-fight-star-warriors.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/eLF0ikwxdhBMNXmMDhfiB9r9rlS.jpg",
+    "totalEpisodios": 38
   }
 ]
