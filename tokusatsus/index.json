@@ -190,5 +190,11 @@
     "arquivo": "tokusatsus/kamen-rider-amazon.json",
     "thumb": "https://image.tmdb.org/t/p/w500/4QjrLtMtAxKejzKMERoghaHOlFO.jpg",
     "totalEpisodios": 24
+  },
+  {
+    "nome": "Spider-Man",
+    "arquivo": "tokusatsus/spider-man.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/w5pTlusOFWrOib6XX3iCMjHSzB1.jpg",
+    "totalEpisodios": 42
   }
 ]
