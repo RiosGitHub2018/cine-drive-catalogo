@@ -78,6 +78,12 @@
     "totalEpisodios": 52
   },
   {
+    "nome": "Esquadrão Solar Sun Vulcan",
+    "arquivo": "tokusatsus/esquadrao-solar-sun-vulcan.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/dNuKqRZjPMnlQQXV5k7tZ1USgR5.jpg",
+    "totalEpisodios": 50
+  },
+  {
     "nome": "Esquadrão Super Atômico Bioman",
     "arquivo": "tokusatsus/esquadrao-super-atomico-bioman.json",
     "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
