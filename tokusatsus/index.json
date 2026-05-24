@@ -112,5 +112,11 @@
     "arquivo": "tokusatsus/comando-estelar-flashman.json",
     "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
     "totalEpisodios": 50
+  },
+  {
+    "nome": "Gigantes Guerreiros Goggle Five",
+    "arquivo": "tokusatsus/gigantes-guerreiros-goggle-five.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/t7SQZjVKIhltErMw2eytfPDTANB.jpg",
+    "totalEpisodios": 50
   }
 ]
