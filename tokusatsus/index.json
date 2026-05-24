@@ -78,6 +78,12 @@
     "totalEpisodios": 52
   },
   {
+    "nome": "Kamen Rider Black RX",
+    "arquivo": "tokusatsus/kamen-rider-black-rx.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
+    "totalEpisodios": 46
+  },
+  {
     "nome": "Poderoso Lion Man",
     "arquivo": "tokusatsus/poderoso-lion-man.json",
     "thumb": "https://image.tmdb.org/t/p/w500/5lWatlZDjL4bnzeobs7b5FYl8gj.jpg",
@@ -196,11 +202,5 @@
     "arquivo": "tokusatsus/super-star-fleet-sazer-x-the-movie-fight-star-warriors.json",
     "thumb": "https://image.tmdb.org/t/p/w500/eLF0ikwxdhBMNXmMDhfiB9r9rlS.jpg",
     "totalEpisodios": 38
-  },
-  {
-    "nome": "Kamen Rider Black RX",
-    "arquivo": "tokusatsus/kamen-rider-black-rx.json",
-    "thumb": "https://image.tmdb.org/t/p/w500/xsbW2qdfZuaiTIwm0zxDpSXwOGc.jpg",
-    "totalEpisodios": 46
   }
 ]
