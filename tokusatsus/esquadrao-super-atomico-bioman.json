@@ -1,0 +1,312 @@
+{
+  "nome": "Esquadrão Super Atômico Bioman",
+  "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+  "episodios": [
+    {
+      "id": "001",
+      "titulo": "ROBO GIGANTE! O ENIGMA CHEGA",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1XIlNOJjM55url6NDftD1sJluj0bEfhqj"
+    },
+    {
+      "id": "002",
+      "titulo": "REUNIR! GUERREIROS DO DESTINO",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1oGvlSvkiJRrb11Aq3SKZFT7iDPnmBI6R"
+    },
+    {
+      "id": "003",
+      "titulo": "NOSSO AMIGO BIO ROBO",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1gIF9v2O_CV0-Z9xIp5BQTXLQ4fjJ9xi1"
+    },
+    {
+      "id": "004",
+      "titulo": "A DESTRUIÇÃO DOS MECHAS-HUMANOS",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1H9zn5FsDRtvLikEYBCQVREOiPp0LdNoO"
+    },
+    {
+      "id": "005",
+      "titulo": "O INIMIGO INVISÍVEL",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1Xk6wFliKaoJa4xxTpjXVnCc7sDAS81KA"
+    },
+    {
+      "id": "006",
+      "titulo": "PEEB CAPTURADO",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1sKwYsGCBKAGM7x6zB5sZjEQIwlr651se"
+    },
+    {
+      "id": "007",
+      "titulo": "LUTE E DESEJE UMA ESTRELA",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1J67Cuz-UiNaXxUePmAALPKMNXapDZxJf"
+    },
+    {
+      "id": "008",
+      "titulo": "LEVANTE-SE BIO ROBO",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1IsHIRAoccQGmHKL6eopR9PLR1Yr36w8b"
+    },
+    {
+      "id": "009",
+      "titulo": "A CORDA DE SALTO",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "12x7r46-re3KA5jRg6z2b2JpG2Bz-4yd6"
+    },
+    {
+      "id": "010",
+      "titulo": "ADEUS AMARELA",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1E_BPfGMmnxDNwXPZLINqQoFLgMzFsano"
+    },
+    {
+      "id": "011",
+      "titulo": "ENTRE GUERREIRA JUN",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1qTISQkyREaiR9-oETMNRS4Mxtbjz-vHw"
+    },
+    {
+      "id": "012",
+      "titulo": "VERDE ASSASSINO!",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1R0l7A0OUNQEeSuZaOIdu63JzQhkH1u9l"
+    },
+    {
+      "id": "013",
+      "titulo": "JUN!",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1P_FjJ4_9i62S0Wn17CrAfZmmIowQx6-u"
+    },
+    {
+      "id": "014",
+      "titulo": "CERÉBRO INTELECTUAL",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1bsdtNsAb3PzNXbExEALOJEazoZ78Mv_a"
+    },
+    {
+      "id": "015",
+      "titulo": "O JURAMENTO DE FOGO",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1DIJz6ADI2hhfUFOQ7dhJqTpFQD026Dzb"
+    },
+    {
+      "id": "016",
+      "titulo": "CORRA EM 21599 SEGUNDOS!",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1jzK4MweEsUxn8vaxhC5tZp4Q2QuQkPKj"
+    },
+    {
+      "id": "017",
+      "titulo": "SERRA DO CASTELO TATSUYA",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "19yO-D5d1J16RamOgWpy_UyIP9qF1696p"
+    },
+    {
+      "id": "018",
+      "titulo": "A ORAÇÃO",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1Xfwbo3vD2EEcmwEWr44z3UxpAaGVdH8-"
+    },
+    {
+      "id": "019",
+      "titulo": "MEU PAI",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1Azxzte7X2SVYEsKgiuPwTFmzqf9lmuat"
+    },
+    {
+      "id": "020",
+      "titulo": "DESAFIO DE PRINCESAS",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1zPT9gvw0kzBOpyicOb4dhkLQEFvc4zCe"
+    },
+    {
+      "id": "021",
+      "titulo": "A BIO BASE",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1yzVdSX3m4Td5o0dZXZnkU0nSnFC7SxpS"
+    },
+    {
+      "id": "022",
+      "titulo": "AZUL",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1JFjGlCOPtY9nNh2y0kgBxCBx3pQbipQD"
+    },
+    {
+      "id": "023",
+      "titulo": "ATAQUE DE BONECOS",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1AnFgvr36uA9B3QQ5ko2C-dA98gIlBl1R"
+    },
+    {
+      "id": "024",
+      "titulo": "A FLOR EXPLOSIVA DO AMOR",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1uJgyhNozUW_kHXyfLd1euUnMhxcp3Cf6"
+    },
+    {
+      "id": "025",
+      "titulo": "ESPÍRITO DE PRINCESA",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1SsDtjk7Ylc0GSV6sLUQxqDs746GWBRwG"
+    },
+    {
+      "id": "026",
+      "titulo": "GUERREIRO INFERNAL",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1W6nnlcrkk91Pf1B8uUy65iynfUv0HUyh"
+    },
+    {
+      "id": "027",
+      "titulo": "DOUTOR MORTO",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "12YL1PnmwlIWbQId2UuDpKUodylxqrYEz"
+    },
+    {
+      "id": "028",
+      "titulo": "O GRANDE SEGREDO",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1fm_gCS1pFxgMmmr0djJ-xIqk8mA0v9Nz"
+    },
+    {
+      "id": "029",
+      "titulo": "TÓQUIO DESAPARECE",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1pOF_8UjRA8mhBoxgN_EcarrqPsbhOb-T"
+    },
+    {
+      "id": "030",
+      "titulo": "ESPADA SUPREMA!",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1GK6HM4l0xmb4ri2Dnudfn0R4InlgCI33"
+    },
+    {
+      "id": "031",
+      "titulo": "CHEGAM OS NOVOS MEGA",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1UAntwjeChKFaC3jJp4th_wx3UZRoX_8k"
+    },
+    {
+      "id": "032",
+      "titulo": "O GRANDE PLANO PARA REMODELAÇÃO DAS ENGRENAGENS",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1cUFcDUvRJlWUp0fVmJ-sdutneEqFqdM0"
+    },
+    {
+      "id": "033",
+      "titulo": "TÉCNICA SECRETA: UMA NOVA FORMAÇÃO DE COMBATE?",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1OYTepBaEfEo729jSqqsGuiZRPa5wV4kw"
+    },
+    {
+      "id": "034",
+      "titulo": "EIS O BIO PODER!",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1Cmb_gs-de3vJz9qdCfL4ewCuIH11qAmM"
+    },
+    {
+      "id": "035",
+      "titulo": "O SEXTO INTEGRANTE",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1uZUlJ0CqYyASpIi3-zeRGXXg3sBrvwDR"
+    },
+    {
+      "id": "036",
+      "titulo": "TRANSFORME-SE RAPAZ",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1cbD-0ak1InpZ5iluo8xaGquJwisZwCZ4"
+    },
+    {
+      "id": "037",
+      "titulo": "O ASSASSINO SILVER",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1xxUqKobhsc3UkN_yqyficxeYXO_9CmgT"
+    },
+    {
+      "id": "038",
+      "titulo": "O MISTERIOSO BALZION",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1-bGO21R5idLxh3jLM6tFdsP85zQStGx-"
+    },
+    {
+      "id": "039",
+      "titulo": "A ARMADILHA DE MASON",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1xFzPU2NktY-6P1YJOEbj3I6pzb14PRN1"
+    },
+    {
+      "id": "040",
+      "titulo": "O ROUBO DO BIO TURBO",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1ed2AxnoEszVUmUeeJtdR19NXjOxOcDsn"
+    },
+    {
+      "id": "041",
+      "titulo": "CANÇÃO DE NINAR DEMONÍACA",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1hexNLThThpw2Tu9zzly6pbdTN9T2paCY"
+    },
+    {
+      "id": "042",
+      "titulo": "GOH ARRISCA SUA VIDA",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1BY5o1s2hTg0e1OMjMJ-CM0CdQjaF6fGw"
+    },
+    {
+      "id": "043",
+      "titulo": "A GUERREIRA DE UNIFORME COLEGIA",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1_2eIbS10J694YBAbt73-7qZ6OOhOHYU-"
+    },
+    {
+      "id": "044",
+      "titulo": "A BELEZA DO CIRCUITO CONSCIENTE",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1k1Z3dhhlyvOeinlc-BBf9NNjqRcP3utz"
+    },
+    {
+      "id": "045",
+      "titulo": "A BOMBA HUMANA: JUN",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1R4dRupf3cFxEDzP42UY9nOLSiuvpYDBH"
+    },
+    {
+      "id": "046",
+      "titulo": "DEPRESSA! ARMADILHA NA CIDADE",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1euC2eR2RWxcYje4izl0mpubDVoOG1H_a"
+    },
+    {
+      "id": "047",
+      "titulo": "A VERDADEIRA IDENTIDADE DO PROFESSOR SHIBATA",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1-lEpOMLjP1Fhf-Z6R5yXZfcAQ7CV4_GS"
+    },
+    {
+      "id": "048",
+      "titulo": "APAREÇA BALZION",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1j8XgSw_pi1Jmux8NzooEKLgjjil_s-ux"
+    },
+    {
+      "id": "049",
+      "titulo": "CUIDADO BIO ROBÔ",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1ytGOUjaVcLYR0Ddx31uWB8YeAuUSnvzK"
+    },
+    {
+      "id": "050",
+      "titulo": "ATAQUE A NEOGRAD",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1lOpD-GnzRi-8A4rrxkG-uIYPRLiNhe5q"
+    },
+    {
+      "id": "051",
+      "titulo": "ADEUS PEEBO",
+      "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
+      "driveId": "1LEDyXgWGefi8KtSRXyIWxSIgL64YfwZC"
+    }
+  ]
+}
