@@ -82,5 +82,11 @@
     "arquivo": "tokusatsus/esquadrao-super-atomico-bioman.json",
     "thumb": "https://image.tmdb.org/t/p/w500/gWvjtUHxu4Ushq55scWAVtQLshD.jpg",
     "totalEpisodios": 51
+  },
+  {
+    "nome": "Esquadrão Relâmpago Changeman",
+    "arquivo": "tokusatsus/esquadrao-relampago-changeman.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/aoEJ1pWjFlLRPuwhww9uRJnc9QD.jpg",
+    "totalEpisodios": 55
   }
 ]
