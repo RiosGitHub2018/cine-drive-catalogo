@@ -1,0 +1,222 @@
+{
+  "nome": "Machineman",
+  "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+  "episodios": [
+    {
+      "id": "001",
+      "titulo": "Os Livros Apagados",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1C06XZmFiJOIAW8yVlJbxIPNrQMWUJc1S"
+    },
+    {
+      "id": "002",
+      "titulo": "Lágrimas de Crianças",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1_N0ij1Ah8OXFTX2DB6D6rB2kzD8XvzI2"
+    },
+    {
+      "id": "003",
+      "titulo": "As Agressões ao Mundo dos Esportes",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1ri-OaFCE6cMcVPJvFieqSvxpv2wRRgj5"
+    },
+    {
+      "id": "004",
+      "titulo": "O Resfriado das Batatas",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1fJeyge-ER00j1r2OHC_F3dEAIaAnv4m7"
+    },
+    {
+      "id": "005",
+      "titulo": "O Selo Raro",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1CyxLFIXxdU5fWjWgiLaqPZDwV1CQZ7UI"
+    },
+    {
+      "id": "006",
+      "titulo": "Os Falsos Pais",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1RUnhFIWX9zkTgJaB65mDPw4V3PoIXYPb"
+    },
+    {
+      "id": "007",
+      "titulo": "Vontade de Viver",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1zG4lewFwEdzPXUF2O0PLhImi_aCxiI8n"
+    },
+    {
+      "id": "008",
+      "titulo": "A Poeira Cósmica",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1O8QMiFop0zslNbhJ0KZ8SI5iKV-zRiMa"
+    },
+    {
+      "id": "009",
+      "titulo": "O Homem da Capa Preta",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1rmEo26R9nC0Yzn_vcDEWDzAmtgE5awOr"
+    },
+    {
+      "id": "010",
+      "titulo": "O Samurai",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1ZyRxeqUrz2wx8B9KJ3EPmBDJS4S7yagQ"
+    },
+    {
+      "id": "011",
+      "titulo": "O Míssil",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "11bMYM1KhCrAf27E0fHLRGUY--vaYcbAx"
+    },
+    {
+      "id": "012",
+      "titulo": "O Mágico",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1RHVjqcvblcwPVOHfCHOaFUOPrO_Mot0b"
+    },
+    {
+      "id": "013",
+      "titulo": "O Sósia",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "19gLz8Gn9z3VUB0lFeWCPDsLM7pz2Iy70"
+    },
+    {
+      "id": "014",
+      "titulo": "A Fuga de Ball Boy",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "15pOKsPqN2pEvffSW2hiKAs3iY9bWOkU1"
+    },
+    {
+      "id": "015",
+      "titulo": "Os Sonhos Controlados",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1oPSLMGE_lLI7fYKVA_SExAkLEcdZj6A7"
+    },
+    {
+      "id": "016",
+      "titulo": "O Rapto de Gunko",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1T0H8-JE7I4hSgSVQuMtthMr5Q6p3hbTi"
+    },
+    {
+      "id": "017",
+      "titulo": "O Desafio",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1ntsGUZNjn4ScejoJTRHs2MLLQ1nBQx-4"
+    },
+    {
+      "id": "018",
+      "titulo": "As Máscaras",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "11rLw7Zn7hkNI7xfvfwWp27BwdChWJb9r"
+    },
+    {
+      "id": "019",
+      "titulo": "Goru",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1OP75zvja7hDrRa0h_VALvZoqGsrpU-xc"
+    },
+    {
+      "id": "020",
+      "titulo": "O Cristal Branco e Negro",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1L2rDNVPNOIStyZNUsVnO3zlXUDWtrAdx"
+    },
+    {
+      "id": "021",
+      "titulo": "A Chuva Salgada",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1tc1xMui97c-6JAf-sMvryVMkBiLw0615"
+    },
+    {
+      "id": "022",
+      "titulo": "A Língua de Melelique",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1NNrRU2Oi6o_uNcQF8IDUgu0w55Bo4WsM"
+    },
+    {
+      "id": "023",
+      "titulo": "Morrendo de Rir",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1j-VKVrvtF1PuJEMzw0GJnf11YunkO8et"
+    },
+    {
+      "id": "024",
+      "titulo": "O Velho do Parque",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1k107_NRfYkDdZnPXTevQun7T9Y_UI4VY"
+    },
+    {
+      "id": "025",
+      "titulo": "O Homem-Múmia",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "14qq_KhoTMgHMeUtjuLsZ6fU0ffqXcWMS"
+    },
+    {
+      "id": "026",
+      "titulo": "A Boneca",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1r9RNvdEbqi-9UMbGOfYQUivzJNE3TvsZ"
+    },
+    {
+      "id": "027",
+      "titulo": "O Andróide",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1ksH6J6SYX3pAqMo7bbBz4imCK--8Kb6_"
+    },
+    {
+      "id": "028",
+      "titulo": "As Pílulas do Amor",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "16EcbdeuEMJlC9KjYwEQhgOsSMIpJG7_1"
+    },
+    {
+      "id": "029",
+      "titulo": "O Mapa do Tesouro",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1sRHmSpSrxysTQMsC_5Fg-rFkSJ5NqDln"
+    },
+    {
+      "id": "030",
+      "titulo": "O Espelho Mágico",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1sRHmSpSrxysTQMsC_5Fg-rFkSJ5NqDln"
+    },
+    {
+      "id": "031",
+      "titulo": "O Leque de Bananeira",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1p2iqa24jxuy118WkRbNbJwzri-oOvP9B"
+    },
+    {
+      "id": "032",
+      "titulo": "O Canto do Pavão",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1JLBGZgMWRi02EFZxXDGQbq-7XcXBoQHe"
+    },
+    {
+      "id": "033",
+      "titulo": "O Cachorro Bomba",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1KxkRUYzlf-zBx-wuGG_W1mazzxTPC-Bn"
+    },
+    {
+      "id": "034",
+      "titulo": "A Loção Milagrosa",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "14mJuDN8wJQlmjjQAYhxmMpQkZrtqoOED"
+    },
+    {
+      "id": "035",
+      "titulo": "A Última Aventura",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1RIMZR-8i-dLoj4vT2wMNvCAE59MUWMSN"
+    },
+    {
+      "id": "036",
+      "titulo": "Até Logo",
+      "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+      "driveId": "1cFF9TEC9gHX1OtqlRQtitlRylmsI4Rki"
+    }
+  ]
+}
