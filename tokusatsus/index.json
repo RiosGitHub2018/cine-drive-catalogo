@@ -124,5 +124,11 @@
     "arquivo": "tokusatsus/esquadrao-homens-passaros-jetman.json",
     "thumb": "https://image.tmdb.org/t/p/w500/6UKmUHYTzSFZKoioIXQ2I4cFuzT.jpg",
     "totalEpisodios": 50
+  },
+  {
+    "nome": "Poderoso Lion Man",
+    "arquivo": "tokusatsus/poderoso-lion-man.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/5lWatlZDjL4bnzeobs7b5FYl8gj.jpg",
+    "totalEpisodios": 25
   }
 ]
