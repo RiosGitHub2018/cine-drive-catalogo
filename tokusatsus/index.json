@@ -160,5 +160,11 @@
     "arquivo": "tokusatsus/metalder-o-homem-maquina.json",
     "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
     "totalEpisodios": 39
+  },
+  {
+    "nome": "Robô Gigante",
+    "arquivo": "tokusatsus/robo-gigante.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/ugOdAjj1jpb6ZaBKS8v0MN0dp40.jpg",
+    "totalEpisodios": 26
   }
 ]
