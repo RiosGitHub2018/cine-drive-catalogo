@@ -130,5 +130,11 @@
     "arquivo": "tokusatsus/poderoso-lion-man.json",
     "thumb": "https://image.tmdb.org/t/p/w500/5lWatlZDjL4bnzeobs7b5FYl8gj.jpg",
     "totalEpisodios": 25
+  },
+  {
+    "nome": "Esquadrão Super Feras Liveman",
+    "arquivo": "tokusatsus/esquadrao-super-feras-liveman.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/hbMV06yJ6nHWj0LweEQCDXWhXcq.jpg",
+    "totalEpisodios": 49
   }
 ]
