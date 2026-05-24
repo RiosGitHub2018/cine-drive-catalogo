@@ -42,6 +42,12 @@
     "totalEpisodios": 52
   },
   {
+    "nome": "Metalder, o Homem Máquina",
+    "arquivo": "tokusatsus/metalder-o-homem-maquina.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
+    "totalEpisodios": 39
+  },
+  {
     "nome": "Robô Investigador Janperson",
     "arquivo": "tokusatsus/junperson.json",
     "thumb": "https://image.tmdb.org/t/p/w500/8SpoCyMwwtgn3vjAKpdX2YZNQ8v.jpg",
@@ -66,10 +72,40 @@
     "totalEpisodios": 15
   },
   {
+    "nome": "Kamen Rider Amazon",
+    "arquivo": "tokusatsus/kamen-rider-amazon.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/4QjrLtMtAxKejzKMERoghaHOlFO.jpg",
+    "totalEpisodios": 24
+  },
+  {
     "nome": "Black Kamen Rider (1987)",
     "arquivo": "tokusatsus/black-kamen-rider-1987.json",
     "thumb": "https://image.tmdb.org/t/p/w500/Eoa5QzCTRgw44Y4MibXUV4HBCY.jpg",
     "totalEpisodios": 52
+  },
+  {
+    "nome": "Machineman",
+    "arquivo": "tokusatsus/machineman.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
+    "totalEpisodios": 36
+  },
+  {
+    "nome": "Spider-Man",
+    "arquivo": "tokusatsus/spider-man.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/w5pTlusOFWrOib6XX3iCMjHSzB1.jpg",
+    "totalEpisodios": 42
+  },
+  {
+    "nome": "Robô Gigante",
+    "arquivo": "tokusatsus/robo-gigante.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/ugOdAjj1jpb6ZaBKS8v0MN0dp40.jpg",
+    "totalEpisodios": 26
+  },
+  {
+    "nome": "Cyber Cop",
+    "arquivo": "tokusatsus/cyber-cop.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
+    "totalEpisodios": 34
   },
   {
     "nome": "Battle Fever J",
@@ -81,6 +117,18 @@
     "nome": "Esquadrão Solar Sun Vulcan",
     "arquivo": "tokusatsus/esquadrao-solar-sun-vulcan.json",
     "thumb": "https://image.tmdb.org/t/p/w500/dNuKqRZjPMnlQQXV5k7tZ1USgR5.jpg",
+    "totalEpisodios": 50
+  },
+  {
+    "nome": "Esquadrão Científico Dynaman",
+    "arquivo": "tokusatsus/esquadrao-cientifico-dynaman.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/hou7b1cRw7cpo1JS3Vk8Torr1gH.jpg",
+    "totalEpisodios": 51
+  },
+  {
+    "nome": "Gigantes Guerreiros Goggle Five",
+    "arquivo": "tokusatsus/gigantes-guerreiros-goggle-five.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/t7SQZjVKIhltErMw2eytfPDTANB.jpg",
     "totalEpisodios": 50
   },
   {
@@ -96,15 +144,21 @@
     "totalEpisodios": 55
   },
   {
-    "nome": "Esquadrão Eletrônico Denziman",
-    "arquivo": "tokusatsus/esquadrao-eletronico-denziman.json",
-    "thumb": "https://image.tmdb.org/t/p/w500/HiVKcMQvGln1UAaMzbdYu9dBua.jpg",
+    "nome": "Comando Estelar Flashman",
+    "arquivo": "tokusatsus/comando-estelar-flashman.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
+    "totalEpisodios": 50
+  },
+  {
+    "nome": "Defensores da Luz Maskman",
+    "arquivo": "tokusatsus/defensores-da-luz-maskman.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/4LWws4P5FjbVtKb9huQUssPWvsR.jpg",
     "totalEpisodios": 51
   },
   {
-    "nome": "Esquadrão Científico Dynaman",
-    "arquivo": "tokusatsus/esquadrao-cientifico-dynaman.json",
-    "thumb": "https://image.tmdb.org/t/p/w500/hou7b1cRw7cpo1JS3Vk8Torr1gH.jpg",
+    "nome": "Esquadrão Eletrônico Denziman",
+    "arquivo": "tokusatsus/esquadrao-eletronico-denziman.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/HiVKcMQvGln1UAaMzbdYu9dBua.jpg",
     "totalEpisodios": 51
   },
   {
@@ -112,18 +166,6 @@
     "arquivo": "tokusatsus/esquadrao-terrestre-fiveman.json",
     "thumb": "https://image.tmdb.org/t/p/w500/wZZTqkVoA5SmYoRvDPtuPHBIwLg.jpg",
     "totalEpisodios": 48
-  },
-  {
-    "nome": "Comando Estelar Flashman",
-    "arquivo": "tokusatsus/comando-estelar-flashman.json",
-    "thumb": "https://image.tmdb.org/t/p/w500/7ERo7GdiS8Su3iBezjijTugUjTt.jpg",
-    "totalEpisodios": 50
-  },
-  {
-    "nome": "Gigantes Guerreiros Goggle Five",
-    "arquivo": "tokusatsus/gigantes-guerreiros-goggle-five.json",
-    "thumb": "https://image.tmdb.org/t/p/w500/t7SQZjVKIhltErMw2eytfPDTANB.jpg",
-    "totalEpisodios": 50
   },
   {
     "nome": "Esquadrão Homens-Pássaros Jetman",
@@ -150,57 +192,15 @@
     "totalEpisodios": 50
   },
   {
-    "nome": "Machineman",
-    "arquivo": "tokusatsus/machineman.json",
-    "thumb": "https://image.tmdb.org/t/p/w500/nuqCvNAJrE6sMFDov5TAAo4Mziw.jpg",
-    "totalEpisodios": 36
-  },
-  {
-    "nome": "Defensores da Luz Maskman",
-    "arquivo": "tokusatsus/defensores-da-luz-maskman.json",
-    "thumb": "https://image.tmdb.org/t/p/w500/4LWws4P5FjbVtKb9huQUssPWvsR.jpg",
-    "totalEpisodios": 51
-  },
-  {
     "nome": "Esquadrão Eletromagnético Megaranger",
     "arquivo": "tokusatsus/esquadrao-eletromagnetico-megaranger.json",
     "thumb": "https://image.tmdb.org/t/p/w500/gKtYenCKKsf69xDPXDIpdpt9iT2.jpg",
     "totalEpisodios": 51
   },
   {
-    "nome": "Metalder, o Homem Máquina",
-    "arquivo": "tokusatsus/metalder-o-homem-maquina.json",
-    "thumb": "https://image.tmdb.org/t/p/w500/3KaowKMVkclnnTbCxnhUYOvGJxQ.jpg",
-    "totalEpisodios": 39
-  },
-  {
-    "nome": "Robô Gigante",
-    "arquivo": "tokusatsus/robo-gigante.json",
-    "thumb": "https://image.tmdb.org/t/p/w500/ugOdAjj1jpb6ZaBKS8v0MN0dp40.jpg",
-    "totalEpisodios": 26
-  },
-  {
     "nome": "Super Star Fleet Sazer-X the Movie: Fight! Star Warriors",
     "arquivo": "tokusatsus/super-star-fleet-sazer-x-the-movie-fight-star-warriors.json",
     "thumb": "https://image.tmdb.org/t/p/w500/eLF0ikwxdhBMNXmMDhfiB9r9rlS.jpg",
     "totalEpisodios": 38
-  },
-  {
-    "nome": "Cyber Cop",
-    "arquivo": "tokusatsus/cyber-cop.json",
-    "thumb": "https://image.tmdb.org/t/p/w500/5PtU3hUDqMgiNmLyMPwI99HDd1y.jpg",
-    "totalEpisodios": 34
-  },
-  {
-    "nome": "Kamen Rider Amazon",
-    "arquivo": "tokusatsus/kamen-rider-amazon.json",
-    "thumb": "https://image.tmdb.org/t/p/w500/4QjrLtMtAxKejzKMERoghaHOlFO.jpg",
-    "totalEpisodios": 24
-  },
-  {
-    "nome": "Spider-Man",
-    "arquivo": "tokusatsus/spider-man.json",
-    "thumb": "https://image.tmdb.org/t/p/w500/w5pTlusOFWrOib6XX3iCMjHSzB1.jpg",
-    "totalEpisodios": 42
   }
 ]
