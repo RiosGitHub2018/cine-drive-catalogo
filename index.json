@@ -1,8 +1,8 @@
 [
   {
-    "categoria": "FAVORITOS",
-    "tipo": "series",
-    "arquivo": "series/favoritos.json"
+      "categoria": "⭐ FAVORITOS",
+      "arquivo": "favoritos.json",
+      "tipo": "filmes"
   },
   {
     "categoria": "Tokusatsus",
