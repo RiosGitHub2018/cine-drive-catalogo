@@ -1,5 +1,11 @@
 [
   {
+    "nome": "Batman e Robin",
+    "arquivo": "series/batman-e-robin.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/6vbxUh6LWHGhfuPI7GrimQaXNsQ.jpg",
+    "totalEpisodios": 9
+  },
+  {
     "nome": "Chaves",
     "arquivo": "series/chaves.json",
     "thumb": "https://image.tmdb.org/t/p/w500/nSpP9aS9LAQd7wwzzOoCAYIluco.jpg",
