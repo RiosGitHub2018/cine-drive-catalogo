@@ -18,7 +18,7 @@
     "titulo": "Fetebol ao vivo 03",
     "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOY9UR-bElwd9IxWfbbODrWrifSKFOVCnzzM9ds2DfdXZSCoBqDLixBg1yZIekGdxukYumh8vUUJBaZRW1H_AinaXjnXDr743utKFrS1UI-7YIWBThyvUf_7qro-ulWFwkqeO_n2qpmj5YwgMAAazz8jMb9za5_CtC2pZXPygEf4ASLv0FFvVtEhKXEgs/s1600/futerbol_live.png",
     "driveId": "",
-    "url": "https://ng0pr.envivoslatam.org/foxsports/tracks-v1a1/mono.m3u8?ip=131.255.152.85&token=cfed3569b69f323057c5cd0c0051bd220fe30b83-ab-1779801788-1779747788"
+    "url": "https://iaw5b.envivoslatam.org/winplus/tracks-v1a1/mono.m3u8?ip=131.255.152.81&token=e52e36afd8273caba42becde0ffd27ad4f42a381-56-1779889130-1779835130"
   },
   {
     "id": "004",
@@ -33,12 +33,5 @@
     "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOY9UR-bElwd9IxWfbbODrWrifSKFOVCnzzM9ds2DfdXZSCoBqDLixBg1yZIekGdxukYumh8vUUJBaZRW1H_AinaXjnXDr743utKFrS1UI-7YIWBThyvUf_7qro-ulWFwkqeO_n2qpmj5YwgMAAazz8jMb9za5_CtC2pZXPygEf4ASLv0FFvVtEhKXEgs/s1600/futerbol_live.png",
     "driveId": "",
     "url": "https://iaw5b.envivoslatam.org/hotflix/tycsports/index.m3u8?token=c17d9545c626393f451505dc4a64866ea9b7c2bc-7a-1779887579-1779833579&ip=131.255.152.81"
-  },
-  {
-    "id": "006",
-    "titulo": "Teste",
-    "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOY9UR-bElwd9IxWfbbODrWrifSKFOVCnzzM9ds2DfdXZSCoBqDLixBg1yZIekGdxukYumh8vUUJBaZRW1H_AinaXjnXDr743utKFrS1UI-7YIWBThyvUf_7qro-ulWFwkqeO_n2qpmj5YwgMAAazz8jMb9za5_CtC2pZXPygEf4ASLv0FFvVtEhKXEgs/s1600/futerbol_live.png",
-    "driveId": "",
-    "url": "https://poolce5gac1d.airspace-cdn.cbsivideo.com/out/v1/a56cb49e37eb4e5b9dd269358c9f4491/start/1779839100/manifest.mpd"
   }
 ]
