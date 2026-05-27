@@ -1030,7 +1030,7 @@ function renderConteudoSubs(){
   atualizarBarraEsq('+ Nova Subcategoria', 'btn-roxo', abrirModalSub);
   atualizarBarraDir('<button class="btn btn-verde" onclick="adicionarEpisodio()" style=" width: 170px;  margin-left: 200px;">+ Adicionar Episodio</button>'+
     '<label class="btn btn-ouro" for="csv-eps" style="cursor:pointer;">&#128229; Importar CSV</label>'+
-    '<input type="file" id="csv-eps" accept=".csv" style="display:none" onchange="importarCSVEpisodios(this)">'+
+    '<input type="file" id="csv-eps" accept=".csv, .txt" style="display:none" onchange="importarCSVEpisodios(this)">'+
     (sub.episodios.length===0?
       '<label class="btn btn-sec" for="json-sub-'+info.catIdx+'-'+info.subIdx+'" style="cursor:pointer;border-color:var(--ouro);color:var(--ouro);">&#128194; Carregar '+sub.arquivo+'</label>'+
       '<input type="file" id="json-sub-'+info.catIdx+'-'+info.subIdx+'" accept=".json" style="display:none" onchange="carregarJSONSub(this,'+info.catIdx+','+info.subIdx+')">'
