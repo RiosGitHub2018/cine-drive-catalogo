@@ -1,0 +1,126 @@
+{
+  "nome": "A Família Addams",
+  "thumb": "https://image.tmdb.org/t/p/w500/n22Oepg1t1aP5jgT6ZdCzITB28Z.jpg",
+  "episodios": [
+    {
+      "id": "001",
+      "titulo": "A Família Addams Vai À Escola",
+      "thumb": "https://image.tmdb.org/t/p/w500/n22Oepg1t1aP5jgT6ZdCzITB28Z.jpg",
+      "driveId": "1N638KHQ3VeSRaPT8x54_0eg3kT0it2Id"
+    },
+    {
+      "id": "002",
+      "titulo": "Morticia E O Psiquiatra",
+      "thumb": "https://image.tmdb.org/t/p/w500/n22Oepg1t1aP5jgT6ZdCzITB28Z.jpg",
+      "driveId": "1UyLJWf-ntD4bZdl1HyQI8giW7-L7whAj"
+    },
+    {
+      "id": "003",
+      "titulo": "Puncionado Romance Do Fester",
+      "thumb": "https://image.tmdb.org/t/p/w500/n22Oepg1t1aP5jgT6ZdCzITB28Z.jpg",
+      "driveId": "13iR3OB3GF5vS8ZfEE_FYa3Qja5elKRbI"
+    },
+    {
+      "id": "004",
+      "titulo": "Gomez Do Político",
+      "thumb": "https://image.tmdb.org/t/p/w500/n22Oepg1t1aP5jgT6ZdCzITB28Z.jpg",
+      "driveId": "1WwB7JZ_yPxKTAH5CW0YXV980GGXlxwL7"
+    },
+    {
+      "id": "005",
+      "titulo": "A Árvore Addams Family",
+      "thumb": "https://image.tmdb.org/t/p/w500/n22Oepg1t1aP5jgT6ZdCzITB28Z.jpg",
+      "driveId": "1RQcMMOeI9QK5ZlwgOT_nMas3vCMM6NQK"
+    },
+    {
+      "id": "006",
+      "titulo": "Morticia Junta-se A Liga Das Senhoras",
+      "thumb": "https://image.tmdb.org/t/p/w500/n22Oepg1t1aP5jgT6ZdCzITB28Z.jpg",
+      "driveId": "12OIS5VN3Ponl9qhFJOJb0QRnZtDKcNCT"
+    },
+    {
+      "id": "007",
+      "titulo": "Dia Das Bruxas Com A Família Addams",
+      "thumb": "https://image.tmdb.org/t/p/w500/n22Oepg1t1aP5jgT6ZdCzITB28Z.jpg",
+      "driveId": "1Hq9eyH71I1WwTimbu4JebdJfEwMZFoJX"
+    },
+    {
+      "id": "008",
+      "titulo": "Gomez De Olhos Verdes",
+      "thumb": "https://image.tmdb.org/t/p/w500/n22Oepg1t1aP5jgT6ZdCzITB28Z.jpg",
+      "driveId": "1oJGG8WgpYN6F-EbrVOp567DM4gJDRQBl"
+    },
+    {
+      "id": "009",
+      "titulo": "Os Novos Vizinhos Conheça A Família Addams",
+      "thumb": "https://image.tmdb.org/t/p/w500/n22Oepg1t1aP5jgT6ZdCzITB28Z.jpg",
+      "driveId": "1SHTxNjvrWo8-NKMxnrigzz51x9xAHIod"
+    },
+    {
+      "id": "010",
+      "titulo": "Quarta-feira Sai De Casa",
+      "thumb": "https://image.tmdb.org/t/p/w500/n22Oepg1t1aP5jgT6ZdCzITB28Z.jpg",
+      "driveId": "1rCdQ_aaguKkNTij97UNmhqE2uTQCGatQ"
+    },
+    {
+      "id": "011",
+      "titulo": "A Família Addams Atende Aos Vips",
+      "thumb": "https://image.tmdb.org/t/p/w500/n22Oepg1t1aP5jgT6ZdCzITB28Z.jpg",
+      "driveId": "12IL-QIsYgXTJTmBI25AbnIvxR5YKdJiz"
+    },
+    {
+      "id": "012",
+      "titulo": "Morticia Uma Casamenteiro",
+      "thumb": "https://image.tmdb.org/t/p/w500/n22Oepg1t1aP5jgT6ZdCzITB28Z.jpg",
+      "driveId": "1DUQKenjEYPqDW8XQnxpDy0xS8skX19Oc"
+    },
+    {
+      "id": "013",
+      "titulo": "Lurch Aprende a Dançar",
+      "thumb": "https://image.tmdb.org/t/p/w500/n22Oepg1t1aP5jgT6ZdCzITB28Z.jpg",
+      "driveId": "1norn-5hfks3Vo01vKufI8pRXV2WRJjxr"
+    },
+    {
+      "id": "014",
+      "titulo": "Arte E Da Família Addams",
+      "thumb": "https://image.tmdb.org/t/p/w500/n22Oepg1t1aP5jgT6ZdCzITB28Z.jpg",
+      "driveId": "11zmxLCfSrUCbHL7gdz2sbVyf2yDc0hkK"
+    },
+    {
+      "id": "015",
+      "titulo": "A Família Addams Encontra Um Beatnik",
+      "thumb": "https://image.tmdb.org/t/p/w500/n22Oepg1t1aP5jgT6ZdCzITB28Z.jpg",
+      "driveId": "1yjnFWWnnGn9UokM2sCr4pQuj6ujVZCL_"
+    },
+    {
+      "id": "016",
+      "titulo": "A Família Addams E O Homem Secreto",
+      "thumb": "https://image.tmdb.org/t/p/w500/n22Oepg1t1aP5jgT6ZdCzITB28Z.jpg",
+      "driveId": "1O17vSSoQ4AcUz6NQ32eue2zOs9sA8IwO"
+    },
+    {
+      "id": "017",
+      "titulo": "A Mãe Do Tropeço Visita A Família Addams",
+      "thumb": "https://image.tmdb.org/t/p/w500/n22Oepg1t1aP5jgT6ZdCzITB28Z.jpg",
+      "driveId": "1K43A88XiFcmIHcbcP--ln8NSAnEyb0MT"
+    },
+    {
+      "id": "018",
+      "titulo": "A Doença Do Tio Chico",
+      "thumb": "https://image.tmdb.org/t/p/w500/n22Oepg1t1aP5jgT6ZdCzITB28Z.jpg",
+      "driveId": "1LoqFvHiDwMY_DG_IBesurA9L2w3ujzdO"
+    },
+    {
+      "id": "019",
+      "titulo": "A Família Addams Esbanja",
+      "thumb": "https://image.tmdb.org/t/p/w500/n22Oepg1t1aP5jgT6ZdCzITB28Z.jpg",
+      "driveId": "1hcOUBgLlb1cj23J2X37P0cVkF7-HYHY-"
+    },
+    {
+      "id": "020",
+      "titulo": "Primo Itt Visita A Família Addams",
+      "thumb": "https://image.tmdb.org/t/p/w500/n22Oepg1t1aP5jgT6ZdCzITB28Z.jpg",
+      "driveId": "1X2QoKTOj7VckmlRoe2hJZ_3Zj9RuKbxr"
+    }
+  ]
+}
