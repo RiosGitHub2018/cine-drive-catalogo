@@ -40,5 +40,11 @@
     "arquivo": "series/todo-mundo-odeia-o-cris-3-temporada.json",
     "thumb": "https://2.bp.blogspot.com/-GJgA1O85gCg/XAqYhgJZXkI/AAAAAAAABxI/neLL9-2hQR0JR8s7cAhbcdNbaJN8A_LQgCLcBGAs/s1600/tmdodcristp03.png",
     "totalEpisodios": 22
+  },
+  {
+    "nome": "A Família Addams",
+    "arquivo": "series/a-familia-addams.json",
+    "thumb": "https://image.tmdb.org/t/p/w500/n22Oepg1t1aP5jgT6ZdCzITB28Z.jpg",
+    "totalEpisodios": 20
   }
 ]
