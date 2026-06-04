@@ -33,5 +33,19 @@
     "thumb": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOY9UR-bElwd9IxWfbbODrWrifSKFOVCnzzM9ds2DfdXZSCoBqDLixBg1yZIekGdxukYumh8vUUJBaZRW1H_AinaXjnXDr743utKFrS1UI-7YIWBThyvUf_7qro-ulWFwkqeO_n2qpmj5YwgMAAazz8jMb9za5_CtC2pZXPygEf4ASLv0FFvVtEhKXEgs/s1600/futerbol_live.png",
     "driveId": "",
     "url": "https://tk0hz.envivoslatam.org/tycsports/tracks-v1a1/mono.m3u8?ip=131.255.152.90&token=f2704bc6553db92be7cd5b75a36eae231661be35-45-1780582424-1780528424"
+  },
+  {
+    "id": "006",
+    "titulo": "Eltrece -AR",
+    "thumb": "",
+    "driveId": "",
+    "url": "https://live-01-02-eltrece.vodgc.net/eltrecetv_noti/tracks-v1/mono.m3u8"
+  },
+  {
+    "id": "007",
+    "titulo": "TN Notícias - AG",
+    "thumb": "https://yt3.googleusercontent.com/T223Y97Qrq3u6vwPDtLGWT9koDO0uEfsHysd8l4h7fHdpEISrzfr5feErGmzs9zXlvfxlSs_cA=s160-c-k-c0x00ffffff-no-rj",
+    "driveId": "",
+    "url": "https://live-01-01-tn.vodgc.net/TN_DAI_Beta/index_TN_DAI_Beta_1080.m3u8"
   }
 ]
