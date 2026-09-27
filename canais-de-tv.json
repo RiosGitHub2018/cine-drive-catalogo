@@ -25,14 +25,14 @@
     "titulo": "Directv AR",
     "thumb": "https://static.wikia.nocookie.net/logopedia/images/2/26/Eltrece_Internacional_2017.png/revision/latest?cb=20191216035910&path-prefix=es",
     "driveId": "",
-    "url": "https://47.domhsd.com/global/dsports/index.m3u8?token=27e58ef55a9bcaecc6877e1faf626976e8515aa3-4a-1789971360-1789917360&ip=131.255.152.78"
+    "url": "https://17.domhsd.com/global/dsports/index.m3u8?token=26e8f57d8385db1d4437256bf782af1a9f8d3d62-2c-1790580380-1790526380&ip=131.255.152.103"
   },
   {
     "id": "005",
     "titulo": "TNT Sportes AR",
     "thumb": "https://www.minhaoperadora.com.br/wp-content/uploads/2021/01/Esporte-Interativo-vai-virar-TNT-Sports-em-breve.jpg",
     "driveId": "",
-    "url": "https://85.domhsd.com/tntsports/tracks-v1a1/mono.m3u8?ip=131.255.152.78&token=60b21d6f99130b8f79a427588173bf51d396c3c9-69-1789971246-1789917246"
+    "url": "https://17.domhsd.com/global/tntsports/index.m3u8?token=e1ca3117a68f8b0812e514cceeb6ad95b987632d-2c-1790580340-1790526340&ip=131.255.152.103"
   },
   {
     "id": "006",
